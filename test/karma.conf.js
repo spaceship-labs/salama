@@ -14,7 +14,11 @@ module.exports = function(config) {
     basePath: '../',
 
     // testing framework to use (jasmine/mocha/qunit/...)
-    frameworks: ['jasmine'],
+    frameworks: [
+      "mocha",
+      "chai",
+      'sinon-chai'
+    ],
 
     // list of files / patterns to load in the browser
     files: [
@@ -26,16 +30,18 @@ module.exports = function(config) {
       'bower_components/angular-route/angular-route.js',
       'bower_components/angular-sanitize/angular-sanitize.js',
       'bower_components/angular-touch/angular-touch.js',
+      'bower_components/github-api/src/github.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'app/scripts/**/*.js',
       'test/mock/**/*.js',
-      'test/spec/**/*.js'
+      'test/spec/**/*.js',
+      "node_modules/chai/chai.js",
+      "node_modules/chai-things/lib/chai-things.js"
     ],
 
     // list of files / patterns to exclude
-    exclude: [
-    ],
+    exclude: [],
 
     // web server port
     port: 8080,
@@ -51,11 +57,23 @@ module.exports = function(config) {
     browsers: [
       'PhantomJS'
     ],
+    // Code coverage report
+    reporters: ['progress', 'coverage'],
+    preprocessors: {
+      'app/scripts/**/*.js': ['coverage']
+    },
+    coverageReporter: {
+      type: 'lcov',
+      dir: 'coverage'
+    },
 
     // Which plugins to enable
     plugins: [
-      'karma-phantomjs-launcher',
-      'karma-jasmine'
+      "karma-phantomjs-launcher",
+      'karma-mocha',
+      'karma-chai',
+      'karma-coverage',
+      'karma-sinon-chai'
     ],
 
     // Continuous Integration mode
