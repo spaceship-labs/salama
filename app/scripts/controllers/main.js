@@ -2,16 +2,24 @@
 
 /**
  * @ngdoc function
- * @name salamaApp.controller:MainCtrl
+ * @name ctbookApp.controller:ContratoCtrl
  * @description
- * # MainCtrl
- * Controller of the salamaApp
+ * # ContratoCtrl
+ * Controller of the ctbookApp
  */
 angular.module('salamaApp')
-  .controller('MainCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+  .controller('MainCtrl', mainCtrl);
+
+function mainCtrl(contentService) {
+  /* jshint validthis: true */
+  var vm = this;
+
+  vm.load = load;
+
+  vm.load();
+
+  function load(){
+    contentService.connect();
+  }
+
+}
