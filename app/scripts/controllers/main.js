@@ -7,20 +7,12 @@
  * # ContratoCtrl
  * Controller of the ctbookApp
  */
-angular.module('salamaApp')
+angular
+  .module('salamaApp')
   .controller('MainCtrl', mainCtrl);
 
-function mainCtrl(contentService) {
-  /* jshint validthis: true */
-  var vm = this;
-
-  vm.load = load;
-
-  vm.load();
-
-  function load(){
-    var a=contentService.getHash();
-    console.log(a);
-  }
-
+function mainCtrl(metaService) {
+  metaService.getMeta().then(function(meta){
+    console.log(meta);
+  });
 }

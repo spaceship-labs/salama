@@ -10,7 +10,6 @@
     "angular-sanitize": "^1.4.0",
     "angular-touch": "^1.4.0",
     "angular-material": "~1.0.4",
-    "angular-github-adapter": "~0.1.2",
     "github-api": "0.10.7"
   },
   "devDependencies": {

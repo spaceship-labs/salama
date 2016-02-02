@@ -1,34 +1,16 @@
 'use strict';
 
+/**
+ * @ngdoc service
+ * @name salamaApp.contentService
+ * @description
+ * # contentService
+ * Service in the salamaApp.
+ */
 angular
   .module('salamaApp')
   .service('contentService', contentService);
 
-function contentService($q) {
-  var service=this;
-  service.connect = connect;
-  service.getHash=getHash;
-  service.repo=null;
+function contentService() {
 
-  service.connect();
-
-  ////////////////
-
-  function connect($q) {
-    var github = new Github({
-      username: 'tugorez',
-      password: 'juanjo271193',
-      auth: 'basic',
-    });
-    service.repo=github.getRepo(
-      'spaceship-labs',
-      'salama-content'
-    );
-  }
-
-  function getHash(){
-    $q(function(a,b){
-
-    });
-  }
 }

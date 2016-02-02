@@ -18,10 +18,18 @@
 </head>
 
 <body ng-app="salamaApp">
-  <!--[if lte IE 8]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
+  <!--Header-->
+
+  <!--endHeader-->
+
+  <!--Content-->
   <md-content ng-view></md-content>
+  <!--endContent-->
+
+  <!--Footer-->
+
+  <!--endFooter-->
+
   <!-- build:js(.) scripts/vendor.js -->
   <!-- bower:js -->
   <script src="bower_components/angular/angular.js"></script>
@@ -33,8 +41,6 @@
   <script src="bower_components/angular-touch/angular-touch.js"></script>
   <script src="bower_components/angular-messages/angular-messages.js"></script>
   <script src="bower_components/angular-material/angular-material.js"></script>
-  <script src="bower_components/github/github.js"></script>
-  <script src="bower_components/angular-github-adapter/angular-github-adapter.js"></script>
   <script src="bower_components/github-api/github.js"></script>
   <!-- endbower -->
   <!-- endbuild -->
@@ -42,6 +48,8 @@
   <script src="scripts/app.js"></script>
   <script src="scripts/controllers/main.js"></script>
   <script src="scripts/services/content-service.js"></script>
+  <script src="scripts/services/meta-service.js"></script>
+  <script src="scripts/services/questions-service.js"></script>
   <!-- endbuild -->
 </body>
 
