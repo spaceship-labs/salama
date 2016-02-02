@@ -19,7 +19,8 @@ function mainCtrl(contentService) {
   vm.load();
 
   function load(){
-    contentService.connect();
+    var a=contentService.getHash();
+    console.log(a);
   }
 
 }

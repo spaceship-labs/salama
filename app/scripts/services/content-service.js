@@ -2,28 +2,33 @@
 
 angular
   .module('salamaApp')
-  .service('contentService', Service);
+  .service('contentService', contentService);
 
-//Service.$inject = ['dependencies'];
+function contentService($q) {
+  var service=this;
+  service.connect = connect;
+  service.getHash=getHash;
+  service.repo=null;
 
-/* @ngInject */
-function Service() {
-  this.connect = connect;
+  service.connect();
 
   ////////////////
 
-  function connect() {
+  function connect($q) {
     var github = new Github({
-      username: 'el-sonny',
-      password: '---------',
+      username: 'tugorez',
+      password: 'juanjo271193',
       auth: 'basic',
     });
+    service.repo=github.getRepo(
+      'spaceship-labs',
+      'salama-content'
+    );
+  }
 
-    var repo = github.getRepo('spaceship-labs', 'salama-content');
+  function getHash(){
+    $q(function(a,b){
 
-    repo.show(function(err,repo){
-      console.log(err);
-      console.log(repo);
     });
   }
 }

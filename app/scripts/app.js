@@ -15,7 +15,8 @@ angular
     'ngCookies',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'pascalprecht.github-adapter'//github adapter
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -27,4 +28,8 @@ angular
       .otherwise({
         redirectTo: '/'
       });
+  }).config(function($githubProvider){
+    $githubProvider.username('tugorez');
+    $githubProvider.password('juanjo271193');
+    $githubProvider.authType('basic');
   });
