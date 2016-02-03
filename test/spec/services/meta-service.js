@@ -12,7 +12,8 @@ describe('Service: metaService', function () {
   }));
 
   it('should do something', function () {
-    expect(!!metaService).toBe(true);
+    console.log(metaService, expect);
+    expect(!!metaService).to.equal(true);
   });
 
 });

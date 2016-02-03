@@ -17,13 +17,30 @@
   <!-- endbuild -->
 </head>
 
-<body ng-app="salamaApp">
+<body ng-app="salamaApp" ng-controller="MainCtrl as main">
   <!--Header-->
-
+  <header>
+    <md-toolbar class="md-toolbar-tools" layout-align="center center">
+      <md-button hide-gt-sm class="md-icon-button" aria-label="Settings">
+          <md-icon md-svg-icon="/images/menu.svg"></md-icon>
+      </md-button>
+      <h2>
+        <a href="#/">Salama</a>
+      </h2>
+      <span flex-gt-sm="50" flex-sm></span>
+      <md-input-container>
+        <md-select ng-model="lang">
+          <md-option value="es">Español</md-option>
+          <md-option value="en" selected>English</md-option>
+        </md-select>
+      </md-input-container>
+    </md-toolbar>
+  </header>
   <!--endHeader-->
 
   <!--Content-->
-  <md-content ng-view></md-content>
+  <md-content ng-view layout layout-align="center">
+  </md-content>
   <!--endContent-->
 
   <!--Footer-->
@@ -42,6 +59,11 @@
   <script src="bower_components/angular-messages/angular-messages.js"></script>
   <script src="bower_components/angular-material/angular-material.js"></script>
   <script src="bower_components/github-api/github.js"></script>
+  <script src="bower_components/angular-translate/angular-translate.js"></script>
+  <script src="bower_components/angular-translate-storage-cookie/angular-translate-storage-cookie.js"></script>
+  <script src="bower_components/angular-translate-storage-local/angular-translate-storage-local.js"></script>
+  <script src="bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.js"></script>
+  <script src="bower_components/angular-translate-loader-url/angular-translate-loader-url.js"></script>
   <!-- endbower -->
   <!-- endbuild -->
   <!-- build:js({.tmp,app}) scripts/scripts.js -->
@@ -50,6 +72,12 @@
   <script src="scripts/services/content-service.js"></script>
   <script src="scripts/services/meta-service.js"></script>
   <script src="scripts/services/questions-service.js"></script>
+  <script src="scripts/controllers/home.js"></script>
+  <script src="scripts/controllers/evaluation.js"></script>
+  <script src="scripts/controllers/library.js"></script>
+  <script src="scripts/controllers/v3.js"></script>
+  <script src="scripts/controllers/prov2.js"></script>
+  <script src="scripts/controllers/article.js"></script>
   <!-- endbuild -->
 </body>
 

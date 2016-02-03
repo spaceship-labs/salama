@@ -12,7 +12,4 @@ angular
   .controller('MainCtrl', mainCtrl);
 
 function mainCtrl(metaService) {
-  metaService.getMeta().then(function(meta){
-    console.log(meta);
-  });
 }
