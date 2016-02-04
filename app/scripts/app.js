@@ -17,8 +17,13 @@ angular
     'ngSanitize',
     'ngTouch',
     'ngMaterial',//angular material
+    'pascalprecht.translate'//angular translate
   ])
-  .config(function ($routeProvider) {
+  .config(routeProvider)
+  .config(translateProvider);
+
+  routeProvider.$inject=['$routeProvider'];
+  function routeProvider($routeProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/home.html',
@@ -53,4 +58,13 @@ angular
       .otherwise({
         redirectTo: '/'
       });
-  });
+  }
+
+  translateProvider.$inject=['$translateProvider'];
+  function translateProvider($translateProvider){
+    $translateProvider.useStaticFilesLoader({
+      prefix: 'resources/locale-',
+      suffix: '.json'
+    });
+    $translateProvider.preferredLanguage('en_US');
+  }

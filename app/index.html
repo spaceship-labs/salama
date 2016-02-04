@@ -29,9 +29,9 @@
       </h2>
       <span flex-gt-sm="50" flex-sm></span>
       <md-input-container>
-        <md-select ng-model="lang">
-          <md-option value="es">Español</md-option>
-          <md-option value="en" selected>English</md-option>
+      <md-select ng-model="lang" ng-change="main.changeLang(lang)" >
+          <md-option value="es_MX">Español</md-option>
+          <md-option value="en_US" selected>English</md-option>
         </md-select>
       </md-input-container>
     </md-toolbar>

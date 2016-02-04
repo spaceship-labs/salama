@@ -9,7 +9,15 @@
  */
 angular
   .module('salamaApp')
-  .controller('MainCtrl', mainCtrl);
+  .controller('MainCtrl', MainCtrl);
 
-function mainCtrl(metaService) {
+MainCtrl.$inject=['$translate','metaService'];
+function MainCtrl($translate,metaService) {
+  var ctrl=this;
+  this.changeLang=changeLang;
+
+  /////
+  function changeLang(lang){
+    $translate.use(lang);
+  }
 }
