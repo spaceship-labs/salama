@@ -38,7 +38,7 @@
       db.articles = db.articles || {};
       return github.getContent(db.selected).then(function(content){
         //removing frontmatter
-        db.articles[db.selected]=content.replace(/---(.|\s)*---/,'');
+        db.articles[db.selected]=content.replace(/^---(.|\s)*?---/,'');
         return db.articles[db.selected];
       });
     }
