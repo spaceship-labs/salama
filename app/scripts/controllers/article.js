@@ -7,11 +7,23 @@
  * # ArticleCtrl
  * Controller of the salamaApp
  */
-angular.module('salamaApp')
-  .controller('ArticleCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+(function(){
+  angular.module('salamaApp')
+    .controller('ArticleCtrl', ArticleCtrl);
+
+  ArticleCtrl.$inject=['contentService'];
+
+  function ArticleCtrl(contentService){
+    var ctrl=this;
+    ctrl.article=null;
+
+    activate();
+
+    function activate(){
+      contentService.getArticle().then(function(article){
+        ctrl.article=article;
+      });
+    }
+  }
+})();
+

@@ -10,25 +10,31 @@
 angular.module('salamaApp')
   .controller('LibraryCtrl',LibraryCtrl);
 
-LibraryCtrl.$inject=['metaService'];
+LibraryCtrl.$inject=['metaService','contentService'];
 
-function LibraryCtrl(metaService) {
-  var ctrl=this;
-  ctrl.metadata=[];
+function LibraryCtrl(metaService,contentService) {
+  var ctrl = this;
+  ctrl.metadata = [];
+  ctrl.setArticleSelected = setArticleSelected;
+
   activate();
 
   function activate(){
-    metaService.getMeta()
-      .then(saveMeta)
+    metaService.getMetadata()
+      .then(setMetadata)
       .catch(logError);
   }
 
-  function saveMeta(metadata){
+  function setMetadata(metadata){
     ctrl.metadata=metadata;
-    console.log(metadata);
+  }
+
+  function setArticleSelected(path){
+    contentService.setArticleSelected(path);
   }
 
   function logError(err){
     console.log(err);
   }
+
 }

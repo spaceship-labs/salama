@@ -53,7 +53,7 @@ angular
         controller: 'Prov2Ctrl',
         controllerAs: 'prov2'
       })
-      .when('/article/:path', {
+      .when('/article', {
         templateUrl: 'views/article.html',
         controller: 'ArticleCtrl',
         controllerAs: 'article'
