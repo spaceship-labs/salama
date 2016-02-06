@@ -22,7 +22,8 @@
       getLatestVersion:getLatestVersion,
       getMetadata: getMetadata,
       getContent: getContent,
-      getQuestions: getQuestions
+      getIndividuals: getIndividuals,
+      getOrganizations: getOrganizations
     }
 
     function getLatestVersion(){
@@ -45,9 +46,20 @@
       return getFile('master',path);
     }
 
-    function getQuestions(lang){
+    function getIndividuals(lang){
       lang = lang || 'es_MX';
-      return getFileJSON('master','questions/locale-'+lang+'.json');
+      return getFileJSON(
+        'master',
+        'questions/individuals/locale-'+lang+'.json'
+      );
+    }
+
+    function getOrganizations(lang){
+      lang = lang || 'es_MX';
+      return getFileJSON(
+        'master',
+        'questions/organizations/locale-'+lang+'.json'
+      );
     }
 
     function getFileJSON(branch,path){
