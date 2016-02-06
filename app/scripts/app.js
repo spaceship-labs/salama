@@ -58,6 +58,16 @@ angular
         controller: 'ArticleCtrl',
         controllerAs: 'article'
       })
+      .when('/individuals', {
+        templateUrl: 'views/individuals.html',
+        controller: 'IndividualsCtrl',
+        controllerAs: 'individuals'
+      })
+      .when('/organizations', {
+        templateUrl: 'views/organizations.html',
+        controller: 'OrganizationsCtrl',
+        controllerAs: 'organizations'
+      })
       .otherwise({
         redirectTo: '/'
       });

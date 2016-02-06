@@ -21,7 +21,8 @@
     return {
       getLatestVersion:getLatestVersion,
       getMetadata: getMetadata,
-      getContent: getContent
+      getContent: getContent,
+      getQuestions: getQuestions
     }
 
     function getLatestVersion(){
@@ -37,12 +38,21 @@
     }
 
     function getMetadata(){
-      return getFile('master','metadata/locale-all.json')
-        .then(function(metadata){ return JSON.parse(metadata);});
+      return getFileJSON('master','metadata/locale-all.json');
     }
 
     function getContent(path){
       return getFile('master',path);
+    }
+
+    function getQuestions(lang){
+      lang = lang || 'es_MX';
+      return getFileJSON('master','questions/locale-'+lang+'.json');
+    }
+
+    function getFileJSON(branch,path){
+      return getFile(branch,path)
+        .then(function(file){ return JSON.parse(file);});
     }
 
     function getFile(branch,path){

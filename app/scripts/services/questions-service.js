@@ -7,10 +7,26 @@
  * # questionsService
  * Service in the salamaApp.
  */
-angular
-  .module('salamaApp')
-  .service('questionsService',questionsService);
+(function(){
+  angular
+    .module('salamaApp')
+    .service('questionsService',questionsService);
 
-function questionsService(){
+  questionsService.$inject=['$q','$localStorage','githubService'];
 
-}
+  function questionsService($q,$localStorage,githubService){
+    $localStorage.questionsService = $localStorage.questionsService || {};
+    var db = $localStorage.questionsService;
+    var github = githubService;
+    return {
+
+    };
+
+    function getIndividuals(){
+    }
+
+    function getOrganizations(){
+    }
+  }
+})();
+

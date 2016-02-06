@@ -2,13 +2,13 @@
 
 /**
  * @ngdoc function
- * @name salamaApp.controller:Prov2Ctrl
+ * @name salamaApp.controller:OrganizationsCtrl
  * @description
- * # Prov2Ctrl
+ * # OrganizationsCtrl
  * Controller of the salamaApp
  */
 angular.module('salamaApp')
-  .controller('Prov2Ctrl', function () {
+  .controller('OrganizationsCtrl', function () {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',

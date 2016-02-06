@@ -2,13 +2,13 @@
 
 /**
  * @ngdoc function
- * @name salamaApp.controller:V3Ctrl
+ * @name salamaApp.controller:IndividualsCtrl
  * @description
- * # V3Ctrl
+ * # IndividualsCtrl
  * Controller of the salamaApp
  */
 angular.module('salamaApp')
-  .controller('V3Ctrl', function () {
+  .controller('IndividualsCtrl', function () {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
