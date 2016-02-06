@@ -14,8 +14,8 @@ angular
 MainCtrl.$inject=['$translate','metaService'];
 function MainCtrl($translate,metaService) {
   var ctrl=this;
+  this.lang;
   this.changeLang=changeLang;
-
   /////
   function changeLang(lang){
     $translate.use(lang);

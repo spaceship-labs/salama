@@ -1,1 +1,5 @@
-<p>This is the library view.</p>
+<div layout="column" flex-sm="100" flex-gt-sm="80" class="test">
+     <div ng-repeat="m in library.metadata" flex>
+       <a href="#/article/{{}}">{{m.author}}</a>
+     </div>
+</div>

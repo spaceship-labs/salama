@@ -7,48 +7,57 @@
  * # metaService
  * Service in the salamaApp.
  */
-angular
-  .module('salamaApp')
-  .factory('metaService',metaService);
+(function(){
+  angular
+    .module('salamaApp')
+    .factory('metaService',metaService);
 
-metaService.$inject = ['$q'];
+  metaService.$inject = ['$q','$localStorage'];
 
-function metaService($q){
-  var repo=connect();
-  var service={
-      getMeta:getMeta
-  };
-  return service;
+  function metaService($q,$localStorage){
+    $localStorage.metaService = $localStorage.metaService || {};
+    var db = $localStorage.metaService;
+    var creden = { username:null, password:null, auth:'basic'};
+    var config = { owner: 'spaceship-labs', repo: 'salama-content' };
+    var repo = new Github( creden ).getRepo( config.owner, config.repo );
+    return { getMeta: getMeta };
 
+    function getMeta(lang){
+      return getRepoVersion().then(validateVersion);
+    }
 
-  function connect(){
-    //we are just reading content so
-    //we dont need to set real credentials
-    var ghCreden={
-      username:null,
-      password:null,
-      auth:'basic'
-    };
-    var repoOwner='spaceship-labs';
-    var repoName='salama-content';
-    return new Github(ghCreden).getRepo(repoOwner,repoName);
-  }
+    function getRepoVersion(){
+      var deferred = $q.defer();
+      repo.show(function(err,data){
+          if (err) {
+            deferred.reject(err);
+          } else {
+            deferred.resolve(data.updated_at);
+          }
+      });
+      return deferred.promise;
+    }
 
-  function getMeta(){
-    var deferred=$q.defer();
-    var repoBranch='master';
-    var repoMetaPath='metadata';
-    repo.contents( repoBranch, repoMetaPath, function(err,content){
+    function validateVersion(version){
+      if( !db.version || db.version!==version || !db.metadata ){
+        db.version=version;
+        return downloadMeta();
+      }
+      return db.metadata;
+    }
+
+    function downloadMeta(){
+      var deferred = $q.defer();
+      var config={ branch:'master', path:'metadata/locale-all.json' };
+      repo.read(config.branch,config.path,function(err,metadata){
         if(err){
           deferred.reject(err);
         }else{
-          deferred.resolve(content);
+          db.metadata = JSON.parse(metadata);
+          deferred.resolve(db.metadata);
         }
-    });
-    return deferred.promise;
+      });
+      return deferred.promise;
+    }
   }
-
-  function getLatestCommit(){
-  }
-
-}
+})();

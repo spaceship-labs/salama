@@ -17,10 +17,13 @@ angular
     'ngSanitize',
     'ngTouch',
     'ngMaterial',//angular material
-    'pascalprecht.translate'//angular translate
+    'pascalprecht.translate',//angular translate
+    'hc.marked', //markdown
+    'ngStorage'//local storage
   ])
   .config(routeProvider)
-  .config(translateProvider);
+  .config(translateProvider)
+  .config(markdownProvider);
 
   routeProvider.$inject=['$routeProvider'];
   function routeProvider($routeProvider) {
@@ -50,7 +53,7 @@ angular
         controller: 'Prov2Ctrl',
         controllerAs: 'prov2'
       })
-      .when('/article', {
+      .when('/article/:path', {
         templateUrl: 'views/article.html',
         controller: 'ArticleCtrl',
         controllerAs: 'article'
@@ -67,4 +70,10 @@ angular
       suffix: '.json'
     });
     $translateProvider.preferredLanguage('en_US');
+    $translateProvider.useLocalStorage();
+  }
+
+  markdownProvider.$inject=['markedProvider'];
+  function markdownProvider(markedProvider){
+    markedProvider.setOptions({gfm: true});
   }
