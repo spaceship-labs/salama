@@ -1,1 +1,10 @@
-<p>This is the questions/radio view.</p>
+<span>{{question.instruction}}</span>
+<p>{{question.question}}</p>
+<div layout flex="100">
+  <md-radio-group flex="100">
+    <md-radio-button ng-repeat="option in question.options">
+      {{option.option}}
+    </md-radio-button>
+  </md-radio-group>
+</div>
+<hr>

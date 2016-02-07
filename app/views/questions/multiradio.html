@@ -1,1 +1,28 @@
-<p>This is the questions/multiradio view.</p>
+<span>{{question.instruction}}</span>
+<p>{{question.question}}</p>
+<div>
+
+  <div layout flex="50" flex-offset="50" layout-wrap>
+    <span ng-repeat="option in question.options[0].options" flex>
+      {{option.option}}
+    </span>
+  </div>
+
+  <div layout flex="100" layout-wrap ng-repeat="qoption in question.options">
+    <div flex="50">
+      {{qoption.question}}
+    </div>
+    <div flex="50">
+      <md-radio-group layout>
+        <md-radio-button ng-repeat="option in qoption.options" flex>
+          {{opt.option}}
+        </md-radio-button>
+      </md-radio-group>
+      <hr>
+    </div>
+  </div>
+
+</div>
+<hr>
+
+
