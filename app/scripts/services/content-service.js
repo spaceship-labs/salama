@@ -38,7 +38,10 @@
       db.articles = db.articles || {};
       return github.getContent(db.selected).then(function(content){
         //removing frontmatter
-        db.articles[db.selected]=content.replace(/^---(.|\s)*?---/,'');
+        content = content.replace(/^---(.|\s)*?---/,'');
+        //replacing site.baseurl
+        content = content.replace(/{{site.baseurl}}/,'https://raw.githubusercontent.com/spaceship-labs/salama-content/master/');
+        db.articles[db.selected] = content;
         return db.articles[db.selected];
       });
     }
