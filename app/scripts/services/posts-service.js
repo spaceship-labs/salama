@@ -2,19 +2,19 @@
 
 /**
  * @ngdoc service
- * @name salamaApp.metaService
+ * @name salamaApp.postsService
  * @description
- * # metaService
+ * # postsService
  * Service in the salamaApp.
  */
 (function(){
   angular
     .module('salamaApp')
-    .factory('metaService',metaService);
+    .factory('postsService',postsService);
 
-  metaService.$inject = [];
+  postsService.$inject = [];
 
-  function metaService(){
+  function postsService(){
     return {};
   }
 })();

@@ -11,12 +11,11 @@ angular
   .module('salamaApp')
   .controller('MainCtrl', MainCtrl);
 
-MainCtrl.$inject=['$translate','metaService'];
-function MainCtrl($translate,metaService) {
-  var ctrl=this;
-  this.lang;
-  this.changeLang=changeLang;
-  /////
+MainCtrl.$inject=['$translate'];
+function MainCtrl($translate){
+  var ctrl = this;
+  this.changeLang = changeLang;
+
   function changeLang(lang){
     $translate.use(lang);
   }

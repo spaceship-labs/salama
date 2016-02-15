@@ -12,38 +12,67 @@
     .module('salamaApp')
     .factory('contentService', contentService);
 
-  contentService.$inject = ['$q','$localStorage','githubService'];
+  contentService.$inject = ['$q', '$http'];
 
-  function contentService($q,$localStorage,githubService) {
-    $localStorage.contentService = $localStorage.contentService || {};
-    var db = $localStorage.contentService;
-    var github = githubService;
+  function contentService($q, $http){
+    var urlSite = 'https://raw.githubusercontent.com/spaceship-labs/salama-content/gh-pages/';
+    var urlVersion = urlSite + 'version.txt';
+    var urlMeta = urlSite + 'metadata/';
+    var urlPosts = urlSite + 'posts/';
+    var urlQuestions = urlSite + 'questions/';
     return {
-      setArticleSelected: setArticleSelected,
-      getArticle: getArticle
+      urlSite: urlSite,
+      urlVersion: urlVersion,
+      urlMeta: urlMeta,
+      urlPosts: urlPosts,
+      urlQuestions: urlQuestions,
+      getMeta: getMeta,
+      getPost: getPost,
+      getEvalIndividuals: getEvalIndividuals,
+      getEvalOrganizations: getEvalOrganizations
     };
 
-    function setArticleSelected(path){
-      db.selected=path;
+    function getMeta(lang){
+      lang = lang || 'all';
+      var url = urlMeta + 'locale-' + lang + '.json';
+      return downloadFile(url);
+
     }
 
-    function getArticle(){
-      if( !db.articles || !db.articles[db.selected] ){
-        return setArticle();
-      }
-      return $q.resolve(db.articles[db.selected]);
-    }
-
-    function setArticle(){
-      db.articles = db.articles || {};
-      return github.getContent(db.selected).then(function(content){
+    function getPost(path){
+      var url = urlPosts+path;
+      return downloadFile(url).then(function(post){
         //removing frontmatter
-        content = content.replace(/^---(.|\s)*?---/,'');
+        post = post.replace(/^---(.|\s)*?---/,'');
         //replacing site.baseurl
-        content = content.replace(/{{site.baseurl}}/,'https://raw.githubusercontent.com/spaceship-labs/salama-content/master/');
-        db.articles[db.selected] = content;
-        return db.articles[db.selected];
+        post = post.replace(/{{site.baseurl}}/,urlSite)
+        return post;
       });
+    }
+
+    function getEvalIndividuals(lang){
+
+    }
+
+    function getEvalOrganizations(lang){
+
+    }
+
+    function getLatestVersion(){
+      return downloadFile(urlVersion);
+    }
+
+    function downloadFile(url){
+      var deferred = $q.defer();
+      $http.get(url).then(
+        function(res){
+          deferred.resolve(res.data);
+        },
+        function(err){
+          deferred.reject(err);
+        }
+      );
+      return deferred.promise;
     }
   }
 })();
