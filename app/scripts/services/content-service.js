@@ -15,17 +15,24 @@
   contentService.$inject = ['$q', '$http'];
 
   function contentService($q, $http){
+
     var urlSite = 'https://raw.githubusercontent.com/spaceship-labs/salama-content/gh-pages/';
     var urlVersion = urlSite + 'version.txt';
     var urlMeta = urlSite + 'metadata/';
     var urlPosts = urlSite + 'posts/';
     var urlQuestions = urlSite + 'questions/';
+    var urlIndividuals = urlQuestions + 'individuals/';
+    var urlOrganizations = urlQuestions + 'organizations/';
+
     return {
       urlSite: urlSite,
       urlVersion: urlVersion,
       urlMeta: urlMeta,
       urlPosts: urlPosts,
       urlQuestions: urlQuestions,
+      urlIndividuals: urlIndividuals,
+      urlOrganizations: urlOrganizations,
+      getVersion: getVersion,
       getMeta: getMeta,
       getPost: getPost,
       getEvalIndividuals: getEvalIndividuals,
@@ -44,21 +51,22 @@
       return downloadFile(url).then(function(post){
         //removing frontmatter
         post = post.replace(/^---(.|\s)*?---/,'');
-        //replacing site.baseurl
         post = post.replace(/{{site.baseurl}}/,urlSite)
         return post;
       });
     }
 
     function getEvalIndividuals(lang){
-
+      var url = urlIndividuals + 'locale-' + lang + '.json' ;
+      return downloadFile(url);
     }
 
     function getEvalOrganizations(lang){
-
+      var url = urlOrganizations + 'locale-' + lang + '.json' ;
+      return downloadFile(url);
     }
 
-    function getLatestVersion(){
+    function getVersion(){
       return downloadFile(urlVersion);
     }
 

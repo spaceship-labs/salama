@@ -20,14 +20,28 @@ describe('Service: contentService', function () {
     expect(contentService.urlMeta).to.not.be.empty;
     expect(contentService.urlPosts).to.not.be.empty;
     expect(contentService.urlQuestions).to.not.be.empty;
+    expect(contentService.urlIndividuals).to.not.be.empty;
+    expect(contentService.urlOrganizations).to.not.be.empty;
   });
 
   it('should have setted getters',function(){
+    expect(contentService.getVersion).to.not.be.undefined;
     expect(contentService.getMeta).to.not.be.undefined;
     expect(contentService.getPost).to.not.be.undefined;
     expect(contentService.getEvalIndividuals).to.not.be.undefined;
     expect(contentService.getEvalOrganizations).to.not.be.undefined;
   });
+
+  it('should download current version',function(){
+    httpBackend.whenGET('resources/locale-en_US.json').respond('randomstr');
+    httpBackend.whenGET(contentService.urlVersion).respond('some_random_string');
+    contentService.getVersion().then(function(version){
+      expect(version).to.not.be.empty;
+    });
+    httpBackend.flush();
+  });
+
+
 
   it('should download valid metadata',function(){
     httpBackend.whenGET('resources/locale-en_US.json').respond('randomstr');
@@ -91,5 +105,4 @@ describe('Service: contentService', function () {
     });
     httpBackend.flush();
   });
-
 });

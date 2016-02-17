@@ -7,11 +7,13 @@
  * # HomeCtrl
  * Controller of the salamaApp
  */
-angular.module('salamaApp')
-  .controller('HomeCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+(function(){
+  angular.module('salamaApp')
+  .controller('HomeCtrl', HomeCtrl);
+
+  HomeCtrl.$inject=[];
+
+  function HomeCtrl(){
+
+  }
+})();

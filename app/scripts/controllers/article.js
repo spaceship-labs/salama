@@ -11,16 +11,19 @@
   angular.module('salamaApp')
     .controller('ArticleCtrl', ArticleCtrl);
 
-  ArticleCtrl.$inject=[];
+  ArticleCtrl.$inject=['postsService'];
 
-  function ArticleCtrl(){
+  function ArticleCtrl(postsService){
+
     var ctrl=this;
     ctrl.article=null;
 
     activate();
 
     function activate(){
-
+      postsService.getPost().then(function(post){
+        ctrl.article = post;
+      });
     }
   }
 })();

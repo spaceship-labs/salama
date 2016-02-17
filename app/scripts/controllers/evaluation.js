@@ -7,11 +7,14 @@
  * # EvaluationCtrl
  * Controller of the salamaApp
  */
-angular.module('salamaApp')
-  .controller('EvaluationCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+(function(){
+  angular.module('salamaApp')
+    .controller('EvaluationCtrl', EvaluationCtrl);
+
+  EvaluationCtrl.$inject = [];
+
+  function EvaluationCtrl(){
+
+  }
+})();
+
