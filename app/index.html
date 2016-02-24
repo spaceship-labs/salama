@@ -19,66 +19,61 @@
 
 <body ng-app="salamaApp" ng-controller="MainCtrl as main">
   <!--Header-->
-  <header layout layout-align="center center">
-    <md-toolbar layout layout-align="space-between center" flex ="80"
+  <header layout layout-align="center center" layout-wrap>
+    <md-toolbar layout layout-align="space-between center" flex ="85"
      class ="md-toolbar-tools"
     >
-    <div layout layout-align="space-between center">
+    <div layout layout-align="space-between center" flex="15"
+      class="header-left"
+    >
       <div class="header-logo"> S </div>
       <div layout layout-align="center center" class="header-menu">
         <md-button class="md-icon-button">
-          <md-icon md-svg-icon="images/menu.svg" class="logo"></md-icon>
+          <md-icon md-svg-icon="images/menu.svg" class="header-menu-logo">
+          </md-icon>
         </md-button>
         <span>Menu</span>
       </div>
     </div>
-    <div layout layout-align="space-between center">
-      <div>
-        <a class="twitter-share-button"
-          href="https://twitter.com/intent/tweet"
+    <div layout layout-align="space-between center"  flex="25"
+      class="header-right"
+    >
+      <a href="https://twitter.com/intent/tweet"
+        class="twitter-share-button"
+      >
+        Tweet
+      </a>
+      <div >
+        <md-button class="header-lang"
+          ng-click="main.showOptions = !main.showOptions"
         >
-          Tweet
-        </a>
-      </div>
-      <md-button class="header-lang">
-        <md-button class="md-icon-button">
-          <md-icon md-svg-icon="images/lang.svg" class="logo"></md-icon>
+          <md-icon md-svg-icon="images/lang.svg">
+          </md-icon>
+          <span translate>views.main.lang</span>
         </md-button>
-        <span>Español</span>
-      </md-button>
+        <md-content class="header-lang-options" ng-show="main.showOptions">
+          <md-button class="legend">
+            <span translate>views.main.suggest</span>
+          </md-button>
+          <md-button ng-click="main.changeLang('es_MX')">
+            Español
+          </md-button>
+          <md-button ng-click="main.changeLang('en_US')">
+            English
+          </md-button>
+        </md-content>
+      </div>
     </div>
-    </md-toolbar>
+  </md-toolbar>
   </header>
+
   <!--endHeader-->
 
   <!--Sidenav-->
-  <div class="sidenav">
-    <md-sidenav md-is-locked-open="$mdMedia('gt-xl')">
-      <md-toolbar class="md-toolbar-tools">
-        <div class="header-logo"> S </div>
-        Menu
-      </md-toolbar>
-      <section class="sidenav-section">
-        <p>Security evaluation</p>
-        <ul>
-          <li><a href="#">Individual Journalist</a></li>
-          <li><a href="#">Organization</a></li>
-        </ul>
-      </section>
-      <section class="sidenav-section">
-        <p>Security Library</p>
-        <p ng-repeat="m in main.metadata">
-          <a ng-href="#/article" ng-click="main.setPost(m.path)">
-            {{m.title}}-{{m.author}}
-          </a>
-        </p>
-      </section>
-    </md-sidenav>
-  </div>
   <!--endSidenav-->
 
   <!--Content-->
-  <md-content ng-view></md-content>
+  <md-content class="content" ng-view></md-content>
   <!--endContent-->
 
   <!--Footer-->

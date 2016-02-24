@@ -18,10 +18,12 @@
     ctrl.meta= [];
     ctrl.changeLang = changeLang;
     ctrl.setPost = setPost;
+    ctrl.showOptions = false;
 
     activate();
 
     function changeLang(lang){
+      ctrl.showOptions = false;
       $translate.use(lang);
     }
 

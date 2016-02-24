@@ -1,5 +1,6 @@
 {
   "views.main.lang": "English",
+  "views.main.suggest": "Select your language",
   "views.home.library": "Library",
   "views.home.evaluation": "Evaluation",
   "views.evaluation.individuals": "Individuals",

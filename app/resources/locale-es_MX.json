@@ -1,5 +1,6 @@
 {
   "views.main.lang": "Español",
+  "views.main.suggest": "Seleccione su lenguaje",
   "views.home.library": "Biblioteca",
   "views.home.evaluation": "Evaluacion",
   "views.evaluation.individuals": "Individual",
