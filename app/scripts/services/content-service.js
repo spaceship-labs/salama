@@ -21,8 +21,8 @@
     var urlMeta = urlSite + 'metadata/';
     var urlPosts = urlSite + 'posts/';
     var urlQuestions = urlSite + 'questions/';
-    var urlIndividuals = urlQuestions + 'individuals/';
-    var urlOrganizations = urlQuestions + 'organizations/';
+    var urlIndividuals = urlQuestions + 'individuals/locale-';
+    var urlOrganizations = urlQuestions + 'organizations/locale-';
 
     return {
       urlSite: urlSite,
@@ -57,13 +57,17 @@
     }
 
     function getEvalIndividuals(lang){
-      var url = urlIndividuals + 'locale-' + lang + '.json' ;
-      return downloadFile(url);
+      var url = urlIndividuals + lang + '.json' ;
+      return downloadFile(url).then(function(questions){
+        return questions.questions;
+      });
     }
 
     function getEvalOrganizations(lang){
-      var url = urlOrganizations + 'locale-' + lang + '.json' ;
-      return downloadFile(url);
+      var url = urlOrganizations + lang + '.json' ;
+      return downloadFile(url).then(function(questions){
+        return questions.questions;
+      });
     }
 
     function getVersion(){

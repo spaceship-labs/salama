@@ -11,13 +11,13 @@
   angular.module('salamaApp')
     .controller('IndividualsCtrl', IndividualsCtrl);
 
-  IndividualsCtrl.$inject=['$scope', '$translate'];
+  IndividualsCtrl.$inject=['$scope', '$translate','questionsService'];
 
-  function IndividualsCtrl($scope, $translate){
+  function IndividualsCtrl($scope, $translate, questionsService){
 
     var ctrl = this;
-    ctrl.questions = null;
-    ctrl.lang = null;
+    ctrl.questions = [];
+    ctrl.answers = [];
 
     activate();
 
@@ -30,11 +30,12 @@
     }
 
     function getQuestions(lang){
-
+      questionsService.setLang(lang);
+      questionsService.getEvalIndividuals().then(setQuestions);
     }
 
     function setQuestions(questions){
-
+      ctrl.questions = questions;
     }
 
   }

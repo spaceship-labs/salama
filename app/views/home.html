@@ -1,8 +1,28 @@
-<div flex="80" layout layout-padding layout-align="center">
-  <md-button flex="30" ng-href="#/library" class="md-primary md-raised">
-    <span translate>views.home.library</span>
-  </md-button>
-  <md-button flex="30" ng-href="#/evaluation"class="md-primary md-raised">
-    <span translate>views.home.evaluation</span>
-  </md-button>
+<div layout="column" layout-align="space-between center" class="home">
+  <!---->
+  <div class="home-logo" >
+    <h1>Salama <h1>
+  </div>
+  <!---->
+
+  <!---->
+  <div class="home-description">
+    <h1>Lorem Ipsum</h1>
+    <p>Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum</p>
+  </div>
+  <!---->
+  <span flex></span>
+  <!---->
+  <div class="home-choices">
+
+    <md-button ng-href="#/library" class="button-choice">
+      <span translate>views.home.library</span>
+    </md-button>
+
+    <md-button ng-href="#/evaluation" class="button-choice">
+      <span translate>views.home.evaluation</span>
+    </md-button>
+
+  </div>
+  <!---->
 </div>

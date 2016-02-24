@@ -18,21 +18,21 @@
 
     var db;
     $localStorage.questionsService = $localStorage.questionsService || {};
-    db = $localStorage.postService;
+    db = $localStorage.questionsService;
     db.individuals = db.individuals || {};
     db.organizations = db.organizations || {};
 
     return {
-      getIndividuals: getIndividuals,
-      getOrganizations: getOrganizations,
+      getEvalIndividuals: getEvalIndividuals,
+      getEvalOrganizations: getEvalOrganizations,
       setLang: setLang
     };
 
-    function getIndividuals(){
+    function getEvalIndividuals(){
       return existsNewVersion().then(resolveIndividuals);
     }
 
-    function getOrganizations(){
+    function getEvalOrganizations(){
       return existsNewVersion().then(resolveOrganizations);
     }
 
@@ -60,7 +60,7 @@
           return individuals;
         });
       }
-      return db.individuals[lang];
+      return db.individuals[db.lang];
     }
 
     function resolveOrganizations(mustDownload){

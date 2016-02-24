@@ -1,8 +1,109 @@
-header md-toolbar{
-  text-align:center;
-  padding:0 10px;
+/**** General ****/
+html{
+  position:relative;
 }
-header a{
-  text-decoration:none;
+
+body,body md-content{
+  background: linear-gradient(to top right,#003650,#61ADCD);
+}
+
+body md-content{
+  height:100%;
+  padding:0 10%;
+}
+
+/**** Header ****/
+
+header, header .md-toolbar-tools{
+  background-color: white;
+  color: #5495C0;
+}
+
+header .header-logo{
+  background-color:  #5495C0;
   color:white;
+  text-align: center;
+  padding:8px 10px;
+}
+
+header .header-menu span{
+  margin-left:-13px;
+  font-size:15px;
+  font-weight:bold;
+}
+
+header .header-menu md-icon svg {
+  fill:#0F5E7F;
+}
+
+header .header-lang{
+  color:black;
+  font-weight:bold;
+}
+
+header .header-lang md-icon svg {
+  fill:black;
+}
+
+/**** SideNav ****/
+
+.sidenav{
+  position:absolute;
+  top:0px;
+  z-index:9999999;
+  height:100%;
+}
+
+.sidenav,.sidenav *{
+  background-color:#141414;
+  color:white;
+}
+
+.sidenav .md-toolbar-tools{
+  background-color:#141414;
+  color:white;
+}
+.sidenav .sidenav-section{
+  border-top:1px solid #1D1E1F;
+  padding-left:30px;
+}
+
+/**** Content ****/
+.content{
+  height:auto;
+}
+/**** Home ****/
+
+.home{
+  color:white;
+}
+.home .button-choice{
+  border: 1px solid;
+}
+
+/**** Article ****/
+
+/**** Footer ****/
+
+footer {
+  position:relative;
+  bottom:0px;
+  width:100%;
+  height:60px;
+  text-align:center;
+  background-color: #2A2A2A;
+}
+
+footer .footer-share{
+  color:white;
+}
+
+footer .footer-rights{
+  color:#3B566C;
+  font-weight:bold;
+}
+
+/**** Elimina ****/
+.test{
+  border: 1px solid;
 }

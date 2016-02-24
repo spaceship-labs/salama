@@ -30,6 +30,7 @@ function LibraryCtrl($scope, $translate, postsService){
   }
 
   function setMeta(metadata){
+    console.log(metadata);
     ctrl.metadata = metadata;
   }
 

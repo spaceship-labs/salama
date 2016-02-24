@@ -1,8 +1,10 @@
 <span>{{question.instruction}}</span>
 <p>{{question.question}}</p>
 <div layout flex="100">
-  <md-radio-group flex="100">
-    <md-radio-button ng-repeat="option in question.options">
+  <md-radio-group flex="100" ng-model="question.answer">
+    <md-radio-button ng-repeat="option in question.options"
+      value="{{option.value}}"
+    >
       {{option.option}}
     </md-radio-button>
   </md-radio-group>
