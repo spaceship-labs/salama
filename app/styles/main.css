@@ -52,14 +52,121 @@ header .header-lang-options .md-button{
 header .header-lang-options .legend{
   border-bottom:1px solid;
 }
+header .header-sidenav,
+header .header-sidenav .md-sidenav-left{
+  max-width:262px;
+  height:100vh;
+  position:fixed;
+  left:0;
+  z-index:99999;
+  background-color:#141414;
+}
+header .header-sidenav .md-toolbar-tools{
+  padding-left:35px;
+  min-height:85px;
+  color:white;
+  background-color:#141414;
+}
+header .header-sidenav .sidenav-block{
+  padding-left:35px;
+  padding-right:35px;
+  border-top:1px solid #202122;
+}
+header .header-sidenav .sidenav-block h3{
+  font-size:16px;
+  color:white;
+}
+header .header-sidenav .sidenav-block p{
+  color:#474D4D;
+  font-weight:bold;
+}
+header .header-sidenav .sidenav-block ul{
+  list-style:disc;
+}
+header .header-sidenav .sidenav-block ul li{
+  margin-top:5px;
+}
+header .header-sidenav *{
+  color:#474D4D;
+  font-weight:bold;
+  font-size:12px;
+}
 
-/* Content */
-.content{
+/* Home */
+.content-home{
   background: linear-gradient(to top right,#003650,#61ADCD);
   min-height:100%;
 }
+.home{
+  color:white;
+  text-align:center;
+}
+.home h1{
+  font-size:90px;
+}
+.home h2{
+  font-size:40px;
+}
+.home .home-logo{
+
+}
+.home .home-description{
+
+}
+.home .home-choices{
+}
+.home .home-choices .md-button{
+  text-align:center;
+  border:1px solid;
+  height:54px;
+  font-size:20px;
+}
+
+.home .home-choices .md-button span{
+  position:relative;
+  top:10%;
+}
+
+/* Evaluation */
+
+.content-instructions{
+  background-color:#519DBD;
+  color:white;
+  min-height:92%;
+}
+.content-instructions h2{
+  margin:0 auto;
+  margin-top:57px;
+  font-size:45px;
+  font-weight:lighter;
+}
+.content-instructions p{
+  margin-top:38px;
+  font-size:20px;
+}
+.content-instructions .instructions{
+  margin-top:50px;
+}
+.content-evaluation{
+  background-color:white;
+  min-height:100%;
+}
+
+/* Article */
+
+.article h1{
+  text-align:center;
+}
+.article h1, .article h2{
+  margin-top:20px;
+  margin-bottom:0px;
+}
+.article img{
+  max-width:100%;
+}
 
 /* Footer */
+
 footer {
   width:100%;
   height:60px;
@@ -74,8 +181,10 @@ footer .footer-rights{
   font-weight:bold;
 }
 
+/* Elimina */
+
 .test{
-  border: 1px solid;
-  position:relative;
+  border:1px solid;
 }
+
 

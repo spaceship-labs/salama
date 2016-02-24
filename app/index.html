@@ -23,57 +23,96 @@
     <md-toolbar layout layout-align="space-between center" flex ="85"
      class ="md-toolbar-tools"
     >
-    <div layout layout-align="space-between center" flex="15"
-      class="header-left"
-    >
-      <div class="header-logo"> S </div>
-      <div layout layout-align="center center" class="header-menu">
-        <md-button class="md-icon-button">
-          <md-icon md-svg-icon="images/menu.svg" class="header-menu-logo">
-          </md-icon>
-        </md-button>
-        <span>Menu</span>
-      </div>
-    </div>
-    <div layout layout-align="space-between center"  flex="25"
-      class="header-right"
-    >
-      <a href="https://twitter.com/intent/tweet"
-        class="twitter-share-button"
+      <div layout layout-align="space-between center" flex="15"
+        class="header-left"
       >
-        Tweet
-      </a>
-      <div >
-        <md-button class="header-lang"
-          ng-click="main.showOptions = !main.showOptions"
-        >
-          <md-icon md-svg-icon="images/lang.svg">
-          </md-icon>
-          <span translate>views.main.lang</span>
-        </md-button>
-        <md-content class="header-lang-options" ng-show="main.showOptions">
-          <md-button class="legend">
-            <span translate>views.main.suggest</span>
+        <div class="header-logo"> S </div>
+        <div layout layout-align="center center" class="header-menu">
+          <md-button class="md-icon-button"
+            ng-click="main.showSide = !main.showSide"
+          >
+            <md-icon md-svg-icon="images/menu.svg"
+              class="header-menu-logo"
+            >
+            </md-icon>
           </md-button>
-          <md-button ng-click="main.changeLang('es_MX')">
-            Español
-          </md-button>
-          <md-button ng-click="main.changeLang('en_US')">
-            English
-          </md-button>
-        </md-content>
+          <span>Menu</span>
+        </div>
       </div>
-    </div>
-  </md-toolbar>
-  </header>
-
+      <div layout layout-align="space-between center"  flex="25"
+        class="header-right"
+      >
+        <a href="https://twitter.com/intent/tweet"
+          class="twitter-share-button"
+        >
+          Tweet
+        </a>
+        <div >
+          <md-button class="header-lang"
+            ng-click="main.showOptions = !main.showOptions"
+          >
+            <md-icon md-svg-icon="images/lang.svg">
+            </md-icon>
+            <span translate>views.main.lang</span>
+          </md-button>
+          <md-content class="header-lang-options" ng-show="main.showOptions">
+            <md-button class="legend">
+              <span translate>views.main.suggest</span>
+            </md-button>
+            <md-button ng-click="main.changeLang('es_MX')">
+              Español
+            </md-button>
+            <md-button ng-click="main.changeLang('en_US')">
+              English
+            </md-button>
+          </md-content>
+        </div>
+      </div>
+    </md-toolbar>
   <!--endHeader-->
 
   <!--Sidenav-->
+    <div class="header-sidenav">
+      <md-sidenav md-component-id="left"
+        md-is-locked-open="main.showSide"
+        class="md-sidenav-left md-whiteframe-z2"
+      >
+        <md-toolbar class="md-toolbar-tools">
+          <md-button class="md-icon-button"
+            ng-click="main.showSide = !main.showSide"
+          >
+            <md-icon md-svg-icon="images/menu.svg"
+              class="header-menu-logo"
+            >
+            </md-icon>
+          </md-button>
+          <span>Menu</span>
+        </md-toolbar>
+        <div class="sidenav-block">
+          <h3>Security Evaluation</h3>
+          <p><a href="#/individuals">Individual Journalist</a></p>
+          <p><a href="#/organizations">Organization</a></p>
+        </div>
+        <div class="sidenav-block">
+          <h3>Security Library</h3>
+          <div ng-repeat="m in main.categories">
+            <p>{{m}}</p>
+            <ul>
+              <li ng-repeat="info in main.metadata[m]">
+                <a href="#/article" ng-click="main.setPost(info.path)">
+                  {{info.title}}
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </md-sidenav>
+    </div>
+  </header>
   <!--endSidenav-->
 
   <!--Content-->
-  <md-content class="content" ng-view></md-content>
+  <ng-view></ng-view>
   <!--endContent-->
 
   <!--Footer-->
