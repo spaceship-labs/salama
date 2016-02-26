@@ -8,14 +8,16 @@
     </span>
   </div>
 
-  <div layout flex="100" layout-wrap ng-repeat="qoption in question.options">
+  <div layout flex="100" layout-wrap
+    ng-repeat="qoption in question.options"
+  >
     <div flex="50">
       {{qoption.question}}
     </div>
     <div flex="50">
-      <md-radio-group layout>
-        <md-radio-button ng-repeat="option in qoption.options" flex>
-          {{opt.option}}
+      <md-radio-group  ng-model="individuals.evaluation[$parent.$index][$index]"
+        layout>
+        <md-radio-button ng-repeat="option in qoption.options" value="{{option.value}}" flex>
         </md-radio-button>
       </md-radio-group>
       <hr>

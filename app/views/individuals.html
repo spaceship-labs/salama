@@ -1,3 +1,10 @@
-<form layout="column" layout-padding flex-sm="100" flex-gt-sm="80">
-  <form-question ng-repeat="q in individuals.questions" question="q"/>
-</form>
+<md-content>
+  <form layout="column" layout-padding flex-sm="100" flex-gt-sm="80"
+    ng-submit ="individuals.calculate()"
+  >
+    <form-question ng-repeat="question in individuals.questions">
+    </form-question>
+    <md-button type="submit">Submit</md-button>
+  </form>
+</md-content>
+

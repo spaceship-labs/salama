@@ -14,9 +14,6 @@
     var template = '<ng-include src="\'views/questions/\'+question.type+\'.html\'"></ng-include>';
     return {
       template: template,
-      scope: {
-        question: '=',
-      }
     };
   }
 })();

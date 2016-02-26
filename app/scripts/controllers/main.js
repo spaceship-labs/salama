@@ -64,8 +64,7 @@
     }
 
     function logError(err){
-      console.log("***Notify the IT department about this error");
-      console.log(err);
+      console.error(err);
     }
 
   }

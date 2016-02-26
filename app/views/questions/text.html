@@ -2,7 +2,10 @@
 <div layout flex="100">
   <md-input-container flex="100">
     <label>{{question.question}}</label>
-    <input type="text">
+    <input type="text"
+      ng-model="individuals.evaluation[$index]"
+      ng-required="$index!=0"
+    >
   </md-input-container>
 </div>
 <hr>

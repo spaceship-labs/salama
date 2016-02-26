@@ -15,7 +15,6 @@ angular
     'ngCookies',
     'ngRoute',
     'ngSanitize',
-    'ngTouch',
     'ngMaterial',//angular material
     'pascalprecht.translate',//angular translate
     'hc.marked', //markdown

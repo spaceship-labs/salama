@@ -145,7 +145,7 @@ header .header-sidenav *{
   font-size:20px;
 }
 .content-instructions .instructions{
-  margin-top:50px;
+  min-height:100px;
 }
 .content-evaluation{
   background-color:white;
