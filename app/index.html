@@ -19,7 +19,9 @@
 
 <body ng-app="salamaApp">
   <!--Header-->
-  <header layout layout-align="center center" layout-wrap ng-controller="HeaderCtrl as header">
+  <header layout layout-align="center center" layout-wrap
+    ng-controller="HeaderCtrl as header"
+  >
     <md-toolbar layout layout-align="space-between center" flex ="85"
      class ="md-toolbar-tools"
     >
@@ -55,7 +57,9 @@
             </md-icon>
             <span translate>views.main.lang</span>
           </md-button>
-          <md-content class="header-lang-options" ng-show="header.showLangOptions">
+          <md-content class="header-lang-options"
+            ng-show="header.showLangOptions"
+          >
             <md-button class="legend">
               <span translate>views.main.suggest</span>
             </md-button>
@@ -90,8 +94,16 @@
         </md-toolbar>
         <div class="sidenav-block">
           <h3>Security Evaluation</h3>
-          <p><a href="#/individuals">Individual Journalist</a></p>
-          <p><a href="#/organizations">Organization</a></p>
+          <p>
+            <a href="#/individuals" ng-click="header.changeStateSide()">
+              Individual Journalist
+            </a>
+          </p>
+          <p>
+            <a href="#/organizations" ng-click="header.changeStateSide()">
+              Organization
+            </a>
+          </p>
         </div>
         <div class="sidenav-block">
           <h3>Security Library</h3>
