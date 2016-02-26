@@ -17,9 +17,9 @@
   <!-- endbuild -->
 </head>
 
-<body ng-app="salamaApp" ng-controller="MainCtrl as main">
+<body ng-app="salamaApp">
   <!--Header-->
-  <header layout layout-align="center center" layout-wrap>
+  <header layout layout-align="center center" layout-wrap ng-controller="HeaderCtrl as header">
     <md-toolbar layout layout-align="space-between center" flex ="85"
      class ="md-toolbar-tools"
     >
@@ -29,7 +29,7 @@
         <div class="header-logo"> S </div>
         <div layout layout-align="center center" class="header-menu">
           <md-button class="md-icon-button"
-            ng-click="main.showSide = !main.showSide"
+            ng-click="header.changeStateSide()"
           >
             <md-icon md-svg-icon="images/menu.svg"
               class="header-menu-logo"
@@ -49,20 +49,20 @@
         </a>
         <div >
           <md-button class="header-lang"
-            ng-click="main.showOptions = !main.showOptions"
+            ng-click="header.showLangOptions = !header.showLangOptions"
           >
             <md-icon md-svg-icon="images/lang.svg">
             </md-icon>
             <span translate>views.main.lang</span>
           </md-button>
-          <md-content class="header-lang-options" ng-show="main.showOptions">
+          <md-content class="header-lang-options" ng-show="header.showLangOptions">
             <md-button class="legend">
               <span translate>views.main.suggest</span>
             </md-button>
-            <md-button ng-click="main.changeLang('es_MX')">
+            <md-button ng-click="header.changeLang('es_MX')">
               Español
             </md-button>
-            <md-button ng-click="main.changeLang('en_US')">
+            <md-button ng-click="header.changeLang('en_US')">
               English
             </md-button>
           </md-content>
@@ -72,14 +72,14 @@
   <!--endHeader-->
 
   <!--Sidenav-->
-    <div class="header-sidenav">
+    <div class="header-sidenav" ng-controller="NavsideCtrl as navside">
       <md-sidenav md-component-id="left"
-        md-is-locked-open="main.showSide"
+        md-is-locked-open="navside.show"
         class="md-sidenav-left md-whiteframe-z2"
       >
         <md-toolbar class="md-toolbar-tools">
           <md-button class="md-icon-button"
-            ng-click="main.showSide = !main.showSide"
+            ng-click="navside.changeStateSide()"
           >
             <md-icon md-svg-icon="images/menu.svg"
               class="header-menu-logo"
@@ -95,12 +95,12 @@
         </div>
         <div class="sidenav-block">
           <h3>Security Library</h3>
-          <div ng-repeat="m in main.categories">
-            <p>{{m}}</p>
+          <div ng-repeat="category in navside.categories">
+            <p>{{category}}</p>
             <ul>
-              <li ng-repeat="info in main.metadata[m]">
-                <a href="#/article" ng-click="main.setPost(info.path)">
-                  {{info.title}}
+              <li ng-repeat="meta in navside.metadata[category]">
+                <a href="#/article" ng-click="navside.setPost(meta.path)">
+                  {{meta.title}}
                 </a>
               </li>
             </ul>
@@ -151,7 +151,7 @@
   <!-- endbuild -->
   <!-- build:js({.tmp,app}) scripts/scripts.js -->
   <script src="scripts/app.js"></script>
-  <script src="scripts/controllers/main.js"></script>
+  <script src="scripts/controllers/header.js"></script>
   <script src="scripts/controllers/home.js"></script>
   <script src="scripts/controllers/evaluation.js"></script>
   <script src="scripts/controllers/article.js"></script>
@@ -161,6 +161,8 @@
   <script src="scripts/services/questions-service.js"></script>
   <script src="scripts/directives/form-question.js"></script>
   <script src="scripts/services/posts-service.js"></script>
+  <script src="scripts/controllers/navside.js"></script>
+  <script src="scripts/services/navside-service.js"></script>
   <!-- endbuild -->
   <script>
   !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');

@@ -17,19 +17,25 @@
   function postsService($localStorage, contentService){
 
     var db;
+
     $localStorage.postService = $localStorage.postService || {};
     db = $localStorage.postService;
     db.metadata = db.metadata || {};
     db.post = db.post || {};
 
     return {
+      getSelected: getSelected,
       getMeta: getMeta,
       getPost: getPost,
       setPost: setPost,
       setLang: setLang
     };
 
-    function getMeta(lang){
+    function getSelected(){
+      return db.selected;
+    }
+
+    function getMeta(){
       return existsNewVersion().then(resolveMeta);
     }
 

@@ -11,20 +11,38 @@
   angular.module('salamaApp')
     .controller('ArticleCtrl', ArticleCtrl);
 
-  ArticleCtrl.$inject=['postsService'];
+  ArticleCtrl.$inject=['$scope', 'postsService'];
 
-  function ArticleCtrl(postsService){
+  function ArticleCtrl($scope, postsService){
 
     var ctrl=this;
-    ctrl.article=null;
+
+    ctrl.article = null;
 
     activate();
 
     function activate(){
-      postsService.getPost().then(function(post){
-        ctrl.article = post;
-      });
+      $scope.$watch(getSelected, getPost);
     }
+
+    function getSelected(){
+      return postsService.getSelected();
+    }
+
+    function getPost(){
+      postsService.getPost()
+        .then(setPost)
+        .catch(logError);
+    }
+
+    function setPost(post){
+      ctrl.article = post;
+    }
+
+    function logError(err){
+      console.error(err);
+    }
+
   }
 })();
 
