@@ -23,6 +23,7 @@
     ctrl.changeStateSide = changeStateSide;
 
     function changeLang(lang){
+      ctrl.showLangOptions = !ctrl.showLangOptions;
       $translate.use(lang);
     }
 

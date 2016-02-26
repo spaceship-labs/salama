@@ -11,9 +11,17 @@
   angular.module('salamaApp')
   .controller('HomeCtrl', HomeCtrl);
 
-  HomeCtrl.$inject=[];
+  HomeCtrl.$inject=['navsideService'];
 
-  function HomeCtrl(){
+  function HomeCtrl(navsideService){
+
+    var ctrl = this;
+
+    ctrl.changeStateSide = changeStateSide;
+
+    function changeStateSide(){
+      navsideService.changeState();
+    }
 
   }
 })();
