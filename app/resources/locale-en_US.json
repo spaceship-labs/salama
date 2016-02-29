@@ -1,8 +1,8 @@
 {
   "views.main.lang": "English",
   "views.main.suggest": "Select your language",
-  "views.home.library": "Library",
-  "views.home.evaluation": "Evaluation",
+  "views.home.library": "Security Library",
+  "views.home.evaluation": "Security Evaluation",
   "views.evaluation.individuals": "Individuals",
   "views.evaluation.organizations": "Organizations"
 }

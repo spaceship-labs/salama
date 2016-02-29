@@ -1,5 +1,43 @@
 /* General */
 
+@font-face {
+    font-family: lato-light;
+    src: url(font/Lato-Hairline.ttf);
+}
+@font-face {
+    font-family: lato-bold;
+    src: url(font/Lato-Black.ttf);
+}
+a{
+  text-decoration: none;
+}
+sup{
+  font-size: .5em;
+}
+
+.container{
+  width: 90%;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+.absolute{
+  position: absolute;
+}
+.relative{
+  position: relative;
+}
+.center{
+  text-align: center;
+}
+.absoluteLink{
+  position: absolute;
+  cursor: pointer;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+
 /* Header */
 header{
   min-height:85px;
@@ -18,12 +56,12 @@ header .header-logo{
   padding:8px 10px;
 }
 header .header-menu span{
-  margin-left:-13px;
+  text-transform: capitalize;
   font-size:15px;
   font-weight:bold;
 }
 header .header-menu md-icon svg {
-  fill: #0F5E7F;
+  fill: #5495C0;
 }
 header .header-lang{
   color:black;
@@ -91,11 +129,28 @@ header .header-sidenav *{
   font-weight:bold;
   font-size:12px;
 }
+.sideButton *{
+  float: left;
+  margin: 10px;
+  color: #FFF !important;
+}
 
 /* Home */
+.md-button.md-icon-button{
+  border-radius: 0;
+}
 .content-home{
   background: linear-gradient(to top right,#003650,#61ADCD);
   min-height:100%;
+}
+.content-home .md-button{
+  color: #519DBF;
+  border-color: #519DBF;
+}
+.content-home .md-button:hover{
+  color: #FFF;
+  border-color: #519DBF !important;
+  background-color: #519DBF !important;
 }
 .home{
   color:white;
@@ -108,7 +163,12 @@ header .header-sidenav *{
   font-size:40px;
 }
 .home .home-logo{
-
+    width: 80%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+.home .home-logo img{
+  width: 100%;
 }
 .home .home-description{
 
@@ -118,7 +178,7 @@ header .header-sidenav *{
 .home .home-choices .md-button{
   text-align:center;
   border:1px solid;
-  height:54px;
+  line-height:54px;
   font-size:20px;
 }
 
@@ -129,6 +189,20 @@ header .header-sidenav *{
 
 /* Evaluation */
 
+md-tabs[md-border-bottom] md-tabs-wrapper{
+  border-style:none !important;
+}
+.md-tab{
+  background-color: #519DBD;
+  border-radius: 50%;
+  line-height: 10px;
+  margin: 10px 5px;
+  padding: 10px;
+  color: #FFF !important;
+}
+.md-center-tabs{
+  width: 100% !important;
+}
 .content-instructions{
   background-color:#519DBD;
   color:white;
@@ -141,8 +215,7 @@ header .header-sidenav *{
   font-weight:lighter;
 }
 .content-instructions p{
-  margin-top:38px;
-  font-size:20px;
+  font-size:1em;
 }
 .content-instructions .instructions{
   min-height:100px;
@@ -151,7 +224,78 @@ header .header-sidenav *{
   background-color:white;
   min-height:100%;
 }
-
+.evaluation h1{
+  font-family: "lato-light";
+  font-weight: normal;
+}
+.evaluation h1 strong{
+  font-family: "lato-bold";
+  font-weight: bold;
+}
+.evaluation-options{
+  width: 100%;
+  margin: 5% 0;
+}
+.steps > div *{
+  text-align: center;
+}
+.steps > div h3{
+  text-transform: uppercase;
+  font-weight: normal;
+  font-size: 1.5em;
+  margin: 0;
+}
+.categories{
+  border: solid 1px #519DBD;
+  min-height: 250px;
+}
+.categories *{
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.categories:hover .iconWrapper{
+  top: -30px;
+}
+.categories:hover h3{
+  color: #519DBD;
+}
+.categories:after{
+  content: "";
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  height: 0px;
+  background-color: #519DBD;
+  left: 0;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.categories:hover:after{
+  height: 4px;
+}
+.iconWrapper{
+  position: absolute;
+  width: 80px;
+  line-height: 80px;
+  border-radius: 5px;
+  color: #FFF;
+  background-color: #519DBD;
+  font-size: 2em;
+  top: -40px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+.iconWrapper .square{
+  position: absolute;
+  background-color: #519DBD;
+  width: 20px;
+  height: 20px;
+  transform: rotate(45deg);
+  bottom: -10px;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+}
 /* Article */
 
 .article h1{
@@ -187,4 +331,9 @@ footer .footer-rights{
   border:1px solid;
 }
 
-
+@media (max-width: 600px){
+  .categories{
+    width: 100%;
+    margin: 40px 0;
+  }
+}

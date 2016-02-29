@@ -1,18 +1,105 @@
 <md-content layout layout-align="center center"
   class="content-instructions"
 >
-  <div layout="column" flex="100" flex-gt-sm="70" class="instructions">
-
+  <div layout="column" class="instructions">
+    <div class="container">
+      <h1 class="center">Lorem Ipsum Dolor Sit Amet</h1>
+      <p class="center">oijsd foiasj dpfoisj dfoiajs dfpoaisj doaisdj</p>
+      <div
+        class="steps"
+        layout
+        layout-margin
+        layout-xs="column"
+        layout-align="space-around center"
+      >
+        <div flex="33" flex-xs="100">
+          <div>
+            <img src="images/icon_step1.png">
+          </div>
+          <h3>Choose<sup>1</sup></h3>
+          <p>oijsd foiasj dpfoisj dfoiajs dfpoaisj doaisdj</p>
+        </div>
+        <div flex="33" flex-xs="100">
+          <div>
+            <img src="images/icon_step2.png">
+          </div>
+          <h3>Response<sup>2</sup></h3>
+          <p>oijsd foiasj dpfoisj dfoiajs dfpoaisj doaisdj</p>
+        </div>
+        <div flex="33" flex-xs="100">
+          <div>
+            <img src="images/icon_step3.png">
+          </div>
+          <h3>Results & Stadistics<sup>3</sup></h3>
+          <p>oijsd foiasj dpfoisj dfoiajs dfpoaisj doaisdj</p>
+        </div>
+      </div>
+    </div>
   </div>
 </md-content>
 
-<md-content layout layout-align="center center"
-  class="content-evaluation"
+<md-tabs
+  md-dynamic-height
+  md-border-bottom
+  md-center-tabs
+  md-no-ink-bar
+  md-no-ink
 >
-  <div layout layout-align="center center"
-    flex="100" flex-gt-sm="70" class="evaluation"
-  >
-      <md-button ng-href="#/individuals">Individuals</md-button>
-      <md-button ng-href="#/organizations">Organizations</md-button>
-  </div>
-</md-content>
+  <md-tab label="1">
+    <md-content class="content-evaluation" layout layout-align="center center">
+      <div class="evaluation container" layout="column" layout-align="center center">
+        <h1 class="center"><strong>Get involved.</strong> Choose a category to start your evaluation.</h1>
+
+        <div
+          class="evaluation-options"
+          layout="row"
+          layout-align="space-around center"
+          layout-xs="column"
+        >
+
+          <div
+            class="categories relative"
+            flex="40"
+            flex-xs="100"
+            layout="column"
+            layout-align="center"
+          >
+            <div class="iconWrapper">
+              <i class="icon-user"></i>
+              <div class="square"></div>
+            </div>
+            <div>
+              <h3>Individual  Journalist</h3>
+              <p>oijsd foiasj dpfoisj dfoiajs dfpoaisj doaisdj f</p>
+            </div>
+            <a class="absoluteLink" href="#/individuals"></a>
+          </div>
+
+          <div
+            class="categories relative"
+            flex="40"
+            flex-xs="100"
+            layout="column"
+            layout-align="center"
+          >
+            <div class="iconWrapper">
+              <i class="icon-users"></i>
+              <div class="square"></div>
+            </div>
+            <div>
+              <h3>Organization</h3>
+              <p>oijsd foiasj dpfoisj dfoiajs dfpoaisj doaisdj f</p>
+            </div>
+            <a class="absoluteLink" href="#/organizations"></a>
+          </div>
+
+        </div>
+
+      </div>
+    </md-content>
+  </md-tab>
+  <md-tab label="2">
+  </md-tab>
+  <md-tab label="3">
+  </md-tab>
+</md-tabs>
