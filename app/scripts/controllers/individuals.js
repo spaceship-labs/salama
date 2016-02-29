@@ -12,7 +12,7 @@
   angular.module('salamaApp')
     .controller('IndividualsCtrl', IndividualsCtrl);
 
-  IndividualsCtrl.$inject=['$scope', '$translate','questionsService'];
+  IndividualsCtrl.$inject=['$scope', '$translate', 'questionsService'];
 
   function IndividualsCtrl($scope, $translate, questionsService){
 
@@ -32,8 +32,9 @@
     }
 
     function getQuestions(lang){
-      questionsService.setLang(lang);
-      questionsService.getEvalIndividuals().then(setQuestions);
+      questionsService.getIndividuals(lang)
+      .then(setQuestions)
+      .catch(logError);
     }
 
     function setQuestions(questions){
@@ -61,6 +62,7 @@
         security + censorship + professional +
         network + laboral + digital
       );
+      alert(score);
     }
 
     function subScore(item){
@@ -71,9 +73,8 @@
       return score;
     }
 
-    function riskLevel(score){
-      return 'low';
+    function logError(err){
+      console.error(err);
     }
-
   }
 })();

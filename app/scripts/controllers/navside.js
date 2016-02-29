@@ -12,12 +12,11 @@
   angular.module('salamaApp')
     .controller('NavsideCtrl',NavsideCtrl);
 
-  NavsideCtrl.$inject = ['$scope', '$translate', 'navsideService', 'postsService'];
+  NavsideCtrl.$inject = ['$scope', '$translate', 'navsideService', 'metadataService', 'postsService'];
 
-  function NavsideCtrl($scope, $translate, navsideService, postsService){
+  function NavsideCtrl($scope, $translate, navsideService, metadataService, postsService){
 
     var ctrl = this;
-
     ctrl.show = false;
     ctrl.categories = [];
     ctrl.metadata = {};
@@ -27,57 +26,56 @@
     activate();
 
     function activate(){
-      $scope.$watch(getLang, getMeta);
       $scope.$watch(getState, setState);
+      $scope.$watch(getLang, getMetadata);
+    }
+
+    function changeStateSide(){
+      navsideService.changeState();
     }
 
     function getState(){
       return navsideService.getState();
     }
 
-    function getLang(){
-      return $translate.use();
-    }
-
-    function getMeta(lang){
-      postsService.setLang(lang);
-      postsService.getMeta()
-        .then(setCategories)
-        .then(setMeta)
-        .catch(logError);
-    }
-
     function setState(show){
       ctrl.show = show;
     }
 
-    function setCategories(meta){
-      var categories = [];
-      meta.forEach(function(m){
-        if (categories.indexOf(m)==-1) {
-          categories.push(m.category);
-        }
-      });
-      ctrl.categories = categories;
-      return meta;
+    function getLang(){
+      return $translate.use();
     }
 
-    function setMeta(meta){
+    function getMetadata(lang){
+      return metadataService.getMetadata(lang)
+      .then(setCategories)
+      .then(setMetadata);
+    }
+
+    function setCategories(metadata){
+      var categories = [];
+      metadata.forEach(function(m){
+        var category = m.category;
+        categories.indexOf(category) != -1 || categories.push(category);
+      });
+      ctrl.categories = categories;
+      return metadata;
+    }
+
+    function setMetadata(repoMetadata){
       var metadata = {};
-      meta.forEach(function(m){
-        metadata[m.category] = metadata[m.category] || [];
-        metadata[m.category].push(m);
+      repoMetadata.forEach(function(m){
+        var category = m.category;
+        metadata[category] = metadata[category] || [];
+        metadata[category].push(m);
       });
       ctrl.metadata = metadata;
+      return repoMetadata;
     }
 
     function setPost(path){
-      postsService.setPost(path);
       changeStateSide();
-    }
-
-    function changeStateSide(){
-      navsideService.changeState();
+      postsService.setSelected(path);
     }
 
     function logError(err){

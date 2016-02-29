@@ -18,32 +18,25 @@
 
     var urlSite = 'https://raw.githubusercontent.com/spaceship-labs/salama-content/gh-pages/';
     var urlVersion = urlSite + 'version.txt';
-    var urlMeta = urlSite + 'metadata/';
+    var urlMetadata = urlSite + 'metadata/';
     var urlPosts = urlSite + 'posts/';
     var urlQuestions = urlSite + 'questions/';
-    var urlIndividuals = urlQuestions + 'individuals/locale-';
-    var urlOrganizations = urlQuestions + 'organizations/locale-';
 
     return {
-      urlSite: urlSite,
-      urlVersion: urlVersion,
-      urlMeta: urlMeta,
-      urlPosts: urlPosts,
-      urlQuestions: urlQuestions,
-      urlIndividuals: urlIndividuals,
-      urlOrganizations: urlOrganizations,
       getVersion: getVersion,
-      getMeta: getMeta,
+      getMetadata: getMetadata,
       getPost: getPost,
       getEvalIndividuals: getEvalIndividuals,
       getEvalOrganizations: getEvalOrganizations
     };
 
-    function getMeta(lang){
-      lang = lang || 'all';
-      var url = urlMeta + 'locale-' + lang + '.json';
-      return downloadFile(url);
+    function getVersion(){
+      return downloadFile(urlVersion);
+    }
 
+    function getMetadata(lang){
+      var url = urlMetadata + 'locale-' + lang + '.json';
+      return downloadFile(url);
     }
 
     function getPost(path){
@@ -57,21 +50,17 @@
     }
 
     function getEvalIndividuals(lang){
-      var url = urlIndividuals + lang + '.json' ;
+      var url = urlQuestions + lang + '/individuals.json' ;
       return downloadFile(url).then(function(questions){
         return questions.questions;
       });
     }
 
     function getEvalOrganizations(lang){
-      var url = urlOrganizations + lang + '.json' ;
+      var url = urlQuestions + lang + '/organizations.json' ;
       return downloadFile(url).then(function(questions){
         return questions.questions;
       });
-    }
-
-    function getVersion(){
-      return downloadFile(urlVersion);
     }
 
     function downloadFile(url){
