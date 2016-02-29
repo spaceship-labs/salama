@@ -7,6 +7,7 @@
  * # questionsService
  * Service in the salamaApp.
  */
+
 (function(){
   angular
     .module('salamaApp')
@@ -16,62 +17,67 @@
 
   function questionsService($localStorage, contentService){
 
-    var db;
-    $localStorage.questionsService = $localStorage.questionsService || {};
-    db = $localStorage.questionsService;
+    var db      = $localStorage.questions = $localStorage.questions || {};
     db.individuals = db.individuals || {};
     db.organizations = db.organizations || {};
+    db.version  = db.version || '';
+    db.lang     = db.lang || 'en_US';
 
     return {
-      getEvalIndividuals: getEvalIndividuals,
-      getEvalOrganizations: getEvalOrganizations,
-      setLang: setLang
+      getIndividuals: getIndividuals,
+      getOrganizations: getOrganizations
     };
 
-    function getEvalIndividuals(){
-      return existsNewVersion().then(resolveIndividuals);
-    }
-
-    function getEvalOrganizations(){
-      return existsNewVersion().then(resolveOrganizations);
-    }
-
-    function setLang(lang){
-      db.lang = lang;
-    }
-
-    function existsNewVersion(){
+    function getIndividuals(newlang){
+      setLang(newlang);
       return contentService.getVersion()
-        .then(validateNewVersion);
+        .then(resolveVersion)
+        .then(resolveIndividuals);
     }
 
-    function validateNewVersion(version){
-      if (!db.version || db.version != version){
-        db.version = version;
+    function getOrganizations(newlang){
+      setLang(newlang);
+      return contentService.getVersion()
+        .then(resolveVersion)
+        .then(resolveOrganizations);
+    }
+
+    function resolveVersion(newversion){
+      if (newversion != db.version){
+        db.version = newversion;
         return true;
       }
       return false;
     }
 
-    function resolveIndividuals(mustDownload){
-      if (!db.individuals[db.lang] || mustDownload){
-        return contentService.getEvalIndividuals(db.lang).then(function(individuals){
-          db.individuals[db.lang] = individuals;
-          return individuals;
-        });
+    function resolveIndividuals(newversion){
+      if (!db.individuals[db.lang] || newversion){
+        return contentService.getEvalIndividuals(db.lang).then(setIndividuals);
       }
       return db.individuals[db.lang];
     }
 
-    function resolveOrganizations(mustDownload){
-      if (!db.organizations[db.lang] || mustDownload){
-        return contentService.getEvalOrganizations(db.lang).then(function(organizations){
-          db.organizations[db.lang] = organizations;
-          return organizations;
-        });
+    function resolveOrganizations(newversion){
+      if (!db.organizations[db.lang] || newversion){
+        return contentService.getEvalOrganizations(db.lang).then(setOrganizations);
       }
-      return db.organizations[lang];
+      return db.organizations[db.lang];
     }
+
+    function setIndividuals(evaluation){
+      db.individuals[db.lang] = evaluation;
+      return evaluation;
+    }
+
+    function setOrganizations(evaluation){
+      db.organizations[db.lang] = evaluation;
+      return evaluation;
+    }
+
+    function setLang(newlang){
+      db.lang = newlang;
+    }
+
   }
 })();
 

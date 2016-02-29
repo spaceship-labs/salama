@@ -15,73 +15,49 @@
   postsService.$inject = ['$localStorage','contentService'];
 
   function postsService($localStorage, contentService){
-
-    var db;
-
-    $localStorage.postService = $localStorage.postService || {};
-    db = $localStorage.postService;
-    db.metadata = db.metadata || {};
-    db.post = db.post || {};
+    var db     = $localStorage.post = $localStorage.post || {};
+    db.post    = db.post || {} ;
+    db.version = db.version || '';
 
     return {
       getSelected: getSelected,
-      getMeta: getMeta,
-      getPost: getPost,
-      setPost: setPost,
-      setLang: setLang
+      setSelected: setSelected,
+      getPost: getPost
     };
 
     function getSelected(){
-      return db.selected;
+      return db.path;
     }
 
-    function getMeta(){
-      return existsNewVersion().then(resolveMeta);
+    function setSelected(newpath){
+      db.path = newpath;
     }
 
     function getPost(){
-      return existsNewVersion().then(resolvePost);
-    }
-
-    function setPost(path){
-      db.selected = path;
-    }
-
-    function setLang(lang){
-      db.lang = lang;
-    }
-
-    function existsNewVersion(){
       return contentService.getVersion()
-        .then(validateNewVersion);
+        .then(resolveVersion)
+        .then(resolvePost);
     }
 
-    function validateNewVersion(version){
-      if (!db.version || db.version != version){
-        db.version = version;
+    function resolveVersion(newversion){
+      if (db.version != newversion) {
+        db.version = newversion;
         return true;
       }
       return false;
     }
 
-    function resolveMeta(mustDownload){
-      if (!db.metadata[db.lang] || mustDownload){
-        return contentService.getMeta(db.lang).then(function(metadata){
-          db.metadata = metadata;
-          return metadata;
-        });
+    function resolvePost(newversion){
+      if (!db.post[db.path] || newversion) {
+        return contentService.getPost(db.path).then(setPost);
       }
-      return db.metadata;
+      return db.post[db.path];
     }
 
-    function resolvePost(mustDownload){
-      if (!db.post[db.selected] || mustDownload){
-        return contentService.getPost(db.selected).then(function(post){
-          db.post[db.selected] = post;
-          return post;
-        });
-      }
-      return db.post[db.selected];
+    function setPost(newpost){
+      db.post[db.path] = newpost;
+      return newpost;
     }
+
   }
 })();
