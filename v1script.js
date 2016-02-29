@@ -77,13 +77,13 @@ function adjustFormSubmitTrigger(enableTrigger) {
  */
 
 function respondToFormSubmit(e) {
-  
+
   //Set the initial threat level to 0
   var threatLevel = 0;
   var itemResponses;
   var message;
   var senderEmail;
-  
+
   //flags for conditional feedback
   var digitalSecurityFlag;
   var dangerZoneFlag;
@@ -102,27 +102,27 @@ function respondToFormSubmit(e) {
     for (var i = 0; i < itemResponses.length; i++) {
       var itemTitle = itemResponses[i].getItem().getTitle();
       var itemResponse = itemResponses[i].getResponse();
-    
-     
+
+
       //Have YOU, Your Colleagues, or Colleagues in your Area been threatened
       if(i == 7){
         if(itemResponse == "Yes" || itemResponse == "Si")
-           threatLevel += 20; 
+           threatLevel += 20;
       }
-      
-      //Have colleagues in your organization been threatened or suffered an aggression as journalists over the last year? 
+
+      //Have colleagues in your organization been threatened or suffered an aggression as journalists over the last year?
        if(i == 8){
         if(itemResponse == "Yes" || itemResponse == "Si")
-           threatLevel += 20; 
+           threatLevel += 20;
       }
-      
-      //Have colleagues in your area been threatened or suffered an aggression as journalists over the last year? 
+
+      //Have colleagues in your area been threatened or suffered an aggression as journalists over the last year?
       if(i == 9){
         if(itemResponse == "Yes" || itemResponse == "Si")
-           threatLevel += 20; 
+           threatLevel += 20;
       }
-      
-      
+
+
       //for questions security and censorship
       if(i == 10 || i ==  11){
         var valueThisTime;
@@ -130,7 +130,7 @@ function respondToFormSubmit(e) {
             threatLevel += (1 * valueThisTime);
           valueThisTime = WordCount("Nunca", itemResponse);// spanish
             threatLevel += (1 * valueThisTime);
-          valueThisTime = WordCount("Sometimes", itemResponse); 
+          valueThisTime = WordCount("Sometimes", itemResponse);
             threatLevel += (2 * valueThisTime);
           valueThisTime = WordCount("A veces", itemResponse);
             threatLevel += (2 * valueThisTime);
@@ -146,12 +146,12 @@ function respondToFormSubmit(e) {
             threatLevel += (5 * valueThisTime);
           valueThisTime = WordCount ("Todos los Dias", itemResponse);
             threatLevel += (5 * valueThisTime);
-        
-     
-        
+
+
+
         }
-      
-      
+
+
       //Professional Situation
       if(i == 12){
          var valueThisTime;
@@ -159,7 +159,7 @@ function respondToFormSubmit(e) {
             threatLevel += 1 * valueThisTime;
           valueThisTime = WordCount("Todos los dias",itemResponse);
             threatLevel += 1 * valueThisTime;
-          valueThisTime = WordCount("Often", itemResponse); 
+          valueThisTime = WordCount("Often", itemResponse);
             threatLevel += 2 * valueThisTime;
           valueThisTime = WordCount("Con mucha frecuencia", itemResponse);
             threatLevel += 2 * valueThisTime;
@@ -176,15 +176,15 @@ function respondToFormSubmit(e) {
           valueThisTime = WordCount ("Nunca", itemResponse);
             threatLevel += 5 * valueThisTime;
       }
-      
+
       //Support Networks & Labor Security
       if(i == 13 || 14){
         var valueThisTime;
           valueThisTime = WordCount("Excellent",itemResponse);
             threatLevel += 1 * valueThisTime;
-          valueThisTime = WordCount("Excelente",itemResponse); 
+          valueThisTime = WordCount("Excelente",itemResponse);
             threatLevel += 1 * valueThisTime;
-          valueThisTime = WordCount("Good", itemResponse); 
+          valueThisTime = WordCount("Good", itemResponse);
             threatLevel += 2 * valueThisTime;
           valueThisTime = WordCount("Buena", itemResponse);
             threatLevel += 2 * valueThisTime;
@@ -201,7 +201,7 @@ function respondToFormSubmit(e) {
           valueThisTime = WordCount ("Pésima", itemResponse);
             threatLevel += 5 * valueThisTime;
       }
-      
+
       //Digital Security
       if(i == 15){
         var valueThisTime;
@@ -209,7 +209,7 @@ function respondToFormSubmit(e) {
             threatLevel += 1 * valueThisTime;
           valueThisTime = WordCount("Maestro",itemResponse);
             threatLevel += 1 * valueThisTime;
-          valueThisTime = WordCount("Advanced", itemResponse); 
+          valueThisTime = WordCount("Advanced", itemResponse);
             threatLevel += 2 * valueThisTime;
           valueThisTime = WordCount("Avanzada", itemResponse);
             threatLevel += 2 * valueThisTime;
@@ -225,11 +225,11 @@ function respondToFormSubmit(e) {
             threatLevel += 5 * valueThisTime;
           valueThisTime = WordCount ("Ninguna", itemResponse);
             threatLevel += 5 * valueThisTime;
-        
+
         if(valueThisTime == "Basic" || "Básica" || "None" || "Ninguna"){
           digitalSecurityFlag = true;
         }
-        
+
       }
       //  message += i + ' ' + itemTitle + ': ' + itemResponse + ' ' + threatLevel+ '\n';
     }
@@ -239,60 +239,60 @@ function respondToFormSubmit(e) {
  //build message English
   if(itemResponses[0].getResponse()=="English"){
     message += '\n'+'Based off your responses to the Threat Assessment Survey, your threat level is calculated to be ' + threatLevel+'\n'+'\n';
-    
+
     if (threatLevel <=40){
      message += EnglishLowThreat();
     }
-    
+
     if (threatLevel > 40 && threatLevel <= 59){
       message += EnglishMedThreat();
     }
-    
+
     if (threatLevel > 60 && threatLevel <= 79){
      message += EnglishHighThreat();
     }
-    
+
     if (threatLevel > 80){
      message += EnglishExtThreat();
     }
-    
+
     if(digitalSecurityFlag == true){
      message +=  'Digital Security'+'\n';
      message +=  'You need to better with your digital security. Your information is at risk of being lost, attacked. You may need to protect your information with encrypting tools and good practices.'+'\n'+'\n';
     }
-    
+
     message += 'We hope this tool has been useful to you in forming your security plans.';
   }
-  
+
 //build message Spanish
   if(itemResponses[0].getResponse()=="Español"){
     message += '\n'+'Need Spanish translation: Based off your responses to the Threat Assessment Survey, your threat level is calculated to be ' + threatLevel+'\n'+'\n';
-    
+
     if (threatLevel <=40){
       message += SpanishLowThreat();
     }
-    
+
    if (threatLevel > 40 && threatLevel <= 59){
       message += SpanishMedThreat();
     }
-    
+
     if (threatLevel > 60 && threatLevel <= 79){
       message += SpanishHighThreat();
     }
-    
+
     if (threatLevel > 80){
       message += SpanishExtThreat();
     }
-    
+
      if(digitalSecurityFlag == true){
      message +=  'Seguridad Digital'+'\n';
      message +=  'Debes mejorar tu seguridad digital. Tu información está en riesgo de sufrir pérdida, ataques. Podrías necesitar la protección de tus datos e información mediante herramientas de encriptación y buenas prácticas.'+'\n'+'\n';
     }
-    
+
     message += 'Esperamos que esta herramienta ha sido útil para usted en la formación de sus planes de seguridad.';
   }
-  
-  
+
+
 //send email
     MailApp.sendEmail(
       senderEmail,
@@ -519,7 +519,7 @@ function SpanishExtThreat(){
       messageb +=  '   https://rorypecktrust.org/Contact '+ '\n';
       messageb += 'Otras acciones:'+ '\n';
       messageb += 'Crea o revisa tu estrategia de seguridad: Una estategia de seguridad es un documento que las organizaciones deben revisar periódicamente en el que está una definición de los problemas principales de seguridad para un periodista o un medio y un plan para reducir riesgos y enfrentar esas preocupaciones. De ser posible, discute con tu medio y tu red de confianza sobre la situación y analizen juntos las amenazas reales y potenciales, fortalezas y vulnerabilidades, y definan nuevas metas de seguridad según las circunstancias.'+ '\n';
-      messageb += 'Crear o revisar los protocolos de seguridad. Un protocolo de seguridad es una secuencia de operaciones que aseguren la integridad física, psicológica, legal o digital. Será necesaria la creación de protocolos de seguridad para cada situación, dependiendo de la naturaleza de la amenaza y las condiciones específicas de viulnerabilidad y fortaleza.'+ '\n'; 
+      messageb += 'Crear o revisar los protocolos de seguridad. Un protocolo de seguridad es una secuencia de operaciones que aseguren la integridad física, psicológica, legal o digital. Será necesaria la creación de protocolos de seguridad para cada situación, dependiendo de la naturaleza de la amenaza y las condiciones específicas de viulnerabilidad y fortaleza.'+ '\n';
       messageb +=   '\n'+'\n';
   return messageb;
 }

@@ -4,7 +4,7 @@
   >
     <form-question ng-repeat="question in individuals.questions">
     </form-question>
-    <md-button type="submit">Submit</md-button>
+    <md-button ng-href="#/advice" ng-click="individuals.calculate()" type="submit"> Submit</md-button>
   </form>
 </md-content>
 
