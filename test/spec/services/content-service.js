@@ -11,6 +11,7 @@ describe('Service: contentService', function () {
   var urlPost          = urlSite + 'posts/en_US/random.md';
   var urlIndividuals   = urlSite + 'questions/en_US/individuals.json';
   var urlOrganizations = urlSite + 'questions/en_US/organizations.json';
+  var urlAdvice        = urlSite + 'advices/en_US/low.md';
   var contentService;
   var httpBackend;
 
@@ -207,6 +208,16 @@ describe('Service: contentService', function () {
           expect(q.options).to.be.defined;
         }
       });
+    });
+    httpBackend.flush();
+  });
+
+  it('should download a valid advice based on lang and score',function(){
+    httpBackend.whenGET(urlResources).respond('randomstr');
+    httpBackend.whenGET(urlVersion).respond('some_random_string');
+    httpBackend.whenGET(urlAdvice).respond('some_random_string');
+    contentService.getAdvice('low','en_US').then(function(advice){
+      expect(advice).to.be.equal('some_random_string');
     });
     httpBackend.flush();
   });

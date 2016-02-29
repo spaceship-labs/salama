@@ -21,13 +21,15 @@
     var urlMetadata = urlSite + 'metadata/';
     var urlPosts = urlSite + 'posts/';
     var urlQuestions = urlSite + 'questions/';
+    var urlAdvices = urlSite + 'advices/';
 
     return {
       getVersion: getVersion,
       getMetadata: getMetadata,
       getPost: getPost,
       getEvalIndividuals: getEvalIndividuals,
-      getEvalOrganizations: getEvalOrganizations
+      getEvalOrganizations: getEvalOrganizations,
+      getAdvice: getAdvice
     };
 
     function getVersion(){
@@ -61,6 +63,11 @@
       return downloadFile(url).then(function(questions){
         return questions.questions;
       });
+    }
+
+    function getAdvice(riskLevel,lang){
+      var url = urlAdvices + lang + '/' +riskLevel + '.md';
+      return downloadFile(url);
     }
 
     function downloadFile(url){
