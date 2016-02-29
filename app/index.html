@@ -13,6 +13,7 @@
   <!-- endbower -->
   <!-- endbuild -->
   <!-- build:css(.tmp) styles/main.css -->
+  <link rel="stylesheet" href="styles/fontello/css/fontello.css">
   <link rel="stylesheet" href="styles/main.css">
   <!-- endbuild -->
 </head>
@@ -22,28 +23,23 @@
   <header layout layout-align="center center" layout-wrap
     ng-controller="HeaderCtrl as header"
   >
-    <md-toolbar layout layout-align="space-between center" flex ="85"
+    <md-toolbar layout layout-align="space-between center" flex-gt-md="85"
      class ="md-toolbar-tools"
     >
-      <div layout layout-align="space-between center" flex="15"
-        class="header-left"
+      <div layout layout-align="space-between center" flex="15" class="header-left"
       >
-        <div class="header-logo"> S </div>
-        <div layout layout-align="center center" class="header-menu">
-          <md-button class="md-icon-button"
-            ng-click="header.changeStateSide()"
-          >
-            <md-icon md-svg-icon="images/menu.svg"
-              class="header-menu-logo"
-            >
+        <a href="#/" class="header-logo">
+          <img src="/images/icon_salama.png">
+        </a>
+
+          <md-button class="header-menu" ng-click="header.changeStateSide()">
+            <md-icon md-svg-icon="images/menu.svg" class="header-menu-logo">
             </md-icon>
+            Menu
           </md-button>
-          <span>Menu</span>
-        </div>
+
       </div>
-      <div layout layout-align="space-between center"  flex="25"
-        class="header-right"
-      >
+      <div layout layout-align="space-between center" >
         <a href="https://twitter.com/intent/tweet"
           class="twitter-share-button"
         >
@@ -82,15 +78,15 @@
         class="md-sidenav-left md-whiteframe-z2"
       >
         <md-toolbar class="md-toolbar-tools">
-          <md-button class="md-icon-button"
-            ng-click="navside.changeStateSide()"
+
+          <md-button
+          class="sideButton"
+          ng-click="navside.changeStateSide()"
           >
-            <md-icon md-svg-icon="images/menu.svg"
-              class="header-menu-logo"
-            >
-            </md-icon>
+            <img src="images/icon_salama.png">
+            <div>Menu</div>
           </md-button>
-          <span>Menu</span>
+
         </md-toolbar>
         <div class="sidenav-block">
           <h3>Security Evaluation</h3>
