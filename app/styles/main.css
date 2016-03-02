@@ -2,11 +2,11 @@
 
 @font-face {
     font-family: lato-light;
-    src: url(font/Lato-Hairline.ttf);
+    src: url(fonts/font/Lato-Hairline.ttf);
 }
 @font-face {
     font-family: lato-bold;
-    src: url(font/Lato-Black.ttf);
+    src: url(fonts/font/Lato-Black.ttf);
 }
 a{
   text-decoration: none;

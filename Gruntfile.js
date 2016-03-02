@@ -220,7 +220,7 @@ module.exports = function (grunt) {
             }
           }
       }
-    }, 
+    },
 
     // Renames files for browser caching purposes
     filerev: {
@@ -380,7 +380,10 @@ module.exports = function (grunt) {
             '*.{ico,png,txt}',
             '*.html',
             'images/{,*/}*.{webp}',
-            'styles/fonts/{,*/}*.*'
+            'styles/fonts/{,*/}*.*',
+            'styles/font/*.*',
+            'styles/fontello/font/*.*',
+            'resources/*'
           ]
         }, {
           expand: true,
@@ -417,6 +420,20 @@ module.exports = function (grunt) {
       unit: {
         configFile: 'test/karma.conf.js',
         singleRun: true
+      }
+    },
+
+    processhtml: {
+      options: {
+        commentMarker: "process"
+      },
+      dist: {
+        files: [{
+          expand: true,
+          cwd: '<%= yeoman.dist %>',
+          src: ['index.html', 'index.html'],
+          dest: '<%= yeoman.dist %>'
+        }]
       }
     }
   });
@@ -465,6 +482,7 @@ module.exports = function (grunt) {
     'cssmin',
     'uglify',
     'filerev',
+    'processhtml',
     'usemin',
     'htmlmin'
   ]);
