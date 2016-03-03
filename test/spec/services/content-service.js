@@ -116,48 +116,34 @@ describe('Service: contentService', function () {
 
   it('should download the individual\'s eval',function(){
     httpBackend.whenGET(urlResources).respond('randomstr');
-    httpBackend.whenGET(urlIndividuals).respond(
-    {
-      "questions": [
+    httpBackend.whenGET(urlIndividuals).respond({
+      "pages": [
         {
-          "question": "Nombre",
-          "instruction": "Si quiere permanecer anónimo, no llenes el espacio del nombre. Necesitamos tu correo electrónico para enviarte los resultados. Si deseas recibir consejo individual, por  favor escribe tu nombre.",
-          "type": "text"
-        },
-        {
-          "question": "Correo electrónico",
-          "instruction": "Por favor escribe tu correo electrónico, (Los resultados serán enviados a este correo electrónico).",
-          "type": "email"
-        },
-        {
-          "question": "Entrenamiento Individualizado",
-          "type": "checkbox",
-          "options": [
+          "type": "one-column" ,
+          "questions":[
             {
-              "value": 0,
-              "option": "Si, deseo recibir entrenamiento individualizado"
+              "name": "name",
+              "input":"text",
+              "title":"Nombre",
+              "instruction":"Si quiere permanecer anónimo, no llenes el espacio del nombre. Necesitamos tu correo electrónico para enviarte los resultado . Si deseas recibir consejo individual, por favor escribe tu nombre"
+            },
+            {
+              "name": "email",
+              "input": "email",
+              "title": "Correo Electrónico",
+              "instruction": "Por favor escribe tu correo electrónico, (Los resultados serán enviados a este correo electrónico)."
             }
           ]
-        },
-        {
-          "question": "Medio",
-          "instruction": "Por favor anota el nombre de tu medio de comunicación (si eres periodista independiente, escribe esas palabras) ",
-          "type": "text"
-        },
-        {
-          "question": "Municipio y Estado (Provincia o Departamento)",
-          "instruction": "Por favor escribe el nombre de tu municipio y departamento. Ejemplo: Pueblo Nuevo, Estelí",
-          "type": "text"
         }
       ]
     });
     contentService.getEvalIndividuals(lang).then(function(questions){
-      questions.forEach(function(q){
-        expect(q.question).to.be.defined;
-        expect(q.type).to.be.defined;
-        if( q.type!='text' && q.type!='email' ){
-          expect(q.options).to.be.defined;
-        }
+      questions.forEach(function(page){
+        expect(page.questions).to.be.defined;
+        expect(page.questions.length).to.equal(2);
+        page.questions.forEach(function(question){
+          expect(question.name).to.not.be.undefined;
+        });
       });
     });
     httpBackend.flush();
@@ -165,48 +151,34 @@ describe('Service: contentService', function () {
 
   it('should download the organization\'s eval',function(){
     httpBackend.whenGET(urlResources).respond('randomstr');
-    httpBackend.whenGET(urlOrganizations).respond(
-    {
-      "questions": [
+    httpBackend.whenGET(urlOrganizations).respond({
+      "pages": [
         {
-          "question": "Nombre",
-          "instruction": "Si quiere permanecer anónimo, no llenes el espacio del nombre. Necesitamos tu correo electrónico para enviarte los resultados. Si deseas recibir consejo individual, por  favor escribe tu nombre.",
-          "type": "text"
-        },
-        {
-          "question": "Correo electrónico",
-          "instruction": "Por favor escribe tu correo electrónico, (Los resultados serán enviados a este correo electrónico).",
-          "type": "email"
-        },
-        {
-          "question": "Entrenamiento Individualizado",
-          "type": "checkbox",
-          "options": [
+          "type": "one-column" ,
+          "questions":[
             {
-              "value": 0,
-              "option": "Si, deseo recibir entrenamiento individualizado"
+              "name": "name",
+              "input":"text",
+              "title":"Nombre",
+              "instruction":"Si quiere permanecer anónimo, no llenes el espacio del nombre. Necesitamos tu correo electrónico para enviarte los resultado . Si deseas recibir consejo individual, por favor escribe tu nombre"
+            },
+            {
+              "name": "email",
+              "input": "email",
+              "title": "Correo Electrónico",
+              "instruction": "Por favor escribe tu correo electrónico, (Los resultados serán enviados a este correo electrónico)."
             }
           ]
-        },
-        {
-          "question": "Medio",
-          "instruction": "Por favor anota el nombre de tu medio de comunicación (si eres periodista independiente, escribe esas palabras) ",
-          "type": "text"
-        },
-        {
-          "question": "Municipio y Estado (Provincia o Departamento)",
-          "instruction": "Por favor escribe el nombre de tu municipio y departamento. Ejemplo: Pueblo Nuevo, Estelí",
-          "type": "text"
         }
       ]
     });
     contentService.getEvalOrganizations(lang).then(function(questions){
-      questions.forEach(function(q){
-        expect(q.question).to.be.defined;
-        expect(q.type).to.be.defined;
-        if( q.type!='text' && q.type!='email' ){
-          expect(q.options).to.be.defined;
-        }
+      questions.forEach(function(page){
+        expect(page.questions).to.be.defined;
+        expect(page.questions.length).to.equal(2);
+        page.questions.forEach(function(question){
+          expect(question.name).to.not.be.undefined;
+        });
       });
     });
     httpBackend.flush();

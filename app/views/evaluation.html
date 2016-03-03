@@ -47,6 +47,7 @@
   md-selected = "evaluation.page"
   class="content-evaluation"
 >
+
   <md-tab label="1">
     <md-content layout layout-align="center center">
       <div class="evaluation container" layout="column" layout-align="center center">
@@ -106,14 +107,20 @@
       </div>
     </md-content>
   </md-tab>
+
   <md-tab label="2" ng-disabled="!evaluation.type">
     <md-content>
-    {{evaluation.questions}}
+      {{evaluation.questions}}
     </md-content>
+    <md-button ng-click="evaluation.finishEvaluation()">
+      Finalizar
+    </md-button>
+    <div class="score">{{evaluation.completed}}% completed<div>
   </md-tab>
+
   <md-tab label="3" ng-disabled="evaluation.completed!=100">
     <md-content>
-
     </md-content>
   </md-tab>
+
 </md-tabs>
