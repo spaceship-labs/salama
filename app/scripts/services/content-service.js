@@ -54,14 +54,14 @@
     function getEvalIndividuals(lang){
       var url = urlQuestions + lang + '/individuals.json' ;
       return downloadFile(url).then(function(questions){
-        return questions.questions;
+        return questions.pages;
       });
     }
 
     function getEvalOrganizations(lang){
       var url = urlQuestions + lang + '/organizations.json' ;
       return downloadFile(url).then(function(questions){
-        return questions.questions;
+        return questions.pages;
       });
     }
 
