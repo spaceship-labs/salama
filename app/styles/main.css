@@ -59,6 +59,7 @@ header .header-menu span{
   text-transform: capitalize;
   font-size:15px;
   font-weight:bold;
+  color: #5495C0;
 }
 header .header-menu md-icon svg {
   fill: #5495C0;
@@ -68,6 +69,7 @@ header .header-lang{
   font-weight:bold;
   padding:0 10px;
   background-color: #F3F3F3;
+  color: #000 !important;
 }
 header .header-lang md-icon svg {
   width:70%;
@@ -234,7 +236,7 @@ md-tabs[md-border-bottom] md-tabs-wrapper{
 }
 .evaluation-options{
   width: 100%;
-  margin: 5% 0;
+  margin: 50px 0;
 }
 .steps > div *{
   text-align: center;

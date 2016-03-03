@@ -108,7 +108,8 @@
   </md-tab>
   <md-tab label="2" ng-disabled="!evaluation.type">
     <md-content>
-    {{evaluation.questions}}
+    <!-- {{evaluation.questions}} -->
+    <evaluation-questions evaluation="evaluation"></evaluation-questions>
     </md-content>
   </md-tab>
   <md-tab label="3" ng-disabled="evaluation.completed!=100">

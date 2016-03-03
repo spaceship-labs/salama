@@ -1,0 +1,16 @@
+<div id="eq">
+  <ul class="eq-pages">
+    <li
+      class="eq-page"
+      ng-repeat="page in evaluation.questions"
+    >
+{{$index}}
+{{page}}
+      <md-content ng-include="directiveUrl+page.type+'.html'"
+      >
+      </md-content>
+
+    </li>
+  </ul>
+  <div class="eq-completed">loader</div>
+</div>

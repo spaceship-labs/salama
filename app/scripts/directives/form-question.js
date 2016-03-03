@@ -11,7 +11,7 @@
     .directive('formQuestion',formQuestion);
 
   function formQuestion(){
-    var template = '<ng-include src="\'views/questions/\'+question.type+\'.html\'"></ng-include>';
+    var template = '<ng-include src="\'views/directives/questions/\'+question.type+\'.html\'"></ng-include>';
     return {
       template: template,
     };
