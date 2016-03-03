@@ -32,30 +32,15 @@ angular
         controller: 'HomeCtrl',
         controllerAs: 'home'
       })
-      .when('/evaluation', {
-        templateUrl: 'views/evaluation.html',
-        controller: 'EvaluationCtrl',
-        controllerAs: 'evaluation'
-      })
-      .when('/library', {
-        templateUrl: 'views/library.html',
-        controller: 'LibraryCtrl',
-        controllerAs: 'library'
-      })
       .when('/article', {
         templateUrl: 'views/article.html',
         controller: 'ArticleCtrl',
         controllerAs: 'article'
       })
-      .when('/individuals', {
-        templateUrl: 'views/individuals.html',
-        controller: 'IndividualsCtrl',
-        controllerAs: 'individuals'
-      })
-      .when('/organizations', {
-        templateUrl: 'views/organizations.html',
-        controller: 'OrganizationsCtrl',
-        controllerAs: 'organizations'
+      .when('/evaluation', {
+        templateUrl: 'views/evaluation.html',
+        controller: 'EvaluationCtrl',
+        controllerAs: 'evaluation'
       })
       .when('/advice', {
         templateUrl: 'views/advice.html',

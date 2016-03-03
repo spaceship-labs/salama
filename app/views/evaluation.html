@@ -44,9 +44,11 @@
   md-center-tabs
   md-no-ink-bar
   md-no-ink
+  md-selected = "evaluation.page"
+  class="content-evaluation"
 >
   <md-tab label="1">
-    <md-content class="content-evaluation" layout layout-align="center center">
+    <md-content layout layout-align="center center">
       <div class="evaluation container" layout="column" layout-align="center center">
         <h1 class="center"><strong>Get involved.</strong> Choose a category to start your evaluation.</h1>
 
@@ -72,7 +74,10 @@
               <h3>Individual  Journalist</h3>
               <p>oijsd foiasj dpfoisj dfoiajs dfpoaisj doaisdj f</p>
             </div>
-            <a class="absoluteLink" href="#/individuals"></a>
+            <a class="absoluteLink" href=""
+              ng-click="evaluation.setType(evaluation.individuals)"
+            >
+            </a>
           </div>
 
           <div
@@ -90,7 +95,10 @@
               <h3>Organization</h3>
               <p>oijsd foiasj dpfoisj dfoiajs dfpoaisj doaisdj f</p>
             </div>
-            <a class="absoluteLink" href="#/organizations"></a>
+            <a class="absoluteLink" href=""
+              ng-click="evaluation.setType(evaluation.organizations)"
+            >
+            </a>
           </div>
 
         </div>
@@ -98,8 +106,14 @@
       </div>
     </md-content>
   </md-tab>
-  <md-tab label="2">
+  <md-tab label="2" ng-disabled="!evaluation.type">
+    <md-content>
+    {{evaluation.questions}}
+    </md-content>
   </md-tab>
-  <md-tab label="3">
+  <md-tab label="3" ng-disabled="evaluation.completed!=100">
+    <md-content>
+
+    </md-content>
   </md-tab>
 </md-tabs>

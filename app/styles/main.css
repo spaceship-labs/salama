@@ -297,7 +297,10 @@ md-tabs[md-border-bottom] md-tabs-wrapper{
   right: 0;
 }
 /* Article */
-
+.content-article{
+  background-color:white;
+  min-height:100%;
+}
 .article h1{
   text-align:center;
 }
@@ -306,7 +309,8 @@ md-tabs[md-border-bottom] md-tabs-wrapper{
   margin-bottom:0px;
 }
 .article img{
-  max-width:100%;
+  width:80%;
+  margin:3% 10%;
 }
 
 /* Footer */
