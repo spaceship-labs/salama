@@ -42,7 +42,9 @@
     }
 
     function getAdvice(){
-      return contentService.getVersion().then(resolveVersion).then(resolveAdvice);
+      return contentService.getVersion()
+        .then(resolveVersion)
+        .then(resolveAdvice);
     }
 
     function resolveVersion(newversion){

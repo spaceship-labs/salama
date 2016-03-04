@@ -14,9 +14,8 @@ function evaluationQuestions(){
 
   var controller = ['$scope',function ($scope){
 
-    console.log($scope.evaluation.questions);
-
     $scope.directiveUrl = 'views/directives/evaluation-questions/';
+    console.log($scope);
 
     $scope.next = function (){
 
