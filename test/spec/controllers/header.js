@@ -1,23 +1,28 @@
 'use strict';
 
 describe('Controller: HeaderCtrl', function () {
+  var HeaderCtrl;
+  var scope;
 
-  // load the controller's module
   beforeEach(module('salamaApp'));
 
-  var HeaderCtrl,
-    scope;
-
-  // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope) {
     scope = $rootScope.$new();
     HeaderCtrl = $controller('HeaderCtrl', {
       $scope: scope
-      // place here mocked dependencies
     });
+
   }));
 
-  it('should attach a list of awesomeThings to the scope', function () {
-    //expect(HeaderCtrl.awesomeThings.length).toBe(3);
+  it('"show lang options" menu must be hidden', function () {
+    expect(HeaderCtrl.showLangOptions).to.be.false;
   });
+
+  it('"show lang options" menu must be hidden after calling changeLang', function () {
+    expect(HeaderCtrl.showLangOptions).to.be.false;
+    HeaderCtrl.showLangOptions = true;
+    HeaderCtrl.changeLang('en_US');
+    expect(HeaderCtrl.showLangOptions).to.be.false;
+  });
+
 });

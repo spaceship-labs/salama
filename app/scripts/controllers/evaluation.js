@@ -12,6 +12,7 @@
     .controller('EvaluationCtrl', EvaluationCtrl);
 
   EvaluationCtrl.$inject = [
+    '$http',
     '$scope',
     '$translate',
     'individualsService',
@@ -19,6 +20,7 @@
   ];
 
   function EvaluationCtrl(
+    $http,
     $scope,
     $translate,
     individualsService,
@@ -26,11 +28,12 @@
   ){
 
     var ctrl = this;
+    var urlApi = 'http://salama-api.herokuapp.com/survey';
     ctrl.individuals = 'individual';
     ctrl.organizations = 'organizations';
-    ctrl.type;
-    ctrl.page;
-    ctrl.completed;
+    ctrl.type = undefined;
+    ctrl.page = 0 ;
+    ctrl.completed = 0;
     ctrl.questions = [];
     ctrl.answers = {};
     ctrl.setType = setType;
@@ -44,12 +47,6 @@
 
     function getLangAndType(){
         return $translate.use() + ctrl.type;
-    }
-
-    function setType(type){
-      ctrl.type = type;
-      ctrl.completed = 10;
-      ctrl.page = 1;
     }
 
     function getQuestions(){
@@ -69,11 +66,24 @@
       ctrl.questions = questions;
     }
 
+    function setType(type){
+      ctrl.type = type;
+      ctrl.completed = 0;
+      ctrl.page = 1;
+    }
+
     function finishEvaluation(){
       ctrl.completed = 100;
       ctrl.page = 2;
+      sendQuestions();
     }
 
+    function sendQuestions(){
+      ctrl.answers['survey_type'] = ctrl.type;
+      $http.post(urlApi, ctrl.answers).success(function(a){
+        console.log(a);
+      });
+    }
   }
 })();
 

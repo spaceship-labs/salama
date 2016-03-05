@@ -15,9 +15,9 @@
 
   function ArticleCtrl($scope, postsService){
 
-    var ctrl=this;
+    var ctrl = this;
 
-    ctrl.article = null;
+    ctrl.article = '';
 
     activate();
 
