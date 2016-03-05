@@ -1,11 +1,13 @@
-<span>{{question.instruction}}</span>
+<h2>{{question.title}} <span class="eq-x"></span></h2>
+<p>{{question.instruction}}</p>
 <div layout flex="100">
-  <md-input-container flex="100">
-    <label>{{question.question}}</label>
-    <input type="email"
-      required
-      ng-model="individuals.evaluation[$index]"
-    >
-  </md-input-container>
+  <!-- <md-input-container flex="100"> -->
+  <label>{{question.question}}</label>
+  <input type="email"
+    placeholder="{{question.placeholder}}"
+    required
+    ng-model="individuals.evaluation[$index]"
+  >
+  <!-- </md-input-container> -->
 </div>
-<hr>
+

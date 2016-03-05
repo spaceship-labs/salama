@@ -12,25 +12,41 @@ angular.module('salamaApp')
 
 function evaluationQuestions(){
 
-  var controller = ['$scope',function ($scope){
+  var link = function (scope,element,attr){
 
-    $scope.directiveUrl = 'views/directives/evaluation-questions/';
-    console.log($scope);
+    var eq = $('#eq');
+    var pages = $('.eq-pages');
+    var page = $('.eq-page');
+    console.log(scope.evaluation);
 
-    $scope.next = function (){
+    scope.$watch( scope.evaluation.questions ,function (){
+      scope.evaluation
+      var baseWidth = eq.width();
+      var fullWidth = baseWidth * scope.evaluation.questions.length;
+      console.log(baseWidth);
+      console.log(fullWidth);
+    });
 
+    scope.directiveUrl = 'views/directives/evaluation-questions/';
+
+    scope.next = function (){
+      console.log('next');
+      console.log( pages );
+      console.log( page );
     }
 
-    $scope.prev = function (){
-
+    scope.prev = function (){
+      console.log('prev');
+      console.log( pages );
+      console.log( page );
     }
 
-  }];
+  };
   return {
     scope : {
       evaluation : '='
     },
-    controller : controller,
+    link : link,
     templateUrl : 'views/directives/evaluation-questions/evaluation-questions.html'
-  }
+  };
 }

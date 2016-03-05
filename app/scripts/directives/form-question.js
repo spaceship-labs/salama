@@ -6,15 +6,30 @@
  * @description
  * # formQuestion
  */
-(function(){
-  angular.module('salamaApp')
-    .directive('formQuestion',formQuestion);
+
+angular.module('salamaApp')
+  .directive('formQuestion',formQuestion);
 
   function formQuestion(){
-    var template = '<ng-include src="\'views/directives/questions/\'+question.type+\'.html\'"></ng-include>';
-    return {
-      template: template,
-    };
-  }
-})();
 
+    var controller = ['$scope',function($scope){
+
+      $scope.directiveUrl = 'views/directives/questions/';
+
+      if($scope.question.type == 'table-multiradio'){
+        $scope.directiveUrl += 'table-multiradio.html';
+      }else{
+        $scope.directiveUrl += $scope.question.input + '.html';
+      }
+
+    }];
+
+    return {
+      scope : {
+        question : '='
+      },
+      controller : controller,
+      templateUrl: 'views/directives/questions/questions.html'
+    };
+
+  }

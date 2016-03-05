@@ -1,3 +1,18 @@
-<h1>una columna</h1>
-{{page.questions}}
-<!-- <div ng-repeat="question in page.questions" form-question="question"></div> -->
+<div class="eq-one-column">
+
+  <div layout="column">
+
+    <form-question
+      ng-repeat="question in page.questions"
+      question="question"
+    >
+    </form-question>
+
+  </div>
+
+  <div class="eq-buttons" layout layout-align="end center">
+    <md-button class="eq-prev" ng-click="prev()">Prev</md-button>
+    <md-button class="eq-next" ng-click="next()">Next</md-button>
+  </div>
+
+</div>
