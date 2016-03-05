@@ -1,0 +1,17 @@
+<div class="eq-double-column">
+
+  <div layout layout-align="space-between start" layout-wrap>
+    <form-question
+      ng-repeat="question in page.questions"
+      question="question"
+      flex="45"
+    >
+    </form-question>
+  </div>
+
+  <div class="eq-buttons" layout layout-align="end center">
+    <md-button class="eq-prev" ng-click="prev()">Prev</md-button>
+    <md-button class="eq-next" ng-click="next()">Next</md-button>
+  </div>
+
+</div>

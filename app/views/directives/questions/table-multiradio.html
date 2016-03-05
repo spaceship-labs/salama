@@ -1,0 +1,45 @@
+<h2>{{question.title}}</h2>
+<p>{{question.instruction}}</p>
+<div>
+  <div class="fq">
+    <div layout="row" class="fq-options">
+      <div flex="50"></div>
+      <div
+        flex="10"
+        ng-repeat="option in question.options"
+        layout
+        layout-align="center center"
+      >
+        {{option.option}}
+      </div>
+    </div>
+    <div layout="column">
+      <div
+        ng-class-odd="'odd'"
+        ng-class-even="'even'"
+        layout="row"
+        ng-repeat="questions in question.questions"
+      >
+        <div flex="50"><p>{{questions.title}}</p></div>
+        <md-radio-group
+          ng-model="individuals.evaluation[$parent.$index][$index]"
+          layout="row"
+          flex="50"
+        >
+          <md-radio-button
+            flex="20"
+            ng-repeat="option in question.options"
+            ng-value="{{option.value}}"
+            layout
+            layout-align="center center"
+            aria-label="{{option.option}}"
+          >
+          </md-radio-button>
+        </md-radio-group>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

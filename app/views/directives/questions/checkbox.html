@@ -1,0 +1,10 @@
+<h2>{{question.title}} <span class="eq-x"></span></h2>
+<p>{{question.question}}</p>
+<div layout="column" flex="100">
+  <md-checkbox
+    ng-model="individuals.evaluation[$parent.$index][$index]"
+    flex
+  >
+    {{question.instruction}}
+  </md-checkbox>
+</div>

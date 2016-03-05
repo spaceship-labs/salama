@@ -1,0 +1,12 @@
+<h2>{{question.title}} <span class="eq-x"></span></h2>
+<p>{{question.instruction}}</p>
+<div layout flex="100">
+  <!-- <md-input-container flex="100"> -->
+  <label>{{question.question}}</label>
+  <input type="text"
+    placeholder="{{question.placeholder}}"
+    ng-model="individuals.evaluation[$index]"
+    ng-required="$index!=0"
+  >
+  <!-- </md-input-container> -->
+</div>

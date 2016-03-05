@@ -1,0 +1,19 @@
+<div id="eq" class="container-md">
+  <div class="eq-pages">
+    <div
+      class="eq-page"
+      ng-repeat="page in evaluation.questions"
+    >
+
+      <md-content ng-include="directiveUrl+page.type+'.html'">
+      </md-content>
+
+    </div>
+  </div>
+  <div class="eq-completed">
+    <div class="eq-graybar">
+      <div class="eq-bluebar"></div>
+    </div>
+    <div class="eq-percentage">{{evaluation.completed}}% completed</div>
+    <div>
+</div>
