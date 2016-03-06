@@ -55,7 +55,7 @@
         return individualsService
           .getEval(lang)
           .then(setQuestions);
-      }else{
+      } else if (ctrl.type == ctrl.organizations) {
         return organizationsService
           .getEval(lang)
           .then(setQuestions);
