@@ -16,7 +16,7 @@ angular.module('salamaApp')
 
       $scope.directiveUrl = 'views/directives/questions/';
 
-      if($scope.question.type == 'table-multiradio'){
+      if($scope.question.type === 'table-multiradio'){
         $scope.directiveUrl += 'table-multiradio.html';
       }else{
         $scope.directiveUrl += $scope.question.input + '.html';
