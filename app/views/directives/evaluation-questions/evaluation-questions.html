@@ -3,6 +3,7 @@
     <div
       class="eq-page"
       ng-repeat="page in evaluation.questions"
+      layout="column" layout-align="center center"
     >
 
       <md-content ng-include="directiveUrl+page.type+'.html'">

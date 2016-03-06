@@ -327,14 +327,18 @@ md-tabs[md-border-bottom] md-tabs-wrapper{
 
 #eq{
   overflow: hidden;
+  margin-bottom: 50px;
 }
 .eq-pages{
+  margin-top: 50px;
   padding: 0;
-  width: 9900px;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 .eq-page{
-  width: 900px;
   float: left;
+}
+.eq-page > md-content{
+  width: 100%;
 }
 .eq-page h2{
   margin: 0;
@@ -386,10 +390,7 @@ md-tabs[md-border-bottom] md-tabs-wrapper{
   position: absolute;
   height: 20px;
   left: 0;
-  width: 10%;
-}
-.eq-bluebar:hover{
-  width: 90%;
+  width: 0%;
 }
 .eq-percentage{
   text-align: center;
@@ -420,6 +421,10 @@ form-question{
 .fq-options{
   margin-bottom: 15px;
   font-weight: bold;
+}
+.fq-head{
+  padding: 0 5px;
+  text-align: center;
 }
 
 /* Footer */
