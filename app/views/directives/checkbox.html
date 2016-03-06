@@ -2,7 +2,7 @@
 <p>{{question.question}}</p>
 <div layout="column" flex="100">
   <md-checkbox
-    ng-model="individuals.evaluation[$parent.$index][$index]"
+    ng-model="answers[question.name]"
     flex
   >
     {{question.instruction}}

@@ -1,0 +1,14 @@
+<!--fix later-->
+<ng-include
+  ng-if="questions[selected].type &&questions[selected].type!='table-multiradio'"
+  src=" 'views/directives/' + questions[selected].type + '.html' "
+  class="evaluation-page"
+>
+</ng-include>
+<ng-include
+  ng-if="questions[selected].type == 'table-multiradio'"
+  src="'views/directives/table-multiradio.html'"
+  class="evaluation-page"
+>
+</ng-include>
+

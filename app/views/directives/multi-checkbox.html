@@ -4,7 +4,7 @@
 <div layout="column" flex="100">
   <md-checkbox
     ng-repeat="option in question.options"
-    ng-model="individuals.evaluation[$parent.$index][$index]" flex
+    ng-model="answers[question.name][$index]" flex
   >
     {{option.option}}
   </md-checkbox>

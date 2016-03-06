@@ -1,0 +1,16 @@
+<div class="eq-double-column">
+
+  <div layout layout-align="space-between start" layout-wrap>
+    <ng-include ng-repeat="question in questions[selected].questions"
+      src="'views/directives/' + question.input + '.html'"
+    >
+    </ng-include>
+  </div>
+
+  <div class="eq-buttons" layout layout-align="end center">
+    <md-button class="eq-prev" ng-click="prev()" ng-show="!start">Prev</md-button>
+    <md-button class="eq-next" ng-click="next()" ng-show="!last" >Next</md-button>
+    <md-button class="eq-next" ng-click="finish()" ng-show=" last" >Finish</md-button>
+  </div>
+
+</div>

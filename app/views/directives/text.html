@@ -5,8 +5,8 @@
   <label>{{question.question}}</label>
   <input type="text"
     placeholder="{{question.placeholder}}"
-    ng-model="individuals.evaluation[$index]"
-    ng-required="$index!=0"
+    ng-model="answers[question.name]"
+    ng-required="question.required"
   >
   <!-- </md-input-container> -->
 </div>

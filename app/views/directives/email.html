@@ -5,8 +5,8 @@
   <label>{{question.question}}</label>
   <input type="email"
     placeholder="{{question.placeholder}}"
-    required
-    ng-model="individuals.evaluation[$index]"
+    required="question.required"
+    ng-model="answers[question.name]"
   >
   <!-- </md-input-container> -->
 </div>

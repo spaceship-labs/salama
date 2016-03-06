@@ -1,5 +1,5 @@
-<h2>{{question.title}}</h2>
-<p>{{question.instruction}}</p>
+<h2>{{questions[selected].title}}</h2>
+<p>{{questions[selected].instruction}}</p>
 <div>
   <div class="fq">
     <div layout="row" class="fq-options">
@@ -7,7 +7,7 @@
       <div
         class="fq-head"
         flex="10"
-        ng-repeat="option in question.options"
+        ng-repeat="option in questions[selected].options"
         layout
         layout-align="center center"
       >
@@ -19,17 +19,17 @@
         ng-class-odd="'odd'"
         ng-class-even="'even'"
         layout="row"
-        ng-repeat="questions in question.questions"
+        ng-repeat="question in questions[selected].questions"
       >
-        <div flex="50"><p>{{questions.title}}</p></div>
+        <div flex="50"><p>{{question.title}}</p></div>
         <md-radio-group
-          ng-model="individuals.evaluation[$parent.$index][$index]"
+          ng-model="answers[question.name]"
           layout="row"
           flex="50"
         >
           <md-radio-button
             flex="20"
-            ng-repeat="option in question.options"
+            ng-repeat="option in questions[selected].options"
             ng-value="{{option.value}}"
             layout
             layout-align="center center"
@@ -41,6 +41,8 @@
     </div>
   </div>
 </div>
-
-
-
+<div class="eq-buttons" layout layout-align="end center">
+  <md-button class="eq-prev" ng-click="prev()" ng-show="!start">Prev</md-button>
+  <md-button class="eq-next" ng-click="next()" ng-show="!last" >Next</md-button>
+  <md-button class="eq-next" ng-click="finish()" ng-show=" last" >Finish</md-button>
+</div>
