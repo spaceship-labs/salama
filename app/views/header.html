@@ -1,0 +1,98 @@
+<header layout layout-align="center center" layout-wrap
+  ng-controller="HeaderCtrl as header"
+>
+  <md-toolbar layout layout-align="space-between center" flex-gt-md="85"
+   class ="md-toolbar-tools"
+  >
+    <div layout layout-align="space-between center" flex="15" class="header-left"
+    >
+      <a href="#/" class="header-logo">
+        <img src="images/icon_salama.png">
+      </a>
+
+        <md-button class="header-menu" ng-click="header.changeStateSide()">
+          <md-icon md-svg-icon="images/menu.svg" class="header-menu-logo">
+          </md-icon>
+          Menu
+        </md-button>
+
+    </div>
+    <div layout layout-align="space-between center" >
+      <a href="https://twitter.com/intent/tweet"
+        class="twitter-share-button"
+      >
+        Tweet
+      </a>
+      <div>
+        <md-button class="header-lang"
+          ng-click="header.showLangOptions = !header.showLangOptions"
+        >
+          <md-icon md-svg-icon="images/lang.svg">
+          </md-icon>
+          <span translate>views.main.lang</span>
+        </md-button>
+        <md-content class="header-lang-options"
+          ng-show="header.showLangOptions"
+        >
+          <md-button class="legend">
+            <span translate>views.main.suggest</span>
+          </md-button>
+          <md-button ng-click="header.changeLang('es_MX')">
+            Español
+          </md-button>
+          <md-button ng-click="header.changeLang('en_US')">
+            English
+          </md-button>
+        </md-content>
+      </div>
+    </div>
+  </md-toolbar>
+
+<!--Sidenav-->
+  <div class="header-sidenav" ng-controller="NavsideCtrl as navside">
+    <md-sidenav md-component-id="left"
+      md-is-locked-open="navside.show"
+      class="md-sidenav-left md-whiteframe-z2"
+    >
+      <md-toolbar class="md-toolbar-tools">
+
+        <md-button
+        class="sideButton"
+        ng-click="navside.changeStateSide()"
+        >
+          <img src="images/icon_salama.png">
+          <div>Menu</div>
+        </md-button>
+
+      </md-toolbar>
+      <div class="sidenav-block">
+        <h3>Security Evaluation</h3>
+        <p>
+          <a href="#/individuals" ng-click="header.changeStateSide()">
+            Individual Journalist
+          </a>
+        </p>
+        <p>
+          <a href="#/organizations" ng-click="header.changeStateSide()">
+            Organization
+          </a>
+        </p>
+      </div>
+      <div class="sidenav-block">
+        <h3>Security Library</h3>
+        <div ng-repeat="category in navside.categories">
+          <p>{{category}}</p>
+          <ul>
+            <li ng-repeat="meta in navside.metadata[category]">
+              <a href="#/article" ng-click="navside.setPost(meta.path)">
+                {{meta.title}}
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </md-sidenav>
+  </div>
+</header>
+<!--endSidenav-->
+
