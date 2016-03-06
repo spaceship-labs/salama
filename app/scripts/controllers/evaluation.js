@@ -38,8 +38,48 @@
     ctrl.answers = {};
     ctrl.setType = setType;
     ctrl.finishEvaluation = finishEvaluation;
+    ctrl.checkResults = false;
+    ctrl.finalScore = 85;
+    ctrl.risks = {
+      'extreme' : {
+        'level'       : 'Extremo',
+        'image'       : '/images/riesgo_extremo.jpg',
+        'description' : 'Suspender actividad si el riesgo es inaceptable y fallan estrategias'
+      },
+      'high'    : {
+        'level'       : 'Alto',
+        'image'       : '/images/riesgo_alto.jpg',
+        'description' : 'Require medidas proactivas y reducción de riesgos inaceptables'
+      },
+      'medium'  : {
+        'level'       : 'Moderado',
+        'image'       : '/images/riesgo_medio.jpg',
+        'description' : 'Estrategias de prevención para mitigar el daño eventual'
+      },
+      'low'     : {
+        'level'       : 'Bajo',
+        'image'       : '/images/riesgo_bajo.jpg',
+        'description' : 'Continuidad de actividades'
+      }
+    };
 
     activate();
+
+    ctrl.checkResultsFoo = function (){
+      if(ctrl.finalScore > 90){
+        ctrl.risk = ctrl.risks.low;
+      }else
+      if(ctrl.finalScore > 70){
+        ctrl.risk = ctrl.risks.medium;
+      }else
+      if(ctrl.finalScore > 50){
+        ctrl.risk = ctrl.risks.high;
+      }else{
+        ctrl.risk = ctrl.risks.extreme;
+      }
+
+      ctrl.checkResults = true;
+    }
 
     function activate(){
       $scope.$watch(getLangAndType, getQuestions);

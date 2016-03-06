@@ -396,6 +396,7 @@ md-tabs[md-border-bottom] md-tabs-wrapper{
   text-align: center;
   text-transform: uppercase;
   color: #519DBF;
+  font-weight: bold;
 }
 
 md-radio-button > div{
@@ -427,6 +428,64 @@ form-question{
   text-align: center;
 }
 
+.evaluation-end{
+  height: 500px;
+}
+.evaluation-end h1{
+  font-family: "lato-light";
+  font-weight: normal;
+}
+.evaluation-end h1 strong{
+  font-family: "lato-bold";
+  font-weight: bold;
+}
+.evaluation-end h2{
+  text-align: center;
+}
+.evaluation-end hr{
+  width: 80%;
+  max-width: 500px;
+  border-color: #519DBF;
+}
+.evaluation-end p{
+  text-align: center;
+}
+.evaluation-end .md-button{
+  border: solid 2px #519DBF;
+  color: #519DBF;
+  font-weight: bold;
+  width: 200px;
+}
+.evaluation-end .md-button:hover{
+  background-color: #519DBF !important;
+  color: #FFF;
+}
+.evaluation-results h1{
+  font-family: "lato-light";
+  font-weight: normal;
+}
+.evaluation-results h1 strong{
+  font-family: "lato-bold";
+  font-weight: bold;
+}
+.evaluation-results h2{
+  font-family: "lato-light";
+  font-weight: normal;}
+.evaluation-results h2 span{
+  color: #519DBF;
+  font-weight: bold;
+}
+.evaluation-results h2 strong{
+  font-family: "lato-bold";
+  font-weight: bold;
+}
+
+.evaluation-results .risk-image{
+  max-width: 200px;
+}
+.evaluation-results .risk-image img{
+  width: 100%;
+}
 /* Footer */
 
 footer {

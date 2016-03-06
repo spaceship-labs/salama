@@ -39,13 +39,14 @@
 </md-content>
 
 <md-tabs
+  md-selected = "evaluation.page"
+  class="content-evaluation"
+  ng-if="!evaluation.checkResults"
   md-dynamic-height
   md-border-bottom
   md-center-tabs
   md-no-ink-bar
   md-no-ink
-  md-selected = "evaluation.page"
-  class="content-evaluation"
 >
 
   <md-tab label="1">
@@ -111,7 +112,6 @@
   <md-tab label="2" ng-disabled="!evaluation.type">
 
     <md-content>
-      <!-- {{evaluation.questions}} -->
       <evaluation-questions evaluation="evaluation"></evaluation-questions>
     </md-content>
 
@@ -122,8 +122,50 @@
   </md-tab>
 
   <md-tab label="3" ng-disabled="evaluation.completed!=100">
-    <md-content>
+
+    <md-content
+      class="evaluation-end container"
+      layout
+      layout-align="center center"
+    >
+      <div>
+        <h1 class="center"><strong>Thank you,</strong> for all your answers.</h1>
+        <h2>Análisis de riesgo organizacional</h2>
+        <hr/>
+
+        <div layout layout-xs="column" layout-align="center center">
+          <md-button ng-click="evaluation.checkResultsFoo()">Check your results</md-button>
+          <md-button>Upload survey</md-button>
+        </div>
+
+        <p>* If you upload your survey, the content will be anonymously for stadistical purpose only.</p>
+
+        <div class="eq-completed">
+          <div class="eq-graybar">
+            <div class="eq-bluebar"></div>
+          </div>
+          <div class="eq-percentage">{{evaluation.completed}}% completed</div>
+        </div>
+      </div>
     </md-content>
+
   </md-tab>
 
 </md-tabs>
+
+<md-content ng-if="evaluation.checkResults">
+  <div class="evaluation-results container-md">
+    <h1 class="center"><strong>Your results.</strong> Here you can see your score</h1>
+    <h2>Based on you responses to the <span>Threat Assessment Survey,</span> your threat level is calculated to be <strong>51</strong></h2>
+    <div layout layout-align="space-around center" >
+      <div class="risk-image">
+        <img ng-src="{{evaluation.risk.image}}">
+      </div>
+      <div>
+        <h3>Riesgo {{evaluation.risk.level}}.</h3>
+        <h4>{{evaluation.risk.description}}</h4>
+      </div>
+    </div>
+    <div class="risk-description"></div>
+  </div>
+</md-content>
