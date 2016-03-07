@@ -57,9 +57,13 @@
 
 
 .content-evaluation{
-  background-color:white;
-  min-height:100%;
+  background-color: #F7F7F7;
+  min-height: calc(100% - 145px);
 }
+.content-evaluation md-content{
+  background-color: #F7F7F7;
+}
+
 md-tabs[md-border-bottom] md-tabs-wrapper{
   border-style:none !important;
 }
