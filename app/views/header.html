@@ -2,11 +2,13 @@
   ng-controller="HeaderCtrl as header"
 >
   <md-toolbar layout layout-align="space-between center"
-   flex="100" flex-gt-xs="90" flex-gt-sm="80"
-   class ="md-toolbar-tools"
+   class="md-toolbar-tools container"
   >
-    <div layout layout-align="space-between center"
+    <!-- <div layout layout-align="space-between center"
       flex="35" flex-gt-xs="30" flex-gt-sm="20" flex-gt-md="15"
+      class="header-left"
+    > -->
+    <div layout layout-align="space-between center"
       class="header-left"
     >
       <a href="#/" layout layout-align="center center"
@@ -22,8 +24,11 @@
         </md-button>
 
     </div>
+    <!-- <div layout layout-align="space-between center"
+      flex="35" flex-gt-xs="40" flex-gt-sm="15"
+      class="header-right"
+    > -->
     <div layout layout-align="space-between center"
-      flex="45" flex-gt-xs="40" flex-gt-sm="30"
       class="header-right"
     >
       <a href="https://twitter.com/intent/tweet"

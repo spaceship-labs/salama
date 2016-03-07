@@ -47,6 +47,16 @@ sup{
 .md-button{
   text-transform:capitalize;
 }
+.container{
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+}
+.container-md{
+  max-width: 900px;
+  width: 90%;
+  margin: 0 auto;
+}
 @media (max-width: 600px){
   .categories{
     width: 100%;
