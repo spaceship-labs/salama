@@ -1,14 +1,25 @@
 <!--fix later-->
 <ng-include
+  ng-animate="'animate'"
   ng-if="questions[selected].type &&questions[selected].type!='table-multiradio'"
   src=" 'views/directives/' + questions[selected].type + '.html' "
   class="evaluation-page"
 >
 </ng-include>
+
 <ng-include
+  ng-animate="'animate'"
   ng-if="questions[selected].type == 'table-multiradio'"
   src="'views/directives/table-multiradio.html'"
   class="evaluation-page"
 >
 </ng-include>
 
+<div class="eq-completed">
+  <div class="eq-bar">
+    <div class="eq-graybar">
+      <div class="eq-bluebar"></div>
+    </div>
+    <div class="eq-percentage">{{completed}}% completed</div>
+  </div>
+</div>

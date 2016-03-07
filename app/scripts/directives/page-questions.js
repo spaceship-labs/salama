@@ -21,8 +21,9 @@
     ctrl.selected = 0;
     ctrl.next = next;
     ctrl.prev = prev;
+    ctrl.completed = 0;
 
-    $scope.$watch(
+    ctrl.$watch(
       function(){
         return ctrl.questions;
       },
@@ -30,8 +31,17 @@
         ctrl.selected = 0;
       }
     );
+    ctrl.$watch(
+      function(){
+        return ctrl.completed;
+      },
+      function (newVal,oldVal){
+        $('.eq-bluebar').width(newVal+'%');
+      }
+    );
 
     function next(){
+      ctrl.completed += 5;
       if (ctrl.selected < ctrl.questions.length-1) {
         ctrl.selected+=1;
       } else {

@@ -140,7 +140,9 @@ md-tabs[md-border-bottom] md-tabs-wrapper{
   right: 0;
 }
 
-
+.page-questions{
+  width: 100%;
+}
 
 .evaluation-end{
   height: 500px;
@@ -222,7 +224,7 @@ md-tabs[md-border-bottom] md-tabs-wrapper{
 .eq-page p{
   margin: 5px 0;
 }
-.eq-page input{
+.evaluation-page input{
   width: 90%;
   font-size: 1.2em;
   padding: 10px 15px;
@@ -238,7 +240,9 @@ md-tabs[md-border-bottom] md-tabs-wrapper{
 .eq-x:after{
   content: "*";
 }
-.eq-buttons{}
+.eq-buttons{
+  margin: 1em 0;
+}
 .eq-prev,.eq-next{
   color: #FFF;
   background-color: #ACACAC;
@@ -247,6 +251,11 @@ md-tabs[md-border-bottom] md-tabs-wrapper{
 .eq-prev:hover{background-color: rgba(172,172,172,.8) !important;}
 .eq-next:hover{background-color: rgba(81,157,192,.8) !important;}
 .eq-completed{
+  position: relative;
+  margin-bottom: 1em;
+  height: 40px;
+}
+.eq-bar{
   position: absolute;
   width: 300px;
   height: 40px;
@@ -261,7 +270,7 @@ md-tabs[md-border-bottom] md-tabs-wrapper{
   position: relative;
 }
 .eq-bluebar{
-  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition: all 2s cubic-bezier(0.25, 0.8, 0.25, 1);
   background-color: #519DBF;
   position: absolute;
   height: 20px;
@@ -302,4 +311,15 @@ form-question{
 .fq-head{
   padding: 0 5px;
   text-align: center;
+  font-size: .8em;
+}
+
+.animate-enter,.animate-leave{
+  transition: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.animte-enter.animte-enter-active{
+  opacity: 1;
+}
+.animte-leave.animte-leave-active{
+  opacity: 1;
 }

@@ -110,11 +110,12 @@
   </md-tab>
 
   <md-tab label="2" ng-disabled="!evaluation.type">
-    <md-content layout layout-align="center center">
+    <md-content class="container-md" layout layout-align="center center">
       <page-questions
+        finish="evaluation.finishEvaluation"
         questions="evaluation.questions"
         answers="evaluation.answers"
-        finish="evaluation.finishEvaluation"
+        class="page-questions"
       >
       </page-questions>
     </md-content>
@@ -140,11 +141,14 @@
         <p>* If you upload your survey, the content will be anonymously for stadistical purpose only.</p>
 
         <div class="eq-completed">
-          <div class="eq-graybar">
-            <div class="eq-bluebar"></div>
+          <div class="eq-bar">
+            <div class="eq-graybar">
+              <div class="eq-bluebar"></div>
+            </div>
+            <div class="eq-percentage">{{evaluation.completed}}% completed</div>
           </div>
-          <div class="eq-percentage">{{evaluation.completed}}% completed</div>
         </div>
+
       </div>
     </md-content>
 

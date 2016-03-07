@@ -3,6 +3,20 @@
   font-size:1.1em;
   min-height:calc(100% - 145px);
   padding-top:10px;
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.content-article h1{
+  text-transform: uppercase;
+}
+
+.content-article a{
+  color: #519DBF;
+}
+.content-article a:hover{
+  text-decoration: underline;
 }
 
 .content-article .article{
