@@ -17,16 +17,16 @@
       </p>
     </div>
     <div layout="row" layout-align="space-around center" layout-wrap
-      flex="100" flex-gt-xs="70" flex-gt-sm="60" flex-gt-md="45" flex-lg="40"
-      class="home-choices"
+    layout-xs="column"
+      class="home-choices container-md"
     >
       <md-button ng-href="#/evaluation"
-        flex="45" layout-wrap
+        flex="45" flex-xs="100" layout-wrap
       >
         <span translate>views.home.evaluation</span>
       </md-button>
       <md-button ng-href="" ng-click="home.changeStateSide()"
-        flex="45"
+        flex="45" flex-xs="100"
       >
         <span translate>views.home.library</span>
       </md-button>

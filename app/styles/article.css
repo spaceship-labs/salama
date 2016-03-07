@@ -3,11 +3,20 @@
   font-size:1.1em;
   min-height:calc(100% - 145px);
   padding-top:10px;
+  background-color: #F7F7F7;
+}
+
+.article{
   width: 90%;
   max-width: 900px;
   margin: 0 auto;
 }
-
+.article li{
+  color: #519DBF;
+}
+.article li p{
+  color: #000;
+}
 .content-article h1{
   text-transform: uppercase;
 }

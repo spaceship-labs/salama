@@ -63,6 +63,7 @@ header .header-sidenav .md-sidenav-left{
   height:100vh;
   position:fixed;
   left:0;
+  top: 0;
   z-index:99999;
   background-color:#141414;
 }
@@ -100,4 +101,8 @@ header .header-sidenav *{
   float: left;
   margin: 10px;
   color: #FFF !important;
+}
+
+.header-lang-options button{
+  color: #000 !important;
 }
