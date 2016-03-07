@@ -1,4 +1,4 @@
-<div class="eq-one-column">
+<div class="eq-one-column" flex="60" style="margin:0 auto;">
   <div layout="column">
     <ng-include ng-repeat="question in questions[selected].questions"
       src="'views/directives/' + question.input + '.html'"
@@ -11,3 +11,4 @@
     <md-button class="eq-next" ng-click="finish()" ng-show=" last" >Finish</md-button>
   </div>
 </div>
+

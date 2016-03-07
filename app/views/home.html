@@ -1,29 +1,34 @@
-<md-content layout layout-align="center center" class="content-home">
-  <div layout="column" flex="100" flex-md="80" flex-gt-md="50" class="home">
-    <div class="home-logo " flex>
-      <!-- <h1>Salama <h1> -->
-        <img src="images/logo_salama.png">
+<md-content layout layout-align="center center" layout-wrap
+  class="content-home"
+>
+    <div flex="100"
+      class="home-logo"
+    >
+      <img src="images/logo_salama.png">
     </div>
-    <div class="home-description " flex>
-      <h2>Lorem Ipsum Dolor Sit Amet</h2>
-      <p>Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum</p>
+
+    <div layout layout-align="center center" layout-wrap
+      flex="100"
+      class="home-description"
+    >
+      <h2 flex="100">Lorem Ipsum Dolor Sit Amet</h2>
+      <p flex="100">
+        Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum
+      </p>
     </div>
     <div layout="row" layout-align="space-around center" layout-wrap
-      class="home-choices "
+      flex="100" flex-gt-xs="70" flex-gt-sm="60" flex-gt-md="45" flex-lg="40"
+      class="home-choices"
     >
-
-      <md-button class="" ng-href="#/evaluation" flex="45" flex-xs="90"
-        class="button-choice"
+      <md-button ng-href="#/evaluation"
+        flex="45" layout-wrap
       >
         <span translate>views.home.evaluation</span>
       </md-button>
-
-      <md-button class="" ng-href="" ng-click="home.changeStateSide()" flex="45" flex-xs="90"
-        class="button-choice"
+      <md-button ng-href="" ng-click="home.changeStateSide()"
+        flex="45"
       >
         <span translate>views.home.library</span>
       </md-button>
-
     </div>
-  </div>
 </md-content>

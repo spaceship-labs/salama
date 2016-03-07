@@ -1,12 +1,17 @@
 <header layout layout-align="center center" layout-wrap
   ng-controller="HeaderCtrl as header"
 >
-  <md-toolbar layout layout-align="space-between center" flex-gt-md="85"
+  <md-toolbar layout layout-align="space-between center"
+   flex="100" flex-gt-xs="90" flex-gt-sm="80"
    class ="md-toolbar-tools"
   >
-    <div layout layout-align="space-between center" flex="15" class="header-left"
+    <div layout layout-align="space-between center"
+      flex="35" flex-gt-xs="30" flex-gt-sm="20" flex-gt-md="15"
+      class="header-left"
     >
-      <a href="#/" class="header-logo">
+      <a href="#/" layout layout-align="center center"
+        class="header-logo"
+      >
         <img src="images/icon_salama.png">
       </a>
 
@@ -17,7 +22,10 @@
         </md-button>
 
     </div>
-    <div layout layout-align="space-between center" >
+    <div layout layout-align="space-between center"
+      flex="45" flex-gt-xs="40" flex-gt-sm="30"
+      class="header-right"
+    >
       <a href="https://twitter.com/intent/tweet"
         class="twitter-share-button"
       >
@@ -31,8 +39,8 @@
           </md-icon>
           <span translate>views.main.lang</span>
         </md-button>
-        <md-content class="header-lang-options"
-          ng-show="header.showLangOptions"
+        <md-content layout="column" ng-show="header.showLangOptions"
+          class="header-lang-options"
         >
           <md-button class="legend">
             <span translate>views.main.suggest</span>

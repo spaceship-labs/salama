@@ -1,0 +1,103 @@
+header .md-toolbar-tools{
+  color: #5495C0;
+  background-color:white;
+  min-height:85px;
+}
+
+header .header-left{
+}
+header .header-left .header-logo{
+}
+header .header-left .header-logo img{
+  width:100%;
+}
+header .header-left .header-menu span{
+  text-transform: capitalize;
+  font-size:15px;
+  font-weight:bold;
+  color: #5495C0;
+}
+header .header-left .header-menu md-icon svg {
+  fill: #5495C0;
+}
+
+header .header-right{
+}
+header .header-right .header-lang{
+  color:black;
+  font-weight:bold;
+  padding:0 10px;
+  background-color: #F3F3F3;
+  color: #000 !important;
+}
+
+header .header-right .header-lang svg{
+  width:70%;
+  fill:black;
+}
+header .header-lang-options{
+  position:absolute;
+  top:80%;
+  right: 24px;
+  min-width:200px;
+}
+header .header-lang-options{
+  box-shadow:0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+}
+header .header-lang-options .md-button{
+  text-align:left;
+  padding:0;
+  margin:0;
+  padding-left:20px;
+  padding-top:8px;
+  padding-bottom:8px;
+}
+header .header-lang-options  .legend{
+  border-bottom:1px solid #A1A1A1;
+}
+
+
+header .header-sidenav,
+header .header-sidenav .md-sidenav-left{
+  max-width:262px;
+  height:100vh;
+  position:fixed;
+  left:0;
+  z-index:99999;
+  background-color:#141414;
+}
+header .header-sidenav .md-toolbar-tools{
+  padding-left:35px;
+  min-height:85px;
+  color:white;
+  background-color:#141414;
+}
+header .header-sidenav .sidenav-block{
+  padding-left:35px;
+  padding-right:35px;
+  border-top:1px solid #202122;
+}
+header .header-sidenav .sidenav-block h3{
+  font-size:16px;
+  color:white;
+}
+header .header-sidenav .sidenav-block p{
+  color:#474D4D;
+  font-weight:bold;
+}
+header .header-sidenav .sidenav-block ul{
+  list-style:disc;
+}
+header .header-sidenav .sidenav-block ul li{
+  margin-top:5px;
+}
+header .header-sidenav *{
+  color:#474D4D;
+  font-weight:bold;
+  font-size:12px;
+}
+.sideButton *{
+  float: left;
+  margin: 10px;
+  color: #FFF !important;
+}

@@ -1,0 +1,13 @@
+.content-article{
+  font-family:"lato-bold";
+  font-size:1.1em;
+  min-height:calc(100% - 145px);
+  padding-top:10px;
+}
+
+.content-article .article{
+  margin:0 auto;
+}
+.content-article .article img{
+  max-width:100%;
+}
