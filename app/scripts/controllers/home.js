@@ -11,16 +11,25 @@
   angular.module('salamaApp')
   .controller('HomeCtrl', HomeCtrl);
 
-  HomeCtrl.$inject=['navsideService'];
+  HomeCtrl.$inject=['$window','$mdSidenav'];
 
-  function HomeCtrl(navsideService){
+  function HomeCtrl($window,$mdSidenav){
 
     var ctrl = this;
+    setFixedMenu();
 
     ctrl.changeStateSide = changeStateSide;
 
     function changeStateSide(){
-      navsideService.changeState();
+      $mdSidenav('left').toggle();
+    }
+
+    function setFixedMenu(){
+      var w = angular.element($window);
+      w.bind('load resize',function (){
+        var h = w.height() - 120;
+        $('.content-home').css('min-height',h+'px');
+      });
     }
 
   }

@@ -59,6 +59,7 @@
 .content-evaluation{
   background-color: #F7F7F7;
   min-height: calc(100% - 145px);
+  padding: 2% 5%;
 }
 .content-evaluation md-content{
   background-color: #F7F7F7;

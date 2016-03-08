@@ -60,7 +60,6 @@
     // navsideFoo
 
     function activate(){
-      // $scope.$watch(getState, setState);
       $scope.$watch(getLang, getMetadata);
       setFixedMenu();
     }

@@ -43,6 +43,7 @@ header .header-lang-options{
   top:80%;
   right: 24px;
   min-width:200px;
+  background-color: #FFF;
 }
 header .header-lang-options{
   box-shadow:0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);

@@ -1,8 +1,9 @@
 .content-home{
-  height:calc(100% - 145px);
+  height:500px;
   background: linear-gradient(to top right,#003650,#61ADCD);
   text-align:center;
   color:white;
+  padding: 5%;
 }
 .content-home .home-description{
 }
@@ -18,8 +19,9 @@
 .content-home .home-choices .md-button{
   font:"lato-bold";
   font-size:1.2em;
-  border:1px solid;
+  border:2px solid;
   text-transform:uppercase;
+  line-height: 50px;
 }
 
 .container-md{
