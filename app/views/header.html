@@ -1,13 +1,53 @@
 <header layout layout-align="center center" layout-wrap
   ng-controller="HeaderCtrl as header"
 >
-  <md-toolbar layout layout-align="space-between center"
-   class="md-toolbar-tools container"
-  >
-    <!-- <div layout layout-align="space-between center"
-      flex="35" flex-gt-xs="30" flex-gt-sm="20" flex-gt-md="15"
-      class="header-left"
-    > -->
+
+<!--Sidenav-->
+<md-sidenav md-component-id="left"
+
+  class="md-sidenav-left md-whiteframe-z2 header-sidenav"
+>
+  <md-toolbar class="md-toolbar-tools">
+
+    <md-button
+    class="sideButton"
+    ng-click="header.changeStateSide()"
+    >
+      <img src="images/icon_salama.png">
+      <div>Menu</div>
+    </md-button>
+
+  </md-toolbar>
+  <div class="sidenav-block">
+    <h3>Security Evaluation</h3>
+    <p>
+      <a href="#/individuals" ng-click="header.changeStateSide()">
+        Individual Journalist
+      </a>
+    </p>
+    <p>
+      <a href="#/organizations" ng-click="header.changeStateSide()">
+        Organization
+      </a>
+    </p>
+  </div>
+  <div class="sidenav-block">
+    <h3>Security Library</h3>
+    <div ng-repeat="category in header.categories">
+      <p>{{category}}</p>
+      <ul>
+        <li ng-repeat="meta in header.metadata[category]">
+          <a href="#/article" ng-click="header.setPost(meta.path)">
+            {{meta.title}}
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</md-sidenav>
+
+  <md-toolbar class="md-toolbar-tools animate header-fixed">
+  <div class="container" layout layout-align="space-between center">
     <div layout layout-align="space-between center"
       class="header-left"
     >
@@ -22,12 +62,7 @@
           </md-icon>
           Menu
         </md-button>
-
     </div>
-    <!-- <div layout layout-align="space-between center"
-      flex="35" flex-gt-xs="40" flex-gt-sm="15"
-      class="header-right"
-    > -->
     <div layout layout-align="space-between center"
       class="header-right"
     >
@@ -59,53 +94,9 @@
         </md-content>
       </div>
     </div>
+  </div>
   </md-toolbar>
 
-<!--Sidenav-->
-  <div class="header-sidenav" ng-controller="NavsideCtrl as navside">
-    <md-sidenav md-component-id="left"
-      md-is-locked-open="navside.show"
-      class="md-sidenav-left md-whiteframe-z2"
-    >
-      <md-toolbar class="md-toolbar-tools">
-
-        <md-button
-        class="sideButton"
-        ng-click="navside.changeStateSide()"
-        >
-          <img src="images/icon_salama.png">
-          <div>Menu</div>
-        </md-button>
-
-      </md-toolbar>
-      <div class="sidenav-block">
-        <h3>Security Evaluation</h3>
-        <p>
-          <a href="#/individuals" ng-click="header.changeStateSide()">
-            Individual Journalist
-          </a>
-        </p>
-        <p>
-          <a href="#/organizations" ng-click="header.changeStateSide()">
-            Organization
-          </a>
-        </p>
-      </div>
-      <div class="sidenav-block">
-        <h3>Security Library</h3>
-        <div ng-repeat="category in navside.categories">
-          <p>{{category}}</p>
-          <ul>
-            <li ng-repeat="meta in navside.metadata[category]">
-              <a href="#/article" ng-click="navside.setPost(meta.path)">
-                {{meta.title}}
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </md-sidenav>
-  </div>
 </header>
 <!--endSidenav-->
 

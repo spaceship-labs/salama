@@ -38,11 +38,19 @@
     font-family: lato;
     src: url(fonts/font/Lato-BlackItalic.ttf);
 }
+
+
+body{
+  background-color: #F7F7F7;
+}
 a{
   text-decoration: none;
 }
 sup{
   font-size: .5em;
+}
+md-content{
+  background-color: transparent;
 }
 .md-button{
   text-transform:capitalize;
@@ -56,6 +64,9 @@ sup{
   max-width: 900px;
   width: 90%;
   margin: 0 auto;
+}
+.animate{
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 @media (max-width: 600px){
   .categories{

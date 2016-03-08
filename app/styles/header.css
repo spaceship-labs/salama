@@ -1,7 +1,10 @@
+header{
+  min-height: 60px;
+}
 header .md-toolbar-tools{
   color: #5495C0;
   background-color:white;
-  min-height:85px;
+  min-height:60px;
 }
 
 header .header-left{
@@ -105,4 +108,11 @@ header .header-sidenav *{
 
 .header-lang-options button{
   color: #000 !important;
+}
+
+.header-fixed{
+  position: fixed;
+  width: 100% !important;
+  left: 0;
+  top: 0;
 }

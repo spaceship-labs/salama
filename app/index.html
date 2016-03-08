@@ -15,24 +15,29 @@
   <!-- build:css(.tmp) styles/main.css -->
   <link rel="stylesheet" href="styles/animations.css">
   <link rel="stylesheet" href="styles/fontello.css">
-  <link rel="stylesheet" href="styles/main.css">
   <link rel="stylesheet" href="styles/header.css">
   <link rel="stylesheet" href="styles/footer.css">
   <link rel="stylesheet" href="styles/home.css">
   <link rel="stylesheet" href="styles/article.css">
   <link rel="stylesheet" href="styles/evaluation.css">
+  <link rel="stylesheet" href="styles/stickyFooter.css">
+  <link rel="stylesheet" href="styles/main.css">
   <!-- endbuild -->
 </head>
 
 <body ng-app="salamaApp" ng-cloak>
 
-  <!--Header-->
-  <ng-include src="'views/header.html'"></ng-include>
-  <!--endHeader-->
+  <div id="wrap">
+    <div id="main">
+      <!--Header-->
+      <ng-include src="'views/header.html'"></ng-include>
+      <!--endHeader-->
 
-  <!--Content-->
-  <ng-view></ng-view>
-  <!--endContent-->
+      <!--Content-->
+      <ng-view></ng-view>
+      <!--endContent-->
+    </div>
+  </div>
 
   <!--Footer-->
   <ng-include src="'views/footer.html'"></ng-include>
