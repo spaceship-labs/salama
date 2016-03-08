@@ -23,12 +23,14 @@
     ctrl.prev = prev;
     ctrl.completed = 0;
 
+
     ctrl.$watch(
       function(){
         return ctrl.questions;
       },
       function(){
         ctrl.selected = 0;
+        setProgress();
       }
     );
     ctrl.$watch(
@@ -41,13 +43,13 @@
     );
 
     function next(){
-      ctrl.completed += 5;
       if (ctrl.selected < ctrl.questions.length-1) {
         ctrl.selected+=1;
       } else {
         ctrl.selected = ctrl.questions.length -1;
       }
       evaluateIndex();
+      setProgress();
     }
 
     function prev(){
@@ -57,6 +59,7 @@
         ctrl.selected = 0;
       }
       evaluateIndex();
+      setProgress();
     }
 
     function evaluateIndex(){
@@ -67,6 +70,11 @@
       } else{
         ctrl.start = ctrl.last = false;
       }
+    }
+
+    function setProgress(){
+      var score = 100 * (ctrl.selected + 1) / ctrl.questions.length;
+      ctrl.completed =  Math.floor(score);
     }
 
   }
