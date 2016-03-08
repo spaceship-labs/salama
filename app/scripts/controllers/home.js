@@ -16,6 +16,7 @@
   function HomeCtrl($window,$mdSidenav){
 
     var ctrl = this;
+    var w = angular.element($window);
     setFixedMenu();
 
     ctrl.changeStateSide = changeStateSide;
@@ -24,11 +25,16 @@
       $mdSidenav('left').toggle();
     }
 
+    function fixedMenu(){
+      var h = w.height() - 120;
+      $('.content-home').css('min-height',h+'px');
+    }
+
     function setFixedMenu(){
-      var w = angular.element($window);
+      fixedMenu();
       w.bind('load resize',function (){
         var h = w.height() - 120;
-        $('.content-home').css('min-height',h+'px');
+        fixedMenu();
       });
     }
 
