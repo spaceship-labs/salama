@@ -1,27 +1,28 @@
 'use strict';
 
 describe('Controller: HomeCtrl', function () {
+
   var HomeCtrl
   var scope;
-  var navsideService;
+  var mdSidenav;
 
   beforeEach(module('salamaApp'));
 
-  beforeEach(inject(function ($controller, $rootScope,_navsideService_) {
+  beforeEach(inject(function ($controller, $rootScope, $mdSidenav) {
     scope = $rootScope.$new();
     HomeCtrl = $controller('HomeCtrl', {
       $scope: scope
     });
-    navsideService = _navsideService_;
+    mdSidenav = $mdSidenav;
   }));
 
   it('change the navside state', function () {
     var state;
     var newState;
-    state = navsideService.getState();
+    state = mdSidenav('left').isOpen();
     HomeCtrl.changeStateSide();
-    newState =  navsideService.getState();
-    expect(state).to.be.equal(!newState);
+    newState = mdSidenav('left').isOpen();
+    expect(!!state).to.not.be.equal(newState);
   });
 
 });

@@ -16,19 +16,19 @@
   function HomeCtrl($window,$mdSidenav,$mdDialog){
 
     var ctrl = this;
-    ctrl.showVideo = showVideo;
     var w = angular.element($window);
-    setFixedMenu();
 
+    ctrl.showVideo = showVideo;
     ctrl.changeStateSide = changeStateSide;
-
-    function changeStateSide(){
-      $mdSidenav('left').toggle();
-    }
+    setFixedMenu();
 
     function fixedMenu(){
       var h = w.height() - 120;
       $('.content-home').css('min-height',h+'px');
+    }
+
+    function changeStateSide(){
+      $mdSidenav('left').toggle();
     }
 
     function setFixedMenu(){

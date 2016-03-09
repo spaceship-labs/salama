@@ -108,7 +108,6 @@ describe('Controller: EvaluationCtrl', function () {
     httpBackend.flush();
     httpBackend.when('POST', urlApi,
       function(postData) {
-        console.log(postData);
         return true;
       }
     ).respond(200, true);

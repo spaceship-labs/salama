@@ -23,10 +23,6 @@ describe('Controller: NavsideCtrl', function () {
     httpBackend = $httpBackend;
   }));
 
-  it('must be hidden by default', function () {
-    expect(NavsideCtrl.show).to.be.false;
-  });
-
   it('it must show the categories obtained from metadata', function () {
     httpBackend.whenGET(urlResources).respond(someRandomString);
     httpBackend.whenGET(urlVersion).respond(someRandomString);

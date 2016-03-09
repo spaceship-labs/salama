@@ -12,35 +12,22 @@
   angular.module('salamaApp')
     .controller('NavsideCtrl',NavsideCtrl);
 
-  NavsideCtrl.$inject = ['$scope', '$translate', 'navsideService', 'metadataService', 'postsService'];
+  NavsideCtrl.$inject = ['$scope', '$translate', 'metadataService', 'postsService'];
 
-  function NavsideCtrl($scope, $translate, navsideService, metadataService, postsService){
+  function NavsideCtrl($scope, $translate, metadataService, postsService){
 
     var ctrl = this;
     ctrl.show = false;
     ctrl.categories = [];
     ctrl.metadata = {};
-    ctrl.changeStateSide = changeStateSide;
     ctrl.setPost = setPost;
 
     activate();
 
     function activate(){
-      $scope.$watch(getState, setState);
       $scope.$watch(getLang, getMetadata);
     }
 
-    function changeStateSide(){
-      navsideService.changeState();
-    }
-
-    function getState(){
-      return navsideService.getState();
-    }
-
-    function setState(show){
-      ctrl.show = show;
-    }
 
     function getLang(){
       return $translate.use();
