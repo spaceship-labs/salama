@@ -19,13 +19,42 @@
 .content-home .home-choices .md-button{
   font:"lato-bold";
   font-size:1.2em;
-  border:2px solid;
+  border:2px solid #519DBF;
   text-transform:uppercase;
   line-height: 50px;
+  color: #519DBF;
 }
-
+.content-home .home-choices .md-button:hover{
+  border-color: #FFF;
+}
+.content-home .home-choices .md-button:hover > span{
+  color: #FFF;
+}
 .container-md{
   max-width: 900px;
   width: 90%;
   margin: 0 auto;
+}
+
+.video-container{
+  padding: 2em;
+  color: #519DBF;
+  font-size: 1.2em;
+
+}
+.video-container:hover{
+  color: #FFF;
+}
+.video-container:hover .icon-video{
+  background-position-x: -45px;
+}
+.icon-video{
+  background-image: url(/images/ICONO_PLAY.png);
+  background-repeat: no-repeat;
+  width: 44px;
+  height: 44px;
+  display: block;
+  margin: 0 auto;
+  cursor: pointer;
+  background-position: 0px 0px;
 }

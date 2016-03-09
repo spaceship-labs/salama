@@ -11,19 +11,19 @@
     src: url(fonts/font/Lato-Light.ttf);
 }
 @font-face {
-    font-family: lato;
+    font-family: lato-italic;
     src: url(fonts/font/Lato-Italic.ttf);
 }
 @font-face {
-    font-family: lato;
+    font-family: hairline-italic;
     src: url(fonts/font/Lato-HairlineItalic.ttf);
 }
 @font-face {
-    font-family: lato;
+    font-family: lato-hairline;
     src: url(fonts/font/Lato-Hairline.ttf);
 }
 @font-face {
-    font-family: lato;
+    font-family: lato-bold-italic;
     src: url(fonts/font/Lato-BoldItalic.ttf);
 }
 @font-face {
@@ -35,10 +35,13 @@
     src: url(fonts/font/Lato-Black.ttf);
 }
 @font-face {
-    font-family: lato;
+    font-family: lato-black-italic;
     src: url(fonts/font/Lato-BlackItalic.ttf);
 }
 
+*{
+  font-family: lato;
+}
 
 body{
   background-color: #F7F7F7;
