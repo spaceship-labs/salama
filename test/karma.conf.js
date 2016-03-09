@@ -41,6 +41,8 @@ module.exports = function(config) {
       'bower_components/marked/lib/marked.js',
       'bower_components/angular-marked/dist/angular-marked.js',
       'bower_components/ngstorage/ngStorage.js',
+      'bower_components/angular-google-places-autocomplete/src/autocomplete.js',
+      'bower_components/angular-google-places-autocomplete/dist/autocomplete.min.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'app/scripts/**/*.js',

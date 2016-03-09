@@ -1,12 +1,18 @@
 <h2>{{question.title}} <span class="eq-x"></span></h2>
 <p>{{question.instruction}}</p>
 <div layout flex="100">
-  <!-- <md-input-container flex="100"> -->
   <label>{{question.question}}</label>
   <input type="text"
+    ng-if="question.name == 'location'"
+    placeholder="{{question.placeholder}}"
+    ng-model="answers[question.name]"
+    ng-required="question.required"
+    g-places-autocomplete
+  >
+  <input type="text"
+    ng-if="question.name != 'location'"
     placeholder="{{question.placeholder}}"
     ng-model="answers[question.name]"
     ng-required="question.required"
   >
-  <!-- </md-input-container> -->
 </div>

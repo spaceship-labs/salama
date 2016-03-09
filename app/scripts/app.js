@@ -18,7 +18,8 @@ angular
     'ngMaterial',//angular material
     'pascalprecht.translate',//angular translate
     'hc.marked', //markdown
-    'ngStorage'//local storage
+    'ngStorage',//local storage
+    'google.places' // google places
   ])
   .config(routeProvider)
   .config(translateProvider)
