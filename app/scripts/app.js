@@ -33,12 +33,12 @@ angular
         controller: 'HomeCtrl',
         controllerAs: 'home'
       })
-      .when('/article', {
+      .when('/article/:lang/:article', {
         templateUrl: 'views/article.html',
         controller: 'ArticleCtrl',
         controllerAs: 'article'
       })
-      .when('/evaluation', {
+      .when('/evaluation/:type?', {
         templateUrl: 'views/evaluation.html',
         controller: 'EvaluationCtrl',
         controllerAs: 'evaluation'
@@ -47,6 +47,11 @@ angular
         templateUrl: 'views/advice.html',
         controller: 'AdviceCtrl',
         controllerAs: 'advice'
+      })
+      .when('/results', {
+        templateUrl: 'views/results.html',
+        controller: 'ResultsCtrl',
+        controllerAs: 'results'
       })
       .otherwise({
         redirectTo: '/'

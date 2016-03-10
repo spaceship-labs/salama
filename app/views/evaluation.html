@@ -1,12 +1,12 @@
 <md-tabs
   md-selected = "evaluation.page"
   class="content-evaluation"
-  ng-if="!evaluation.checkResults"
   md-dynamic-height
   md-border-bottom
   md-center-tabs
   md-no-ink-bar
   md-no-ink
+  ng-cloak
   id="results"
 >
 
@@ -101,7 +101,7 @@
         <hr/>
 
         <div layout layout-xs="column" layout-align="center center" >
-          <md-button ng-click="evaluation.showAdvice()">
+          <md-button ng-href="#/results">
             <span translate>views.evaluation.check</span>
           </md-button>
           <md-button ng-click="evaluation.sendEvaluation($event)">
@@ -126,26 +126,3 @@
   </md-tab>
 
 </md-tabs>
-
-<md-content ng-if="evaluation.checkResults">
-  <div class="evaluation-results container-md">
-    <h1 class="center"><strong>Your results.</strong> Here you can see your score</h1>
-    <h2>
-      {{ 'views.evaluation.resultstitle1'| translate}}
-      <span>{{ 'views.evaluation.resultstitle2'| translate}} </span>
-      {{ 'views.evaluation.resultstitle3'|translate}}
-      <strong> {{evaluation.finalScore}}</strong>
-    </h2>
-    <div layout layout-align="space-around center" >
-      <div class="risk-image">
-        <img ng-src="{{evaluation.risk.image}}">
-      </div>
-      <div>
-        <h3>{{ evaluation.risk.level | translate}}</h3>
-        <h4>{{ evaluation.risk.description | translate}}</h4>
-      </div>
-    </div>
-    <div class="risk-description"   marked="evaluation.advice">
-    </div>
-  </div>
-</md-content>

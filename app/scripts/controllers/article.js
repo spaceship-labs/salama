@@ -11,9 +11,9 @@
   angular.module('salamaApp')
     .controller('ArticleCtrl', ArticleCtrl);
 
-  ArticleCtrl.$inject=['$scope', 'postsService'];
+  ArticleCtrl.$inject=['$scope', '$routeParams', 'postsService'];
 
-  function ArticleCtrl($scope, postsService){
+  function ArticleCtrl($scope, $routeParams, postsService){
 
     var ctrl = this;
 
@@ -22,7 +22,9 @@
     activate();
 
     function activate(){
-      $scope.$watch(getSelected, getPost);
+      var selected = $routeParams.lang + '/' +$routeParams.article;
+      postsService.setSelected(selected);
+      getPost();
     }
 
     function getSelected(){

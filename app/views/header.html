@@ -20,12 +20,12 @@
   <div class="sidenav-block">
     <h3 translate>views.sidenav.evaluation</h3>
     <p>
-      <a href="#/individuals" translate>
+      <a href="#/evaluation/individual" translate>
         views.sidenav.individuals
       </a>
     </p>
     <p>
-      <a href="#/organizations" translate>
+      <a href="#/evaluation/organizations" translate>
         views.sidenav.organizations
       </a>
     </p>
@@ -36,7 +36,7 @@
       <p>{{category}}</p>
       <ul>
         <li ng-repeat="meta in header.metadata[category]">
-          <a href="#/article" ng-click="header.setPost(meta.path)">
+          <a ng-href="{{'#/article/' + meta.path}}">
             {{meta.title}}
           </a>
         </li>

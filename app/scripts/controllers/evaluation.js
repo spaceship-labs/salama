@@ -15,6 +15,7 @@
     '$http',
     '$scope',
     '$translate',
+    '$routeParams',
     '$mdDialog',
     'individualsService',
     'organizationsService',
@@ -25,6 +26,7 @@
     $http,
     $scope,
     $translate,
+    $routeParams,
     $mdDialog,
     individualsService,
     organizationsService,
@@ -36,7 +38,6 @@
     var risks;
     ctrl.questions = [];
     ctrl.answers = {};
-    ctrl.checkResults = false;
     ctrl.individuals = 'individual';
     ctrl.organizations = 'organizations';
     ctrl.type;
@@ -45,7 +46,6 @@
     ctrl.finalScore = 0;
     ctrl.setType = setType;
     ctrl.finishEvaluation = finishEvaluation;
-    ctrl.showAdvice = showAdvice;
     ctrl.sendEvaluation = sendEvaluation;
 
     risks = {
@@ -78,6 +78,10 @@
     activate();
 
     function activate(){
+      var type = $routeParams.type;
+      if (type == ctrl.individuals || type == ctrl.organizations) {
+        ctrl.setType(type);
+      }
       $scope.$watch(getLangAndType, getQuestions);
       $scope.$watch(getLang, getAdvice);
     }
@@ -123,9 +127,6 @@
       adviceService.getAdvice(ctrl.risk.advice).then(function(advice){
         ctrl.advice = advice;
       });
-    }
-    function showAdvice(){
-      ctrl.checkResults = true;
     }
 
     function setQuestions(questions){
