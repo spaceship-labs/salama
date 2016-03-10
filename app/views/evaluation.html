@@ -131,9 +131,9 @@
   <div class="evaluation-results container-md">
     <h1 class="center"><strong>Your results.</strong> Here you can see your score</h1>
     <h2>
-      Based on you responses to the
-      <span>Threat Assessment Survey,</span>
-      your threat level is calculated to be
+      {{ 'views.evaluation.resultstitle1'| translate}}
+      <span>{{ 'views.evaluation.resultstitle2'| translate}} </span>
+      {{ 'views.evaluation.resultstitle3'|translate}}
       <strong> {{evaluation.finalScore}}</strong>
     </h2>
     <div layout layout-align="space-around center" >
@@ -141,8 +141,8 @@
         <img ng-src="{{evaluation.risk.image}}">
       </div>
       <div>
-        <h3>Riesgo {{evaluation.risk.level}}.</h3>
-        <h4>{{evaluation.risk.description}}</h4>
+        <h3>{{ evaluation.risk.level | translate}}</h3>
+        <h4>{{ evaluation.risk.description | translate}}</h4>
       </div>
     </div>
     <div class="risk-description"   marked="evaluation.advice">

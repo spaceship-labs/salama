@@ -31,7 +31,21 @@
   "views.evaluation.check":"Checa tus resultados",
   "views.evaluation.upload":"Enviar resultados",
   "views.evaluation.uploadlegend":"* Los datos que envies de la encuesta serán anónimos y solamente con fines estadisticos",
+  "views.evaluation.resultstitle1":"Basado en sus respuestas a la",
+  "views.evaluation.resultstitle2":"Evaluación de riesgos,",
+  "views.evaluation.resultstitle3":"Su nivel de riesgo es ",
 
+  "views.evaluation.lowrisk": "Riesgo bajo.",
+  "views.evaluation.lowadvice": "Puede continuar con sus actividades.",
+
+  "views.evaluation.midrisk": "Riesgo moderado.",
+  "views.evaluation.midadvice": "Puede continuar con sus actividades.",
+
+  "views.evaluation.highrisk": "Riesgo alto.",
+  "views.evaluation.highadvice": "Tiene que tomar medidas.",
+
+  "views.evaluation.extremerisk":"Riesgo extremo.",
+  "views.evaluation.extremeadvice":"Suspender actividad si el riesgo es inaceptable y fallan estrategias.",
 
 
   "views.footer.rights":"Todos los derechos reservados"

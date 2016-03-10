@@ -32,6 +32,21 @@
   "views.evaluation.check":"Check Your Results",
   "views.evaluation.upload":"Upload Survey",
   "views.evaluation.uploadlegend":"* If you upload your survey, the content will be anonymously for stadistical purpose only.",
+  "views.evaluation.resultstitle1":"Based on you responses to the",
+  "views.evaluation.resultstitle2":"Threat Assessment Survey,",
+  "views.evaluation.resultstitle3":"your threat level is calculated to be",
+
+  "views.evaluation.lowrisk": "Low risk.",
+  "views.evaluation.lowadvice": "Same activities.",
+
+  "views.evaluation.midrisk": "Moderated risk.",
+  "views.evaluation.midadvice": "Same activities.",
+
+  "views.evaluation.highrisk": "High risk.",
+  "views.evaluation.highadvice": "Same high risk.",
+
+  "views.evaluation.extremerisk":"Extreme risk.",
+  "views.evaluation.extremeadvice":"Suspend activities.",
 
   "views.footer.rights":"All rights reserved"
 }

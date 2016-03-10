@@ -50,24 +50,28 @@
 
     risks = {
       extreme : {
-        level       : 'extreme',
+        level       : 'views.evaluation.extremerisk',
         image       : '/images/riesgo_extremo.jpg',
-        description : 'Suspender actividad si el riesgo es inaceptable y fallan estrategias'
+        description : 'views.evaluation.extremeadvice',
+        advice: 'extreme'
       },
       high    : {
-        level       : 'high',
+        level       : 'views.evaluation.highrisk',
         image       : '/images/riesgo_alto.jpg',
-        escription : 'Require medidas proactivas y reducción de riesgos inaceptables'
+        description  : 'views.evaluation.highadvice',
+        advice: 'high'
       },
       medium  : {
-        level       : 'mid',
+        level       : 'views.evaluation.midrisk',
         image       : '/images/riesgo_medio.jpg',
-        description : 'Estrategias de prevención para mitigar el daño eventual'
+        description : 'views.evaluation.midadvice',
+        advice: 'mid'
       },
       low     : {
-        level       : 'low',
+        level       : 'views.evaluation.lowrisk',
         image       : '/images/riesgo_bajo.jpg',
-        description : 'Continuidad de actividades'
+        description : 'views.evaluation.lowadvice',
+        advice: 'low'
       }
     };
 
@@ -116,7 +120,7 @@
         return;
       }
       adviceService.setLang($translate.use());
-      adviceService.getAdvice(ctrl.risk.level).then(function(advice){
+      adviceService.getAdvice(ctrl.risk.advice).then(function(advice){
         ctrl.advice = advice;
       });
     }
