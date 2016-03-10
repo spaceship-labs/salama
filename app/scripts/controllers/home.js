@@ -13,7 +13,7 @@
 
   HomeCtrl.$inject=['$window','$mdSidenav','$mdDialog'];
 
-  function HomeCtrl($window,$mdSidenav,$mdDialog){
+  function HomeCtrl($window, $mdSidenav, $mdDialog){
 
     var ctrl = this;
     var w = angular.element($window);
@@ -22,9 +22,11 @@
     ctrl.changeStateSide = changeStateSide;
     setFixedMenu();
 
-    function fixedMenu(){
-      var h = w.height() - 120;
-      $('.content-home').css('min-height',h+'px');
+    function showVideo(){
+      $mdDialog.show({
+        template : '<iframe width="560" height="315" src="https://www.youtube.com/embed/-zsO2rUM0oU" frameborder="0" allowfullscreen></iframe>',
+        clickOutsideToClose : true
+      });
     }
 
     function changeStateSide(){
@@ -39,11 +41,9 @@
       });
     }
 
-    function showVideo(){
-      $mdDialog.show({
-        template : '<iframe width="560" height="315" src="https://www.youtube.com/embed/-zsO2rUM0oU" frameborder="0" allowfullscreen></iframe>',
-        clickOutsideToClose : true
-      });
+    function fixedMenu(){
+      var h = w.height() - 120;
+      $('.content-home').css('min-height',h+'px');
     }
 
   }
