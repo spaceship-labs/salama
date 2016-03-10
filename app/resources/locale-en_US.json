@@ -16,6 +16,16 @@
 
   "views.evaluation.individuals": "Individuals",
   "views.evaluation.organizations": "Organizations",
+  "views.evaluation.catindividuals":"Individuals journalist",
+  "views.evaluation.catorganizations":"Organization",
+  "views.evaluation.descindividuals":"Individuals description",
+  "views.evaluation.descorganizations":"Organization description",
+  "views.evaluation.title": "Get involved.",
+  "views.evaluation.subtitle": "Choose a category to start your evaluation.",
+  "views.evaluation.prev":"prev",
+  "views.evaluation.next":"next",
+  "views.evaluation.finish":"finish",
+  "views.evaluation.scorelegend":"completed",
 
   "views.footer.rights":"All rights reserved"
 }

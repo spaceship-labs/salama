@@ -15,6 +15,17 @@
 
   "views.evaluation.individuals": "Individual",
   "views.evaluation.organizations": "Organizaciones",
+  "views.evaluation.catindividuals":"Individual",
+  "views.evaluation.catorganizations":"Organización",
+  "views.evaluation.descindividuals":"Descripción individual",
+  "views.evaluation.descorganizations":"Descripción organización",
+  "views.evaluation.title": "Empieza",
+  "views.evaluation.subtitle": "Escoja una categoría para empezar la evaluación",
+  "views.evaluation.prev":"anterior",
+  "views.evaluation.next":"siguiente",
+  "views.evaluation.finish":"terminar",
+  "views.evaluation.scorelegend":"completado",
+
 
   "views.footer.rights":"Todos los derechos reservados"
 

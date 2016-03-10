@@ -15,11 +15,23 @@
 >
 </ng-include>
 
+<div class="eq-buttons" layout layout-align="end center">
+  <md-button class="eq-prev" ng-click="prev()" ng-show="!start">
+    <span translate>views.evaluation.prev</span>
+  </md-button>
+  <md-button class="eq-next" ng-click="next()" ng-show="!last" >
+    <span translate>views.evaluation.next</span>
+  </md-button>
+  <md-button class="eq-next" ng-click="finish()" ng-show=" last" >
+    <span translate>views.evaluation.finish</span>
+  </md-button>
+</div>
+
 <div class="eq-completed">
   <div class="eq-bar">
     <div class="eq-graybar">
       <div class="eq-bluebar"></div>
     </div>
-    <div class="eq-percentage" ng-cloak>{{completed}}% completed</div>
+    <div class="eq-percentage">{{completed}}% <span translate>views.evaluation.scorelegend</span></div>
   </div>
 </div>

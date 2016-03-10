@@ -10,9 +10,9 @@
   angular.module('salamaApp')
     .directive('pageQuestions', pageQuestions);
 
-  controller.$inject=['$scope'];
+  controller.$inject=['$scope', '$translate'];
 
-  function controller($scope){
+  function controller($scope, $translate){
 
     var ctrl = $scope;
 
@@ -23,24 +23,29 @@
     ctrl.prev = prev;
     ctrl.completed = 0;
 
+    activate();
 
-    ctrl.$watch(
-      function(){
-        return ctrl.questions;
-      },
-      function(){
-        ctrl.selected = 0;
-        setProgress();
-      }
-    );
-    ctrl.$watch(
-      function(){
-        return ctrl.completed;
-      },
-      function (newVal,oldVal){
-        $('.eq-bluebar').width(newVal+'%');
-      }
-    );
+    function activate(){
+      $scope.$watch(getType,setQuestions);
+      $scope.$watch(getCompleted,setBar);
+    }
+
+    function getCompleted(){
+      return ctrl.completed;
+    }
+
+    function getType(){
+      return ctrl.type;
+    }
+
+    function setBar(newVal){
+      $('.eq-bluebar').width(newVal+'%');
+    }
+
+    function setQuestions(){
+      ctrl.selected = 0;
+      setProgress();
+    }
 
     function next(){
       if (ctrl.selected < ctrl.questions.length-1) {
@@ -75,6 +80,7 @@
     function setProgress(){
       var score = 100 * (ctrl.selected + 1) / ctrl.questions.length;
       ctrl.completed =  Math.floor(score);
+      ctrl.completed =  isFinite(ctrl.completed) && ctrl.completed || 0;
     }
 
   }
@@ -86,6 +92,7 @@
       scope:{
         questions:'=',
         answers:'=',
+        type: '=',
         finish:'='
       },
       controller:controller

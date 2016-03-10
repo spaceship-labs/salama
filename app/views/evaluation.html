@@ -12,8 +12,10 @@
   <md-tab label="1">
     <md-content layout layout-align="center center">
       <div class="evaluation container" layout="column" layout-align="center center">
-        <h1 class="center"><strong>Get involved.</strong> Choose a category to start your evaluation.</h1>
-
+        <h1 class="center">
+          <strong> {{ 'views.evaluation.title' | translate}}</strong>
+          {{'views.evaluation.subtitle' | translate}}
+        </h1>
         <div
           class="evaluation-options"
           layout="row"
@@ -33,8 +35,8 @@
               <div class="square"></div>
             </div>
             <div>
-              <h3>Individual  Journalist</h3>
-              <p>oijsd foiasj dpfoisj dfoiajs dfpoaisj doaisdj f</p>
+              <h3 translate>views.evaluation.catindividuals</h3>
+              <p translate>views.evaluation.descindividuals</p>
             </div>
             <a class="absoluteLink" href=""
               ng-click="evaluation.setType(evaluation.individuals)"
@@ -54,8 +56,8 @@
               <div class="square"></div>
             </div>
             <div>
-              <h3>Organization</h3>
-              <p>oijsd foiasj dpfoisj dfoiajs dfpoaisj doaisdj f</p>
+              <h3 translate>views.evaluation.catorganizations</h3>
+              <p translate>views.evaluation.descorganizations</p>
             </div>
             <a class="absoluteLink" href=""
               ng-click="evaluation.setType(evaluation.organizations)"
@@ -74,6 +76,7 @@
       <page-questions
         finish="evaluation.finishEvaluation"
         questions="evaluation.questions"
+        type = "evaluation.type"
         answers="evaluation.answers"
         class="page-questions"
       >
