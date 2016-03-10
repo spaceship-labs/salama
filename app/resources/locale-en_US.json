@@ -1,8 +1,21 @@
 {
   "views.main.lang": "English",
   "views.main.suggest": "Select your language",
+
+  "views.sidenav.evaluation": "Security Evaluation",
+  "views.sidenav.library": "Security Library",
+  "views.sidenav.individuals": "Individual Journalist",
+  "views.sidenav.organizations": "Organization",
+
+  "views.home.title": "Lorem Ipsum Dolor Sit Amet EN",
+  "views.home.subtitle": "Lorem Ipsum Dolor Sit Amet EN",
   "views.home.library": "Security Library",
   "views.home.evaluation": "Security Evaluation",
+  "views.home.video":"Play video for more information",
+
+
   "views.evaluation.individuals": "Individuals",
-  "views.evaluation.organizations": "Organizations"
+  "views.evaluation.organizations": "Organizations",
+
+  "views.footer.rights":"All rights reserved"
 }

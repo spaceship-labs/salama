@@ -4,14 +4,13 @@
 
 <!--Sidenav-->
 <md-sidenav md-component-id="left"
-
   class="md-sidenav-left md-whiteframe-z2 header-sidenav"
 >
   <md-toolbar class="md-toolbar-tools">
 
     <md-button
-    class="sideButton"
-    ng-click="header.changeStateSide()"
+      class="sideButton"
+      ng-click="header.changeStateSide()"
     >
       <img src="images/icon_salama.png">
       <div>Menu</div>
@@ -19,20 +18,20 @@
 
   </md-toolbar>
   <div class="sidenav-block">
-    <h3>Security Evaluation</h3>
+    <h3 translate>views.sidenav.evaluation</h3>
     <p>
-      <a href="#/individuals" ng-click="header.changeStateSide()">
-        Individual Journalist
+      <a href="#/individuals" translate>
+        views.sidenav.individuals
       </a>
     </p>
     <p>
-      <a href="#/organizations" ng-click="header.changeStateSide()">
-        Organization
+      <a href="#/organizations" translate>
+        views.sidenav.organizations
       </a>
     </p>
   </div>
   <div class="sidenav-block">
-    <h3>Security Library</h3>
+    <h3 translate>views.sidenav.library</h3>
     <div ng-repeat="category in header.categories">
       <p>{{category}}</p>
       <ul>
