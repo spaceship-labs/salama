@@ -26,6 +26,12 @@
   "views.evaluation.next":"next",
   "views.evaluation.finish":"finish",
   "views.evaluation.scorelegend":"completed",
+  "views.evaluation.thank":"Thank you,",
+  "views.evaluation.thankans":"for all your answers.",
+  "views.evaluation.evaluation":"Risk assesment evaluation",
+  "views.evaluation.check":"Check Your Results",
+  "views.evaluation.upload":"Upload Survey",
+  "views.evaluation.uploadlegend":"* If you upload your survey, the content will be anonymously for stadistical purpose only.",
 
   "views.footer.rights":"All rights reserved"
 }

@@ -15,6 +15,7 @@
     '$http',
     '$scope',
     '$translate',
+    '$mdDialog',
     'individualsService',
     'organizationsService',
     'adviceService'
@@ -24,6 +25,7 @@
     $http,
     $scope,
     $translate,
+    $mdDialog,
     individualsService,
     organizationsService,
     adviceService
@@ -43,6 +45,8 @@
     ctrl.finalScore = 0;
     ctrl.setType = setType;
     ctrl.finishEvaluation = finishEvaluation;
+    ctrl.showAdvice = showAdvice;
+    ctrl.sendEvaluation = sendEvaluation;
 
     risks = {
       extreme : {
@@ -108,10 +112,16 @@
     }
 
     function getAdvice(){
+      if (!ctrl.risk) {
+        return;
+      }
       adviceService.setLang($translate.use());
       adviceService.getAdvice(ctrl.risk.level).then(function(advice){
         ctrl.advice = advice;
       });
+    }
+    function showAdvice(){
+      ctrl.checkResults = true;
     }
 
     function setQuestions(questions){
@@ -136,7 +146,6 @@
       } else {
         ctrl.risk = risks.extreme;
       }
-      ctrl.checkResults = true;
     }
 
     function setScore(){
@@ -150,14 +159,37 @@
       setScore();
       setResults();
       getAdvice();
-      sendQuestions();
     }
 
-    function sendQuestions(){
+    function sendEvaluation(ev){
       ctrl.answers['survey_type'] = ctrl.type;
-      $http.post(urlApi, ctrl.answers).success(function(a){
-        console.log(a);
-      });
+      $http.post(urlApi, ctrl.answers).then(
+        function(_){
+          $mdDialog.show(
+            $mdDialog.alert()
+            .parent(angular.element(document.querySelector('#results')))
+            .clickOutsideToClose(true)
+            .title('Your answers were submited')
+            .textContent('Thank you for your time, you will receive an email')
+            .ariaLabel('')
+            .ok('Agree')
+            .targetEvent(ev)
+          );
+        },
+        function(_){
+          console.error("problem posting the results")
+          $mdDialog.show(
+            $mdDialog.alert()
+            .parent(angular.element(document.querySelector('#results')))
+            .clickOutsideToClose(true)
+            .title('Your answers were submited')
+            .textContent('Thank you for your time, you will receive an email')
+            .ariaLabel('')
+            .ok('Agree')
+            .targetEvent(ev)
+          );
+        }
+      );
     }
   }
 })();

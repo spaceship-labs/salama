@@ -7,6 +7,7 @@
   md-center-tabs
   md-no-ink-bar
   md-no-ink
+  id="results"
 >
 
   <md-tab label="1">
@@ -84,31 +85,38 @@
     </md-content>
   </md-tab>
 
-  <md-tab label="3" ng-disabled="evaluation.completed!=100">
+  <md-tab label="3" ng-disabled="evaluation.completed!=100" >
 
     <md-content
       class="evaluation-end container"
       layout
       layout-align="center center"
     >
-      <div>
-        <h1 class="center"><strong>Thank you,</strong> for all your answers.</h1>
-        <h2>Análisis de riesgo organizacional</h2>
+      <div >
+        <h1 class="center">
+          <strong translate>views.evaluation.thank</strong>
+          <span translate>views.evaluation.thankans</span>
+        </h1>
+        <h2 translate></h2>
         <hr/>
 
-        <div layout layout-xs="column" layout-align="center center">
-          <md-button ng-click="evaluation.checkResultsFoo()">Check your results</md-button>
-          <md-button>Upload survey</md-button>
+        <div layout layout-xs="column" layout-align="center center" >
+          <md-button ng-click="evaluation.showAdvice()">
+            <span translate>views.evaluation.check</span>
+          </md-button>
+          <md-button ng-click="evaluation.sendEvaluation($event)">
+            <span translate>views.evaluation.upload</span>
+          </md-button>
         </div>
 
-        <p>* If you upload your survey, the content will be anonymously for stadistical purpose only.</p>
+        <p translate>views.evaluation.uploadlegend</p>
 
         <div class="eq-completed">
           <div class="eq-bar">
             <div class="eq-graybar">
               <div class="eq-bluebar"></div>
             </div>
-            <div class="eq-percentage">{{evaluation.completed}}% completed</div>
+            <div class="eq-percentage">{{evaluation.completed}}% <span translate>views.evaluation.scorelegend</span></div>
           </div>
         </div>
 

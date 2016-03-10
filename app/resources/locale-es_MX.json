@@ -25,6 +25,13 @@
   "views.evaluation.next":"siguiente",
   "views.evaluation.finish":"terminar",
   "views.evaluation.scorelegend":"completado",
+  "views.evaluation.thank":"Muchas gracias,",
+  "views.evaluation.thankans":"por sus respuestas",
+  "views.evaluation.evaluation":"Evaluación de análisis de riesgo",
+  "views.evaluation.check":"Checa tus resultados",
+  "views.evaluation.upload":"Enviar resultados",
+  "views.evaluation.uploadlegend":"* Los datos que envies de la encuesta serán anónimos y solamente con fines estadisticos",
+
 
 
   "views.footer.rights":"Todos los derechos reservados"
