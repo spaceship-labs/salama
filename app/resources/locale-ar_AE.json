@@ -1,0 +1,52 @@
+{
+  "views.main.lang": "العربي",
+  "views.main.suggest": "اختر لغتك",
+
+  "views.sidenav.evaluation": "Security Evaluation",
+  "views.sidenav.library": "Security Library",
+  "views.sidenav.individuals": "Individual Journalist",
+  "views.sidenav.organizations": "Organization",
+
+  "views.home.title": "Lorem Ipsum Dolor Sit Amet EN",
+  "views.home.subtitle": "Lorem Ipsum Dolor Sit Amet EN",
+  "views.home.library": "Security Library",
+  "views.home.evaluation": "Security Evaluation",
+  "views.home.video":"Play video for more information",
+
+
+  "views.evaluation.individuals": "Individuals",
+  "views.evaluation.organizations": "Organizations",
+  "views.evaluation.catindividuals":"Individuals journalist",
+  "views.evaluation.catorganizations":"Organization",
+  "views.evaluation.descindividuals":"Individuals description",
+  "views.evaluation.descorganizations":"Organization description",
+  "views.evaluation.title": "Get involved.",
+  "views.evaluation.subtitle": "Choose a category to start your evaluation.",
+  "views.evaluation.prev":"prev",
+  "views.evaluation.next":"next",
+  "views.evaluation.finish":"finish",
+  "views.evaluation.scorelegend":"completed",
+  "views.evaluation.thank":"Thank you,",
+  "views.evaluation.thankans":"for all your answers.",
+  "views.evaluation.evaluation":"Risk assesment evaluation",
+  "views.evaluation.check":"Check Your Results",
+  "views.evaluation.upload":"Upload Survey",
+  "views.evaluation.uploadlegend":"* If you upload your survey, the content will be anonymously for stadistical purpose only.",
+  "views.evaluation.resultstitle1":"Based on you responses to the",
+  "views.evaluation.resultstitle2":"Threat Assessment Survey,",
+  "views.evaluation.resultstitle3":"your threat level is calculated to be",
+
+  "views.evaluation.lowrisk": "Low risk.",
+  "views.evaluation.lowadvice": "Same activities.",
+
+  "views.evaluation.midrisk": "Moderated risk.",
+  "views.evaluation.midadvice": "Same activities.",
+
+  "views.evaluation.highrisk": "High risk.",
+  "views.evaluation.highadvice": "Same high risk.",
+
+  "views.evaluation.extremerisk":"Extreme risk.",
+  "views.evaluation.extremeadvice":"Suspend activities.",
+
+  "views.footer.rights":"All rights reserved"
+}

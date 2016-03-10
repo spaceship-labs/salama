@@ -7,6 +7,7 @@
   md-no-ink-bar
   md-no-ink
   ng-cloak
+  ng-if="!evaluation.results"
   id="results"
 >
 
@@ -101,7 +102,7 @@
         <hr/>
 
         <div layout layout-xs="column" layout-align="center center" >
-          <md-button ng-href="#/results">
+          <md-button ng-click="evaluation.results = true">
             <span translate>views.evaluation.check</span>
           </md-button>
           <md-button ng-click="evaluation.sendEvaluation($event)">
@@ -126,3 +127,33 @@
   </md-tab>
 
 </md-tabs>
+
+<md-content ng-if="evaluation.results">
+  <div class="evaluation-results container-md">
+    <h1 class="center"><strong>Your results.</strong> Here you can see your score</h1>
+    <h2>
+      {{'views.evaluation.resultstitle1'| translate}}
+      <span>{{ 'views.evaluation.resultstitle2'| translate}} </span>
+      {{'views.evaluation.resultstitle3'|translate}}
+      <strong> {{evaluation.finalScore}}</strong>
+    </h2>
+    <div layout layout-align="space-around center" >
+      <div class="risk-image">
+        <img ng-src="{{evaluation.risk.image}}">
+      </div>
+      <div>
+        <h3>{{ evaluation.risk.level | translate}}</h3>
+        <h4>{{ evaluation.risk.description | translate}}</h4>
+      </div>
+    </div>
+    <div ng-if="evaluation.otherlinks">
+      <h3>Some other links</h3>
+      <p ng-repeat="link in evaluation.otherlinks">
+        <a href="{{ '#/article/' + link.link}}">
+          link.title
+        </a>
+      </p>
+    </div>
+
+  </div>
+</md-content>
