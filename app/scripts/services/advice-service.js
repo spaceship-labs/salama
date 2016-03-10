@@ -2,46 +2,30 @@
 
 /**
  * @ngdoc service
- * @name salamaApp.scoreService
+ * @name salamaApp.adviceService
  * @description
- * # scoreService
+ * # adviceService
  * Service in the salamaApp.
  */
 (function(){
   angular.module('salamaApp')
-    .factory('scoreService', scoreService);
+    .factory('adviceService', adviceService);
 
-  scoreService.$inject = ['$localStorage', 'contentService'];
+  adviceService.$inject = ['$localStorage', 'contentService'];
 
-  function scoreService($localStorage, contentService){
+  function adviceService($localStorage, contentService){
 
-    var db = $localStorage.score = $localStorage.score || {};
+    var db = $localStorage.advice = $localStorage.advice || {};
     db.lang = db.lang || 'en_US';
     db.advices = db.advices || {};
-    db.score = db.score || 0;
 
     return {
-      setScore: setScore,
       setLang: setLang,
-      getRiskLevel: getRiskLevel,
       getAdvice: getAdvice
     };
 
-    function getRiskLevel(){
-      var score = db.score;
-      if (score <= 40) {
-        return 'low';
-      }
-      if (score <= 59) {
-        return 'mid';
-      }
-      if (score <= 79) {
-        return 'high';
-      }
-      return 'extreme';
-    }
-
-    function getAdvice(){
+    function getAdvice(riskLevel){
+      setRiskLevel(riskLevel);
       return contentService.getVersion()
         .then(resolveVersion)
         .then(resolveAdvice);
@@ -55,8 +39,8 @@
       return false;
     }
 
-    function resolveAdvice(newversion){
-      var risk = getRiskLevel(db.score);
+    function resolveAdvice(newversion){;
+      var risk = db.risk;
       var lang = db.lang;
       if (!db.advices[lang] || !db.advices[lang][risk] || newversion) {
         return contentService.getAdvice(risk, lang).then(setAdvice);
@@ -70,12 +54,12 @@
       return newadvice;
     }
 
-    function setLang(newlang){
-      db.lang = newlang;
+    function setRiskLevel(level){
+      db.risk = level;
     }
 
-    function setScore(newscore){
-      db.score = newscore
+    function setLang(newlang){
+      db.lang = newlang;
     }
 
   }

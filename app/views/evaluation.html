@@ -122,7 +122,12 @@
 <md-content ng-if="evaluation.checkResults">
   <div class="evaluation-results container-md">
     <h1 class="center"><strong>Your results.</strong> Here you can see your score</h1>
-    <h2>Based on you responses to the <span>Threat Assessment Survey,</span> your threat level is calculated to be <strong>{{evaluation.score}}</strong></h2>
+    <h2>
+      Based on you responses to the
+      <span>Threat Assessment Survey,</span>
+      your threat level is calculated to be
+      <strong> {{evaluation.finalScore}}</strong>
+    </h2>
     <div layout layout-align="space-around center" >
       <div class="risk-image">
         <img ng-src="{{evaluation.risk.image}}">
@@ -132,6 +137,7 @@
         <h4>{{evaluation.risk.description}}</h4>
       </div>
     </div>
-    <div class="risk-description"></div>
+    <div class="risk-description"   marked="evaluation.advice">
+    </div>
   </div>
 </md-content>

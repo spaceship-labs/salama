@@ -16,7 +16,8 @@
     '$scope',
     '$translate',
     'individualsService',
-    'organizationsService'
+    'organizationsService',
+    'adviceService'
   ];
 
   function EvaluationCtrl(
@@ -24,7 +25,8 @@
     $scope,
     $translate,
     individualsService,
-    organizationsService
+    organizationsService,
+    adviceService
   ){
 
     var urlApi = 'http://salama-api.herokuapp.com/survey';
@@ -32,40 +34,95 @@
     var risks;
     ctrl.questions = [];
     ctrl.answers = {};
+    ctrl.checkResults = false;
     ctrl.individuals = 'individual';
     ctrl.organizations = 'organizations';
-    ctrl.type = undefined;
+    ctrl.type;
     ctrl.page = 0;
     ctrl.completed = 0;
-    ctrl.checkResults = false;
     ctrl.finalScore = 0;
     ctrl.setType = setType;
     ctrl.finishEvaluation = finishEvaluation;
 
     risks = {
       extreme : {
-        level       : 'Extremo',
+        level       : 'extreme',
         image       : '/images/riesgo_extremo.jpg',
         description : 'Suspender actividad si el riesgo es inaceptable y fallan estrategias'
       },
       high    : {
-        level       : 'Alto',
+        level       : 'high',
         image       : '/images/riesgo_alto.jpg',
         escription : 'Require medidas proactivas y reducción de riesgos inaceptables'
       },
       medium  : {
-        level       : 'Moderado',
+        level       : 'mid',
         image       : '/images/riesgo_medio.jpg',
         description : 'Estrategias de prevención para mitigar el daño eventual'
       },
       low     : {
-        level       : 'Bajo',
+        level       : 'low',
         image       : '/images/riesgo_bajo.jpg',
         description : 'Continuidad de actividades'
       }
     };
 
     activate();
+
+    function activate(){
+      $scope.$watch(getLangAndType, getQuestions);
+      $scope.$watch(getLang,getAdvice);
+    }
+
+    function getLangAndType(){
+      return getLang() + ctrl.type;
+    }
+
+    function getLang(){
+      return $translate.use();
+    }
+
+    function getQuestions(){
+      var lang = $translate.use();
+      if (ctrl.type == ctrl.individuals) {
+        return individualsService
+          .getEval(lang)
+          .then(setQuestions);
+      } else if (ctrl.type == ctrl.organizations) {
+        return organizationsService
+          .getEval(lang)
+          .then(setQuestions);
+      }
+    }
+
+    function getScore(){
+      var score = 0;
+      ctrl.questions.map(function(page){
+        page.questions.map(function(question){
+          if (question.score) {
+            score += Number(ctrl.answers[question.name]) || 0;
+          }
+        });
+      });
+      return score;
+    }
+
+    function getAdvice(){
+      adviceService.setLang($translate.use());
+      adviceService.getAdvice(ctrl.risk.level).then(function(advice){
+        ctrl.advice = advice;
+      });
+    }
+
+    function setQuestions(questions){
+      ctrl.questions = questions;
+    }
+
+    function setType(type){
+      ctrl.type = type;
+      ctrl.completed = 0;
+      ctrl.page = 1;
+    }
 
     function setResults() {
       if (ctrl.finalScore <= 40) {
@@ -82,60 +139,18 @@
       ctrl.checkResults = true;
     }
 
-    function activate(){
-      $scope.$watch(getLangAndType, getQuestions);
-    }
-
-    function getLangAndType(){
-      return $translate.use() + ctrl.type;
-    }
-
-    function getQuestions(){
-      var lang = $translate.use();
-      if (ctrl.type == ctrl.individuals) {
-        return individualsService
-          .getEval(lang)
-          .then(setQuestions);
-      } else if (ctrl.type == ctrl.organizations) {
-        return organizationsService
-          .getEval(lang)
-          .then(setQuestions);
-      }
-    }
-
-    function setQuestions(questions){
-      ctrl.questions = questions;
-    }
-
-    function setType(type){
-      ctrl.type = type;
-      ctrl.completed = 0;
-      ctrl.page = 1;
+    function setScore(){
+      var score = getScore();
+      ctrl.finalScore = score || 0;
     }
 
     function finishEvaluation(){
       ctrl.completed = 100;
       ctrl.page = 2;
       setScore();
-      sendQuestions();
-    }
-
-    function getScore(){
-      var score = 0;
-      ctrl.questions.map(function(page){
-        page.questions.map(function(question){
-          if (question.score) {
-            score += Number(ctrl.answers[question.name]) || 0;
-          }
-        });
-      });
-      return score;
-    }
-
-    function setScore(){
-      var score = getScore();
-      ctrl.finalScore = score || 0;
       setResults();
+      getAdvice();
+      sendQuestions();
     }
 
     function sendQuestions(){
