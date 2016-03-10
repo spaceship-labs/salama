@@ -21,12 +21,11 @@
     // headerStuff
     ctrl.showLangOptions = false;
     ctrl.changeLang = changeLang;
-    ctrl.changeStateSide = changeStateSide;
+
     // navsideStuff
-    ctrl.show = false;
+    ctrl.changeStateSide = changeStateSide;
     ctrl.categories = [];
     ctrl.metadata = {};
-    ctrl.changeStateSide = changeStateSide;
     ctrl.setPost = setPost;
     ctrl.headerFixed = false;
 
@@ -64,9 +63,6 @@
       setFixedMenu();
     }
 
-    function setState(show){
-      ctrl.show = show;
-    }
 
     function getLang(){
       return $translate.use();
@@ -74,8 +70,8 @@
 
     function getMetadata(lang){
       return metadataService.getMetadata(lang)
-      .then(setCategories)
-      .then(setMetadata);
+        .then(setCategories)
+        .then(setMetadata);
     }
 
     function setCategories(metadata){
