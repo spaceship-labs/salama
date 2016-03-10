@@ -51,25 +51,25 @@
     risks = {
       extreme : {
         level       : 'views.evaluation.extremerisk',
-        image       : '/images/riesgo_extremo.jpg',
+        image       : 'images/riesgo_extremo.jpg',
         description : 'views.evaluation.extremeadvice',
         advice: 'extreme'
       },
       high    : {
         level       : 'views.evaluation.highrisk',
-        image       : '/images/riesgo_alto.jpg',
+        image       : 'images/riesgo_alto.jpg',
         description  : 'views.evaluation.highadvice',
         advice: 'high'
       },
       medium  : {
         level       : 'views.evaluation.midrisk',
-        image       : '/images/riesgo_medio.jpg',
+        image       : 'images/riesgo_medio.jpg',
         description : 'views.evaluation.midadvice',
         advice: 'mid'
       },
       low     : {
         level       : 'views.evaluation.lowrisk',
-        image       : '/images/riesgo_bajo.jpg',
+        image       : 'images/riesgo_bajo.jpg',
         description : 'views.evaluation.lowadvice',
         advice: 'low'
       }
