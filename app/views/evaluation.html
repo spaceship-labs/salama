@@ -146,14 +146,13 @@
         <h4>{{ evaluation.risk.description | translate}}</h4>
       </div>
     </div>
-    <div ng-if="evaluation.otherlinks">
+    <div ng-if="evaluation.links.length != 0">
       <h3>Some other links</h3>
-      <p ng-repeat="link in evaluation.otherlinks">
+      <p ng-repeat="link in evaluation.links">
         <a href="{{ '#/article/' + link.link}}">
-          link.title
+          {{link.title}}
         </a>
       </p>
     </div>
-
   </div>
 </md-content>

@@ -47,6 +47,45 @@
     ctrl.setType = setType;
     ctrl.finishEvaluation = finishEvaluation;
     ctrl.sendEvaluation = sendEvaluation;
+    ctrl.links = [];
+    var links = {
+      es_MX:{
+        low: {
+          title: 'Riesgo bajo',
+          link: 'es_MX/low.md'
+        },
+        mid: {
+          title: 'Riesgo moderado',
+          link:'es_MX/moderate.md'
+        },
+        high: {
+          title: 'Riesgo alto',
+          link:'es_MX/high.md'
+        },
+        extreme: {
+          title: 'Riesgo extremo',
+          link: 'es_MX/extreme.md'
+        }
+      },
+      en_US:{
+        low: {
+          title: 'Low risk',
+          link: 'en_US/low.md'
+        },
+        mid: {
+          title: 'Moderate risk',
+          link:'en_US/moderate.md'
+        },
+        high: {
+          title: 'High Risk',
+          link:'en_US/high.md'
+        },
+        extreme: {
+          title: 'Extreme Risk',
+          link: 'en_US/extreme.md'
+        }
+      }
+    };
 
     risks = {
       extreme : {
@@ -65,7 +104,7 @@
         level       : 'views.evaluation.midrisk',
         image       : 'images/riesgo_medio.jpg',
         description : 'views.evaluation.midadvice',
-        advice: 'mid'
+        advice: 'moderate'
       },
       low     : {
         level       : 'views.evaluation.lowrisk',
@@ -83,7 +122,6 @@
         ctrl.setType(type);
       }
       $scope.$watch(getLangAndType, getQuestions);
-      $scope.$watch(getLang, getAdvice);
     }
 
     function getLangAndType(){
@@ -119,16 +157,6 @@
       return score;
     }
 
-    function getAdvice(){
-      if (!ctrl.risk) {
-        return;
-      }
-      adviceService.setLang($translate.use());
-      adviceService.getAdvice(ctrl.risk.advice).then(function(advice){
-        ctrl.advice = advice;
-      });
-    }
-
     function setQuestions(questions){
       ctrl.questions = questions;
     }
@@ -158,12 +186,21 @@
       ctrl.finalScore = score || 0;
     }
 
+    function setLinksAdvice(){
+      var advice_links = [];
+      var lang = getLang();
+      var advice = links[lang][ctrl.risk.advice];
+      advice_links.push(advice);
+      ctrl.links = advice_links;
+
+    }
+
     function finishEvaluation(){
       ctrl.completed = 100;
       ctrl.page = 2;
       setScore();
       setResults();
-      getAdvice();
+      setLinksAdvice();
     }
 
     function sendEvaluation(ev){
