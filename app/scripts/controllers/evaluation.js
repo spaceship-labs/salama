@@ -188,11 +188,10 @@
 
     function setLinksAdvice(){
       var advice_links = [];
-      var lang = getLang();
+      var lang = getLang() || 'en_US';
       var advice = links[lang][ctrl.risk.advice];
       advice_links.push(advice);
       ctrl.links = advice_links;
-
     }
 
     function finishEvaluation(){

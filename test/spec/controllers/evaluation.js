@@ -109,11 +109,6 @@ describe('Controller: EvaluationCtrl', function () {
     });
     EvaluationCtrl.setType(EvaluationCtrl.individuals);
     httpBackend.flush();
-    httpBackend.when('POST', urlApi,
-      function(postData) {
-        return true;
-      }
-    ).respond(200, true);
     EvaluationCtrl.questions.forEach(function(page){
       page.questions.forEach(function(question){
         EvaluationCtrl.answers[question.name] = random_string;
@@ -121,11 +116,6 @@ describe('Controller: EvaluationCtrl', function () {
     });
     expect(EvaluationCtrl.answers).to.deep.equal({name: random_string, email: random_string});
     EvaluationCtrl.finishEvaluation();
-    httpBackend.flush();
-  });
-
-  it('Before finish the individuals evaluation answers must be valid', function () {
-    //expect(true).to.be.false;
   });
 
 });
