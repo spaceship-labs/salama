@@ -75,7 +75,7 @@
 
     function activate(){
       $scope.$watch(getLangAndType, getQuestions);
-      $scope.$watch(getLang,getAdvice);
+      $scope.$watch(getLang, getAdvice);
     }
 
     function getLangAndType(){

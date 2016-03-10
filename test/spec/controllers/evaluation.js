@@ -10,6 +10,8 @@ describe('Controller: EvaluationCtrl', function () {
   var urlVersion = urlSite + 'version.txt';
   var urlQuestions = urlSite + 'questions/en_US/individuals.json';
   var urlApi = 'http://salama-api.herokuapp.com/survey';
+  var urlAdvice = urlSite + 'advices/en_US/low.md';
+
 
 
   beforeEach(module('salamaApp'));
@@ -83,6 +85,7 @@ describe('Controller: EvaluationCtrl', function () {
   it('Before finish the individuals evaluation answers must be valid', function () {
     httpBackend.whenGET(urlVersion).respond(random_string);
     httpBackend.whenGET(urlResources).respond(random_string);
+    httpBackend.whenGET(urlAdvice).respond(random_string);
     httpBackend.whenGET(urlQuestions).respond({
       "pages": [
         {
