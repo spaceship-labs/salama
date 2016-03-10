@@ -139,7 +139,6 @@
     }
 
     function sendQuestions(){
-      return;
       ctrl.answers['survey_type'] = ctrl.type;
       $http.post(urlApi, ctrl.answers).success(function(a){
         console.log(a);
