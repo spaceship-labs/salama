@@ -7,13 +7,14 @@
   md-no-ink-bar
   md-no-ink
   ng-cloak
-  ng-if="!evaluation.results"
   id="results"
 >
 
   <md-tab label="1">
     <md-content layout layout-align="center center">
-      <div class="evaluation container" layout="column" layout-align="center center">
+      <div layout="column" layout-align="center center"
+        class="evaluation container"
+      >
         <h1 class="center">
           <strong> {{ 'views.evaluation.title' | translate}}</strong>
           {{'views.evaluation.subtitle' | translate}}
@@ -24,7 +25,6 @@
           layout-align="space-around center"
           layout-xs="column"
         >
-
           <div
             class="categories relative"
             flex="40"
@@ -40,9 +40,7 @@
               <h3 translate>views.evaluation.catindividuals</h3>
               <p translate>views.evaluation.descindividuals</p>
             </div>
-            <a class="absoluteLink" href=""
-              ng-click="evaluation.setType(evaluation.individuals)"
-            >
+            <a class="absoluteLink" href="#/evaluation/individual">
             </a>
           </div>
 
@@ -61,18 +59,13 @@
               <h3 translate>views.evaluation.catorganizations</h3>
               <p translate>views.evaluation.descorganizations</p>
             </div>
-            <a class="absoluteLink" href=""
-              ng-click="evaluation.setType(evaluation.organizations)"
-            >
+            <a class="absoluteLink" href="#/evaluation/organizations">
             </a>
           </div>
-
         </div>
-
       </div>
     </md-content>
   </md-tab>
-
   <md-tab label="2" ng-disabled="!evaluation.type">
     <md-content class="container-md" layout layout-align="center center">
       <page-questions
@@ -85,9 +78,7 @@
       </page-questions>
     </md-content>
   </md-tab>
-
   <md-tab label="3" ng-disabled="evaluation.completed!=100" >
-
     <md-content
       class="evaluation-end container"
       layout
@@ -100,59 +91,30 @@
         </h1>
         <h2 translate></h2>
         <hr/>
-
         <div layout layout-xs="column" layout-align="center center" >
-          <md-button ng-click="evaluation.results = true">
+          <md-button href="#/advice">
             <span translate>views.evaluation.check</span>
           </md-button>
-          <md-button ng-click="evaluation.sendEvaluation($event)">
+          <md-button>
             <span translate>views.evaluation.upload</span>
           </md-button>
         </div>
-
         <p translate>views.evaluation.uploadlegend</p>
-
         <div class="eq-completed">
           <div class="eq-bar">
             <div class="eq-graybar">
               <div class="eq-bluebar"></div>
             </div>
-            <div class="eq-percentage">{{evaluation.completed}}% <span translate>views.evaluation.scorelegend</span></div>
+            <div class="eq-percentage">
+              {{evaluation.completed}}%
+              <span translate>
+                views.evaluation.scorelegend
+              </span>
+            </div>
           </div>
         </div>
-
       </div>
     </md-content>
-
   </md-tab>
-
 </md-tabs>
 
-<md-content ng-if="evaluation.results">
-  <div class="evaluation-results container-md">
-    <h1 class="center"><strong>Your results.</strong> Here you can see your score</h1>
-    <h2>
-      {{'views.evaluation.resultstitle1'| translate}}
-      <span>{{ 'views.evaluation.resultstitle2'| translate}} </span>
-      {{'views.evaluation.resultstitle3'|translate}}
-      <strong> {{evaluation.finalScore}}</strong>
-    </h2>
-    <div layout layout-align="space-around center" >
-      <div class="risk-image">
-        <img ng-src="{{evaluation.risk.image}}">
-      </div>
-      <div>
-        <h3>{{ evaluation.risk.level | translate}}</h3>
-        <h4>{{ evaluation.risk.description | translate}}</h4>
-      </div>
-    </div>
-    <div ng-if="evaluation.links.length != 0">
-      <h3>Some other links</h3>
-      <p ng-repeat="link in evaluation.links">
-        <a href="{{ '#/article/' + link.link}}">
-          {{link.title}}
-        </a>
-      </p>
-    </div>
-  </div>
-</md-content>

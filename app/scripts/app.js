@@ -38,10 +38,15 @@ angular
         controller: 'ArticleCtrl',
         controllerAs: 'article'
       })
-      .when('/evaluation/:type?', {
+      .when('/evaluation/:type?/:action?', {
         templateUrl: 'views/evaluation.html',
         controller: 'EvaluationCtrl',
         controllerAs: 'evaluation'
+      })
+      .when('/advice', {
+        templateUrl: 'views/advice.html',
+        controller: 'AdviceCtrl',
+        controllerAs: 'advice'
       })
       .when('/advice', {
         templateUrl: 'views/advice.html',

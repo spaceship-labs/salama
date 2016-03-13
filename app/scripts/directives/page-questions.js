@@ -10,24 +10,32 @@
   angular.module('salamaApp')
     .directive('pageQuestions', pageQuestions);
 
-  controller.$inject=['$scope', '$translate'];
+  controller.$inject=['$scope', '$localStorage', '$translate'];
 
-  function controller($scope, $translate){
+  function controller($scope, $localStorage, $translate){
 
     var ctrl = $scope;
+    var db = $localStorage.dirPage = $localStorage.dirPage || {};
+    db.type = db.type || '';
 
+    ctrl.selected = db.selected || 0;
     ctrl.last = false;
     ctrl.start = true;
-    ctrl.selected = 0;
+    ctrl.completed = 0;
     ctrl.next = next;
     ctrl.prev = prev;
-    ctrl.completed = 0;
 
     activate();
 
     function activate(){
-      $scope.$watch(getType,setQuestions);
-      $scope.$watch(getCompleted,setBar);
+      $scope.$watch(getType,setType);
+      $scope.$watch(getQuestions, setQuestions);
+      $scope.$watch(getCompleted, setBar);
+    }
+
+    function setQuestions(){
+      evaluateIndex();
+      setProgress();
     }
 
     function getCompleted(){
@@ -38,21 +46,29 @@
       return ctrl.type;
     }
 
+    function getQuestions(){
+      return ctrl.questions;
+    }
+
+    function setType(type){
+      if ( !type || db.type == type){
+        return;
+      }
+      db.type = type;
+      db.selected = ctrl.selected = 0;
+    }
+
     function setBar(newVal){
       $('.eq-bluebar').width(newVal+'%');
     }
 
-    function setQuestions(){
-      ctrl.selected = 0;
-      setProgress();
-    }
-
     function next(){
       if (ctrl.selected < ctrl.questions.length-1) {
-        ctrl.selected+=1;
+        ctrl.selected = ctrl.selected + 1;
       } else {
         ctrl.selected = ctrl.questions.length -1;
       }
+      db.selected = ctrl.selected;
       evaluateIndex();
       setProgress();
     }
@@ -63,6 +79,7 @@
       } else {
         ctrl.selected = 0;
       }
+      db.selected = ctrl.selected;
       evaluateIndex();
       setProgress();
     }
@@ -90,10 +107,10 @@
       templateUrl: 'views/directives/page.html',
       restrict: 'E',
       scope:{
-        questions:'=',
-        answers:'=',
-        type: '=',
-        finish:'='
+        questions: '=',
+        answers:   '=',
+        type:      '=',
+        finish:    '='
       },
       controller:controller
     };

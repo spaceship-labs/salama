@@ -1,6 +1,32 @@
-<md-content layout layout-align="center start" class="content-home">
-  <div flex="80">
-    <div marked="advice.advice" class="article">
+<md-content>
+  <div class="evaluation-results container-md">
+    <h1 class="center">
+      <strong>{{ 'views.advice.title1' | translate }}</strong>
+      {{ 'views.advice.title2' | translate }}
+    </h1>
+    <h2>
+      {{'views.advice.resultstitle1'| translate}}
+      <span>{{ 'views.advice.resultstitle2'| translate}} </span>
+      {{'views.advice.resultstitle3'|translate}}
+      <strong> {{advice.finalScore}}</strong>
+    </h2>
+    <div layout layout-align="space-around center" >
+      <div class="risk-image">
+        <img ng-src="{{advice.risk.image}}">
+      </div>
+      <div>
+        <h3>{{ advice.risk.level | translate}}</h3>
+        <h4>{{ advice.risk.description | translate}}</h4>
+      </div>
+    </div>
+    <div marked="advice.article" class="article"></div>
+    <div ng-if="advice.links.length && advice.links.length != 0">
+      <h3>Some other links</h3>
+      <p ng-repeat="link in advice.links">
+        <a href="{{ '#/article/' + link.link}}">
+          {{link.title}}
+        </a>
+      </p>
     </div>
   </div>
 </md-content>

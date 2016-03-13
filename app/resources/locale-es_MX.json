@@ -31,9 +31,12 @@
   "views.evaluation.check":"Checa tus resultados",
   "views.evaluation.upload":"Enviar resultados",
   "views.evaluation.uploadlegend":"* Los datos que envies de la encuesta serán anónimos y solamente con fines estadisticos",
-  "views.evaluation.resultstitle1":"Basado en sus respuestas a la",
-  "views.evaluation.resultstitle2":"Evaluación de riesgos,",
-  "views.evaluation.resultstitle3":"Su nivel de riesgo es ",
+
+  "views.advice.title1":"Tus resultados.",
+  "views.advice.title2":"Aqui puedes ver tu score",
+  "views.advice.resultstitle1":"Basado en sus respuestas a la",
+  "views.advice.resultstitle2":"Evaluación de riesgos,",
+  "views.advice.resultstitle3":"Su nivel de riesgo es ",
 
   "views.evaluation.lowrisk": "Riesgo bajo.",
   "views.evaluation.lowadvice": "Puede continuar con sus actividades.",

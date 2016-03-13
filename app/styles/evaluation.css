@@ -76,6 +76,9 @@ md-tabs[md-border-bottom] md-tabs-wrapper{
   padding: 10px;
   color: #FFF !important;
 }
+md-tabs-canvas{
+  display:none!important;
+}
 .md-center-tabs{
   width: 100% !important;
 }
