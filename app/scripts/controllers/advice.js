@@ -15,33 +15,32 @@
 
   function AdviceCtrl($scope, $translate, adviceService){
     var ctrl  = this;
-    ctrl.risk = {};
-    ctrl.advice = '';
+    ctrl.risk = adviceService.getRiskLevel();
+    ctrl.finalScore = adviceService.getScore();
     ctrl.links = [];
+    ctrl.advice = '';
 
     activate();
 
     function activate(){
-      $scope.$watch(getLang,getRiskLevel);
-      $scope.$watch(getLang,getScore);
-      $scope.$watch(getLang,getLinks);
+      $scope.$watch(getLang, getAdvice);
+      $scope.$watch(getLang, getLinks);
     }
 
     function getLang(){
       return $translate.use();
     }
 
-    function getRiskLevel(lang){
-      ctrl.risk = adviceService.getRiskLevel();
-    }
-
-    function getScore(){
-      ctrl.finalScore = adviceService.getScore();
+    function getAdvice(lang){
+      adviceService.getAdvice(lang).then(function(advice){
+        ctrl.advice = advice;
+      });
     }
 
     function getLinks(lang){
-      ctrl.links = adviceService.getLinks(lang);
+      adviceService.getLinks(lang).then(function(links){
+        ctrl.links = links;
+      });
     }
-
   }
 })();

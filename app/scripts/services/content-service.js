@@ -66,8 +66,8 @@
     }
 
     function getAdvice(riskLevel,lang){
-      var url = urlAdvices + lang + '/' +riskLevel + '.md';
-      return downloadFile(url);
+      var url = urlPosts + lang + '/' +riskLevel + '.md';
+      return getPost(url);
     }
 
     function downloadFile(url){

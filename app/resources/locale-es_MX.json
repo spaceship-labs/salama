@@ -37,6 +37,7 @@
   "views.advice.resultstitle1":"Basado en sus respuestas a la",
   "views.advice.resultstitle2":"Evaluación de riesgos,",
   "views.advice.resultstitle3":"Su nivel de riesgo es ",
+  "views.advice.linkslegend":"Otros artículos seleccionados basados en la evaluación",
 
   "views.evaluation.lowrisk": "Riesgo bajo.",
   "views.evaluation.lowadvice": "Puede continuar con sus actividades.",

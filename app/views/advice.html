@@ -19,8 +19,9 @@
         <h4>{{ advice.risk.description | translate}}</h4>
       </div>
     </div>
-    <div if="advice.links.length && advice.links.length != 0">
-      <h3>You may want to read</h3>
+    <div marked="advice.advice"></div>
+    <div ng-if="advice.links.length >0 ">
+      <h3 translate>views.advice.linkslegend</h3>
       <ul>
         <li ng-repeat="link in advice.links">
           <a href="{{ '#/article/' + link.link}}">
