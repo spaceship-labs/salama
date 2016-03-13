@@ -11,78 +11,37 @@
   angular.module('salamaApp')
     .controller('AdviceCtrl', AdviceCtrl);
 
-  AdviceCtrl.$inject = [];
+  AdviceCtrl.$inject = ['$scope', '$translate', 'adviceService'];
 
-  function AdviceCtrl(){
-    var ctrl = this;
-      var links = {
-      es_MX:{
-        low: {
-          title: 'Riesgo bajo',
-          link: 'es_MX/low.md'
-        },
-        mid: {
-          title: 'Riesgo moderado',
-          link:'es_MX/moderate.md'
-        },
-        high: {
-          title: 'Riesgo alto',
-          link:'es_MX/high.md'
-        },
-        extreme: {
-          title: 'Riesgo extremo',
-          link: 'es_MX/extreme.md'
-        }
-      },
-      en_US:{
-        low: {
-          title: 'Low risk',
-          link: 'en_US/low.md'
-        },
-        mid: {
-          title: 'Moderate risk',
-          link:'en_US/moderate.md'
-        },
-        high: {
-          title: 'High Risk',
-          link:'en_US/high.md'
-        },
-        extreme: {
-          title: 'Extreme Risk',
-          link: 'en_US/extreme.md'
-        }
-      }
-    };
+  function AdviceCtrl($scope, $translate, adviceService){
+    var ctrl  = this;
+    ctrl.risk = {};
+    ctrl.advice = '';
+    ctrl.links = [];
 
-    var risks = {
-      extreme : {
-        level       : 'views.evaluation.extremerisk',
-        image       : 'images/riesgo_extremo.jpg',
-        description : 'views.evaluation.extremeadvice',
-        advice: 'extreme'
-      },
-      high    : {
-        level       : 'views.evaluation.highrisk',
-        image       : 'images/riesgo_alto.jpg',
-        description  : 'views.evaluation.highadvice',
-        advice: 'high'
-      },
-      medium  : {
-        level       : 'views.evaluation.midrisk',
-        image       : 'images/riesgo_medio.jpg',
-        description : 'views.evaluation.midadvice',
-        advice: 'moderate'
-      },
-      low     : {
-        level       : 'views.evaluation.lowrisk',
-        image       : 'images/riesgo_bajo.jpg',
-        description : 'views.evaluation.lowadvice',
-        advice: 'low'
-      }
-    };
+    activate();
 
-    ctrl.risk = risks.low;
+    function activate(){
+      $scope.$watch(getLang,getRiskLevel);
+      $scope.$watch(getLang,getScore);
+      $scope.$watch(getLang,getLinks);
+    }
+
+    function getLang(){
+      return $translate.use();
+    }
+
+    function getRiskLevel(lang){
+      ctrl.risk = adviceService.getRiskLevel();
+    }
+
+    function getScore(){
+      ctrl.finalScore = adviceService.getScore();
+    }
+
+    function getLinks(lang){
+      ctrl.links = adviceService.getLinks(lang);
+    }
 
   }
-
 })();

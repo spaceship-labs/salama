@@ -16,51 +16,77 @@
   function adviceService($localStorage, contentService){
 
     var db = $localStorage.advice = $localStorage.advice || {};
-    db.lang = db.lang || 'en_US';
-    db.advices = db.advices || {};
+    var risks;
+    var lang ;
 
-    return {
-      setLang: setLang,
-      getAdvice: getAdvice
+    db.results = db.results || {};
+
+    risks = {
+      extreme : {
+        level       : 'views.evaluation.extremerisk',
+        image       : 'images/riesgo_extremo.jpg',
+        description : 'views.evaluation.extremeadvice',
+        advice: 'extreme'
+      },
+      high    : {
+        level       : 'views.evaluation.highrisk',
+        image       : 'images/riesgo_alto.jpg',
+        description  : 'views.evaluation.highadvice',
+        advice: 'high'
+      },
+      moderate  : {
+        level       : 'views.evaluation.midrisk',
+        image       : 'images/riesgo_medio.jpg',
+        description : 'views.evaluation.midadvice',
+        advice: 'moderate'
+      },
+      low     : {
+        level       : 'views.evaluation.lowrisk',
+        image       : 'images/riesgo_bajo.jpg',
+        description : 'views.evaluation.lowadvice',
+        advice: 'low'
+      }
     };
 
-    function getAdvice(riskLevel){
-      setRiskLevel(riskLevel);
-      return contentService.getVersion()
-        .then(resolveVersion)
-        .then(resolveAdvice);
-    }
+    return {
+      setResults : setResults,
+      getLinks: getLinks,
+      getScore : getScore,
+      getRiskLevel: getRiskLevel
+    };
 
-    function resolveVersion(newversion){
-      if (db.version != newversion) {
-        db.version = newversion;
-        return true;
+
+    function getLinks(lang){
+      setLang(lang);
+      var links = [];
+      for (var article in db.results){
+        if (article == 'score' || article == 'riskLevel'){
+          continue;
+        }
+        links.push({
+          title: article,
+          link:  article,
+        });
       }
-      return false;
+      return links;
     }
 
-    function resolveAdvice(newversion){;
-      var risk = db.risk;
-      var lang = db.lang;
-      if (!db.advices[lang] || !db.advices[lang][risk] || newversion) {
-        return contentService.getAdvice(risk, lang).then(setAdvice);
-      }
-      return db.advices[lang][risk];
+    function getScore(lang){
+      setLang(lang);
+      return db.results.score;
     }
 
-    function setAdvice(newadvice){
-      db.advices[db.lang] = db.advices[db.lang] || {};
-      db.advices[db.lang][db.risk] = newadvice;
-      return newadvice;
+    function getRiskLevel(lang){
+      setLang(lang);
+      return risks[db.results.riskLevel];
     }
 
-    function setRiskLevel(level){
-      db.risk = level;
+    function setResults(results){
+      db.results = results;
     }
 
-    function setLang(newlang){
-      db.lang = newlang;
+    function setLang(newLang){
+      lang = newLang;
     }
-
   }
 })();

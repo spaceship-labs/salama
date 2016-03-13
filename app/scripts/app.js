@@ -33,7 +33,7 @@ angular
         controller: 'HomeCtrl',
         controllerAs: 'home'
       })
-      .when('/article/:lang/:article', {
+      .when('/article/:article', {
         templateUrl: 'views/article.html',
         controller: 'ArticleCtrl',
         controllerAs: 'article'

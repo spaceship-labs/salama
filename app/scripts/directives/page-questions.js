@@ -28,7 +28,7 @@
     activate();
 
     function activate(){
-      $scope.$watch(getType,setType);
+      $scope.$watch(getType, setType);
       $scope.$watch(getQuestions, setQuestions);
       $scope.$watch(getCompleted, setBar);
     }
@@ -87,8 +87,10 @@
     function evaluateIndex(){
       if (ctrl.selected == ctrl.questions.length - 1){
         ctrl.last = true;
+        ctrl.start = false;
       } else if (ctrl.selected == 0){
         ctrl.start = true;
+        ctrl.last = false;
       } else{
         ctrl.start = ctrl.last = false;
       }
