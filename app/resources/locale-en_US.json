@@ -42,8 +42,8 @@
   "views.evaluation.lowrisk": "Low risk.",
   "views.evaluation.lowadvice": "Same activities.",
 
-  "views.evaluation.midrisk": "Moderated risk.",
-  "views.evaluation.midadvice": "Same activities.",
+  "views.evaluation.moderaterisk": "Moderated risk.",
+  "views.evaluation.moderateadvice": "Same activities.",
 
   "views.evaluation.highrisk": "High risk.",
   "views.evaluation.highadvice": "Same high risk.",

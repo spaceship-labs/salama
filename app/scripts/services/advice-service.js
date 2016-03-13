@@ -35,9 +35,9 @@
         advice: 'high'
       },
       moderate  : {
-        level       : 'views.evaluation.midrisk',
+        level       : 'views.evaluation.moderaterisk',
         image       : 'images/riesgo_medio.jpg',
-        description : 'views.evaluation.midadvice',
+        description : 'views.evaluation.moderateadvice',
         advice: 'moderate'
       },
       low     : {

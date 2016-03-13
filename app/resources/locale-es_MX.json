@@ -41,8 +41,8 @@
   "views.evaluation.lowrisk": "Riesgo bajo.",
   "views.evaluation.lowadvice": "Puede continuar con sus actividades.",
 
-  "views.evaluation.midrisk": "Riesgo moderado.",
-  "views.evaluation.midadvice": "Puede continuar con sus actividades.",
+  "views.evaluation.moderaterisk": "Riesgo moderado.",
+  "views.evaluation.moderateadvice": "Puede continuar con sus actividades.",
 
   "views.evaluation.highrisk": "Riesgo alto.",
   "views.evaluation.highadvice": "Tiene que tomar medidas.",
@@ -52,5 +52,4 @@
 
 
   "views.footer.rights":"Todos los derechos reservados"
-
 }
