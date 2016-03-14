@@ -1,3 +1,6 @@
+.page-questions h2{
+  font-size:1.2em;
+}
 .absolute{
   position: absolute;
 }
@@ -25,8 +28,6 @@
   margin: 0 auto;
   max-width: 900px;
 }
-
-
 .content-instructions{
   background-color:#519DBD;
   color:white;
