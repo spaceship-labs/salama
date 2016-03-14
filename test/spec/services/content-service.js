@@ -11,7 +11,7 @@ describe('Service: contentService', function () {
   var urlPost          = urlSite + 'posts/en_US/random.md';
   var urlIndividuals   = urlSite + 'questions/en_US/individuals.json';
   var urlOrganizations = urlSite + 'questions/en_US/organizations.json';
-  var urlAdvice        = urlSite + 'advices/en_US/low.md';
+  var urlAdvice        = urlSite + 'posts/en_US/low.md';
   var contentService;
   var httpBackend;
 
