@@ -53,6 +53,7 @@
 
     return {
       setResults   : setResults,
+      getResults   : getResults,
       getAdvice    : getAdvice,
       getLinks     : getLinks,
       getScore     : getScore,
@@ -60,6 +61,9 @@
     };
 
 
+    function getResults(){
+      return db.results;
+    }
     function getAdvice(lang){
       var riskLevel = getRiskLevel();
       return contentService.getAdvice(riskLevel.advice, lang);
@@ -76,7 +80,7 @@
         titles[post.path] = post.title;
       });
       for (var article in db.results){
-        if (article == 'score' || article == 'riskLevel'){
+        if (article == 'score' || article == 'riskLevel' || article == 'completed'){
           continue;
         }
         links.push({

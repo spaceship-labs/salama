@@ -13,9 +13,25 @@
     .module('salamaApp')
     .controller('HeaderCtrl', HeaderCtrl);
 
-  HeaderCtrl.$inject=['$scope', '$translate', 'metadataService', 'postsService','$mdSidenav', '$window', '$timeout'];
+  HeaderCtrl.$inject=[
+    '$scope',
+    '$translate',
+    '$mdSidenav',
+    '$window',
+    '$timeout',
+    'metadataService',
+    'adviceService'
+  ];
 
-  function HeaderCtrl($scope, $translate, metadataService, postsService, $mdSidenav, $window, $timeout){
+  function HeaderCtrl(
+    $scope,
+    $translate,
+    $mdSidenav,
+    $window,
+    $timeout,
+    metadataService,
+    adviceService
+  ){
 
     var ctrl = this;
     // headerStuff
@@ -60,6 +76,18 @@
 
     function activate(){
       $scope.$watch(getLang, getMetadata);
+      $scope.$watch(
+        function(){
+          return adviceService.getResults().completed;
+        },
+        function(completed){
+          if (completed === true){
+            ctrl.individuals = '#/advice';
+          }else{
+            ctrl.individuals = '#/evaluation/individual';
+          }
+        }
+      );
       setFixedMenu();
     }
 
@@ -97,7 +125,6 @@
 
     function setPost(path){
       changeStateSide();
-      postsService.setSelected(path);
     }
 
     function logError(err){

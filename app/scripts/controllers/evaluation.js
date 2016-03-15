@@ -39,8 +39,15 @@
 
     ctrl.questions = db.questions = db.questions || [];
     ctrl.answers = db.answers = db.answers || {};
-
+    ctrl.answers.completed = false;
+    ctrl.finishEvaluation = finishEvaluation;
+    setResults();
     activate();
+
+    function finishEvaluation(){
+      ctrl.answers.completed = true;
+      setResults();
+    }
 
     function activate(){
       setState();
@@ -76,12 +83,12 @@
         ctrl.completed = 100;
         ctrl.page = 2;
       }
-      setResults();
     }
 
     function setResults(){
       var answers = ctrl.answers;
       var results = {};
+      results.completed = answers.completed;
       results.score = getScore();
       results.riskLevel = getRiskLevel();
       //100
