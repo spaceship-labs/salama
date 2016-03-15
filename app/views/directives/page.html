@@ -27,10 +27,10 @@
 </ng-include>
 
 <div class="eq-buttons" layout layout-align="end center">
-  <md-button class="eq-prev" ng-click="prev()" ng-show="!start">
+  <md-button class="eq-prev" href="{{'#evaluation/' + type + '/' + selected}}" ng-click="prev()" ng-show="!start">
     <span translate>views.evaluation.prev</span>
   </md-button>
-  <md-button class="eq-next" ng-click="next()" ng-show="!last" >
+  <md-button class="eq-next" href="{{'#evaluation/' + type + '/' + selected}}" ng-click="next()" ng-show="!last" >
     <span translate>views.evaluation.next</span>
   </md-button>
   <md-button class="eq-next" href="{{'#evaluation/' + type + '/finish'}}" ng-show=" last" >

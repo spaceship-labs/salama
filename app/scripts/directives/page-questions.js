@@ -10,9 +10,9 @@
   angular.module('salamaApp')
     .directive('pageQuestions', pageQuestions);
 
-  controller.$inject=['$scope', '$localStorage', '$translate'];
+  controller.$inject=['$scope','$routeParams','$localStorage', '$translate'];
 
-  function controller($scope, $localStorage, $translate){
+  function controller($scope,$routeParams,$localStorage, $translate){
 
     var ctrl = $scope;
     var db = $localStorage.dirPage = $localStorage.dirPage || {};
@@ -28,6 +28,11 @@
     activate();
 
     function activate(){
+      if ($routeParams.action == 'finish'){
+        ctrl.selected = ctrl.questions.length - 1;
+      }else{
+        ctrl.selected = Number($routeParams.action) || 0;
+      }
       $scope.$watch(getType, setType);
       $scope.$watch(getQuestions, setQuestions);
       $scope.$watch(getCompleted, setBar);
