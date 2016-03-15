@@ -1,7 +1,7 @@
 <div class="eq-double-column">
   <div layout layout-align="space-between start" layout-wrap>
     <ng-include ng-repeat="question in questions[selected].questions"
-      src="'views/directives/' + question.input + '.html'" flex="45"
+      src="'views/directives/' + question.input + '.html'" flex="45" flex-sm="100" flex-xs="100"
     >
     </ng-include>
   </div>

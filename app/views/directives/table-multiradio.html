@@ -3,11 +3,15 @@
   <p>{{questions[selected].instruction}}</p>
   <div>
     <div class="fq">
-      <div layout="row" class="fq-options">
-        <div flex="50"></div>
+
+      <!-- HIDE ON MOBILE -->
+      <div layout="row" layout-wrap class="fq-options" hide-sm hide-xs>
+        <div flex="50" hide-sm hide-xs></div>
         <div
           class="fq-head"
           flex="10"
+          flex-sm="20"
+          flex-xs="20"
           ng-repeat="option in questions[selected].options"
           layout
           layout-align="center center"
@@ -15,18 +19,43 @@
           {{option.option}}
         </div>
       </div>
+      <!-- END HIDE ON MOBILE -->
+
       <div layout="column">
         <div
           ng-class-odd="'odd'"
           ng-class-even="'even'"
           layout="row"
+          layout-wrap
           ng-repeat="question in questions[selected].questions"
         >
-          <div flex="50"><p>{{question.title}}</p></div>
+          <div flex="50" flex-sm="100" flex-xs="100" class="fq-question"><p>{{question.title}}</p></div>
+
+
+          <!--ONLY IN RESPONSIVE-->
+          <div flex="100" layout="row" layout-wrap class="fq-options" hide-md hide-lg hide-xl>
+            <div flex="50" hide-sm hide-xs></div>
+            <div
+              class="fq-head"
+              flex="10"
+              flex-sm="20"
+              flex-xs="20"
+              ng-repeat="option in questions[selected].options"
+              layout
+              layout-align="center center"
+            >
+              {{option.option}}
+            </div>
+          </div>
+          <!--END ONLY IN RESPONSIVE-->
+
           <md-radio-group
             ng-model="answers[question.name]"
             layout="row"
+            class="fq-radio-group"
             flex="50"
+            flex-sm="100"
+            flex-xs="100"
           >
             <md-radio-button
               flex="20"

@@ -332,3 +332,12 @@ form-question{
 .animte-leave.animte-leave-active{
   opacity: 1;
 }
+
+@media screen and (max-width: 960px){
+  .fq-radio-group{
+    min-height: 60px;
+  }
+  .fq-question{
+    font-size: 20px;
+  }
+}
