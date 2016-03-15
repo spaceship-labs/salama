@@ -75,8 +75,8 @@
       if (ctrl.type && action == finish) {
         ctrl.completed = 100;
         ctrl.page = 2;
-        setResults();
       }
+      setResults();
     }
 
     function setResults(){

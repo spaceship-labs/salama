@@ -78,43 +78,5 @@
       </page-questions>
     </md-content>
   </md-tab>
-  <md-tab label="3" ng-disabled="evaluation.completed!=100" >
-    <md-content
-      class="evaluation-end container"
-      layout
-      layout-align="center center"
-    >
-      <div >
-        <h1 class="center">
-          <strong translate>views.evaluation.thank</strong>
-          <span translate>views.evaluation.thankans</span>
-        </h1>
-        <h2 translate></h2>
-        <hr/>
-        <div layout layout-xs="column" layout-align="center center" >
-          <md-button href="#/advice">
-            <span translate>views.evaluation.check</span>
-          </md-button>
-          <md-button>
-            <span translate>views.evaluation.upload</span>
-          </md-button>
-        </div>
-        <p translate>views.evaluation.uploadlegend</p>
-        <div class="eq-completed">
-          <div class="eq-bar">
-            <div class="eq-graybar">
-              <div class="eq-bluebar"></div>
-            </div>
-            <div class="eq-percentage">
-              {{evaluation.completed}}%
-              <span translate>
-                views.evaluation.scorelegend
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </md-content>
-  </md-tab>
 </md-tabs>
 
