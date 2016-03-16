@@ -13,6 +13,7 @@
 
   EvaluationCtrl.$inject = [
     '$scope',
+    '$http',
     '$routeParams',
     '$localStorage',
     '$translate',
@@ -23,6 +24,7 @@
 
   function EvaluationCtrl(
     $scope,
+    $http,
     $routeParams,
     $localStorage,
     $translate,
@@ -36,6 +38,7 @@
     var organizations = 'organizations';
     var finish = 'finish';
     var db = $localStorage.evaluation = $localStorage.evaluation || {};
+    var urlApi = 'http://salama-api.herokuapp.com/survey';
 
     ctrl.questions = db.questions = db.questions || [];
     ctrl.answers = db.answers = db.answers || {};
@@ -46,6 +49,9 @@
 
     function finishEvaluation(){
       ctrl.answers.completed = true;
+      if (ctrl.answers.sent){
+        sentEvaluation();
+      }
       setResults();
     }
 
@@ -229,6 +235,11 @@
       }else {
         return 'extreme';
       }
+    }
+
+    function sentEvaluation(){
+      ctrl.answers['survey_type'] = ctrl.type;
+      $http.post(urlApi, ctrl.answers);
     }
   }
 })();

@@ -1,8 +1,7 @@
 <!--fix later-->
 <div class="eq-one-column" ng-show="questions[selected].optional" >
   <md-checkbox
-    ng-init= "want = {}"
-    ng-model="want[selected]"
+    ng-model="answers.sent"
     flex
   >
     {{questions[selected]['legend-optional']}}
