@@ -41,16 +41,16 @@
   "views.advice.linkslegend":"Other articles based on your evaluation",
 
   "views.evaluation.lowrisk": "Low risk.",
-  "views.evaluation.lowadvice": "Same activities.",
+  "views.evaluation.lowadvice": "Keep focus preventive protocols",
 
   "views.evaluation.moderaterisk": "Moderated risk.",
-  "views.evaluation.moderateadvice": "Same activities.",
+  "views.evaluation.moderateadvice": "You will probably need to improve some prevention protocols.",
 
   "views.evaluation.highrisk": "High risk.",
-  "views.evaluation.highadvice": "Same high risk.",
+  "views.evaluation.highadvice": "You will probably need to adopt or improve some protocols.",
 
   "views.evaluation.extremerisk":"Extreme risk.",
-  "views.evaluation.extremeadvice":"Suspend activities.",
+  "views.evaluation.extremeadvice":"You will probably need to create a new security strategy  ",
 
   "views.footer.rights":"All rights reserved"
 }

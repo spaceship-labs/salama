@@ -1,0 +1,12 @@
+.advice .md-button{
+  border: 1px solid;
+  background: #5495C0;
+  color: white;
+  text-transform: lowercase;
+}
+.advice .md-button:first-letter{
+  text-transform: uppercase;
+}
+.advice .md-button:hover{
+  background-color: rgba(81,157,192,.8) !important;
+}

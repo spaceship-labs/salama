@@ -9,8 +9,8 @@
 </div>
 <ng-include
   ng-animate="'animate'"
-  ng-if="questions[selected].type &&questions[selected].type!='table-multiradio'"
-  ng-show="!questions[selected].optional || want[selected]"
+  ng-if="questions[selected].type && questions[selected].type!='table-multiradio'"
+  ng-show="!questions[selected].optional || answers.sent"
   src=" 'views/directives/' + questions[selected].type + '.html' "
   class="evaluation-page"
 >

@@ -7,8 +7,8 @@
   "views.sidenav.individuals": "Individuales",
   "views.sidenav.organizations": "Organizaciones",
 
-  "views.home.title": "Lorem Ipsum Dolor Sit Amet Es",
-  "views.home.subtitle": "Lorem Ipsum Dolor Sit Amet Es",
+  "views.home.title": "Evaluación de riesgo",
+  "views.home.subtitle": "para periodistas y blogueros",
   "views.home.library": "Biblioteca de Seguridad",
   "views.home.evaluation": "Evaluacion de Seguridad",
   "views.home.video":"Mira el video para más información",
@@ -38,18 +38,19 @@
   "views.advice.resultstitle2":"Evaluación de riesgos,",
   "views.advice.resultstitle3":"Su nivel de riesgo es ",
   "views.advice.linkslegend":"Otros artículos seleccionados basados en la evaluación",
+  "views.advice.restart":"reiniciar la evaluación",
 
   "views.evaluation.lowrisk": "Riesgo bajo.",
-  "views.evaluation.lowadvice": "Puede continuar con sus actividades.",
+  "views.evaluation.lowadvice": "Enfócate en la prevención de riesgos",
 
   "views.evaluation.moderaterisk": "Riesgo moderado.",
-  "views.evaluation.moderateadvice": "Puede continuar con sus actividades.",
+  "views.evaluation.moderateadvice": "Probablemente necesitarás adoptar o mejorar algunos protocolos preventivos de seguridad",
 
   "views.evaluation.highrisk": "Riesgo alto.",
-  "views.evaluation.highadvice": "Tiene que tomar medidas.",
+  "views.evaluation.highadvice": "Probablemente necesitarás adoptar o mejorar algunos protocolos de seguridad",
 
   "views.evaluation.extremerisk":"Riesgo extremo.",
-  "views.evaluation.extremeadvice":"Suspender actividad si el riesgo es inaceptable y fallan estrategias.",
+  "views.evaluation.extremeadvice":"Probablemente necesites crear una nueva estrategia de seguridad",
 
 
   "views.footer.rights":"Todos los derechos reservados"
