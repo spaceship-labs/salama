@@ -14,6 +14,7 @@
   EvaluationCtrl.$inject = [
     '$scope',
     '$http',
+    '$location',
     '$routeParams',
     '$localStorage',
     '$translate',
@@ -25,6 +26,7 @@
   function EvaluationCtrl(
     $scope,
     $http,
+    $location,
     $routeParams,
     $localStorage,
     $translate,
@@ -42,7 +44,7 @@
 
     ctrl.questions = db.questions = db.questions || [];
     ctrl.answers = db.answers = db.answers || {};
-    ctrl.answers.completed = false;
+    ctrl.answers.completed = adviceService.getResults().completed;
     ctrl.finishEvaluation = finishEvaluation;
     setResults();
     activate();
@@ -56,6 +58,11 @@
     }
 
     function activate(){
+      var type = $routeParams.type;
+      var completed = ctrl.answers.completed;
+      if (type == 'individual' && completed) {
+        $location.path('advice');
+      }
       setState();
       $scope.$watch(getTypeLang,getEvaluation);
     }

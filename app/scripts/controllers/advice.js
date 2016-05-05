@@ -17,6 +17,7 @@
     var ctrl  = this;
     ctrl.risk = adviceService.getRiskLevel();
     ctrl.finalScore = adviceService.getScore();
+    ctrl.restartEval = restartEval;
     ctrl.links = [];
     ctrl.advice = '';
 
@@ -41,6 +42,10 @@
       adviceService.getLinks(lang).then(function(links){
         ctrl.links = links;
       });
+    }
+
+    function restartEval(){
+      adviceService.setResults({});
     }
   }
 })();
