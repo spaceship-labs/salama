@@ -40,6 +40,8 @@
   "views.advice.resultstitle3":"your threat level is calculated to be",
   "views.advice.linkslegend":"Other articles based on your evaluation",
 
+  "views.advice.restart":"restart the evaluation",
+
   "views.evaluation.lowrisk": "Low risk.",
   "views.evaluation.lowadvice": "Keep focus preventive protocols",
 
