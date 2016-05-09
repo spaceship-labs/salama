@@ -27,7 +27,8 @@
     activate();
 
     function activate(){
-      $scope.$watch(getLang,getPost);
+      $scope.$watch(getLang, setLang);
+      $scope.$watch(getLang, getPost);
     }
 
     function getLang(){
@@ -48,6 +49,10 @@
 
     function setPost(post){
       ctrl.article = post;
+    }
+
+    function setLang(lang){
+      ctrl.lang = lang;
     }
 
     function logError(err){

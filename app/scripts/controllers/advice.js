@@ -24,12 +24,17 @@
     activate();
 
     function activate(){
+      $scope.$watch(getLang, setLang);
       $scope.$watch(getLang, getAdvice);
       $scope.$watch(getLang, getLinks);
     }
 
     function getLang(){
       return $translate.use();
+    }
+
+    function setLang(lang){
+      ctrl.lang = lang;
     }
 
     function getAdvice(lang){

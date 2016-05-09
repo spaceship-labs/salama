@@ -64,11 +64,20 @@
         $location.path('advice');
       }
       setState();
-      $scope.$watch(getTypeLang,getEvaluation);
+      $scope.$watch(getTypeLang, getEvaluation);
+      $scope.$watch(getLang, setLang);
     }
 
     function getTypeLang(){
       return $routeParams.type + $translate.use();
+    }
+
+    function getLang(){
+      return $translate.use();
+    }
+
+    function setLang(lang){
+      ctrl.lang = lang;
     }
 
     function getEvaluation(lang){
