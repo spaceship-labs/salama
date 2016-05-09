@@ -75,6 +75,7 @@
     // navsideFoo
 
     function activate(){
+      $scope.$watch(getLang, setLang);
       $scope.$watch(getLang, getMetadata);
       $scope.$watch(
         function(){
@@ -94,6 +95,10 @@
 
     function getLang(){
       return $translate.use();
+    }
+
+    function setLang(lang){
+      ctrl.lang = lang;
     }
 
     function getMetadata(lang){
