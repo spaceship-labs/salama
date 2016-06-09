@@ -16,7 +16,7 @@
 
   function contentService($q, $http){
 
-    var urlSite = 'https://raw.githubusercontent.com/spaceship-labs/salama-content/gh-pages/';
+    var urlSite = 'https://raw.githubusercontent.com/icfj-org/salamta-content/gh-pages/';
     var urlVersion = urlSite + 'version.txt';
     var urlMetadata = urlSite + 'metadata/';
     var urlPosts = urlSite + 'posts/';
