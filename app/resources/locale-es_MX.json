@@ -17,7 +17,7 @@
   "views.evaluation.organizations": "Organizaciones",
   "views.evaluation.catindividuals":"Individual",
   "views.evaluation.catorganizations":"Organización",
-  "views.evaluation.descindividuals":"Descripción individual",
+  "views.evaluation.descindividuals":"Esta herramienta te servirá para evaluar tu riesgo a nivel individual",
   "views.evaluation.descorganizations":"Descripción organización",
   "views.evaluation.title": "Empieza",
   "views.evaluation.subtitle": "Escoja una categoría para empezar la evaluación",
