@@ -2,11 +2,11 @@
 
 describe('Service: metadataService', function () {
 
-  var urlSite      = 'https://raw.githubusercontent.com/spaceship-labs/salama-content/gh-pages/';
-  var urlResources = 'resources/locale-en_US.json';
-  var urlVersion   = urlSite + 'version.txt';
-  var langMetadata = 'en_US';
-  var urlMetadata  = urlSite + 'metadata/locale-'+langMetadata+'.json' ;
+  var urlSite          = 'https://raw.githubusercontent.com/icfj-org/salama-content/gh-pages/';
+  var urlResources     = 'resources/locale-en_US.json';
+  var urlVersion       = urlSite + 'version.txt';
+  var langMetadata     = 'en_US';
+  var urlMetadata      = urlSite + 'metadata/locale-'+langMetadata+'.json' ;
   var someRandomString = 'some_random_string';
   var metadataService;
   var httpBackend;

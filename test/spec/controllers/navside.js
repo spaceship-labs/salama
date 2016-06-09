@@ -6,7 +6,7 @@ describe('Controller: NavsideCtrl', function () {
   var httpBackend;
   var NavsideCtrl;
   var urlResources = 'resources/locale-en_US.json';
-  var urlSite = 'https://raw.githubusercontent.com/spaceship-labs/salama-content/gh-pages/';
+  var urlSite = 'https://raw.githubusercontent.com/icfj-org/salama-content/gh-pages/';
   var urlVersion = urlSite + 'version.txt';
   var langMetadata = 'en_US';
   var urlMetadata  = urlSite + 'metadata/locale-'+langMetadata+'.json' ;

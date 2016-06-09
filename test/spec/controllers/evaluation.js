@@ -6,7 +6,7 @@ describe('Controller: EvaluationCtrl', function () {
   var EvaluationCtrl;
   var random_string = 'random_string';
   var urlResources = 'resources/locale-en_US.json';
-  var urlSite = 'https://raw.githubusercontent.com/spaceship-labs/salama-content/gh-pages/';
+  var urlSite = 'https://raw.githubusercontent.com/icfj-org/salama-content/gh-pages/';
   var urlVersion = urlSite + 'version.txt';
   var urlQuestions = urlSite + 'questions/en_US/individuals.json';
   var urlApi = 'http://salama-api.herokuapp.com/survey';

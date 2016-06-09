@@ -2,11 +2,11 @@
 
 describe('Service: postsService', function () {
 
-  var urlSite      = 'https://raw.githubusercontent.com/spaceship-labs/salama-content/gh-pages/';
-  var urlResources = 'resources/locale-en_US.json';
-  var urlVersion   = urlSite + 'version.txt';
-  var pathPost = 'en_US/test.md'
-  var urlPost = urlSite + 'posts/' + pathPost;
+  var urlSite          = 'https://raw.githubusercontent.com/icfj-org/salama-content/gh-pages/';
+  var urlResources     = 'resources/locale-en_US.json';
+  var urlVersion       = urlSite + 'version.txt';
+  var pathPost         = 'en_US/test.md'
+  var urlPost          = urlSite + 'posts/' + pathPost;
   var someRandomString = 'some_random_string';
   var postsService;
   var httpBackend;

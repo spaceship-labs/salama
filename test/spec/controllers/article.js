@@ -8,7 +8,7 @@ describe('Controller: ArticleCtrl', function () {
   var ArticleCtrl;
   var random_string = 'random_string';
   var urlResources = 'resources/locale-en_US.json';
-  var urlSite = 'https://raw.githubusercontent.com/spaceship-labs/salama-content/gh-pages/';
+  var urlSite = 'https://raw.githubusercontent.com/icfj-org/salama-content/gh-pages/';
   var urlVersion       = urlSite + 'version.txt';
   var postPath = 'random_post';
   var urlPost = urlSite + 'posts/en_US/' + postPath + '.md';

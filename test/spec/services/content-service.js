@@ -5,7 +5,7 @@ describe('Service: contentService', function () {
   var lang             = 'en_US';
   var postPath         = 'en_US/random.md';
   var urlResources     = 'resources/locale-en_US.json';
-  var urlSite          = 'https://raw.githubusercontent.com/spaceship-labs/salama-content/gh-pages/';
+  var urlSite          = 'https://raw.githubusercontent.com/icfj-org/salama-content/gh-pages/';
   var urlVersion       = urlSite + 'version.txt';
   var urlMetadata      = urlSite + 'metadata/locale-all.json' ;
   var urlPost          = urlSite + 'posts/en_US/random.md';
