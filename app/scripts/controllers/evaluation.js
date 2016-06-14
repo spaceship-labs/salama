@@ -46,7 +46,6 @@
     ctrl.answers = db.answers = db.answers || {};
     ctrl.answers.completed = adviceService.getResults().completed;
     ctrl.finishEvaluation = finishEvaluation;
-    setResults();
     activate();
 
     function finishEvaluation(){
