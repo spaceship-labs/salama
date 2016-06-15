@@ -14,13 +14,13 @@
   AdviceCtrl.$inject = ['$scope', '$translate', 'adviceService'];
 
   function AdviceCtrl($scope, $translate, adviceService){
-    var ctrl  = this;
-    ctrl.risk = adviceService.getRiskLevel();
-    ctrl.finalScore = adviceService.getScore();
+    var ctrl         = this;
+    var result       = adviceService.getResultsIndividuals();
+    ctrl.finalScore  = result.score;
+    ctrl.risk        = adviceService.getRiskLevelIndividuals();
+    ctrl.links       = [];
+    ctrl.advice      = '';
     ctrl.restartEval = restartEval;
-    ctrl.links = [];
-    ctrl.advice = '';
-
     activate();
 
     function activate(){
@@ -38,19 +38,19 @@
     }
 
     function getAdvice(lang){
-      adviceService.getAdvice(lang).then(function(advice){
+      adviceService.getAdviceIndividuals(lang).then(function(advice){
         ctrl.advice = advice;
       });
     }
 
     function getLinks(lang){
-      adviceService.getLinks(lang).then(function(links){
+      adviceService.getLinksIndividuals(lang).then(function(links){
         ctrl.links = links;
       });
     }
 
     function restartEval(){
-      adviceService.setResults({});
+      adviceService.setResultsIndividuals({});
     }
   }
 })();

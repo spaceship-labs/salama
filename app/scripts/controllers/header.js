@@ -79,7 +79,7 @@
       $scope.$watch(getLang, getMetadata);
       $scope.$watch(
         function(){
-          return adviceService.getResults().completed;
+          return adviceService.getResultsIndividuals().completed;
         },
         function(completed){
           if (completed === true){

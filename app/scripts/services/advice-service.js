@@ -18,13 +18,17 @@
   ];
 
   function adviceService($localStorage, contentService, metadataService){
-
-    var db = $localStorage.advice = $localStorage.advice || {};
-    var risks;
-
-    db.results = db.results || {};
-
-    risks = {
+    var store = $localStorage.adviceService = $localStorage.adviceService || {
+      individuals: {
+        results: {
+        }
+      },
+      organizations: {
+        results: {
+        }
+      }
+    };
+    var risks = {
       extreme  : {
         level       : 'views.evaluation.extremerisk',
         image       : 'images/riesgo_extremo.jpg',
@@ -52,55 +56,47 @@
     };
 
     return {
-      setResults   : setResults,
-      getResults   : getResults,
-      getAdvice    : getAdvice,
-      getLinks     : getLinks,
-      getScore     : getScore,
-      getRiskLevel : getRiskLevel
+      setResultsIndividuals: setResultsIndividuals,
+      getResultsIndividuals: getResultsIndividuals,
+      getRiskLevelIndividuals: getRiskLevelIndividuals,
+      getLinksIndividuals: getLinksIndividuals,
+      getAdviceIndividuals: getAdviceIndividuals
     };
 
-
-    function getResults(){
-      return db.results;
+    function getResultsIndividuals(){
+      return store.individuals.results;
     }
-    function getAdvice(lang){
-      var riskLevel = getRiskLevel();
+
+    function setResultsIndividuals(results){
+      store.individuals.results = results;
+    }
+
+    function getLinksIndividuals(lang){
+      return metadataService.getMetadata(lang).then(function(metadata){
+        var links = [];
+        var titles = {};
+        var rlinks = store.individuals.results.articles;
+        metadata.forEach(function(post){
+          titles[post.path] = post.title;
+        });
+        for (var i = 0; i < rlinks.length; i++){
+          var article = rlinks[i];
+          links.push({
+            title :  titles[article],
+            link  :  article,
+          });
+        }
+        return links;
+      });
+    }
+
+    function getAdviceIndividuals(lang){
+      var riskLevel = risks[store.individuals.results.riskLevel];
       return contentService.getAdvice(riskLevel.advice, lang);
     }
 
-    function getLinks(lang){
-      return metadataService.getMetadata(lang).then(resolveLinks);
-    }
-
-    function resolveLinks(metadata){
-      var links = [];
-      var titles = {};
-      metadata.forEach(function(post){
-        titles[post.path] = post.title;
-      });
-      for (var article in db.results){
-        if (article == 'score' || article == 'riskLevel' || article == 'completed'){
-          continue;
-        }
-        links.push({
-          title :  titles[article],
-          link  :  article,
-        });
-      }
-      return links;
-    }
-
-    function getScore(){
-      return db.results.score;
-    }
-
-    function getRiskLevel(){
-      return risks[db.results.riskLevel];
-    }
-
-    function setResults(results){
-      db.results = results;
+    function getRiskLevelIndividuals(lang){
+       return risks[store.individuals.results.riskLevel];
     }
 
   }

@@ -13,11 +13,10 @@
 
   EvaluationCtrl.$inject = [
     '$scope',
-    '$http',
     '$location',
     '$routeParams',
-    '$localStorage',
     '$translate',
+    '$localStorage',
     'individualsService',
     'organizationsService',
     'adviceService'
@@ -25,171 +24,168 @@
 
   function EvaluationCtrl(
     $scope,
-    $http,
     $location,
     $routeParams,
-    $localStorage,
     $translate,
+    $localStorage,
     individualsService,
     organizationsService,
     adviceService
   ) {
+    var ctrl    = this;
+    var storage = $localStorage.evaluationCtrl = $localStorage.evaluationCtrl || {
+      answers: {
+        individuals: {},
+        organizations: {}
+      }
+    };
 
-    var ctrl = this;
-    var individuals = 'individual';
-    var organizations = 'organizations';
-    var finish = 'finish';
-    var db = $localStorage.evaluation = $localStorage.evaluation || {};
-    var urlApi = 'http://salama-api.herokuapp.com/survey';
+    ctrl.type      = $routeParams.type;
+    ctrl.questions = [];
+    ctrl.answers   = {};
+    ctrl.page      = 0;
+    ctrl.finish    = finish;
 
-    ctrl.questions = db.questions = db.questions || [];
-    ctrl.answers = db.answers = db.answers || {};
-    ctrl.answers.completed = adviceService.getResults().completed;
-    ctrl.finishEvaluation = finishEvaluation;
+
     activate();
 
-    function finishEvaluation(){
-      ctrl.answers.completed = true;
-      if (ctrl.answers.sent){
-        sentEvaluation();
-      }
-      setResults();
-    }
-
     function activate(){
-      var type = $routeParams.type;
-      var completed = ctrl.answers.completed;
-      if (type == 'individual' && completed) {
-        $location.path('advice');
-      }
-      setState();
-      $scope.$watch(getTypeLang, getEvaluation);
-      $scope.$watch(getLang, setLang);
-    }
-
-    function getTypeLang(){
-      return $routeParams.type + $translate.use();
+      $scope.$watch(getLang, setQuestions);
     }
 
     function getLang(){
       return $translate.use();
     }
 
-    function setLang(lang){
-      ctrl.lang = lang;
-    }
-
-    function getEvaluation(lang){
-      var type = $routeParams.type;
-      var lang = $translate.use();
-      if (type == individuals) {
-        individualsService.getEval(lang).then(setEvaluation);
-      }else if (type == organizations) {
-        organizationsService.getEval(lang).then(setEvaluation);
+    function setQuestions(lang){
+      ctrl.page = 1;
+      switch (ctrl.type) {
+        case 'individual':
+          var completed = adviceService.getResultsIndividuals().completed;
+          if (completed) {
+            $location.path('/advice');
+          }
+          individualsService.getEval(lang).then(function(questions){
+              ctrl.questions = questions;
+              ctrl.answers   = storage.answers.individuals;
+          });
+          break;
+        case 'organizations':
+          organizationsService.getEval(lang).then(function(questions){
+            ctrl.questions = questions;
+            ctrl.answers   = storage.answers.organizations;
+          });
+          break;
+        default:
+          ctrl.page = 0;
+          break
       }
     }
 
-    function setEvaluation(questions){
-      ctrl.questions = db.questions = questions;
+    function finish(){
+      switch (ctrl.type) {
+        case 'individual':
+          var score     = getScoreIndividuals();
+          var riskLevel = getRiskLevelIndividuals();
+          var articles  = getArticlesIndividuals();
+          adviceService.setResultsIndividuals({
+            score: score,
+            riskLevel: riskLevel,
+            articles: articles,
+            completed: true
+          });
+          storage.answers.individuals = {};
+          $location.path('/advice');
+          break;
+        case 'organizations':
+
+          break;
+        default:
+          break;
+      }
     }
 
-    function setState(){
-      var type = $routeParams.type;
-      var action = $routeParams.action;
-      if (type == individuals || type == organizations) {
-        ctrl.type = type;
-        ctrl.page = 1;
-      }
-      if (ctrl.type && action == finish) {
-        ctrl.completed = 100;
-        ctrl.page = 2;
-      }
-    }
-
-    function setResults(){
-      var answers = ctrl.answers;
-      var results = {};
-      results.completed = answers.completed;
-      results.score = getScore();
-      results.riskLevel = getRiskLevel();
+    function getArticlesIndividuals(){
+      var answers  = ctrl.answers;
+      var articles = [];
       //100
       if (answers['digital_navigation'] >= 4) {
-        results.digital_security = true;
-        results.navigation = true;
+        articles.push('digital_security');
+        articles.push('navigation');
       }
       if (answers['digital_mail'] >= 4) {
-        results.digital_security = true;
-        results.mail = true;
+        articles.push('digital_security');
+        articles.push('mail');
       }
       if (answers['digital_chat'] >= 4) {
-        results.digital_security = true;
-        results.chat = true;
+        articles.push('digital_security');
+        articles.push('chat');
       }
       if (answers['digital_passwords'] >= 4) {
-        results.digital_security = true;
-        results.passwords = true;
+        articles.push('digital_security');
+        articles.push('passwords');
       }
       if (answers['digital_calls'] >= 4) {
-        results.digital_security = true;
-        results.calls = true;
+        articles.push('digital_security');
+        articles.push('calls');
       }
       //106
       if ( answers['threat_individual'] >= 20
         || answers['threat_collegues_in'] >= 20
         || answers['threat_collegues_out'] >= 20
       ) {
-        results.threat = true;
+        articles.push('threat');
       }
       //107
       if (answers['security_corruption'] >= 3 ) {
-        results.corruption  = true;
+        articles.push('corruption');
       }
       //108
       if ( answers['security_zone'] >= 3
         && answers['profesional_protocols'] >= 3
       ) {
-        results.zone_protocols = true;
+        articles.push('zone_protocols');
       }
       //109
       if ( answers['security_police'] >= 4
         && answers['security_corruption'] >=4
       ){
-        results.crime_corruption = true;
+        articles.push('crime_corruption');
       }
       //110
       if ( answers['security_information'] >= 4
         && answers['security_corruption'] >=4
       ){
-        results.corruption_information = true;
+        articles.push('corruption_information');
       }
       //111
       if ( answers['security_information'] >= 4
         && answers['security_corruption'] >=4
-        && answers['digital_mail']>=3
+        && answers['digital_mail'] >= 3
       ){
-        results.information_corruption_mail = true;
+        articles.push('information_corruption_mail');
       }
       //112
       if (answers['security_violence'] >= 4) {
-        results.violence = true;
+        articles.push('violence');
       }
       //113
       if ( answers['security_violence'] >= 4
         && answers['profesional_plan'] >= 4
       ){
-        results.violence_plan = true;
+        articles.push('violence_plan');
       }
       //114
       if ( answers['security_violence'] >= 4
         && answers['network_boss'] >= 4
       ){
-        results.violence_boss = true;
+        articles.push('violence_boss');
       }
       //115
       if ( answers['threat_collegues_in'] >= 20
         && answers['profesional_protocols'] >= 4
       ){
-        results.threat_protocols = true;
+        articles.push('threat_protocols');
       }
       //116
       if ( answers['profesional_plan'] >= 4
@@ -197,50 +193,49 @@
         || answers['profesional_etic'] >= 4
         || answers['profesional_protocols'] >= 4
       ){
-        results.professional = true;
+        articles.push('professional');
       }
       //117
       if ( answers['network_boss'] >= 4
         || answers['network_sub'] >= 4
         || answers['network_collegues'] >= 4
       ){
-        results.network = true;
+        articles.push('network');
       }
       //118
       if (answers['profesional_plan'] >= 4){
-        results.plan = true;
+        articles.push('plan');
       }
       //119
       if (answers['profesional_information'] >=4) {
-        results.information = true;
+        articles.push('information');
       }
       //120
       if (answers['profesional_etic'] >=4) {
-        results.etic = true;
+        articles.push('etic');
       }
       //121
       if (answers['security_information'] >=4) {
-        results.sinformation = true;
+        articles.push('sinformation');
       }
-      adviceService.setResults(results);
+      return articles;
     }
 
-    function getScore(){
+    function getScoreIndividuals(){
       var score = 0;
-      var digital_security = false;
       ctrl.questions.forEach(function(page){
         page.questions.forEach(function(question){
           if (question.score) {
             var res = ctrl.answers[question.name];
-            score += ( isFinite(res) && Number(res)) || 0;
+            score  += (isFinite(res) && Number(res)) || 0;
           }
         });
       });
       return score;
     }
 
-    function getRiskLevel(){
-      var score = getScore();
+    function getRiskLevelIndividuals(){
+      var score = getScoreIndividuals();
       if (score <= 40) {
         return 'low';
       }else if (score <= 59) {
@@ -252,10 +247,5 @@
       }
     }
 
-    function sentEvaluation(){
-      ctrl.answers['survey_type'] = ctrl.type;
-      $http.post(urlApi, ctrl.answers);
-    }
   }
 })();
-
