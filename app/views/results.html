@@ -1,0 +1,34 @@
+<md-content class="advice"
+  style="{{advice.lang == 'ar_AE' && 'text-align:right!important'}}"
+>
+  <div class="evaluation-results container-md">
+    <h1 class="center">
+      <strong>{{ 'views.advice.title1' | translate }}</strong>
+      {{ 'views.advice.title2' | translate }}
+    </h1>
+    <h2>
+      {{'views.advice.resultstitle1'| translate}}
+      <span>{{ 'views.advice.resultstitle2'| translate}} </span>
+      {{'views.advice.resultstitle3'|translate}}
+      <strong> {{advice.finalScore}}</strong>
+    </h2>
+  </div>
+  <table>
+    <thead>
+      <th>Potential Risk Events</th>
+      <th>Score</th>
+      <th>Risk Rating</th>
+    </thead>
+    <tbody>
+       <tr ng-repeat="res in results.results">
+        <td>{{res.name}}</td>
+        <td>{{res.score}}</td>
+        <td>{{res.advice}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <md-button ng-click="results.restartEval()" ng-href="#/evaluation/organizations">
+  {{'views.advice.restart' | translate}}
+  </md-button>
+
+</md-content>

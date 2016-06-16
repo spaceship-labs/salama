@@ -60,7 +60,9 @@
       getResultsIndividuals: getResultsIndividuals,
       getRiskLevelIndividuals: getRiskLevelIndividuals,
       getLinksIndividuals: getLinksIndividuals,
-      getAdviceIndividuals: getAdviceIndividuals
+      getAdviceIndividuals: getAdviceIndividuals,
+      setResultsOrganizations: setResultsOrganizations,
+      getResultsOrganizations: getResultsOrganizations
     };
 
     function getResultsIndividuals(){
@@ -97,6 +99,14 @@
 
     function getRiskLevelIndividuals(lang){
        return risks[store.individuals.results.riskLevel];
+    }
+
+    function setResultsOrganizations(results){
+      store.organizations.results = results;
+    }
+
+    function getResultsOrganizations(){
+      return store.organizations.results;
     }
 
   }

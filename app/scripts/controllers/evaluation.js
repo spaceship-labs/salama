@@ -71,6 +71,10 @@
           });
           break;
         case 'organizations':
+          var completed = adviceService.getResultsOrganizations().completed;
+          if (completed) {
+            $location.path('/results');
+          }
           organizationsService.getEval(lang).then(function(questions){
             ctrl.questions = questions;
             ctrl.answers   = storage.answers.organizations;
@@ -98,7 +102,11 @@
           $location.path('/advice');
           break;
         case 'organizations':
-
+          var results = getResultsOrganizations();
+          results.completed = true;
+          adviceService.setResultsOrganizations(results);
+          //storage.answers.organizations = {};
+          $location.path('/results');
           break;
         default:
           break;
@@ -245,6 +253,96 @@
       }else {
         return 'extreme';
       }
+    }
+
+    function getResultsOrganizations(){
+      var riskMatrix = [
+        ['adequately', 'adequately', 'potentially_over', 'potentially_over', 'potentially_over'],
+        ['potentially_poorly', 'adequately', 'potentially_over', 'potentially_over', 'potentially_over'],
+        ['potentially_poorly', 'adequately', 'potentially_over', 'potentially_over', 'potentially_over'],
+        ['poorly', 'potentially_poorly', 'adequately', 'potentially_over', 'potentially_over'],
+        ['poorly', 'potentially_poorly', 'adequately', 'adequately', 'potentially_over'],
+        ['poorly', 'poorly', 'potentially_poorly', 'adequately', 'potentially_over'],
+        ['poorly', 'poorly', 'potentially_poorly', 'adequately', 'adequately'],
+        ['poorly', 'poorly', 'poorly', 'potentially_poorly', 'adequately'],
+        ['poorly', 'poorly', 'poorly', 'potentially_poorly', 'adequately']
+      ];
+      var weights = [
+        0.20,
+        0.20,
+        0.20,
+        0.20,
+        0.20
+      ];
+      var events = [
+        'probability',
+        'time',
+        'financial',
+        'physical',
+        'reputation'
+      ];
+      var variables = [
+        'murder',
+        'dissapear',
+        'kidnapping',
+        'torture',
+        'coups',
+        'stole',
+        'thread_death',
+        'defamation',
+        'verbal_attack',
+        'espionage',
+        'hacking',
+        'ciber_attack',
+        'ddos_attack',
+        'media_attack',
+        'sexual_attack',
+        'information_obstacle'
+      ];
+      var keys = variables.map(function(variable){
+        return events.map(function(ev){
+          var key = ev + '_' + variable;
+          return key;
+        });
+      });
+      var keys_control = variables.map(function(variable){
+        return events.map(function(ev){
+          var key = ev + '_control_' + variable;
+          return key;
+        });
+      });
+      var results = {};
+      for (var i = 0; i < keys.length; i++){
+        var vkeys = keys[i].map(function(key){
+          return ctrl.answers[key];
+        });
+        var vkeys_control = keys_control[i].map(function(key){
+          return ctrl.answers[key];
+        });
+        var row      = dotV(vkeys, weights) - 2;
+        var col      = dotV(vkeys_control, weights) - 1;
+        var advice   = riskMatrix[row][col];
+        var sumatory = sumV(vkeys);
+        results[variables[i]] = {
+          score: sumatory,
+          advice: advice
+        };
+      }
+      return results;
+    }
+
+    function dotV(V1, V2){
+      var sum = 0;
+      for (var i = 0; i < V1.length; i++){
+        sum += V1[i] * V2[i];
+      }
+      return sum
+    }
+
+    function sumV(V1){
+      return V1.reduce(function(a, b){
+        return a + b;
+      });
     }
 
   }
