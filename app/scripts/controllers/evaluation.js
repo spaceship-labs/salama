@@ -314,13 +314,19 @@
       var results = {};
       for (var i = 0; i < keys.length; i++){
         var vkeys = keys[i].map(function(key){
-          return ctrl.answers[key];
+          return ctrl.answers[key] || 0;
         });
         var vkeys_control = keys_control[i].map(function(key){
-          return ctrl.answers[key];
+          return ctrl.answers[key] || 0;
         });
         var row      = dotV(vkeys, weights) - 2;
         var col      = dotV(vkeys_control, weights) - 1;
+        if (row < 0 ) {
+          row = 0;
+        }
+        if (col < 0) {
+          col = 0;
+        }
         var advice   = riskMatrix[row][col];
         var sumatory = sumV(vkeys);
         results[variables[i]] = {
