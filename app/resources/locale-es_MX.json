@@ -52,6 +52,30 @@
   "views.evaluation.extremerisk":"Riesgo extremo.",
   "views.evaluation.extremeadvice":"Probablemente necesites crear una nueva estrategia de seguridad",
 
+  "views.results.potentialrisk":"Eventos con riesgo potencial",
+  "views.results.score":"Puntaje",
+  "views.results.riskRating":"Nivel de riesgo",
+  "views.results.adequately":"Nivel Adecuado",
+  "views.results.poorly":"No controlado",
+  "views.results.potentially_over": "Sobrecontrolado",
+  "views.results.potentially_poorly": "Medianamente controlado",
+  "views.results.murder":"Asesinato",
+  "views.results.dissapear":"Desaparición forzada",
+  "views.results.kidnapping":"Secuestro",
+  "views.results.torture":"Tortura",
+  "views.results.coups":"Golpes",
+  "views.results.stole":"Robo",
+  "views.results.thread_death":"Amenaza de muerte",
+  "views.results.defamation":"Difamación",
+  "views.results.verbal_attack":"Ataque verbal",
+  "views.results.espionage":"Espionaje",
+  "views.results.hacking":"Hackeo de cuentas",
+  "views.results.ciber_attack":"Ataque cibernético",
+  "views.results.ddos_attack":"Denegación de servicio",
+  "views.results.media_attack":"Presión mediatica",
+  "views.results.sexual_attack":"Ataque sexual",
+  "views.results.information_obstacle":"Obstrucción de información",
+
 
   "views.footer.rights":"Todos los derechos reservados"
 }

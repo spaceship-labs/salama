@@ -19,7 +19,8 @@ angular
     'pascalprecht.translate',//angular translate
     'hc.marked', //markdown
     'ngStorage',//local storage
-    'google.places' // google places
+    'google.places',
+    'md.data.table'
   ])
   .config(routeProvider)
   .config(translateProvider)

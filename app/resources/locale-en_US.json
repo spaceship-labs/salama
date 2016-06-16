@@ -54,5 +54,28 @@
   "views.evaluation.extremerisk":"Extreme risk.",
   "views.evaluation.extremeadvice":"You will probably need to create a new security strategy  ",
 
+  "views.results.potentialrisk":"Potential Risk Events",
+  "views.results.score":"Score",
+  "views.results.riskRating":"Risk Rating",
+  "views.results.adequately":"Adequately controlled",
+  "views.results.poorly":"Poorly controlled",
+  "views.results.potentially_over": "Over controlled",
+  "views.results.potentially_poorly": "Potentially poorly controlled",
+  "views.results.murder":"murder",
+  "views.results.dissapear":"dissapear",
+  "views.results.kidnapping":"kidnapping",
+  "views.results.coups":"coups",
+  "views.results.stole":"stole",
+  "views.results.thread_death":"thread death",
+  "views.results.defamation":"defamation",
+  "views.results.verbal_attack":"verbal attack",
+  "views.results.espionage":"espionage",
+  "views.results.hacking":"hacking",
+  "views.results.ciber_attack":"ciber_attack",
+  "views.results.ddos_attack":"ddos attack",
+  "views.results.media_attack":"media attack",
+  "views.results.sexual_attack":"sexual attack",
+  "views.results.information_obstacle":"information obstacle",
+
   "views.footer.rights":"All rights reserved"
 }

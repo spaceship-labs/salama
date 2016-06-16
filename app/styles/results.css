@@ -1,0 +1,15 @@
+.row-red *{
+  background: rgba(255, 0, 0, 0.7);
+  color:white!important;
+  font-weight:bold;
+}
+.row-green *{
+  background: rgba(81, 157, 190, 10);
+  color:white!important;
+  font-weight:bold;
+}
+.row-yellow *{
+  background: rgba(255, 255, 0, 0.7);
+  color:black!important;
+  font-weight:bold;
+}
