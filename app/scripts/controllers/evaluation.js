@@ -105,7 +105,7 @@
           var results = getResultsOrganizations();
           results.completed = true;
           adviceService.setResultsOrganizations(results);
-          //storage.answers.organizations = {};
+          storage.answers.organizations = {};
           $location.path('/results');
           break;
         default:
