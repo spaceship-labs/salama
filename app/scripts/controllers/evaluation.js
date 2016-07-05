@@ -369,6 +369,8 @@
         });
         var row      = dotV(vkeys, weights) - 2;
         var col      = dotV(vkeys_control, weights) - 1;
+        row = Math.round(row);
+        col = Math.round(col);
         if (row < 0 ) {
           row = 0;
         }
