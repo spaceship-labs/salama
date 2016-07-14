@@ -17,6 +17,7 @@
     '$routeParams',
     '$translate',
     '$localStorage',
+    '$http',
     'individualsService',
     'organizationsService',
     'adviceService'
@@ -28,6 +29,7 @@
     $routeParams,
     $translate,
     $localStorage,
+    $http,
     individualsService,
     organizationsService,
     adviceService
@@ -99,14 +101,30 @@
             completed: true
           });
           storage.answers.individuals = {};
-          $location.path('/advice');
+
+          var infoSurvey = getFormatInfoSurvey();
+          infoSurvey.score = score;
+          infoSurvey.risk = riskLevel;
+          infoSurvey.type = 'individual';
+          saveSurvey(infoSurvey).then(function(res) {
+            $location.path('/advice');
+          });
           break;
         case 'organizations':
+          var infoSurvey = getFormatInfoSurvey();
+          infoSurvey.type = 'organization';
+
           var results = getResultsOrganizations();
+
           results.completed = true;
           adviceService.setResultsOrganizations(results);
           storage.answers.organizations = {};
-          $location.path('/results');
+
+          infoSurvey.results = results;
+          saveSurvey(infoSurvey).then(function(res) {
+            $location.path('/results');
+          });
+
           break;
         default:
           break;
@@ -242,6 +260,36 @@
       return score;
     }
 
+    function getFormatInfoSurvey() {
+      var info = {
+        answers: {},
+        user: {},
+      };
+      ctrl.questions.forEach(function(page){
+        page.questions.forEach(function(question){
+          var res = ctrl.answers[question.name];
+          if (question.score) {
+            info.answers[question.name] = (isFinite(res) && Number(res)) || 0;
+          } else if (res){
+            if (question.name == 'location') {
+              res = {
+                formatted_address: res.formatted_address,
+                geometry: res.geometry,
+                id: res.id,
+                name: res.name,
+                place_id: res.place_id,
+                url: res.url
+              };
+            }
+            info.user[question.name] = res;
+
+          }
+        });
+      });
+
+      return info;
+    }
+
     function getRiskLevelIndividuals(){
       var score = getScoreIndividuals();
       if (score <= 40) {
@@ -321,18 +369,22 @@
         });
         var row      = dotV(vkeys, weights) - 2;
         var col      = dotV(vkeys_control, weights) - 1;
+        row = Math.round(row);
+        col = Math.round(col);
         if (row < 0 ) {
           row = 0;
         }
         if (col < 0) {
           col = 0;
         }
-        var advice   = riskMatrix[row][col];
-        var sumatory = sumV(vkeys);
-        results[variables[i]] = {
-          score: sumatory,
-          advice: advice
-        };
+        if (riskMatrix && riskMatrix[row]) {
+          var advice   = riskMatrix[row][col];
+          var sumatory = sumV(vkeys);
+          results[variables[i]] = {
+            score: sumatory,
+            advice: advice
+          };
+        }
       }
       return results;
     }
@@ -349,6 +401,10 @@
       return V1.reduce(function(a, b){
         return a + b;
       });
+    }
+
+    function saveSurvey(data) {
+      return $http.post('https://salama-api.herokuapp.com/survey', data);
     }
 
   }
