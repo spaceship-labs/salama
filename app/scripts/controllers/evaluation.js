@@ -92,11 +92,15 @@
       switch (ctrl.type) {
         case 'individual':
           var score     = getScoreIndividuals();
+          var digitalScore = getDigitalScore();
           var riskLevel = getRiskLevelIndividuals();
           var articles  = getArticlesIndividuals();
+          var digitalRiskLevel = getDigitalRiskLevel();
           adviceService.setResultsIndividuals({
             score: score,
+            digitalScore : digitalScore,
             riskLevel: riskLevel,
+            digitalRiskLevel : digitalRiskLevel,
             articles: articles,
             completed: true
           });
@@ -247,6 +251,16 @@
       return articles;
     }
 
+    //Returns int with score from 4- 20 that represents the score for the digital security questions
+    function getDigitalScore(){
+      var questions = ["digital_navigation","digital_mail","digital_chat","digital_passwords","digital_calls"];
+      var score = 0;
+      questions.forEach(function(question){
+        score += ctrl.answers[question];
+      });
+      return score;
+    }
+
     function getScoreIndividuals(){
       var score = 0;
       ctrl.questions.forEach(function(page){
@@ -297,6 +311,19 @@
       }else if (score <= 59) {
         return 'moderate';
       }else if (score <= 79) {
+        return 'high';
+      }else {
+        return 'extreme';
+      }
+    }
+
+    function getDigitalRiskLevel(){
+      var score = getDigitalScore();
+      if (score <= 10) {
+        return 'low';
+      }else if (score <= 15) {
+        return 'moderate';
+      }else if (score <= 20) {
         return 'high';
       }else {
         return 'extreme';

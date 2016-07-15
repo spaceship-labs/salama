@@ -32,6 +32,19 @@
         </li>
       </ul>
     </div>
+
+     <h1 class="center">
+      <strong>{{ 'views.advice.title1' | translate }}</strong>
+      {{ 'views.advice.title2' | translate }}
+    </h1>
+    <h2>
+      {{'views.advice.resultstitle1'| translate}}
+      <span>{{ 'views.advice.resultstitle2'| translate}} </span>
+      {{'views.advice.resultstitle4'|translate}}
+      <strong> {{advice.digitalScore}}</strong>
+    </h2>
+     <h3>{{ advice.digitalRisk.level | translate}}</h3>
+
     <md-button ng-click="advice.restartEval()" ng-href="#/evaluation/individual">
     {{'views.advice.restart' | translate}}
     </md-button>

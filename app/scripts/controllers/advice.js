@@ -17,7 +17,9 @@
     var ctrl         = this;
     var result       = adviceService.getResultsIndividuals();
     ctrl.finalScore  = result.score;
+    ctrl.digitalScore = result.digitalScore;
     ctrl.risk        = adviceService.getRiskLevelIndividuals();
+    ctrl.digitalRisk = adviceService.getDigitalRiskLevelIndividuals();
     ctrl.links       = [];
     ctrl.advice      = '';
     ctrl.restartEval = restartEval;

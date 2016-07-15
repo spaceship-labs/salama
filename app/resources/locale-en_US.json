@@ -38,6 +38,7 @@
   "views.advice.resultstitle1":"Based on you responses to the",
   "views.advice.resultstitle2":"Threat Assessment Survey,",
   "views.advice.resultstitle3":"your threat level is calculated to be",
+  "views.advice.resultstitle4" : "your digital threat level is calculated to be",
   "views.advice.linkslegend":"Other articles based on your evaluation",
 
   "views.advice.restart":"restart the evaluation",
