@@ -55,7 +55,7 @@
 
   "views.results.potentialrisk":"Eventos con riesgo potencial",
   "views.results.score":"Puntaje",
-  "views.results.riskRating":"Nivel de riesgo",
+  "views.results.riskRating":"Control de riesgo",
   "views.results.adequately":"Nivel Adecuado",
   "views.results.poorly":"No controlado",
   "views.results.potentially_over": "Sobrecontrolado",
