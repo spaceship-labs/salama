@@ -16,7 +16,10 @@
 
   function contentService($q, $http){
 
-    var urlSite = 'https://raw.githubusercontent.com/icfj-org/salama-content/gh-pages/';
+    var urlSite = '#{URLCONTENT}';
+    urlSite = urlSite.indexOf('CONTENT')===-1 ?
+                urlSite : 'https://raw.githubusercontent.com/icfj-org/salama-content/gh-pages/';
+    console.log('urlContent', urlSite);
     var urlVersion = urlSite + 'version.txt';
     var urlMetadata = urlSite + 'metadata/';
     var urlPosts = urlSite + 'posts/';
@@ -46,7 +49,7 @@
       return downloadFile(url).then(function(post){
         //removing frontmatter
         post = post.replace(/^---(.|\s)*?---/,'');
-        post = post.replace(/{{site.baseurl}}/,urlSite)
+        post = post.replace(/{{site.baseurl}}/,urlSite);
         return post;
       });
     }

@@ -22,7 +22,11 @@ module.exports = function (grunt) {
   // Configurable paths for the application
   var appConfig = {
     app: require('./bower.json').appPath || 'app',
-    dist: 'dist'
+    dist: 'dist',
+    copyAndReplaceKeys: function (content) {
+      var urlContent = process.env.URLCONTENT || 'CONTENT';
+      return content.replace(/#{URLCONTENT}/, urlContent);
+    }
   };
 
   // Define the configuration for all the tasks
@@ -39,7 +43,7 @@ module.exports = function (grunt) {
       },
       js: {
         files: ['<%= yeoman.app %>/scripts/{,*/}*.js'],
-        tasks: ['newer:jshint:all', 'newer:jscs:all'],
+        tasks: ['newer:copy:setKeysDev', 'newer:jshint:all', 'newer:jscs:all'],
         options: {
           livereload: '<%= connect.options.livereload %>'
         }
@@ -89,6 +93,7 @@ module.exports = function (grunt) {
                 '/app/styles',
                 connect.static('./app/styles')
               ),
+              connect().use('/app/scripts','./app/scripts'),
               connect.static(appConfig.app)
             ];
           }
@@ -397,13 +402,32 @@ module.exports = function (grunt) {
         cwd: '<%= yeoman.app %>/styles',
         dest: '.tmp/styles/',
         src: '{,*/}*.css'
+      },
+      setKeys: {
+        expand: true,
+        cwd: '<%= yeoman.dist %>',
+        dest: '<%= yeoman.dist %>',
+        src: '{,*/}*.js',
+        options: {
+          process: appConfig.copyAndReplaceKeys
+        }
+      },
+      setKeysDev: {
+        expand: true,
+        cwd: '<%= yeoman.app %>/scripts',
+        dest: '.tmp/scripts/',
+        src: '{,*/}*.js',
+        options: {
+          process: appConfig.copyAndReplaceKeys
+        }
       }
     },
 
     // Run some tasks in parallel to speed up the build process
     concurrent: {
       server: [
-        'copy:styles'
+        'copy:styles',
+        'copy:setKeysDev'
       ],
       test: [
         'copy:styles'
@@ -425,7 +449,7 @@ module.exports = function (grunt) {
 
     processhtml: {
       options: {
-        commentMarker: "process"
+        commentMarker: 'process'
       },
       dist: {
         files: [{
@@ -484,7 +508,8 @@ module.exports = function (grunt) {
     'filerev',
     'processhtml',
     'usemin',
-    'htmlmin'
+    'htmlmin',
+    'copy:setKeys'
   ]);
 
   grunt.registerTask('default', [
