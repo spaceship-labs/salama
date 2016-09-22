@@ -343,12 +343,15 @@
         ['poorly', 'poorly', 'poorly', 'potentially_poorly', 'adequately']
       ];
       var weights = [
-        0.20,
-        0.20,
-        0.20,
-        0.20,
-        0.20
+        ctrl.answers['select_physical']  || 0,
+        ctrl.answers['select_financial'] || 0,
+        ctrl.answers['select_reputational'] || 0
       ];
+      var acum   = weights.reduce(function(acum, current) { return acum + current }, 0);
+      weights    = weights.map(function(w) { return 0.6 * (w / acum);});
+      weights    = [0.20, 0.20].concat(weights);
+      acum       = weights.reduce(function(acum, current) { return acum + current }, 0);
+      weights    = weights.map(function(w) { return w / acum; });
       var events = [
         'probability',
         'time',
