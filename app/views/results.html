@@ -15,26 +15,37 @@
     </h2>
   </div>
   <span flex="100"></span>
-  <md-table-container flex="100" flex-gt-sm="80">
-    <table md-table>
-      <thead md-head>
-        <tr md-row>
-          <th md-column>{{'views.results.potentialrisk' | translate}}</th>
-          <th md-column>{{'views.results.score' | translate}}</th>
-          <th md-column>{{'views.results.riskRating' | translate}}</th>
+  <div flex="100" flex-gt-sm="80" layout layout-align="center center">
+    <table class="md-table">
+      <thead class="md-head">
+        <tr class="md-row">
+          <th class="md-column">{{'views.results.potentialrisk' | translate}}</th>
+          <th class="md-column">{{'views.results.score' | translate}}</th>
+          <th class="md-column">{{'views.results.riskRating' | translate}}</th>
         </tr>
       </thead>
-      <tbody md-body>
-         <tr md-row ng-repeat="res in results.results"
-          ng-class="{'row-red': res.advice==='poorly', 'row-yellow': res.advice==='potentially_poorly', 'row-green': res.advice==='potentially_over'}"
-         >
-          <td md-cell>{{'views.results.' + res.name | translate}}</td>
-          <td md-cell>{{res.score}}</td>
-          <td md-cell>{{'views.results.' + res.advice | translate}}</td>
+      <tbody class="md-body" ng-repeat="res in results.results">
+        <tr
+          class="md-row"
+        >
+          <td class="md-cell">{{'views.results.' + res.name | translate}}</td>
+          <td class="md-cell">{{res.score}}</td>
+          <td class="md-cell">{{'views.results.' + res.advice | translate}}</td>
+        </tr>
+        <tr>
+          <td colspan="3">
+            <ratebar
+              style="margin:-16px; height:15px;"
+              flex="100"
+              layout
+              layout-align="center center"
+              rate="res.rate"
+            />
+          </td>
         </tr>
       </tbody>
     </table>
-  </md-table-container>
+  </div>
   <span flex="100"></span>
   <md-button ng-click="results.restartEval()" ng-href="#/evaluation/organizations">
   {{'views.advice.restart' | translate}}

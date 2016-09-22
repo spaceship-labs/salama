@@ -412,7 +412,8 @@
           var sumatory = sumV(vkeys);
           results[variables[i]] = {
             score: sumatory,
-            advice: advice
+            advice: advice,
+            rate: vkeys_control
           };
         }
       }
