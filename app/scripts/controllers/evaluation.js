@@ -343,9 +343,9 @@
         ['poorly', 'poorly', 'poorly', 'potentially_poorly', 'adequately']
       ];
       var weights = [
-        ctrl.answers['select_physical']  || 0,
         ctrl.answers['select_financial'] || 0,
-        ctrl.answers['select_reputational'] || 0
+        ctrl.answers['select_physical']  || 0,
+        ctrl.answers['select_reputational'] || 0,
       ];
       var acum   = weights.reduce(function(acum, current) { return acum + current }, 0);
       weights    = weights.map(function(w) { return 0.6 * (w / acum);});
@@ -413,7 +413,7 @@
           results[variables[i]] = {
             score: sumatory,
             advice: advice,
-            rate: vkeys_control
+            rate: dotV(vkeys_control, weights)
           };
         }
       }
