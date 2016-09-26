@@ -413,7 +413,7 @@
           results[variables[i]] = {
             score: sumatory,
             advice: advice,
-            rate: dotV(vkeys_control, weights)
+            rate: multV(vkeys_control, weights)
           };
         }
       }
@@ -426,6 +426,14 @@
         sum += V1[i] * V2[i];
       }
       return sum
+    }
+
+    function multV(V1, V2) {
+      var VR = V1.map(function(term, index) {
+        return term * V2[index];
+      });
+      var acum = VR.reduce(function(acum, c) { return acum + c; }, 0);
+      return VR.map(function(c) { return c / acum; });
     }
 
     function sumV(V1){

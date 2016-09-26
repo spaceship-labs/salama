@@ -16,7 +16,6 @@ angular.module('salamaApp')
         var w = (w / acum) * 100;
         return Number(w.toFixed(0));
       });
-      console.log($scope.rate);
     }];
 
     return {
