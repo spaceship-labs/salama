@@ -25,3 +25,15 @@
   font-weight:bold;
   font-size:13px;
 }
+.risk-level{
+  background:#FF0011;
+  min-width:20px;
+  min-height:20px;
+  color:white
+}
+.control-level{
+  background:#8B8B8B;
+  min-width:20px;
+  min-height:20px;
+  color:white";
+}
