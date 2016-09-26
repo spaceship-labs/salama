@@ -78,6 +78,11 @@
   "views.results.media_attack":"Media attack",
   "views.results.sexual_attack":"Sexual attack",
   "views.results.information_obstacle":"Information obstacle",
+  "views.results.probability":"Prob. Ocurrencia",
+  "views.results.time":"Tiempo de respuesta",
+  "views.results.financial":"Riesgo Financiero",
+  "views.results.physical":"Riesgo Físico",
+  "views.results.reputation":"Riesgo Reputacional",
 
   "views.footer.rights":"All rights reserved"
 }

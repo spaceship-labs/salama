@@ -10,16 +10,13 @@
   angular.module('salamaApp')
     .directive('pageQuestions', pageQuestions);
 
-  controller.$inject=['$scope','$routeParams','$localStorage', '$translate', '$location'];
+  controller.$inject=['$scope','$routeParams','$localStorage', '$translate'];
 
-  function controller($scope,$routeParams,$localStorage, $translate, $location){
+  function controller($scope,$routeParams,$localStorage, $translate){
 
     var ctrl = $scope;
     var db = $localStorage.dirPage = $localStorage.dirPage || {};
     db.type = db.type || '';
-
-
-
 
     ctrl.selected = db.selected || 0;
     ctrl.last = false;
@@ -41,23 +38,9 @@
       $scope.$watch(getCompleted, setBar);
     }
 
-    function checkFilters() {
-
-    }
-
     function setQuestions(){
       evaluateIndex();
       setProgress();
-
-      if (ctrl.questions && ctrl.questions.length) {
-        ctrl.filtersQ = ctrl.questions[0].questions.map(setFilters);
-        //set number-page in url.
-        if (ctrl.questions[ctrl.selected].filterData && !ctrl.filtersQ.filter(filterAvailable(ctrl.questions[ctrl.selected])).length) {
-          var forceNext = getSelectedWithFilter(true);
-          $location.path('/evaluation/organizations/'+forceNext);
-        }
-      }
-
     }
 
     function getCompleted(){
@@ -66,32 +49,6 @@
 
     function getType(){
       return ctrl.type;
-    }
-
-    function filterAvailable(ques) {
-      return function filter(ft) {
-        if (ques.filterData[ft]) {
-          if (ctrl.answers[ft] >= ques.filterData[ft]) {
-            return true;
-          }
-        }
-      };
-    }
-
-    function getSelectedWithFilter(nextVal) {
-      var next = nextVal ? ctrl.selected+1 : ctrl.selected-1;
-      var ques = ctrl.questions[next];
-      if (ques && ques.filterData) {
-        var fNext = ctrl.filtersQ.filter(filterAvailable(ques));
-        if (fNext.length) {
-          return next;
-        }
-
-        ctrl.selected += nextVal ? +1 : -1;
-        return getSelectedWithFilter(nextVal);
-      }
-
-      return next;
     }
 
     function getQuestions(){
@@ -110,28 +67,20 @@
       $('.eq-bluebar').width(newVal+'%');
     }
 
-    function setFilters(fil) {
-      return fil.name;
-    }
-
     function next(){
       if (ctrl.selected < ctrl.questions.length-1) {
-        ctrl.selected = getSelectedWithFilter(true);
+        ctrl.selected = ctrl.selected + 1;
       } else {
         ctrl.selected = ctrl.questions.length -1;
       }
-
-
       db.selected = ctrl.selected;
-
       evaluateIndex();
       setProgress();
     }
 
     function prev(){
       if (ctrl.selected > 0) {
-        //ctrl.selected -= 1;
-        ctrl.selected = getSelectedWithFilter();
+        ctrl.selected -= 1;
       } else {
         ctrl.selected = 0;
       }

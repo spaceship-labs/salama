@@ -397,6 +397,15 @@
         var vkeys_control = keys_control[i].map(function(key){
           return ctrl.answers[key] || 0;
         });
+        var vkeys_percent = vkeys_control.map(function(vk) {
+          if (vk == 5) {
+            return 0.95;
+          }
+          return 0.25 * (vk - 1);
+        });
+        var each_risk     = vkeys.map(function(vk, i) {
+          return vk - (vk * vkeys_percent[i]);
+        });
         var row      = dotV(vkeys, weights) - 2;
         var col      = dotV(vkeys_control, weights) - 1;
         row = Math.round(row);
@@ -413,7 +422,7 @@
           results[variables[i]] = {
             score: sumatory,
             advice: advice,
-            rate: multV(vkeys_control, weights)
+            each_risk: each_risk
           };
         }
       }

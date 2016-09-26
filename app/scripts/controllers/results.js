@@ -31,7 +31,7 @@
           name : i,
           score: results[i].score,
           advice: results[i].advice,
-          rate: results[i].rate,
+          risks: results[i].each_risk,
         });
       }
       ctrl.results = res;

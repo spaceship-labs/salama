@@ -1,10 +1,10 @@
-<div layout flex="80" class="ratebar">
+<div layout flex="100" class="ratebar">
   <div
+    ng-repeat="r in risks track by $index"
     class="ratebar-item"
-    style="background:{{colors[$index]}};width:{{r}}%"
-    ng-repeat="r in rate track by $index"
+    style="background: linear-gradient(to right, #FF0011 {{(r / 10) * 100}}%, #00A0DF {{(r / 10) * 100}}%); width:20%; border-left: 1px solid white;"
   >
-      {{legends[$index]}}
+      {{legends[$index] | translate}}
   </div>
 </div>
 

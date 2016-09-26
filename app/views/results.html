@@ -32,14 +32,15 @@
           <td class="md-cell">{{res.score}}</td>
           <td class="md-cell">{{'views.results.' + res.advice | translate}}</td>
         </tr>
-        <tr>
+        <tr
+          class="md-row"
+        >
           <td colspan="3">
             <ratebar
-              style="margin:-16px; height:15px;"
               flex="100"
               layout
               layout-align="center center"
-              rate="res.rate"
+              risks="res.risks"
             />
           </td>
         </tr>
