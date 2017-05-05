@@ -24,7 +24,10 @@ angular
   ])
   .config(routeProvider)
   .config(translateProvider)
-  .config(markdownProvider);
+  .config(markdownProvider)
+  .config(['$locationProvider', function($locationProvider) {
+    $locationProvider.hashPrefix('');
+  }]);
 
   routeProvider.$inject=['$routeProvider'];
   function routeProvider($routeProvider) {
