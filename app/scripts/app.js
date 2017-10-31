@@ -11,7 +11,6 @@
 angular
   .module('salamaApp', [
     'ngAnimate',
-    'ngAria',
     'ngCookies',
     'ngRoute',
     'ngSanitize',
