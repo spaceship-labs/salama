@@ -55,5 +55,6 @@
   "views.evaluation.extremerisk":"خطر شديد",
   "views.evaluation.extremeadvice":"وربما تحتاج إلى وضع استراتيجية أمنية جديدة",
 
-  "views.footer.rights":"كل الحقوق محفوظة"
+  "views.footer.rights":"كل الحقوق محفوظة",
+  "views.footer.about": "About Salama"
 }

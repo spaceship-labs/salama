@@ -77,3 +77,7 @@ md-content{
     margin: 40px 0;
   }
 }
+
+.footer-share span{
+  color: white;
+}
