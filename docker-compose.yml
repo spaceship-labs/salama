@@ -10,13 +10,7 @@ services:
     expose:
       - 8080
     restart: always
-    external_links:
-      - mysql:db
     environment:
-      DB_HOST: db:3306
-      DB_USER: spaces
-      DB_PASSWORD: zah0Eegh
-      DB_NAME: "${PROJECT_NAME}"
       VIRTUAL_HOST: "${PROJECT_NAME}.lab.spaceshiplabs.com,salama.io,www.salama.io"
       LETSENCRYPT_HOST: "${PROJECT_NAME}.lab.spaceshiplabs.com,salama.io,www.salama.io"
       LETSENCRYPT_EMAIL: "aero.uriel@gmail.com"
