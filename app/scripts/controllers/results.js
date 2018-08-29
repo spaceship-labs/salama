@@ -30,7 +30,8 @@
         res.push({
           name : i,
           score: results[i].score,
-          advice: results[i].advice
+          advice: results[i].advice,
+          risks: results[i].each_risk,
         });
       }
       ctrl.results = res;

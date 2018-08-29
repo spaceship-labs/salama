@@ -1,0 +1,10 @@
+<div layout flex="100" class="ratebar">
+  <div
+    ng-repeat="r in risks track by $index"
+    class="ratebar-item"
+    style="background: linear-gradient(to right, #FF0011 {{(r / 10) * 100}}%, #8B8B8B {{(r / 10) * 100}}%); width:20%; border-left: 1px solid white;"
+  >
+      {{legends[$index] | translate}}
+  </div>
+</div>
+

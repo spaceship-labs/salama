@@ -76,6 +76,11 @@
   "views.results.media_attack":"Presión mediatica",
   "views.results.sexual_attack":"Ataque sexual",
   "views.results.information_obstacle":"Obstrucción de información",
+  "views.results.probability":"Prob. ocurrencia",
+  "views.results.time":"Tiempo de respuesta",
+  "views.results.financial":"Riesgo financiero",
+  "views.results.physical":"Riesgo físico",
+  "views.results.reputation":"Riesgo reputacional",
 
 
   "views.footer.rights":"Todos los derechos reservados",

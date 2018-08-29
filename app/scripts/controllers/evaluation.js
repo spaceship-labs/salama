@@ -343,12 +343,15 @@
         ['poorly', 'poorly', 'poorly', 'potentially_poorly', 'adequately']
       ];
       var weights = [
-        0.20,
-        0.20,
-        0.20,
-        0.20,
-        0.20
+        ctrl.answers['select_financial'] || 0,
+        ctrl.answers['select_physical']  || 0,
+        ctrl.answers['select_reputational'] || 0,
       ];
+      var acum   = weights.reduce(function(acum, current) { return acum + current }, 0);
+      weights    = weights.map(function(w) { return 0.6 * (w / acum);});
+      weights    = [0.20, 0.20].concat(weights);
+      acum       = weights.reduce(function(acum, current) { return acum + current }, 0);
+      weights    = weights.map(function(w) { return w / acum; });
       var events = [
         'probability',
         'time',
@@ -394,6 +397,15 @@
         var vkeys_control = keys_control[i].map(function(key){
           return ctrl.answers[key] || 0;
         });
+        var vkeys_percent = vkeys_control.map(function(vk) {
+          if (vk == 5) {
+            return 0.95;
+          }
+          return 0.25 * (vk - 1);
+        });
+        var each_risk     = vkeys.map(function(vk, i) {
+          return vk - (vk * vkeys_percent[i]);
+        });
         var row      = dotV(vkeys, weights) - 2;
         var col      = dotV(vkeys_control, weights) - 1;
         row = Math.round(row);
@@ -409,7 +421,8 @@
           var sumatory = sumV(vkeys);
           results[variables[i]] = {
             score: sumatory,
-            advice: advice
+            advice: advice,
+            each_risk: each_risk
           };
         }
       }
@@ -422,6 +435,14 @@
         sum += V1[i] * V2[i];
       }
       return sum
+    }
+
+    function multV(V1, V2) {
+      var VR = V1.map(function(term, index) {
+        return term * V2[index];
+      });
+      var acum = VR.reduce(function(acum, c) { return acum + c; }, 0);
+      return VR.map(function(c) { return c / acum; });
     }
 
     function sumV(V1){
