@@ -296,7 +296,7 @@ md-tabs-canvas{
 md-radio-button > div{
   left: 0 !important;
   right: 0 !important;
-  margin: 0 auto !important;
+  /* margin: 0 auto !important; */
 }
 
 form-question{

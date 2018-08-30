@@ -19,6 +19,12 @@
   "views.evaluation.catorganizations":"Organización",
   "views.evaluation.descindividuals":"Esta herramienta te servirá para evaluar tu riesgo a nivel individual",
   "views.evaluation.descorganizations":"Descripción organización",
+
+  "views.evaluation.catjournalist": "Periodista",
+  "views.evaluation.desjournalist": "(Evalúa tu riesgo si eres periodista)",
+  "views.evaluation.catdefender": "Persona defensora",
+  "views.evaluation.desdefender": "(Evalúa tu riesgo si defiendes los derechos humanos.)",
+
   "views.evaluation.title": "Empieza",
   "views.evaluation.subtitle": "Escoja una categoría para empezar la evaluación",
   "views.evaluation.prev":"anterior",

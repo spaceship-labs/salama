@@ -46,6 +46,11 @@ angular
         controller: 'EvaluationCtrl',
         controllerAs: 'evaluation'
       })
+      .when('/evaluation-individual/:type?/:action?', {
+        templateUrl: 'views/evaluation-individual.html',
+        controller: 'EvaluationCtrl',
+        controllerAs: 'evaluation'
+      })
       .when('/advice', {
         templateUrl: 'views/advice.html',
         controller: 'AdviceCtrl',

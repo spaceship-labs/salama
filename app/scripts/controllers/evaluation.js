@@ -43,6 +43,7 @@
     };
 
     ctrl.type      = $routeParams.type;
+    console.log('type', ctrl.type);
     ctrl.questions = [];
     ctrl.answers   = {};
     ctrl.page      = 0;
@@ -80,6 +81,17 @@
           organizationsService.getEval(lang).then(function(questions){
             ctrl.questions = questions;
             ctrl.answers   = storage.answers.organizations;
+          });
+          break;
+        case 'journalists':
+        case 'defenders':
+          var completed = adviceService.getResultsIndividuals().completed;
+          if (completed) {
+            $location.path('/advice');
+          }
+          individualsService.getEval(lang, ctrl.type).then(function(questions){
+              ctrl.questions = questions;
+              ctrl.answers   = storage.answers.individuals;
           });
           break;
         default:
@@ -129,6 +141,16 @@
             $location.path('/results');
           });
 
+          break;
+        case 'journalists':
+        case 'defenders':
+          var infoSurvey = getFormatInfoSurvey();
+          /* infoSurvey.score = score; */
+          /* infoSurvey.risk = riskLevel; */
+          infoSurvey.type = 'individual-'+ctrl.type;
+          saveSurvey(infoSurvey).then(function(res) {
+            $location.path('/advice');
+          });
           break;
         default:
           break;

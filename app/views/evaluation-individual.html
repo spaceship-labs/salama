@@ -11,21 +11,19 @@
   id="results"
 >
 
+  <!-- individual type -->
   <md-tab label="1">
     <md-content layout layout-align="center center">
       <div layout="column" layout-align="center center"
         class="evaluation container"
       >
-        <h1 class="center">
-          <strong> {{ 'views.evaluation.title' | translate}}</strong>
-          {{'views.evaluation.subtitle' | translate}}
-        </h1>
         <div
           class="evaluation-options"
           layout="row"
           layout-align="space-around center"
           layout-xs="column"
         >
+
           <div
             class="categories relative"
             flex="40"
@@ -38,13 +36,12 @@
               <div class="square"></div>
             </div>
             <div>
-              <h3 translate>views.evaluation.catindividuals</h3>
-              <p translate>views.evaluation.descindividuals</p>
+              <h3 translate>views.evaluation.catjournalist</h3>
+              <p translate>views.evaluation.desjournalist</p>
             </div>
-            <a class="absoluteLink" href="#/evaluation-individual">
+            <a class="absoluteLink" href="#/evaluation-individual/journalists">
             </a>
           </div>
-
           <div
             class="categories relative"
             flex="40"
@@ -53,14 +50,14 @@
             layout-align="center"
           >
             <div class="iconWrapper">
-              <i class="icon-users"></i>
+              <i class="icon-user"></i>
               <div class="square"></div>
             </div>
             <div>
-              <h3 translate>views.evaluation.catorganizations</h3>
-              <p translate>views.evaluation.descorganizations</p>
+              <h3 translate>views.evaluation.catdefender</h3>
+              <p translate>views.evaluation.desdefender</p>
             </div>
-            <a class="absoluteLink" href="#/evaluation/organizations">
+            <a class="absoluteLink" href="#/evaluation-individual/defenders">
             </a>
           </div>
         </div>
@@ -80,4 +77,3 @@
     </md-content>
   </md-tab>
 </md-tabs>
-

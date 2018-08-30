@@ -27,11 +27,11 @@
       getEval: getEval
     }
 
-    function getEval(lang){
+    function getEval(lang, name){
       setLang(lang);
       return contentService.getVersion()
         .then(resolveVersion)
-        .then(resolveEval);
+        .then(resolveEval(name));
     }
 
     function resolveVersion(newversion){
@@ -42,16 +42,19 @@
       return false;
     }
 
-    function resolveEval(newversion){
-      if (!db.evaluation[db.lang] || newversion){
-        return contentService.getEvalIndividuals(db.lang)
-          .then(setEval);
+    function resolveEval(file){
+      return function(newversion) {
+        if (!db.evaluation[db.lang+'_'+file] || newversion){
+          return contentService.getEvalByName(db.lang, file)
+            .then(setEval, file);
+        }
+        return db.evaluation[db.lang+'_'+file];
       }
-      return db.evaluation[db.lang];
+
     }
 
-    function setEval(evaluation){
-      db.evaluation[db.lang] = evaluation;
+    function setEval(evaluation, file){
+      db.evaluation[db.lang+'_'+file] = evaluation;
       return evaluation;
     }
 
