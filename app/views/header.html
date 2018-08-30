@@ -3,14 +3,14 @@
   function hashHandler() {
     this.oldHash = window.location.hash;
     this.Check;
-
+    document.getElementById("drawer").style.marginLeft = "-950px";
     var that = this;
     var detect = function () {
       if (that.oldHash != window.location.hash) {
 
-        document.getElementById("drawer").style.marginLeft = "-950px";
-        that.oldHash = window.location.hash;
 
+        that.oldHash = window.location.hash;
+        document.getElementById("drawer").style.marginLeft = "-950px";
       }
     };
     this.Check = setInterval(function () { detect() }, 100);
@@ -32,18 +32,16 @@
     }
   }
 
-  var validator = false;
+
   var toggle_submenu = false;
   function Toggle() {
-    if (toggle_submenu === false && validator == false) {
-      validator = true;
+    if (toggle_submenu === false) {
+
       toggle_submenu = true;
       document.getElementById("subdrawer").style.display = "none";
 
     } else {
-      if (validator) {
-        validator = false;
-      }
+
       toggle_submenu = false;
       document.getElementById("subdrawer").style.display = "block";
     }
@@ -51,15 +49,13 @@
 
   var toggle_submenu2 = false;
   function Toggle2() {
-    if (toggle_submenu2 === false && validator == false) {
-      validator = true;
+    if (toggle_submenu2 === false) {
+
       toggle_submenu2 = true;
       document.getElementById("subdrawer2").style.display = "none";
 
     } else {
-      if (validator) {
-        validator = false;
-      }
+
       toggle_submenu2 = false;
       document.getElementById("subdrawer2").style.display = "block";
     }
@@ -67,15 +63,13 @@
 
   var toggle_submenu3 = false;
   function Toggle3() {
-    if (toggle_submenu3 === false && validator == false) {
-      validator = true;
+    if (toggle_submenu3 === false) {
+
       toggle_submenu3 = true;
       document.getElementById("subdrawer3").style.display = "none";
 
     } else {
-      if (validator) {
-        validator = false;
-      }
+
       toggle_submenu3 = false;
       document.getElementById("subdrawer3").style.display = "block";
     }
