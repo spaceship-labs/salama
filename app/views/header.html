@@ -1,114 +1,350 @@
-<header layout layout-align="center center" layout-wrap
-  ng-controller="HeaderCtrl as header"
-  style="{{header.lang == 'ar_AE' && 'text-align:right!important'}}"
->
+<script>
 
-<!--Sidenav-->
-<md-sidenav md-component-id="left"
-  class="md-sidenav-left md-whiteframe-z2 header-sidenav"
->
-  <md-toolbar class="md-toolbar-tools">
+  function hashHandler() {
+    this.oldHash = window.location.hash;
+    this.Check;
 
-    <md-button
-      class="sideButton"
-      ng-click="header.changeStateSide()"
-    >
-      <img src="images/icon_salama.png">
-      <div>Menu</div>
-    </md-button>
+    var that = this;
+    var detect = function () {
+      if (that.oldHash != window.location.hash) {
 
-  </md-toolbar>
-  <div class="sidenav-block">
-    <h3 translate>views.sidenav.evaluation</h3>
-    <p>
-      <a href="{{header.individuals}}"
-        ng-click="header.changeStateSide()"
-        translate
-      >
-        views.sidenav.individuals
-      </a>
-    </p>
-    <p>
-      <a href="#/evaluation/organizations"
-        ng-click="header.changeStateSide()"
-        translate
-      >
-        views.sidenav.organizations
-      </a>
-    </p>
-  </div>
-  <div class="sidenav-block">
-    <h3 translate>views.sidenav.library</h3>
-    <div ng-repeat="category in header.categories">
-      <p>{{category}}</p>
+        document.getElementById("drawer").style.marginLeft = "-950px";
+        that.oldHash = window.location.hash;
+
+      }
+    };
+    this.Check = setInterval(function () { detect() }, 100);
+  }
+
+  var hashDetection = new hashHandler();
+  var toggle = false;
+  function activeMenu() {
+    if (toggle === false) {
+
+      toggle = true;
+      document.getElementById("drawer").style.paddingLeft = "150px";
+      document.getElementById("drawer").style.marginLeft = "0px";
+
+    } else {
+
+      toggle = false;
+      document.getElementById("drawer").style.marginLeft = "-950px";
+    }
+  }
+
+  var validator = false;
+  var toggle_submenu = false;
+  function Toggle() {
+    if (toggle_submenu === false && validator == false) {
+      validator = true;
+      toggle_submenu = true;
+      document.getElementById("subdrawer").style.display = "none";
+
+    } else {
+      if (validator) {
+        validator = false;
+      }
+      toggle_submenu = false;
+      document.getElementById("subdrawer").style.display = "block";
+    }
+  }
+
+  var toggle_submenu2 = false;
+  function Toggle2() {
+    if (toggle_submenu2 === false && validator == false) {
+      validator = true;
+      toggle_submenu2 = true;
+      document.getElementById("subdrawer2").style.display = "none";
+
+    } else {
+      if (validator) {
+        validator = false;
+      }
+      toggle_submenu2 = false;
+      document.getElementById("subdrawer2").style.display = "block";
+    }
+  }
+
+  var toggle_submenu3 = false;
+  function Toggle3() {
+    if (toggle_submenu3 === false && validator == false) {
+      validator = true;
+      toggle_submenu3 = true;
+      document.getElementById("subdrawer3").style.display = "none";
+
+    } else {
+      if (validator) {
+        validator = false;
+      }
+      toggle_submenu3 = false;
+      document.getElementById("subdrawer3").style.display = "block";
+    }
+  }
+
+  var toggle_submenu4 = false;
+  function Toggle4() {
+    if (toggle_submenu4 === false) {
+
+      toggle_submenu4 = true;
+      document.getElementById("subdrawer4").style.display = "none";
+
+    } else {
+
+      toggle_submenu4 = false;
+      document.getElementById("subdrawer4").style.display = "block";
+    }
+  }
+
+  var toggle_submenu5 = false;
+  function Toggle5() {
+    if (toggle_submenu5 === false) {
+
+      toggle_submenu5 = true;
+      document.getElementById("subdrawer5").style.display = "none";
+
+    } else {
+
+      toggle_submenu5 = false;
+      document.getElementById("subdrawer5").style.display = "block";
+    }
+  }
+
+  var toggle_submenu6 = false;
+  function Toggle6() {
+    if (toggle_submenu6 === false) {
+
+      toggle_submenu6 = true;
+      document.getElementById("subdrawer6").style.display = "none";
+
+    } else {
+
+      toggle_submenu6 = false;
+      document.getElementById("subdrawer6").style.display = "block";
+    }
+  }
+</script>
+<div id="drawer" class="drawer">
+  <span class="subtitle"> MENÚ </span>
+  <h1 class="title"> Evaluación de seguridad </h1>
+
+
+  <a href="/#/evaluation/individual" class="first-option-link">Individuales </a>
+
+  <div></div>
+  <a href=" /#/evaluation/organizations" class="first-option-link">Organizaciones </a>
+
+
+  <h1 href="" class="title"> Biblioteca de Seguridad </h1>
+
+  <div class="row" onClick="Toggle()">
+    <h1 class="first-option"> Seguridad digital </h1>
+    <div id="subdrawer" class="subdrawer">
       <ul>
-        <li ng-repeat="meta in header.metadata[category]">
-          <a ng-href="{{'#/article/' + meta.path}}"
-            ng-click="header.changeStateSide()"
-          >
-            {{meta.title}}
-          </a>
-        </li>
+        <a class="mediumtitle" href="/#/article/calls"> Llamadas telefónicas cifradas</a>
+      </ul>
+      <ul>
+        <a class="mediumtitle" href="/#/article/chat"> Chat cifrado</a>
+      </ul>
+      <ul>
+        <a class="mediumtitle" href="/#/article/digital_security"> Seguridad Digital</a>
+      </ul>
+      <ul>
+        <a class="mediumtitle" href="/#/article/information_corruption_mail"> La información sensible debe ser descifrada</a>
+      </ul>
+      <ul>
+        <a class="mediumtitle" href="/#/article/mail"> Protege tu información</a>
+      </ul>
+      <ul>
+        <a class="mediumtitle" href="/#/article/navigation"> Navegación segura</a>
+      </ul>
+      <ul>
+        <a class="mediumtitle" href="/#/article/passwords">Contraseñas seguras</a>
       </ul>
     </div>
   </div>
-</md-sidenav>
-
-  <md-toolbar class="md-toolbar-tools animate header-fixed">
-  <div class="container" layout layout-align="space-between center">
-    <div layout layout-align="space-between center"
-      class="header-left"
-    >
-      <a href="#/" layout layout-align="center center"
-        class="header-logo"
-      >
-        <img src="images/icon_salama.png">
-      </a>
-
-        <md-button class="header-menu" ng-click="header.changeStateSide()">
-          <md-icon md-svg-icon="images/menu.svg" class="header-menu-logo">
-          </md-icon>
-          Menu
-        </md-button>
-    </div>
-    <div layout layout-align="space-between center"
-      class="header-right"
-    >
-      <a href="https://twitter.com/intent/tweet"
-        class="twitter-share-button"
-      >
-        Tweet
-      </a>
-      <div>
-        <md-button class="header-lang"
-          ng-click="header.showLangOptions = !header.showLangOptions"
-        >
-          <md-icon md-svg-icon="images/lang.svg">
-          </md-icon>
-          <span translate>views.main.lang</span>
-        </md-button>
-        <md-content layout="column" ng-show="header.showLangOptions"
-          class="header-lang-options"
-        >
-          <md-button class="legend">
-            <span translate>views.main.suggest</span>
-          </md-button>
-          <md-button ng-click="header.changeLang('es_MX')">
-            Español
-          </md-button>
-          <md-button ng-click="header.changeLang('en_US')">
-            English
-          </md-button>
-          <md-button ng-click="header.changeLang('ar_AE')">
-            العربي
-          </md-button>
-
-        </md-content>
-      </div>
+  <div class="row" onClick="Toggle2()">
+    <h1 class="first-option"> Situaciones de censura </h1>
+    <div id="subdrawer2" class="subdrawer2">
+      <ul>
+        <a class="mediumtitle" href="/#/article/corruption">Cubres notas de corrupción</a>
+      </ul>
     </div>
   </div>
+  <div class="row" onClick="Toggle3()">
+    <h1 class="first-option"> Seguridad laboral </h1>
+    <div id="subdrawer3" class="subdrawer3">
+      <ul>
+        <a class="mediumtitle" href="/#/article/corruption_information">Corrupción e información</a>
+      </ul>
+      <ul>
+        <a class="mediumtitle" href="/#/article/crime_corruption">¿Cubres notas de crimen y corrupción?</a>
+      </ul>
+      <ul>
+        <a class="mediumtitle" href="/#/article/threat">Cómo preveenir ataques</a>
+      </ul>
+      <ul>
+        <a class="mediumtitle" href="/#/article/violence_plan">Plan para la cobertura de violencia</a>
+      </ul>
+      <ul>
+        <a class="mediumtitle" href="/#/article/zone_protocols">¿Estás listo para visitar zonas peligrosas?</a>
+      </ul>
+    </div>
+  </div>
+  <div class="row" onClick="Toggle4()">
+    <h1 class="first-option"> Seguridad profesional </h1>
+    <div id="subdrawer4" class="subdrawer4">
+      <ul>
+        <a class="mediumtitle" href=" /#/article/etic">Ética periodística</a>
+      </ul>
+      <ul>
+        <a class="mediumtitle" href="/#/article/information">Las historias deben ser revisadas</a>
+      </ul>
+      <ul>
+        <a class="mediumtitle" href=" /#/article/network">La buena comunicación es esencial</a>
+      </ul>
+      <ul>
+        <a class="mediumtitle" href="/#/article/plan">Métodos de planteamiento</a>
+      </ul>
+
+      <ul>
+        <a class="mediumtitle" href="#/article/professional">Situación profesional</a>
+      </ul>
+      <ul>
+        <a class="mediumtitle" href="/#/article/sinformation">¿Estás listo para manejar información sensible?</a>
+      </ul>
+
+      <ul>
+        <a class="mediumtitle" href="/#/article/threat_protocols">Protocolos para preveenir ataques</a>
+      </ul>
+
+      <ul>
+        <a class="mediumtitle" href="/#/article/violence">¿Cubres hechos de violencia?</a>
+      </ul>
+    </div>
+  </div>
+  <div class="row" onClick="Toggle5()">
+    <h1 class="first-option"> Seguridad de redes </h1>
+    <div id="subdrawer5" class="subdrawer5">
+      <ul>
+        <a class="mediumtitle" href="/#/article/violence_boss">Mejora tu comunicación</a>
+      </ul>
+
+
+    </div>
+  </div>
+
+  <div class="row" onClick="Toggle6()">
+    <h1 class="first-option"> Otros </h1>
+    <div id="subdrawer6" class="subdrawer6">
+      <ul>
+        <a class="mediumtitle" href="/#/article/extreme">Nivel de riesgo extremo</a>
+      </ul>
+      <ul>
+        <a class="mediumtitle" href="/#/article/high">Nivel de riesgo alto</a>
+      </ul>
+
+      <ul>
+        <a class="mediumtitle" href="/#/article/low">Nivel de riesgo moderado</a>
+      </ul>
+
+      <ul>
+        <a class="mediumtitle" href="/#/article/moderate">Nivel de riesgo bajo</a>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="left-bar">
+
+  <div class="logo-bg">
+    <a href="/#/">
+      <img class="logo" src="images/icon_salama.png">
+    </a>
+  </div>
+
+  <div class="inside-bar">
+
+    <div class="bmenu-container" onClick="activeMenu()">
+
+      <img src="../images/menu-button.png" class="bmenuu" alt="bmenu">
+      <span class="Menu">Menú</span>
+    </div>
+  </div>
+</div>
+
+<header layout layout-align="center center" layout-wrap ng-controller="HeaderCtrl as header" style="{{header.lang == 'ar_AE' && 'text-align:right!important'}}">
+
+  <!--Sidenav-->
+  <md-sidenav md-component-id="left" class="md-sidenav-left md-whiteframe-z2 header-sidenav">
+    <md-toolbar class="md-toolbar-tools">
+
+
+
+    </md-toolbar>
+    <div class="sidenav-block">
+      <h3 translate>views.sidenav.evaluation</h3>
+      <p>
+        <a href="{{header.individuals}}" ng-click="header.changeStateSide()" translate>
+          views.sidenav.individuals
+        </a>
+      </p>
+      <p>
+        <a href="#/evaluation/organizations" ng-click="header.changeStateSide()" translate>
+          views.sidenav.organizations
+        </a>
+      </p>
+    </div>
+    <div class="sidenav-block">
+      <h3 translate>views.sidenav.library</h3>
+      <div ng-repeat="category in header.categories">
+        <p>{{category}}</p>
+        <ul>
+          <li ng-repeat="meta in header.metadata[category]">
+            <a ng-href="{{'#/article/' + meta.path}}" ng-click="header.changeStateSide()">
+              {{meta.title}}
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </md-sidenav>
+
+  <md-toolbar class="md-toolbar-tools animate header-fixed">
+    <div class="container" layout layout-align="space-between center">
+      <div layout layout-align="space-between center" class="header-left">
+        <a href="#/" layout layout-align="center center" class="header-logo">
+        </a>
+
+
+      </div>
+      <div layout layout-align="space-between center" class="header-right">
+        <a href="https://twitter.com/intent/tweet" class="twitter-share-button">
+          Tweet
+        </a>
+        <div>
+          <md-button class="header-lang" ng-click="header.showLangOptions = !header.showLangOptions">
+            <md-icon md-svg-icon="images/lang.svg">
+            </md-icon>
+            <span translate>views.main.lang</span>
+          </md-button>
+          <md-content layout="column" ng-show="header.showLangOptions" class="header-lang-options">
+            <md-button class="legend">
+              <span translate>views.main.suggest</span>
+            </md-button>
+            <md-button ng-click="header.changeLang('es_MX')">
+              Español
+            </md-button>
+            <md-button ng-click="header.changeLang('en_US')">
+              English
+            </md-button>
+            <md-button ng-click="header.changeLang('ar_AE')">
+              العربي
+            </md-button>
+
+          </md-content>
+        </div>
+      </div>
+    </div>
   </md-toolbar>
 
 </header>
 <!--endSidenav-->
-

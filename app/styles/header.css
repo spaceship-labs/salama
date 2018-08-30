@@ -1,117 +1,349 @@
-header{
+.left-bar {
+  height: 100%;
+  background-color: #000;
+  position: fixed;
+  z-index: 99;
+  width: 80px;
+}
+.inside-bar {
+  height: 100%;
+  background-color: #000;
+  position: relative;
+  z-index: 99;
+  width: 80px;
+}
+.bmenu-container {
+  position: absolute;
+  margin: auto;
+  left: 20px;
+  top: 40%;
+  bottom: 0;
+}
+.drawer {
+  padding-left: 150px;
+  height: 100%;
+  width: 950px;
+  background-color: #252525;
+  position: fixed;
+  z-index: 99;
+  transition: all 2s;
+  color: #fff;
+  padding-top: 50px;
+  font-family: Lato !important;
+}
+.row {
+  padding-left: 15px;
+}
+.subdrawer {
+  height: 200px;
+  border-left: 2px solid #fff;
+  background-color: #252525;
+  width: 300px;
+  margin-top: -50px;
+  margin-left: 300px;
+  font-family: Lato !important;
+  position: absolute;
+  display: none;
+}
+.subdrawer2 {
+  height: 200px;
+  border-left: 2px solid #fff;
+  background-color: #252525;
+  width: 300px;
+  margin-top: -50px;
+  margin-left: 300px;
+  font-family: Lato !important;
+  position: absolute;
+  display: none;
+}
+.subdrawer3 {
+  height: 200px;
+  border-left: 2px solid #fff;
+  background-color: #252525;
+  width: 300px;
+  margin-top: -50px;
+  margin-left: 300px;
+  font-family: Lato !important;
+  position: absolute;
+  display: none;
+}
+.subdrawer4 {
+  height: 200px;
+  border-left: 2px solid #fff;
+  background-color: #252525;
+  width: 300px;
+  margin-top: -50px;
+  margin-left: 300px;
+  font-family: Lato !important;
+  position: absolute;
+  display: none;
+}
+.subdrawer5 {
+  height: 200px;
+  border-left: 2px solid #fff;
+  background-color: #252525;
+  width: 300px;
+  margin-top: -50px;
+  margin-left: 300px;
+  font-family: Lato !important;
+  position: absolute;
+  display: none;
+}
+.subdrawer6 {
+  height: 200px;
+  border-left: 2px solid #fff;
+  background-color: #252525;
+  width: 300px;
+  margin-top: -50px;
+  margin-left: 300px;
+  font-family: Lato !important;
+  position: absolute;
+  display: none;
+}
+.subtitle {
+  font-size: 10px;
+
+  margin-top: 400px;
+  font-weight: bold;
+}
+.mediumtitle {
+  padding-left: 15px;
+  font-size: 15px;
+  color: #fff;
+}
+.mediumtitle:hover {
+  text-decoration: none;
+  font-weight: bold;
+  color: #fff;
+  color: inherit;
+  text-decoration: none;
+}
+.title {
+  font-size: 20px;
+  letter-spacing: 2px;
+  padding-top: 20px;
+  color: #fff;
+  font-weight: bold;
+}
+.icon {
+  background-color: #fff;
+  width: 60px;
+  height: 60px;
+}
+.icon {
+}
+.first-option {
+  font-size: 20px;
+  letter-spacing: 1px;
+  padding-top: 10px;
+  padding-left: 50px;
+  color: #fff;
+}
+.first-option-link {
+  font-size: 20px;
+  letter-spacing: 1px;
+  padding-top: 10px;
+  padding-left: 50px;
+  color: #fff;
+  color: inherit;
+  text-decoration: none;
+}
+.first-option-link:hover {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  color: #fff;
+  color: inherit;
+  text-decoration: none;
+}
+.first-option:hover {
+  text-decoration: none;
+  font-weight: bold;
+  color: #fff;
+  color: inherit;
+  text-decoration: none;
+}
+/*
+.first-option:hover + .subdrawer {
+  text-decoration: none;
+  display: block;
+  font-weight: bold;
+}*/
+.Menu {
+  color: #fff;
+  margin-left: -5px;
+}
+.bmenuu {
+  height: 30px;
+  width: 30px;
+}
+
+.bmenu-container:hover {
+  /* Start the shake animation and make the animation last for 0.5 seconds */
+  animation: shake 2.4s;
+  /* When the animation is finished, start again */
+  animation-iteration-count: infinite;
+}
+@keyframes shake {
+  0% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+  10% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+  20% {
+    transform: translate(-3px, 0px) rotate(1deg);
+  }
+  30% {
+    transform: translate(3px, 2px) rotate(0deg);
+  }
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+  50% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
+  70% {
+    transform: translate(3px, 1px) rotate(-1deg);
+  }
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+  90% {
+    transform: translate(1px, 2px) rotate(0deg);
+  }
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg);
+  }
+}
+.logo-bg {
+  background-color: #5495c0;
+  width: 100%;
+
   min-height: 60px;
 }
-header .md-toolbar-tools{
-  color: #5495C0;
-  background-color:white;
-  min-height:60px;
+.logo {
+  margin-left: 22px;
+  margin-top: 10px;
 }
 
-header .header-left{
+header {
+  min-height: 50px;
 }
-header .header-left .header-logo{
+header .md-toolbar-tools {
+  color: #5495c0;
+  background-color: white;
+  min-height: 50px;
+  height: 60px;
 }
-header .header-left .header-logo img{
-  width:100%;
+
+header .header-left {
 }
-header .header-left .header-menu span{
+header .header-left .header-logo {
+}
+header .header-left .header-logo img {
+  width: 100%;
+}
+header .header-left .header-menu span {
   text-transform: capitalize;
-  font-size:15px;
-  font-weight:bold;
-  color: #5495C0;
+  font-size: 15px;
+  font-weight: bold;
+  color: #5495c0;
 }
 header .header-left .header-menu md-icon svg {
-  fill: #5495C0;
+  fill: #5495c0;
 }
 
-header .header-right{
+header .header-right {
 }
-header .header-right .header-lang{
-  color:black;
-  font-weight:bold;
-  padding:0 10px;
-  background-color: #F3F3F3;
+header .header-right .header-lang {
+  color: black;
+  font-weight: bold;
+  padding: 0 10px;
+  background-color: #f3f3f3;
   color: #000 !important;
 }
 
-header .header-right .header-lang svg{
-  width:70%;
-  fill:black;
+header .header-right .header-lang svg {
+  width: 70%;
+  fill: black;
 }
-header .header-lang-options{
-  position:absolute;
-  top:80%;
+header .header-lang-options {
+  position: absolute;
+  top: 80%;
   right: 24px;
-  min-width:200px;
-  background-color: #FFF;
+  min-width: 200px;
+  background-color: #fff;
 }
-header .header-lang-options{
-  box-shadow:0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+header .header-lang-options {
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 }
-header .header-lang-options .md-button{
-  text-align:left;
-  padding:0;
-  margin:0;
-  padding-left:20px;
-  padding-top:8px;
-  padding-bottom:8px;
+header .header-lang-options .md-button {
+  text-align: left;
+  padding: 0;
+  margin: 0;
+  padding-left: 20px;
+  padding-top: 8px;
+  padding-bottom: 8px;
 }
-header .header-lang-options  .legend{
-  border-bottom:1px solid #A1A1A1;
+header .header-lang-options .legend {
+  border-bottom: 1px solid #a1a1a1;
 }
-
 
 header .header-sidenav,
-header .header-sidenav .md-sidenav-left{
-  max-width:262px;
-  height:100vh;
-  position:fixed;
-  left:0;
+header .header-sidenav .md-sidenav-left {
+  max-width: 262px;
+  height: 100vh;
+  position: fixed;
+  left: 0;
   top: 0;
-  z-index:99999;
-  background-color:#141414;
+  z-index: 99999;
+  background-color: #141414;
 }
-header .header-sidenav .md-toolbar-tools{
-  padding-left:35px;
-  min-height:85px;
-  color:white;
-  background-color:#141414;
+header .header-sidenav .md-toolbar-tools {
+  padding-left: 35px;
+  min-height: 85px;
+  color: white;
+  background-color: #141414;
 }
-header .header-sidenav .sidenav-block{
-  padding-left:35px;
-  padding-right:35px;
-  border-top:1px solid #202122;
+header .header-sidenav .sidenav-block {
+  padding-left: 35px;
+  padding-right: 35px;
+  border-top: 1px solid #202122;
 }
-header .header-sidenav .sidenav-block h3{
-  font-size:16px;
-  color:white;
+header .header-sidenav .sidenav-block h3 {
+  font-size: 16px;
+  color: white;
 }
-header .header-sidenav .sidenav-block p{
-  color:#474D4D;
-  font-weight:bold;
+header .header-sidenav .sidenav-block p {
+  color: #474d4d;
+  font-weight: bold;
 }
-header .header-sidenav .sidenav-block ul{
-  list-style:disc;
+header .header-sidenav .sidenav-block ul {
+  list-style: disc;
 }
-header .header-sidenav .sidenav-block ul li{
-  margin-top:5px;
+header .header-sidenav .sidenav-block ul li {
+  margin-top: 5px;
 }
-header .header-sidenav *{
-  color:#474D4D;
-  font-weight:bold;
-  font-size:12px;
+header .header-sidenav * {
+  color: #474d4d;
+  font-weight: bold;
+  font-size: 12px;
 }
-.sideButton *{
+.sideButton * {
   float: left;
   margin: 10px;
-  color: #FFF !important;
+  color: #fff !important;
 }
 
-.header-lang-options button{
+.header-lang-options button {
   color: #000 !important;
 }
 
-.header-fixed{
+.header-fixed {
   position: fixed;
   width: 100% !important;
   left: 0;
