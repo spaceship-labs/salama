@@ -20,6 +20,13 @@
   "views.evaluation.catorganizations":"Organization",
   "views.evaluation.descindividuals":"This tool will help you to assess your risk at the individual level",
   "views.evaluation.descorganizations":"This tool will help you to assess your risk at the organizational level",
+
+
+  "views.evaluation.catjournalist": "Journalist",
+  "views.evaluation.desjournalist": "(Evaluate your risk if you are a journalist)",
+  "views.evaluation.catdefender": "Defender",
+  "views.evaluation.desdefender": "(Evaluate your risk if you defend human rights)",
+
   "views.evaluation.title": "Get involved.",
   "views.evaluation.subtitle": "Choose a category to start your evaluation.",
   "views.evaluation.prev":"prev",

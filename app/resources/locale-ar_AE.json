@@ -19,6 +19,13 @@
   "views.evaluation.catorganizations":"المنظمات",
   "views.evaluation.descindividuals":"وصف الأفراد",
   "views.evaluation.descorganizations":"وصف المنظمات",
+
+  "views.evaluation.catjournalist": "صحافي",
+  "views.evaluation.desjournalist": "(تقييم المخاطر الخاصة بك إذا كنت صحافيا)",
+  "views.evaluation.catdefender": "الشخص المدافع",
+  "views.evaluation.desdefender": "(تقييم المخاطر الخاصة بك إذا كنت تدافع عن حقوق الإنسان)",
+
+
   "views.evaluation.title": "تورط",
   "views.evaluation.subtitle": "اختر فئة لبدء التقييم الخاص بك",
   "views.evaluation.prev":"سابق",
