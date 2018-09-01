@@ -299,6 +299,10 @@ md-radio-button > div{
   /* margin: 0 auto !important; */
 }
 
+.multiradio-column md-radio-button > div{
+  margin: 0 auto !important;
+}
+
 form-question{
   margin-bottom: 1.2em;
 }
