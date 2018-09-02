@@ -296,6 +296,10 @@ md-tabs-canvas{
 md-radio-button > div{
   left: 0 !important;
   right: 0 !important;
+  /* margin: 0 auto !important; */
+}
+
+.multiradio-column md-radio-button > div{
   margin: 0 auto !important;
 }
 

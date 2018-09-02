@@ -32,6 +32,7 @@
       getPost: getPost,
       getEvalIndividuals: getEvalIndividuals,
       getEvalOrganizations: getEvalOrganizations,
+      getEvalByName: getEvalByName,
       getAdvice: getAdvice
     };
 
@@ -56,6 +57,13 @@
 
     function getEvalIndividuals(lang){
       var url = urlQuestions + lang + '/individuals.json' ;
+      return downloadFile(url).then(function(questions){
+        return questions.pages;
+      });
+    }
+
+    function getEvalByName(lang, name) {
+      var url = urlQuestions + lang + '/'+name+'.json' ;
       return downloadFile(url).then(function(questions){
         return questions.pages;
       });

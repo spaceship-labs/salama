@@ -82,6 +82,17 @@
             ctrl.answers   = storage.answers.organizations;
           });
           break;
+        case 'journalists':
+        case 'defenders':
+          var completed = adviceService.getResultsIndividuals().completed;
+          if (completed) {
+            $location.path('/advice');
+          }
+          individualsService.getEval(lang, ctrl.type).then(function(questions){
+              ctrl.questions = questions;
+              ctrl.answers   = storage.answers.individuals;
+          });
+          break;
         default:
           ctrl.page = 0;
           break
@@ -130,9 +141,118 @@
           });
 
           break;
+        case 'journalists':
+        case 'defenders':
+          var score     = getScoreIndividuals();
+          var digitalScore = getDigitalScore();
+          score -= digitalScore;
+          var riskLevel = getRiskLevel(score, ctrl.type);
+          var articles  = getArticlesIndividualsByType();
+          var digitalRiskLevel = getRiskLevel(digitalScore, 'digital_'+ctrl.type);
+
+          adviceService.setResultsIndividuals({
+            score: score,
+            digitalScore : digitalScore,
+            riskLevel: riskLevel,
+            digitalRiskLevel : digitalRiskLevel,
+            articles: articles,
+            completed: true
+          });
+          storage.answers.individuals = {};
+
+
+          var infoSurvey = getFormatInfoSurvey();
+          infoSurvey.score = score;
+          infoSurvey.risk = riskLevel;
+          infoSurvey.type = 'individual-'+ctrl.type;
+          /* saveSurvey(infoSurvey).then(function(res) { */
+            $location.path('/advice');
+          /* }); */
+          break;
         default:
           break;
       }
+    }
+
+    function getArticlesIndividualsByType() {
+      var articles = [];
+      //TODO move list to service...
+      var list = [{
+        answers: ['digital_navigation', 'digital_mail', 'digital_chat', 'digital_passwords'],
+        scores: [20, 20, 20, 20],
+        article: 'digital_security',
+        articles: ['navigation', 'mail', 'chat', 'passwords']
+      },
+      {
+        //threat_collegues {threat_collegues_in, threat_collegues_out}
+        answers: ['threat_individual', 'threat_collegues' ],
+        scores: [4, 4, 4],
+        article: 'threat'
+      },{
+        //no aplica para defenders...
+        answers: ['security_corruption'],
+        scores: [3],
+        article: 'corruption'
+      }, {
+        answers: ['security_zone'],
+        scores: [3],
+        article: 'zone_protocols'
+      }, {
+        answers: ['security_police'],
+        scores: [3],
+        article: 'crime_corruption'
+      }, {
+        answers: ['security_information'],
+        scores: [2],
+        article: 'corruption_information'
+      }, {
+        answers: ['security_information', 'digital_mail'],
+        scores: [2, 4],
+        article: 'information_corruption_mail'
+      }, {
+        answers: ['threat_collegues', 'profesional_protocols'],
+        scores: [3, 3],
+        article: 'threat_protocols'
+      }, {
+        answers: ['profesional_plan', 'profesional_information', 'profesional_etic'],
+        scores: [3, 3, 3],
+        article: 'professional'
+      }, {
+        answers: ['threat_collegues'],
+        scores: [3],
+        article: 'network'
+      }, {
+        answers: ['profesional_plan'],
+        scores: [3],
+        article: 'plan'
+      }, {
+        answers: ['profesional_information'],
+        scores: [3],
+        article: 'information'
+      }, {
+        answers: ['profesional_etic'],
+        scores: [4],
+        article: 'etic'
+      }, {
+        answers: ['security_information'],
+        scores: [4],
+        article: 'sinformation'
+      }];
+
+      list.forEach(function(l) {
+        l.answers.forEach(function(answer, i) {
+          if (ctrl.answers[answer] >= l.scores[i]) {
+            if (articles[articles.length-1] !== l.article) {
+              articles.push(l.article);
+            }
+            if (l.articles) {
+              articles = articles.push(l.articles[i]);
+            }
+          }
+        });
+      });
+
+      return articles;
     }
 
     function getArticlesIndividuals(){
@@ -302,6 +422,45 @@
       });
 
       return info;
+    }
+
+
+    //TODO move to service...
+    var riskLevels = {
+      'journalists': {
+        low: 40,
+        moderate: 60,
+        high: 80,
+        extreme: 100
+      },
+      'digital_journalists': {
+        low: 25,
+        moderate: 50,
+        high: 75,
+        extreme: 100
+      },
+      'defenders': {
+        low: 40,
+        moderate: 60,
+        high: 80,
+        extreme: 100
+      },
+      'digital_defenders': {
+        low: 25,
+        moderate: 50,
+        high: 75,
+        extreme: 100
+      }
+    };
+    function getRiskLevel(score, name) {
+      var type = riskLevels[name];
+      var level = Object.keys(type).filter(function(key){
+        if (score <= type[key]) {
+          return true;
+        }
+      });
+
+      return level[0] || 'extreme';
     }
 
     function getRiskLevelIndividuals(){
