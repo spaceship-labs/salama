@@ -120,19 +120,19 @@
 </script>
 <div id="drawer" class="drawer">
   <span class="subtitle"> MENÚ </span>
-  <h1 class="title"> Evaluación de seguridad </h1>
+  <h1 class="title" translate> views.sidenav.evaluation </h1>
 
 
-  <a href="#/evaluation-individual" class="first-option-link">Individuales </a>
+  <a href="#/evaluation-individual" class="first-option-link" translate>views.evaluation.individuals </a>
 
   <div></div>
-  <a href="#/evaluation/organizations" class="first-option-link">Organizaciones </a>
+  <a href="#/evaluation/organizations" class="first-option-link" translate>views.evaluation.organizations </a>
 
 
-  <h1 href="" class="title"> Biblioteca de Seguridad </h1>
+  <h1 href="" class="title" translate>views.sidenav.library </h1>
 
   <div class="row" onClick="Toggle()">
-    <h1 class="first-option"> Seguridad digital </h1>
+    <h1 class="first-option" translate> views.sidenav.security </h1>
     <div id="subdrawer" class="subdrawer">
       <ul>
         <a class="mediumtitle" href="/salama/#/article/calls"> Llamadas telefónicas cifradas</a>
@@ -158,7 +158,7 @@
     </div>
   </div>
   <div class="row" onClick="Toggle2()">
-    <h1 class="first-option"> Situaciones de censura </h1>
+    <h1 class="first-option" translate> views.sidenav.censored </h1>
     <div id="subdrawer2" class="subdrawer2">
       <ul>
         <a class="mediumtitle" href="/salama/#/article/corruption">Cubres notas de corrupción</a>
@@ -166,7 +166,7 @@
     </div>
   </div>
   <div class="row" onClick="Toggle3()">
-    <h1 class="first-option"> Seguridad laboral </h1>
+    <h1 class="first-option" translate> views.sidenav.worksecurity </h1>
     <div id="subdrawer3" class="subdrawer3">
       <ul>
         <a class="mediumtitle" href="/salama/#/article/corruption_information">Corrupción e información</a>
@@ -186,7 +186,7 @@
     </div>
   </div>
   <div class="row" onClick="Toggle4()">
-    <h1 class="first-option"> Seguridad profesional </h1>
+    <h1 class="first-option" translate> views.sidenav.prosecurity </h1>
     <div id="subdrawer4" class="subdrawer4">
       <ul>
         <a class="mediumtitle" href=" /salama/#/article/etic">Ética periodística</a>
@@ -218,7 +218,7 @@
     </div>
   </div>
   <div class="row" onClick="Toggle5()">
-    <h1 class="first-option"> Seguridad de redes </h1>
+    <h1 class="first-option" translate> views.sidenav.networksecurity </h1>
     <div id="subdrawer5" class="subdrawer5">
       <ul>
         <a class="mediumtitle" href="/salama/#/article/violence_boss">Mejora tu comunicación</a>
@@ -229,7 +229,7 @@
   </div>
 
   <div class="row" onClick="Toggle6()">
-    <h1 class="first-option"> Otros </h1>
+    <h1 class="first-option" translate> views.sidenav.others </h1>
     <div id="subdrawer6" class="subdrawer6">
       <ul>
         <a class="mediumtitle" href="/salama/#/article/extreme">Nivel de riesgo extremo</a>
@@ -312,9 +312,7 @@
 
       </div>
       <div layout layout-align="space-between center" class="header-right">
-        <a href="https://twitter.com/intent/tweet" class="twitter-share-button">
-          Tweet
-        </a>
+
         <div>
           <md-button class="header-lang" ng-click="header.showLangOptions = !header.showLangOptions">
             <md-icon md-svg-icon="images/lang.svg">
