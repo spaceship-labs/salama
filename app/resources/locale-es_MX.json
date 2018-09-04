@@ -20,6 +20,7 @@
   "views.evaluation.descindividuals": "Esta herramienta te servirá para evaluar tu riesgo a nivel individual",
   "views.evaluation.descorganizations": "Descripción organización",
 
+  "views.sidenav.menu": "Menú",
   "views.sidenav.security": "Seguridad digital",
   "views.sidenav.censored": "Situaciones de censura",
   "views.sidenav.worksecurity": "Seguridad laboral",
@@ -28,6 +29,12 @@
   "views.sidenav.others": "Otros",
 
   "views.sidenav.calls": "Llamadas telefónicas cifradas",
+  "views.sidenav.chat": "Chat cifrado",
+  "views.sidenav.sensitive": "La información sensible debe ser descifrada",
+  "views.sidenav.protect": "Protege tu información",
+  "views.sidenav.navigation": "Navegación segura",
+  "views.sidenav.passwords": "Contraseñas seguras",
+  "views.sidenav.corruption": "Cubres notas de corrupción",
 
   "views.evaluation.catjournalist": "Periodista",
   "views.evaluation.desjournalist": "(Evalúa tu riesgo si eres periodista)",

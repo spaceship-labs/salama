@@ -20,6 +20,7 @@
   "views.evaluation.descindividuals": "This tool will help you to assess your risk at the individual level",
   "views.evaluation.descorganizations": "This tool will help you to assess your risk at the organizational level",
 
+  "views.sidenav.menu": "Menu",
   "views.sidenav.security": "Digital security",
   "views.sidenav.censored": "Censorship situations",
   "views.sidenav.worksecurity": "Job security",
@@ -28,6 +29,12 @@
   "views.sidenav.others": "Others",
 
   "views.sidenav.calls": "Encrypted phone calls",
+  "views.sidenav.chat": "Encrypted chat",
+  "views.sidenav.sensitive": "The sensitive information must be deciphered",
+  "views.sidenav.protect": "Protect your information",
+  "views.sidenav.navigation": "Secure browsing",
+  "views.sidenav.passwords": "Secure passwords",
+  "views.sidenav.corruption": "You cover corruption notes",
 
   "views.evaluation.catjournalist": "Journalist",
   "views.evaluation.desjournalist": "(Evaluate your risk if you are a journalist)",

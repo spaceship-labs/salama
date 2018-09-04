@@ -20,6 +20,7 @@
   "views.evaluation.descindividuals": "وصف الأفراد",
   "views.evaluation.descorganizations": "وصف المنظمات",
 
+  "views.sidenav.menu": "قائمة الطعام",
   "views.sidenav.security": "الأمن الرقمي",
   "views.sidenav.censored": "حالات الرقابة",
   "views.sidenav.worksecurity": "السلامة المهنية",
@@ -28,6 +29,12 @@
   "views.sidenav.others": "آخرون",
 
   "views.sidenav.calls": "مكالمات هاتفية مشفرة",
+  "views.sidenav.chat": "دردشة مشفرة",
+  "views.sidenav.sensitive": "يجب فك رموز المعلومات الحساسة",
+  "views.sidenav.protect": "حماية المعلومات الخاصة بك",
+  "views.sidenav.navigation": "التنقل الآمن",
+  "views.sidenav.passwords": "كلمات مرور آمنة",
+  "views.sidenav.corruption": "قمت بتغطية ملاحظات الفساد",
 
   "views.evaluation.catjournalist": "صحافي",
   "views.evaluation.desjournalist": "(تقييم المخاطر الخاصة بك إذا كنت صحافيا)",
