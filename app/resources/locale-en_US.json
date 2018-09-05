@@ -46,6 +46,15 @@
   "views.sidenav.stories": "Stories should be reviewed",
   "views.sidenav.communication": "Good communication is essential",
   "views.sidenav.methods": "Approach methods",
+  "views.sidenav.professional": "Professional situation",
+  "views.sidenav.handle": "Are you ready to handle sensitive information?",
+  "views.sidenav.protocols": "Protocols to prevent attacks",
+  "views.sidenav.improvecomm": "Improve your communication",
+
+  "views.sidenav.extreme": "Extreme risk level",
+  "views.sidenav.high": "High risk level",
+  "views.sidenav.medium": "Moderate risk level",
+  "views.sidenav.down": "Low risk level",
 
   "views.evaluation.catjournalist": "Journalist",
   "views.evaluation.desjournalist": "(Evaluate your risk if you are a journalist)",
