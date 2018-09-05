@@ -36,6 +36,17 @@
   "views.sidenav.passwords": "Secure passwords",
   "views.sidenav.corruption": "You cover corruption notes",
 
+  "views.sidenav.corruptioneinfo": "Corruption and information",
+  "views.sidenav.corruptioncover": "Do you cover crime and corruption?",
+  "views.sidenav.attacks": "¿How to prevent attacks?",
+  "views.sidenav.plan": "Plan for coverage of violence",
+  "views.sidenav.dangareas": "Are you ready to visit dangerous areas?",
+
+  "views.sidenav.ethic": "Journalistic ethics",
+  "views.sidenav.stories": "Stories should be reviewed",
+  "views.sidenav.communication": "Good communication is essential",
+  "views.sidenav.methods": "Approach methods",
+
   "views.evaluation.catjournalist": "Journalist",
   "views.evaluation.desjournalist": "(Evaluate your risk if you are a journalist)",
   "views.evaluation.catdefender": "Defender",

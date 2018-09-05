@@ -36,6 +36,17 @@
   "views.sidenav.passwords": "كلمات مرور آمنة",
   "views.sidenav.corruption": "قمت بتغطية ملاحظات الفساد",
 
+  "views.sidenav.corruptioneinfo": "الفساد والمعلومات",
+  "views.sidenav.corruptioncover": "هل تغطي الجريمة والفساد؟",
+  "views.sidenav.attacks": "¿كيفية منع الهجمات?",
+  "views.sidenav.plan": "خطة لتغطية العنف",
+  "views.sidenav.dangareas": "هل أنت على استعداد لزيارة المناطق الخطرة؟",
+
+  "views.sidenav.ethic": "الأخلاق الصحافية",
+  "views.sidenav.stories": "يجب مراجعة القصص",
+  "views.sidenav.communication": "التواصل الجيد أمر ضروري",
+  "views.sidenav.methods": "طرق النهج",
+
   "views.evaluation.catjournalist": "صحافي",
   "views.evaluation.desjournalist": "(تقييم المخاطر الخاصة بك إذا كنت صحافيا)",
   "views.evaluation.catdefender": "الشخص المدافع",
