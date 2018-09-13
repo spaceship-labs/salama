@@ -246,7 +246,7 @@
               articles.push(l.article);
             }
             if (l.articles) {
-              articles = articles.push(l.articles[i]);
+              articles = articles.concat(l.articles[i]);
             }
           }
         });
