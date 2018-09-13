@@ -36,6 +36,26 @@
   "views.sidenav.passwords": "Contraseñas seguras",
   "views.sidenav.corruption": "Cubres notas de corrupción",
 
+  "views.sidenav.corruptioneinfo": "Corrupción e información",
+  "views.sidenav.corruptioncover": "¿Cubres notas de crimen y corrupción?",
+  "views.sidenav.attacks": "¿Cómo preevenir ataques?",
+  "views.sidenav.plan": "Plan para la cobertura de violencia",
+  "views.sidenav.dangareas": "¿Estás listo para visitar zonas peligrosas?",
+
+  "views.sidenav.ethic": "Ética periodística",
+  "views.sidenav.stories": "Las historias deben ser revisadas",
+  "views.sidenav.communication": "La buena comunicación es esencial",
+  "views.sidenav.methods": "Métodos de planteamiento",
+  "views.sidenav.professional": "Situación profesional",
+  "views.sidenav.handle": "¿Estás listo para manejar información sensible?",
+  "views.sidenav.protocols": "Protocolos para preveenir ataques",
+  "views.sidenav.improvecomm": "Mejora tu comunicación",
+
+  "views.sidenav.extreme": "Nivel de riesgo extremo",
+  "views.sidenav.high": "Nivel de riesgo alto",
+  "views.sidenav.medium": "Nivel de riesgo moderado",
+  "views.sidenav.down": "Nivel de riesgo bajo",
+
   "views.evaluation.catjournalist": "Periodista",
   "views.evaluation.desjournalist": "(Evalúa tu riesgo si eres periodista)",
   "views.evaluation.catdefender": "Persona defensora",
