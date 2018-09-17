@@ -36,87 +36,52 @@
 
   var toggle_submenu = false;
   function Toggle() {
-    if (toggle_submenu === false) {
 
-      toggle_submenu = true;
-      document.getElementById("subdrawer").style.display = "none";
-
-    } else {
-
-      toggle_submenu = false;
-      document.getElementById("subdrawer").style.display = "block";
-    }
+    document.getElementById("subdrawer").style.display = "block";
+  }
+  function UnToggle() {
+    document.getElementById("subdrawer").style.display = "none";
   }
 
-  var toggle_submenu2 = false;
   function Toggle2() {
-    if (toggle_submenu2 === false) {
 
-      toggle_submenu2 = true;
-      document.getElementById("subdrawer2").style.display = "none";
-
-    } else {
-
-      toggle_submenu2 = false;
-      document.getElementById("subdrawer2").style.display = "block";
-    }
+    document.getElementById("subdrawer2").style.display = "block";
+  }
+  function UnToggle2() {
+    document.getElementById("subdrawer2").style.display = "none";
   }
 
-  var toggle_submenu3 = false;
   function Toggle3() {
-    if (toggle_submenu3 === false) {
 
-      toggle_submenu3 = true;
-      document.getElementById("subdrawer3").style.display = "none";
-
-    } else {
-
-      toggle_submenu3 = false;
-      document.getElementById("subdrawer3").style.display = "block";
-    }
+    document.getElementById("subdrawer3").style.display = "block";
+  }
+  function UnToggle3() {
+    document.getElementById("subdrawer3").style.display = "none";
   }
 
-  var toggle_submenu4 = false;
   function Toggle4() {
-    if (toggle_submenu4 === false) {
 
-      toggle_submenu4 = true;
-      document.getElementById("subdrawer4").style.display = "none";
-
-    } else {
-
-      toggle_submenu4 = false;
-      document.getElementById("subdrawer4").style.display = "block";
-    }
+    document.getElementById("subdrawer4").style.display = "block";
+  }
+  function UnToggle4() {
+    document.getElementById("subdrawer4").style.display = "none";
   }
 
-  var toggle_submenu5 = false;
   function Toggle5() {
-    if (toggle_submenu5 === false) {
 
-      toggle_submenu5 = true;
-      document.getElementById("subdrawer5").style.display = "none";
-
-    } else {
-
-      toggle_submenu5 = false;
-      document.getElementById("subdrawer5").style.display = "block";
-    }
+    document.getElementById("subdrawer5").style.display = "block";
   }
-
-  var toggle_submenu6 = false;
+  function UnToggle5() {
+    document.getElementById("subdrawer5").style.display = "none";
+  }
   function Toggle6() {
-    if (toggle_submenu6 === false) {
 
-      toggle_submenu6 = true;
-      document.getElementById("subdrawer6").style.display = "none";
-
-    } else {
-
-      toggle_submenu6 = false;
-      document.getElementById("subdrawer6").style.display = "block";
-    }
+    document.getElementById("subdrawer6").style.display = "block";
   }
+  function UnToggle6() {
+    document.getElementById("subdrawer6").style.display = "none";
+  }
+
 </script>
 <div id="drawer" class="drawer">
   <span class="subtitle" translate> views.sidenav.menu </span>
@@ -131,7 +96,7 @@
 
   <h1 href="" class="title" translate>views.sidenav.library </h1>
 
-  <div class="row" onClick="Toggle()">
+  <div class="row" onmouseover="Toggle()" onmouseout="UnToggle()">
     <a href="" class="first-option" translate> views.sidenav.security </a>
     <div id="subdrawer" class="subdrawer">
       <ul>
@@ -157,7 +122,7 @@
       </ul>
     </div>
   </div>
-  <div class="row" onClick="Toggle2()">
+  <div class="row" onmouseover="Toggle2()" onmouseout="UnToggle2()">
     <h1 class="first-option" translate> views.sidenav.censored </h1>
     <div id="subdrawer2" class="subdrawer2">
       <ul>
@@ -165,7 +130,7 @@
       </ul>
     </div>
   </div>
-  <div class="row" onClick="Toggle3()">
+  <div class="row" onmouseover="Toggle3()" onmouseout="UnToggle3()">
     <h1 class="first-option" translate> views.sidenav.worksecurity </h1>
     <div id="subdrawer3" class="subdrawer3">
       <ul>
@@ -185,8 +150,9 @@
       </ul>
     </div>
   </div>
-  <div class="row" onClick="Toggle4()">
-    <h1 class="first-option" translate> views.sidenav.prosecurity </h1>
+  <div class="row" onmouseover="Toggle4()" onmouseout="UnToggle4()"">
+    <h1 class=" first-option" translate>
+    views.sidenav.prosecurity </h1>
     <div id="subdrawer4" class="subdrawer4">
       <ul>
         <a class="mediumtitle" href=" #/article/etic" translate>views.sidenav.ethic</a>
@@ -217,8 +183,9 @@
       </ul>
     </div>
   </div>
-  <div class="row" onClick="Toggle5()">
-    <h1 class="first-option" translate> views.sidenav.networksecurity </h1>
+  <div class="row" onmouseover="Toggle5()" onmouseout="UnToggle5()"">
+    <h1 class=" first-option" translate>
+    views.sidenav.networksecurity </h1>
     <div id="subdrawer5" class="subdrawer5">
       <ul>
         <a class="mediumtitle" href="#/article/violence_boss" translate>views.sidenav.improvecomm</a>
@@ -228,8 +195,9 @@
     </div>
   </div>
 
-  <div class="row" onClick="Toggle6()">
-    <h1 class="first-option" translate> views.sidenav.others </h1>
+  <div class="row" onmouseover="Toggle6()" onmouseout="UnToggle6()"">
+    <h1 class=" first-option" translate>
+    views.sidenav.others </h1>
     <div id="subdrawer6" class="subdrawer6">
       <ul>
         <a class="mediumtitle" href="#/article/extreme" translate>views.sidenav.extreme</a>
