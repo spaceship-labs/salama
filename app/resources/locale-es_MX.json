@@ -2,8 +2,8 @@
   "views.main.lang": "Español",
   "views.main.suggest": "Seleccione su lenguaje",
 
-  "views.sidenav.evaluation": "Evaluación de seguridad",
-  "views.sidenav.library": "Biblioteca de seguridad",
+  "views.sidenav.evaluation": "EVALUACIÓN DE SEGURIDAD",
+  "views.sidenav.library": "BIBLIOTECA DE SEGURIDAD",
   "views.sidenav.individuals": "Individuales",
   "views.sidenav.organizations": "Organizaciones",
 
@@ -124,6 +124,7 @@
   "views.results.physical": "Riesgo físico",
   "views.results.reputation": "Riesgo reputacional",
 
+  "views.footer.terms_one": "Salama es un programa y herramienta libre y gratuita (free open source software). Todos los derechos están reservados ©copyright 2016 como parte de",
   "views.footer.rights": "Todos los derechos reservados",
   "views.footer.about": "Acerca de Salama"
 }

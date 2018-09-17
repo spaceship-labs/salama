@@ -1,54 +1,86 @@
-.content-home{
-  height:auto;
-  background: linear-gradient(to top right,#003650,#61ADCD);
-  text-align:center;
-  color:white;
+.content-home {
+  height: auto;
+  background: linear-gradient(to top right, #003650, #61adcd);
+  text-align: center;
+  color: white;
   padding: 5%;
 }
-.content-home .home-description{
+.content-home .home-description {
 }
-.content-home .home-description h2{
-  margin-bottom:0;
-  font:"lato-bold";
-  font-size:2.2em;
+
+.warning {
+  height: 174px;
+  background-color: #181818;
 }
-.content-home .home-description p{
-  font:"lato-bold";
-  font-size:1.2em;
+.content-home .home-description h2 {
+  margin-bottom: 0;
+  font: "lato-bold";
+  font-size: 2.2em;
 }
-.content-home .home-choices .md-button{
-  font:"lato-bold";
-  font-size:1.2em;
-  border:2px solid #519DBF;
-  text-transform:uppercase;
+.content-home .home-description p {
+  font: "lato-bold";
+  font-size: 1.2em;
+}
+.content-home .home-choices .md-button {
+  font: "lato-bold";
+  font-size: 1.2em;
+  border: 2px solid #519dbf;
+  text-transform: uppercase;
   line-height: 50px;
-  color: #519DBF;
+  color: #519dbf;
 }
-.content-home .home-choices .md-button:hover{
-  border-color: #FFF;
+.content-home .home-choices .md-button:hover {
+  border-color: #fff;
 }
-.content-home .home-choices .md-button:hover > span{
-  color: #FFF;
+.content-home .home-choices .md-button:hover > span {
+  color: #fff;
 }
-.container-md{
+.container-md {
   max-width: 900px;
   width: 90%;
   margin: 0 auto;
 }
+.white-text {
+  font-size: 12px;
+  color: #fff;
+}
+.white-italic-text {
+  font-size: 12px;
+  color: #fff;
+  font-style: italic;
+}
+.white-header {
+  font-size: 14px;
+  padding-top: 5px;
+  font-weight: bold;
+  color: #fff;
+}
+.container-fw {
+  width: 100%;
+  text-align: center;
+  z-index: 99;
+}
+.blue-link {
+  color: #3b566c;
+}
 
-.video-container{
+.blue-link:hover {
+  color: #3b566c;
+  text-decoration: none;
+  font-weight: bold;
+}
+.video-container {
   padding: 2em;
-  color: #519DBF;
+  color: #519dbf;
   font-size: 1.2em;
-
 }
-.video-container:hover{
-  color: #FFF;
+.video-container:hover {
+  color: #fff;
 }
-.video-container:hover .icon-video{
+.video-container:hover .icon-video {
   background-position-x: -45px;
 }
-.icon-video{
+.icon-video {
   background-image: url(../images/ICONO_PLAY.png);
   background-repeat: no-repeat;
   width: 44px;
