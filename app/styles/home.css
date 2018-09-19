@@ -10,6 +10,15 @@
   height: 174px;
   background-color: #181818;
 }
+.white-button {
+  background-color: #fffefd;
+  color: #073953 !important;
+  border-radius: 5px;
+  border-color: #fffefd !important;
+}
+.blue-text {
+}
+
 .content-home .home-description h2 {
   margin-bottom: 0;
   font: "lato-bold";
