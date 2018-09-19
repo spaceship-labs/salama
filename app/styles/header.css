@@ -33,6 +33,7 @@
   position: fixed;
   z-index: 99;
   transition: all 0.5s;
+
   color: #fff;
   padding-top: 20px;
   font-family: Lato !important;
@@ -182,6 +183,7 @@
 .bmenuu {
   height: 30px;
   width: 30px;
+  cursor: pointer !important;
 }
 
 .bmenu-container:hover {
