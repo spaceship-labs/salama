@@ -4,6 +4,8 @@
 
   "views.sidenav.evaluation": "SECURITY EVALUATION",
   "views.sidenav.library": "SECURITY LIBRARY",
+  "views.sidenav.eminus": "Security evaluation",
+  "views.sidenav.lminus": "Security library",
   "views.sidenav.individuals": "Individual Journalist",
   "views.sidenav.organizations": "Organization",
 

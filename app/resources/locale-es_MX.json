@@ -4,10 +4,12 @@
 
   "views.sidenav.evaluation": "EVALUACIÓN DE SEGURIDAD",
   "views.sidenav.library": "BIBLIOTECA DE SEGURIDAD",
+  "views.sidenav.eminus": "Evaluación de seguridad",
+  "views.sidenav.lminus": "Biblioteca de seguridad",
   "views.sidenav.individuals": "Individuales",
   "views.sidenav.organizations": "Organizaciones",
 
-  "views.home.title": "Evaluación de riesgo",
+  "views.home.title": "Evaluación de Riesgos para Periodistas y Personas Defensoras",
   "views.home.subtitle": "para periodistas y blogueros",
   "views.home.library": "Biblioteca de Seguridad",
   "views.home.evaluation": "Evaluacion de Seguridad",

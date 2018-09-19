@@ -5,6 +5,12 @@
   z-index: 99;
   width: 80px;
 }
+.bold-span {
+  font-family: "lato";
+  letter-spacing: 3.6px;
+  font-weight: bold;
+  font-size: 8px;
+}
 .inside-bar {
   height: 100%;
   background-color: #000;
