@@ -345,3 +345,88 @@ form-question{
     font-size: 20px;
   }
 }
+
+
+.options-icon{
+  margin: 25px;
+}
+
+.options-icon.view .no-margin{
+  margin: 0;
+}
+
+.options-icon.view h2{
+  font-size: 1.8em;
+}
+
+.options-icon .option-icon{
+  background-color: #d2d2d2;
+  margin: 0 20px;
+  padding: 30px;
+  cursor: pointer;
+}
+
+
+.options-icon .option-icon:hover,
+.options-icon .option-icon.selected{
+  background-color: #519dbd;
+}
+
+.options-icon .option-icon h3,
+.options-icon .option-icon p{
+  color: black;
+  margin: 10px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.center-title{
+  text-align: center;
+}
+
+.opt-icon{
+  width: 280px;
+  height: 280px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  margin: 0 auto;
+}
+
+.opt-icon-women{
+  background-image: url(../images/asset-women.png);
+
+}
+
+.opt-icon-men{
+  background-image: url(../images/asset-men.png);
+}
+
+.opt-icon-min1{
+  background-image: url(../images/asset-min1.png);
+}
+
+.opt-icon-min2{
+  background-image: url(../images/asset-min2.png);
+}
+
+
+.opt-icon-journalist{
+  background-image: url(../images/asset-journalist.png);
+}
+
+.opt-icon-defender{
+  background-image: url(../images/asset-defender.png);
+}
+
+.options-icon .evaluation-options{
+  padding-top: 10px;
+  margin: 15px 0;
+}
+
+.categories.option-icon{
+  border: none;
+}
+
+.noip{
+  margin: 0;
+}

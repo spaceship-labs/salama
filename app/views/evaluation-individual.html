@@ -15,26 +15,28 @@
   <md-tab label="1">
     <md-content layout layout-align="center center">
       <div layout="column" layout-align="center center"
-        class="evaluation container"
+        class="evaluation container options-icon"
       >
+        <p class="noip" translate>views.evaluation.individual.noip</p>
+        <h2 translate>views.evaluation.individual.title</h2>
         <div
-          class="evaluation-options"
+          class="evaluation-options "
           layout="row"
           layout-align="space-around center"
           layout-xs="column"
         >
 
           <div
-            class="categories relative"
+            class="categories relative option-icon"
             flex="40"
             flex-xs="100"
             layout="column"
             layout-align="center"
+            layout-wrap
+            layout-fill
           >
-            <div class="iconWrapper">
-              <i class="icon-user"></i>
-              <div class="square"></div>
-            </div>
+            <span class="opt-icon opt-icon-journalist">
+            </span>
             <div>
               <h3 translate>views.evaluation.catjournalist</h3>
               <p translate>views.evaluation.desjournalist</p>
@@ -43,16 +45,14 @@
             </a>
           </div>
           <div
-            class="categories relative"
+            class="categories relative option-icon"
             flex="40"
             flex-xs="100"
             layout="column"
             layout-align="center"
           >
-            <div class="iconWrapper">
-              <i class="icon-user"></i>
-              <div class="square"></div>
-            </div>
+            <span class="opt-icon opt-icon-defender">
+            </span>
             <div>
               <h3 translate>views.evaluation.catdefender</h3>
               <p translate>views.evaluation.desdefender</p>

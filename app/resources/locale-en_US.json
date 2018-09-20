@@ -59,9 +59,11 @@
   "views.sidenav.down": "Low risk level",
 
   "views.evaluation.catjournalist": "Journalist",
-  "views.evaluation.desjournalist": "(Evaluate your risk if you are a journalist)",
+  "views.evaluation.desjournalist": "Evaluate your risk if you are a journalist",
   "views.evaluation.catdefender": "Defender",
-  "views.evaluation.desdefender": "(Evaluate your risk if you defend human rights)",
+  "views.evaluation.desdefender": "Evaluate your risk if you defend human rights",
+  "views.evaluation.individual.title": "Choose a category to start the evaluation",
+  "views.evaluation.individual.noip": "This application does not record the IP of the people or their geographical location.",
 
   "views.evaluation.title": "Get involved.",
   "views.evaluation.subtitle": "Choose a category to start your evaluation.",
