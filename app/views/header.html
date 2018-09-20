@@ -1,5 +1,4 @@
 <script>
-
   if (toggle = true) {
     function hashHandler() {
       this.oldHash = window.location.hash;
@@ -8,8 +7,6 @@
       var that = this;
       var detect = function () {
         if (that.oldHash != window.location.hash) {
-
-
           that.oldHash = window.location.hash;
           document.getElementById("drawer").style.marginLeft = "-1050px";
         }
@@ -17,73 +14,72 @@
       this.Check = setInterval(function () { detect() }, 100);
     }
   }
+
   var hashDetection = new hashHandler();
   var toggle = false;
+
   function activeMenu() {
     if (toggle === false) {
-
       toggle = true;
       document.getElementById("drawer").style.paddingLeft = "150px";
       document.getElementById("drawer").style.marginLeft = "0px";
-
     } else {
-
       toggle = false;
       document.getElementById("drawer").style.marginLeft = "-1050px";
     }
   }
 
-
   var toggle_submenu = false;
-  function Toggle() {
 
+  function Toggle() {
     document.getElementById("subdrawer").style.display = "block";
   }
+
   function UnToggle() {
     document.getElementById("subdrawer").style.display = "none";
   }
 
   function Toggle2() {
-
     document.getElementById("subdrawer2").style.display = "block";
   }
+
   function UnToggle2() {
     document.getElementById("subdrawer2").style.display = "none";
   }
 
   function Toggle3() {
-
     document.getElementById("subdrawer3").style.display = "block";
   }
+
   function UnToggle3() {
     document.getElementById("subdrawer3").style.display = "none";
   }
 
   function Toggle4() {
-
     document.getElementById("subdrawer4").style.display = "block";
   }
+
   function UnToggle4() {
     document.getElementById("subdrawer4").style.display = "none";
   }
 
   function Toggle5() {
-
     document.getElementById("subdrawer5").style.display = "block";
   }
+
   function UnToggle5() {
     document.getElementById("subdrawer5").style.display = "none";
   }
-  function Toggle6() {
 
+  function Toggle6() {
     document.getElementById("subdrawer6").style.display = "block";
   }
+
   function UnToggle6() {
     document.getElementById("subdrawer6").style.display = "none";
   }
 
 </script>
-<!---->
 
 <div id="drawer" class="drawer">
   <span class="subtitle" translate> views.sidenav.menu </span>
