@@ -23,9 +23,11 @@
       toggle = true;
       document.getElementById("drawer").style.paddingLeft = "150px";
       document.getElementById("drawer").style.marginLeft = "0px";
+      document.getElementById("shadow").style.display = "initial";
     } else {
       toggle = false;
       document.getElementById("drawer").style.marginLeft = "-1050px";
+      document.getElementById("shadow").style.display = "none";
     }
   }
 
@@ -81,6 +83,7 @@
 
 </script>
 
+<div id="shadow" onclick="activeMenu()"></div>
 <div id="drawer" class="drawer">
   <span class="subtitle" translate> views.sidenav.menu </span>
   <h1 class="title" translate> views.sidenav.evaluation </h1>
