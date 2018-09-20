@@ -211,10 +211,23 @@
   color: #fff;
   margin-left: -5px;
 }
+
+.CrossText {
+  color: #fff;
+  margin-left: -12px;
+}
 .bmenuu {
   height: 30px;
   width: 30px;
   cursor: pointer !important;
+}
+.cross {
+  height: 30px;
+  width: 30px;
+  cursor: pointer !important;
+}
+#cross {
+  display: none;
 }
 
 .bmenu-container:hover {

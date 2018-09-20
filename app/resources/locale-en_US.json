@@ -8,7 +8,7 @@
   "views.sidenav.lminus": "Security library",
   "views.sidenav.individuals": "Individual Journalist",
   "views.sidenav.organizations": "Organization",
-
+  "views.sidenav.close": "CLOSE",
   "views.home.title": "Risk Assessment",
   "views.home.subtitle": "For Journalists and Bloggers",
   "views.home.library": "Security Library",

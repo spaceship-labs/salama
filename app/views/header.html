@@ -24,10 +24,14 @@
       document.getElementById("drawer").style.paddingLeft = "150px";
       document.getElementById("drawer").style.marginLeft = "0px";
       document.getElementById("shadow").style.display = "initial";
+      document.getElementById("burger").style.display = "none";
+      document.getElementById("cross").style.display = "initial";
     } else {
       toggle = false;
       document.getElementById("drawer").style.marginLeft = "-1050px";
       document.getElementById("shadow").style.display = "none";
+      document.getElementById("burger").style.display = "initial";
+      document.getElementById("cross").style.display = "none";
     }
   }
 
@@ -89,12 +93,12 @@
   <h1 class="title" translate> views.sidenav.evaluation </h1>
 
   <div layout="row" class="icon-row">
-    <img src="../images/indiv.png" height="20" width="15" alt="" />
+    <img src="../images/indiv.png" height="20" width="15" alt="s" />
     <a href="#/evaluation-individual" class="first-option-link" translate>views.evaluation.individuals </a>
   </div>
 
   <div layout="row" class="icon-row-organizations">
-    <img src="../images/org.png" height="18" width="31" alt="" />
+    <img src="../images/org.png" height="18" width="31" alt="s" />
     <a href="#/evaluation/organizations" class="first-option-link" translate>views.evaluation.organizations </a>
   </div>
 
@@ -133,7 +137,7 @@
 
   <div class="row" onmouseover="Toggle2()" onmouseout="UnToggle2()">
     <div layout="row" class="row-padded">
-      <img src="../images/censura.png" height="22" width="20" alt="" />
+      <img src="../images/censura.png" height="22" width="20" alt="s" />
       <h1 class="first-option" translate> views.sidenav.censored </h1>
     </div>
     <div id="subdrawer2" class="subdrawer2">
@@ -145,8 +149,7 @@
 
   <div class="row" onmouseover="Toggle3()" onmouseout="UnToggle3()">
     <div layout="row" class="icon-row">
-      <img src="../images/seglab.png" height="22" width="20" alt="" />
-
+      <img src="../images/seglab.png" height="22" width="20" alt="s" />
       <h1 class="first-option" translate> views.sidenav.worksecurity </h1>
     </div>
     <div id="subdrawer3" class="subdrawer3">
@@ -170,7 +173,7 @@
 
   <div class="row" onmouseover="Toggle4()" onmouseout="UnToggle4()"">
     <div layout=" row" class="icon-row">
-    <img src="../images/segprof.png" height="22" width="20" alt="" />
+    <img src="../images/segprof.png" height="22" width="20" alt="d" />
     <h1 class=" first-option" translate>
       views.sidenav.prosecurity </h1>
   </div>
@@ -203,70 +206,64 @@
   </div>
 </div>
 
-<div class="row" onmouseover="Toggle5()" onmouseout="UnToggle5()"">
+<div class="row" onmouseover="Toggle5()" onmouseout="UnToggle5()">
   <div layout=" row" class=" icon-row">
-  <img src="../images/redes.png" height="22" width="20" alt="" />
-  <h1 class=" first-option" translate>
-    views.sidenav.networksecurity </h1>
+    <img src="../images/redes.png" height="22" width="20" alt="d" />
+    <h1 class=" first-option" translate>
+      views.sidenav.networksecurity </h1>
+  </div>
+  <div id="subdrawer5" class="subdrawer5">
+    <ul>
+      <a class="mediumtitle" href="#/article/violence_boss" translate>views.sidenav.improvecomm</a>
+    </ul>
+  </div>
 </div>
 
-<div id="subdrawer5" class="subdrawer5">
-  <ul>
-    <a class="mediumtitle" href="#/article/violence_boss" translate>views.sidenav.improvecomm</a>
-  </ul>
-</div>
-</div>
-
-<div class="row" onmouseover="Toggle6()" onmouseout="UnToggle6()"">
-  <div layout=" row"class=" icon-row">
-  <img src="../images/otros.png" height="22" width="20" alt="" />
-  <h1 class=" first-option" translate>
-    views.sidenav.others </h1>
-</div>
-<div id="subdrawer6" class="subdrawer6">
-  <ul>
-    <a class="mediumtitle" href="#/article/extreme" translate>views.sidenav.extreme</a>
-  </ul>
-  <ul>
-    <a class="mediumtitle" href="#/article/high" translate>views.sidenav.high</a>
-  </ul>
-
-  <ul>
-    <a class="mediumtitle" href="#/article/low" translate>views.sidenav.medium</a>
-  </ul>
-
-  <ul>
-    <a class="mediumtitle" href="#/article/moderate" translate>views.sidenav.down</a>
-  </ul>
-</div>
+<div class="row" onmouseover="Toggle6()" onmouseout="UnToggle6()">
+  <div layout=" row" class=" icon-row">
+    <img src="../images/otros.png" height="22" width="20" alt="ds" />
+    <h1 class=" first-option" translate>
+      views.sidenav.others </h1>
+  </div>
+  <div id="subdrawer6" class="subdrawer6">
+    <ul>
+      <a class="mediumtitle" href="#/article/extreme" translate>views.sidenav.extreme</a>
+    </ul>
+    <ul>
+      <a class="mediumtitle" href="#/article/high" translate>views.sidenav.high</a>
+    </ul>
+    <ul>
+      <a class="mediumtitle" href="#/article/low" translate>views.sidenav.medium</a>
+    </ul>
+    <ul>
+      <a class="mediumtitle" href="#/article/moderate" translate>views.sidenav.down</a>
+    </ul>
+  </div>
 </div>
 </div>
 <div class="left-bar">
-
   <div class="logo-bg">
     <a href="#/">
       <img class="logo" src="images/icon_salama.png">
     </a>
   </div>
-
-  <div class="inside-bar" onclick="activeMenu()">
-
+  <div class="inside-bar">
     <div class="bmenu-container" onClick="activeMenu()">
-
-      <img src="images/menu-button.png" class="bmenuu" alt="bmenu">
-      <span class="Menu" translate>views.sidenav.menu</span>
+      <div id="burger">
+        <img src="images/menu-button.png" class="bmenuu" alt="bmenu">
+        <span class="Menu" translate>views.sidenav.menu</span>
+      </div>
+      <div id="cross">
+        <img src="images/multiply.png" class="cross" alt="cross">
+        <span class="CrossText" translate>views.sidenav.close</span>
+      </div>
     </div>
   </div>
 </div>
-
 <header layout layout-align="center center" layout-wrap ng-controller="HeaderCtrl as header" style="{{header.lang == 'ar_AE' && 'text-align:right!important'}}">
-
   <!--Sidenav-->
   <md-sidenav md-component-id="left" class="md-sidenav-left md-whiteframe-z2 header-sidenav">
     <md-toolbar class="md-toolbar-tools">
-
-
-
     </md-toolbar>
     <div class="sidenav-block">
       <h3 translate>views.sidenav.evaluation</h3>
@@ -295,17 +292,13 @@
       </div>
     </div>
   </md-sidenav>
-
   <md-toolbar class="md-toolbar-tools animate header-fixed">
     <div class="container" layout layout-align="space-between center">
       <div layout layout-align="space-between center" class="header-left">
         <a href="#/" layout layout-align="center center" class="header-logo">
         </a>
-
-
       </div>
       <div layout layout-align="space-between center" class="header-right">
-
         <div>
           <md-button class="header-lang" ng-click="header.showLangOptions = !header.showLangOptions">
             <md-icon md-svg-icon="images/lang.svg">
@@ -325,12 +318,10 @@
             <md-button ng-click="header.changeLang('ar_AE')">
               العربي
             </md-button>
-
           </md-content>
         </div>
       </div>
     </div>
   </md-toolbar>
-
 </header>
 <!--endSidenav-->
