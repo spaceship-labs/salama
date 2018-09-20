@@ -60,6 +60,7 @@
   margin: 0 auto;
 }
 .white-text {
+  padding-top: 0px;
   font-size: 12px;
   color: #fff;
 }

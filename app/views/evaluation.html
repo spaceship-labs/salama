@@ -1,38 +1,15 @@
-<md-tabs
-  md-selected = "evaluation.page"
-  class="content-evaluation"
-  style="{{evaluation.lang == 'ar_AE' && 'text-align:right!important'}}"
-  md-dynamic-height
-  md-border-bottom
-  md-center-tabs
-  md-no-ink-bar
-  md-no-ink
-  ng-cloak
-  id="results"
->
+<md-tabs md-selected="evaluation.page" class="content-evaluation" style="{{evaluation.lang == 'ar_AE' && 'text-align:right!important'}}"
+  md-dynamic-height md-border-bottom md-center-tabs md-no-ink-bar md-no-ink ng-cloak id="results">
 
   <md-tab label="1">
     <md-content layout layout-align="center center">
-      <div layout="column" layout-align="center center"
-        class="evaluation container"
-      >
+      <div layout="column" layout-align="center center" class="evaluation container">
         <h1 class="center">
           <strong> {{ 'views.evaluation.title' | translate}}</strong>
-          {{'views.evaluation.subtitle' | translate}}
+
         </h1>
-        <div
-          class="evaluation-options"
-          layout="row"
-          layout-align="space-around center"
-          layout-xs="column"
-        >
-          <div
-            class="categories relative"
-            flex="40"
-            flex-xs="100"
-            layout="column"
-            layout-align="center"
-          >
+        <div class="evaluation-options" layout="row" layout-align="space-around center" layout-xs="column">
+          <div class="categories relative" flex="40" flex-xs="100" layout="column" layout-align="center">
             <div class="iconWrapper">
               <i class="icon-user"></i>
               <div class="square"></div>
@@ -45,13 +22,7 @@
             </a>
           </div>
 
-          <div
-            class="categories relative"
-            flex="40"
-            flex-xs="100"
-            layout="column"
-            layout-align="center"
-          >
+          <div class="categories relative" flex="40" flex-xs="100" layout="column" layout-align="center">
             <div class="iconWrapper">
               <i class="icon-users"></i>
               <div class="square"></div>
@@ -69,15 +40,9 @@
   </md-tab>
   <md-tab label="2" ng-disabled="!evaluation.type">
     <md-content class="container-md" layout layout-align="center center">
-      <page-questions
-        finish="evaluation.finish"
-        questions="evaluation.questions"
-        type = "evaluation.type"
-        answers="evaluation.answers"
-        class="page-questions"
-      >
+      <page-questions finish="evaluation.finish" questions="evaluation.questions" type="evaluation.type" answers="evaluation.answers"
+        class="page-questions">
       </page-questions>
     </md-content>
   </md-tab>
 </md-tabs>
-
