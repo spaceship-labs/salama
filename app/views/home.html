@@ -1,3 +1,25 @@
+<script>
+  var toggle = false;
+  function activeMenu() {
+    if (toggle === false) {
+
+      toggle = true;
+      document.getElementById("drawer").style.paddingLeft = "150px";
+      document.getElementById("drawer").style.marginLeft = "0px";
+      document.getElementById("shadow").style.display = "initial";
+      document.getElementById("burger").style.display = "none";
+      document.getElementById("cross").style.display = "initial";
+
+    } else {
+
+      toggle = false;
+      document.getElementById("drawer").style.marginLeft = "-1050px";
+      document.getElementById("shadow").style.display = "none";
+      document.getElementById("burger").style.display = "initial";
+      document.getElementById("cross").style.display = "none";
+    }
+  }
+</script>
 <md-content layout layout-align="center center" layout-wrap layout-fill class="content-home">
   <div flex="100" class="home-logo">
     <img src="images/logo_salama.png">
@@ -13,18 +35,20 @@
     <md-button class="white-button" ng-href="#/evaluation" flex-gt-sm="40" flex="100" layout-wrap>
       <span class="blue-text" translate>views.home.evaluation</span>
     </md-button>
-    <md-button class="white-button" ng-click="home.changeStateSide()" flex-gt-sm="40" flex="100">
+    <md-button class="white-button" onClick="activeMenu()" flex-gt-sm="40" flex="100">
       <span class="blue-text" translate>views.home.library</span>
     </md-button>
     <div class="video-container container-md animate">
       <a class="icon-video" ng-click="home.showVideo()" flex="20"></a>
       <p translate>views.home.video</p>
     </div>
-
+    <div class="video-container container-md animate">
+      <a class="icon-library" onClick="activeMenu()" flex="20"></a>
+      <p translate>views.home.library</p>
+    </div>
   </div>
-
-
 </md-content>
+
 <div class="warning container-fw">
   <p class="white-text">Salama es un programa y herramienta libre y gratuita (free
     open source software). Todos los derechos están reservados ©copyright 2016 como parte de <a class="blue-link" href="">salama.io</a>
@@ -33,7 +57,7 @@
     copias de este sitio para cumplir los requerimientos de atribución de la licencia. Si usted hace un cambio, por
     favor agregue su nombre y <br /> organización a la lista de los colaboradores de Salama al republicar sus
     contenidos o
-    cambiar su software</p>
+    cambiar su software.</p>
 
   <h1 class="white-header">CONCEPCIÓN Y DESARROLLO INCIAL
   </h1>

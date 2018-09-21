@@ -8,7 +8,7 @@
   "views.sidenav.lminus": "Security library",
   "views.sidenav.individuals": "Individual Journalist",
   "views.sidenav.organizations": "Organization",
-
+  "views.sidenav.close": "CLOSE",
   "views.home.title": "Risk Assessment",
   "views.home.subtitle": "For Journalists and Bloggers",
   "views.home.library": "Security Library",
@@ -22,7 +22,7 @@
   "views.evaluation.descindividuals": "This tool will help you to assess your risk at the individual level",
   "views.evaluation.descorganizations": "This tool will help you to assess your risk at the organizational level",
 
-  "views.sidenav.menu": "Menu",
+  "views.sidenav.menu": "MENU",
   "views.sidenav.security": "Digital security",
   "views.sidenav.censored": "Censorship situations",
   "views.sidenav.worksecurity": "Job security",
@@ -65,7 +65,7 @@
   "views.evaluation.individual.title": "Choose a category to start the evaluation",
   "views.evaluation.individual.noip": "This application does not record the IP of the people or their geographical location.",
 
-  "views.evaluation.title": "Get involved.",
+  "views.evaluation.title": "Choose an option",
   "views.evaluation.subtitle": "Choose a category to start your evaluation.",
   "views.evaluation.prev": "prev",
   "views.evaluation.next": "next",

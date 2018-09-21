@@ -9,6 +9,8 @@
   "views.sidenav.individuals": "Individuales",
   "views.sidenav.organizations": "Organizaciones",
 
+  "views.sidenav.close": "CERRAR",
+
   "views.home.title": "Evaluación de Riesgos para Periodistas y Personas Defensoras",
   "views.home.subtitle": "para periodistas y blogueros",
   "views.home.library": "Biblioteca de Seguridad",
@@ -22,7 +24,7 @@
   "views.evaluation.descindividuals": "Esta herramienta te servirá para evaluar tu riesgo a nivel individual",
   "views.evaluation.descorganizations": "Descripción organización",
 
-  "views.sidenav.menu": "Menú",
+  "views.sidenav.menu": "MENÚ",
   "views.sidenav.security": "Seguridad digital",
   "views.sidenav.censored": "Situaciones de censura",
   "views.sidenav.worksecurity": "Seguridad laboral",
@@ -65,7 +67,7 @@
   "views.evaluation.individual.title": "Escoge una categoría para empezar la evaluación",
   "views.evaluation.individual.noip": "Esta aplicación no registra el IP de las personas ni su ubicación geográfica.",
 
-  "views.evaluation.title": "Empieza",
+  "views.evaluation.title": "Elige una opción",
   "views.evaluation.subtitle": "Escoja una categoría para empezar la evaluación",
   "views.evaluation.prev": "anterior",
   "views.evaluation.next": "siguiente",
