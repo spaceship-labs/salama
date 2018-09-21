@@ -49,10 +49,11 @@
 }
 .subdrawer {
   height: 200px;
+  text-align: left;
   border-left: 2px solid #fff;
   background-color: #0d0d0d;
   width: 300px;
-  margin-top: -80px;
+  margin-top: -120px;
   margin-left: 350px;
   font-family: Lato !important;
   position: absolute;
@@ -60,10 +61,11 @@
 }
 .subdrawer2 {
   height: 200px;
+  text-align: left;
   border-left: 2px solid #fff;
   background-color: #0d0d0d;
   width: 300px;
-  margin-top: -80px;
+  margin-top: -120px;
   margin-left: 350px;
   font-family: Lato !important;
   position: absolute;
@@ -71,10 +73,11 @@
 }
 .subdrawer3 {
   height: 200px;
+  text-align: left;
   border-left: 2px solid #fff;
   background-color: #0d0d0d;
   width: 300px;
-  margin-top: -80px;
+  margin-top: -120px;
   margin-left: 350px;
   font-family: Lato !important;
   position: absolute;
@@ -82,6 +85,7 @@
 }
 .subdrawer4 {
   height: 200px;
+  text-align: left;
   border-left: 2px solid #fff;
   background-color: #0d0d0d;
   width: 300px;
@@ -93,10 +97,11 @@
 }
 .subdrawer5 {
   height: 200px;
+  text-align: left;
   border-left: 2px solid #fff;
   background-color: #0d0d0d;
   width: 300px;
-  margin-top: -80px;
+  margin-top: -120px;
   margin-left: 350px;
   font-family: Lato !important;
   position: absolute;
@@ -104,10 +109,11 @@
 }
 .subdrawer6 {
   height: 200px;
+  text-align: left;
   border-left: 2px solid #fff;
   background-color: #0d0d0d;
   width: 300px;
-  margin-top: -80px;
+  margin-top: -120px;
   margin-left: 350px;
   font-family: Lato !important;
   position: absolute;
@@ -125,7 +131,6 @@
   color: #fffefd;
 }
 .mediumtitle {
-  padding-left: 15px;
   font-size: 15px;
   color: #fff;
 }
