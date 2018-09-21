@@ -1,4 +1,7 @@
-<h2>{{question.title}}</h2>
+<h2>
+  <ng-include src="'views/directives/span-title-tooltip.html'">
+  </ng-include>
+</h2>
 <span>{{question.instruction}}</span>
 <p>{{question.question}}</p>
 <div layout flex="100">

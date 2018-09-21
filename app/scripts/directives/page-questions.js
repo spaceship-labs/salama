@@ -27,6 +27,54 @@
 
     activate();
 
+    ctrl.multipleAnswer = {};
+
+    ctrl.setMultipleAnswer = function(qName, option, max) {
+      ctrl.multipleAnswer[qName] = ctrl.multipleAnswer[qName] || {};
+      if (ctrl.multipleAnswer[qName][option.option]) {
+        ctrl.multipleAnswer[qName][option.option] = false;
+      } else {
+        ctrl.multipleAnswer[qName][option.option] = option.value;
+      }
+
+      toggleMultipleAnswer(qName, max);
+
+    };
+
+    ctrl.initMultipleAnswer = function(qName, options, max) {
+      var val = ctrl.answers[qName];
+      if (!val) {
+        return ;
+      }
+
+      var d = {};
+      options.forEach(function(opt) {
+        if (val === max || val === opt.value ) {
+          d[opt.option] = opt.value;
+        }
+      });
+      ctrl.multipleAnswer[qName] = d;
+    };
+
+    function toggleMultipleAnswer(qName, max) {
+      var select = Object.keys(ctrl.multipleAnswer[qName]).filter(function(f) {
+        return ctrl.multipleAnswer[qName][f];
+      });
+
+      if (select.length === 2) {
+        ctrl.answers[qName] = max;
+      } else if (select.length === 0) {
+        ctrl.answers[qName] = 0;
+      } else {
+        var val = 0;
+        select.forEach(function(s) {
+          val += ctrl.multipleAnswer[qName][s];
+        });
+
+        ctrl.answers[qName] = val;
+      }
+    }
+
     function activate(){
       if ($routeParams.action == 'finish'){
         ctrl.selected = ctrl.questions.length - 1;

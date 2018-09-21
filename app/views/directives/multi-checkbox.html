@@ -4,6 +4,7 @@
 <div layout="column" flex="100">
   <md-checkbox
     ng-repeat="option in question.options"
+    ng-init="answers[question.name]={}"
     ng-model="answers[question.name][$index]" flex
   >
     {{option.option}}

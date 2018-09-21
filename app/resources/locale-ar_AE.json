@@ -57,9 +57,11 @@
   "views.sidenav.down": "مستوى منخفض من المخاطر",
 
   "views.evaluation.catjournalist": "صحافي",
-  "views.evaluation.desjournalist": "(تقييم المخاطر الخاصة بك إذا كنت صحافيا)",
+  "views.evaluation.desjournalist": "تقييم المخاطر الخاصة بك إذا كنت صحافيا",
   "views.evaluation.catdefender": "الشخص المدافع",
-  "views.evaluation.desdefender": "(تقييم المخاطر الخاصة بك إذا كنت تدافع عن حقوق الإنسان)",
+  "views.evaluation.desdefender": "تقييم المخاطر الخاصة بك إذا كنت تدافع عن حقوق الإنسان",
+  "views.evaluation.individual.title": "اختر فئة لبدء التقييم",
+  "views.evaluation.individual.noip": "هذا التطبيق لا يسجل الملكية الفكرية للشعب أو موقعها الجغرافي",
 
   "views.evaluation.title": "تورط",
   "views.evaluation.subtitle": "اختر فئة لبدء التقييم الخاص بك",

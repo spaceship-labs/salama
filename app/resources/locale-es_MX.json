@@ -61,9 +61,11 @@
   "views.sidenav.down": "Nivel de riesgo bajo",
 
   "views.evaluation.catjournalist": "Periodista",
-  "views.evaluation.desjournalist": "(Evalúa tu riesgo si eres periodista)",
+  "views.evaluation.desjournalist": "Evalúa tu riesgo si eres periodista",
   "views.evaluation.catdefender": "Persona defensora",
-  "views.evaluation.desdefender": "(Evalúa tu riesgo si defiendes los derechos humanos)",
+  "views.evaluation.desdefender": "Evalúa tu riesgo si defiendes los derechos humanos",
+  "views.evaluation.individual.title": "Escoge una categoría para empezar la evaluación",
+  "views.evaluation.individual.noip": "Esta aplicación no registra el IP de las personas ni su ubicación geográfica.",
 
   "views.evaluation.title": "Elige una opción",
   "views.evaluation.subtitle": "Escoja una categoría para empezar la evaluación",

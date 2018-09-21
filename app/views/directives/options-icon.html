@@ -1,0 +1,37 @@
+<div class="options-icon view">
+
+  <p class="center-title no-margin" >{{questions[selected].pretitle1}}</p>
+  <h5 class="center-title no-margin" >{{questions[selected].pretitle2}}</h5>
+  <h2 class="center-title no-margin" >{{questions[selected].title}}</h2>
+  <div layout="row" ng-repeat="question in questions[selected].questions" layout-align="center center" layout-padding layout-margin ng-if="!questions[selected].multiple">
+    <div
+      ng-class="['option-icon', {selected:  answers[question.name] === option.value}]"
+      ng-repeat="option in question.options"
+      flex="40"
+      layout="column"
+      layout-align="center center"
+      ng-click="answers[question.name] = option.value">
+
+      <span ng-class="'opt-icon opt-icon-'+option.icon">
+      </span>
+      <p>{{option.option}}</p>
+    </div>
+  </div>
+
+
+  <div ng-if="questions[selected].multiple" layout="row" ng-repeat="question in questions[selected].questions" layout-align="center center" layout-padding layout-margin ng-init="initMultipleAnswer(question.name, question.options, questions[selected].max)">
+    <div
+      ng-class="['option-icon', {selected:  multipleAnswer[question.name][option.option]}]"
+      ng-repeat="option in question.options"
+      flex="40"
+      layout="column"
+      layout-align="center center"
+      ng-click="setMultipleAnswer(question.name, option, questions[selected].max)">
+
+      <span ng-class="'opt-icon opt-icon-'+option.icon">
+      </span>
+      <p>{{option.option}}</p>
+    </div>
+  </div>
+
+</div>
