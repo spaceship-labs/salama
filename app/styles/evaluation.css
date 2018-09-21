@@ -111,6 +111,8 @@ md-tabs-canvas {
   border: solid 1px #d2d2d2;
   min-height: 350px;
   background-color: #d2d2d2;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.4);
+  transition: background 0.5s linear;
 }
 .categories * {
   text-align: center;
@@ -121,6 +123,22 @@ md-tabs-canvas {
   -ms-transition: background-color 500ms linear;
   transition: background-color 500ms linear;
   background-color: #519dbd;
+}
+.categories::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: white;
+  transform-origin: left;
+  transition: width 0.25s ease;
+  z-index: -1;
+}
+
+.categories:hover::after {
+  width: 100%;
 }
 .categories:hover h3 {
 }
