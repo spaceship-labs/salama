@@ -117,7 +117,9 @@ md-tabs-canvas {
   transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 .categories:hover {
-  transition: all 0.7s cubic-bezier(0.25, 0.8, 0.25, 1);
+  -webkit-transition: background-color 500ms linear;
+  -ms-transition: background-color 500ms linear;
+  transition: background-color 500ms linear;
   background-color: #519dbd;
 }
 .categories:hover h3 {
