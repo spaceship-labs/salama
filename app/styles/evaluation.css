@@ -437,3 +437,26 @@ form-question {
 .noip{
   margin: 0;
 }
+
+.title-cursor{
+  position: relative;
+  display: block;
+}
+
+.tooltip-title{
+  position: absolute;
+  font-size: 10px;
+  left: 0px;
+  bottom: -18px;
+  width: 100%;
+  display: none;
+}
+
+.title-cursor .tooltip-title.tooltip-show{
+  display: block;
+}
+
+.multiradio-column .tooltip-title{
+  top: -44px;
+  bottom: auto;
+}

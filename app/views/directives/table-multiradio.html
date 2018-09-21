@@ -29,7 +29,10 @@
           layout-wrap
           ng-repeat="question in questions[selected].questions"
         >
-          <div flex="50" flex-sm="100" flex-xs="100" class="fq-question"><p>{{question.title}}</p></div>
+          <div flex="50" flex-sm="100" flex-xs="100" class="fq-question"><p>
+            <ng-include src="'views/directives/span-title-tooltip.html'">
+            </ng-include>
+          </p></div>
 
 
           <!--ONLY IN RESPONSIVE-->

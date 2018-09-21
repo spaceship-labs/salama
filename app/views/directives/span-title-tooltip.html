@@ -1,0 +1,12 @@
+<span class="title-cursor" ng-init="tooltips = {}" ng-if="question.tooltip">
+  <span ng-repeat="word in question.title.split(' ') track by $index" ng-mouseover="tooltips[word] = true" ng-mouseleave="tooltips[word] = false" >
+    {{word}}
+  </span>
+  <span ng-repeat="(word, tooltip) in question.tooltip" ng-class="[{'tooltip-show': tooltips[word]}, 'tooltip-title']">
+    {{tooltip}}
+  </span>
+</span>
+
+<span ng-if="!question.tooltip">
+  {{question.title}}
+</span>
