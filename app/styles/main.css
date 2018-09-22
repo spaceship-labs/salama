@@ -81,3 +81,19 @@ md-content{
 .footer-share span{
   color: white;
 }
+
+.cookie-popup{
+  position: absolute;
+  color: white;
+  background: black;
+  border-radius: 10px;
+  width: 100%;
+  bottom: -30px;
+  z-index: 10;
+  height: 30px;
+  text-align: center;
+}
+
+.cookie-popup p{
+  margin: 0;
+}

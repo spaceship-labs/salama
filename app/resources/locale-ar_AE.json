@@ -100,5 +100,11 @@
   "views.evaluation.extremeadvice": "وربما تحتاج إلى وضع استراتيجية أمنية جديدة",
 
   "views.footer.rights": "كل الحقوق محفوظة",
-  "views.footer.about": "About Salama"
+  "views.footer.about": "About Salama",
+
+  "views.footer.cookie": "This page uses cookies",
+  "views.footer.cookie.ok": "Ok",
+  "views.footer.privacy": "Privacy",
+  "views.footer.terms": "Terms",
+  "views.footer.ours": "Ours"
 }
