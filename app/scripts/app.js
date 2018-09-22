@@ -1,5 +1,4 @@
 "use strict";
-
 /**
  * @ngdoc overview
  * @name salamaApp
