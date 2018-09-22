@@ -132,5 +132,11 @@
 
   "views.footer.terms_one": "Salama es un programa y herramienta libre y gratuita (free open source software). Todos los derechos están reservados ©copyright 2016 como parte de",
   "views.footer.rights": "Todos los derechos reservados",
-  "views.footer.about": "Acerca de Salama"
+  "views.footer.about": "Acerca de Salama",
+
+  "views.footer.cookie": "Esta pagina usa cookies",
+  "views.footer.cookie.ok": "Aceptar",
+  "views.footer.privacy": "Privacidad",
+  "views.footer.terms": "Terminos",
+  "views.footer.ours": "Nosotros"
 }

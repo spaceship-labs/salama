@@ -44,6 +44,8 @@
     ctrl.metadata = {};
     ctrl.setPost = setPost;
     ctrl.headerFixed = false;
+    ctrl.okCookies = okCookies;
+    ctrl.okCookiesStorage = localStorage.getItem('okCookie');
 
     activate();
 
@@ -134,6 +136,11 @@
 
     function logError(err){
       console.error(err);
+    }
+
+    function okCookies() {
+      localStorage.setItem('okCookie', true);
+      ctrl.okCookiesStorage = true;
     }
 
   }

@@ -130,5 +130,11 @@
   "views.results.reputation": "Riesgo Reputacional",
 
   "views.footer.rights": "All rights reserved",
-  "views.footer.about": "About Salama"
+  "views.footer.about": "About Salama",
+
+  "views.footer.cookie": "This page uses cookies",
+  "views.footer.cookie.ok": "Ok",
+  "views.footer.privacy": "Privacy",
+  "views.footer.terms": "Terms",
+  "views.footer.ours": "Ours"
 }

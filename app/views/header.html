@@ -594,6 +594,12 @@
         </div>
       </div>
     </div>
+    <div class="cookie-popup" layout="row" layout-align="center center" ng-show="!header.okCookiesStorage">
+      <p translate>views.footer.cookie</p>
+      <md-button ng-click="header.okCookies()">{{'views.footer.cookie.ok' | translate}}</md-button>
+    </div>
   </md-toolbar>
+
+
 </header>
 <!--endSidenav-->
