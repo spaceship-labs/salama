@@ -150,6 +150,7 @@
           var articles  = getArticlesIndividualsByType();
           var digitalRiskLevel = getRiskLevel(digitalScore, 'digital_'+ctrl.type);
 
+
           adviceService.setResultsIndividuals({
             score: score,
             digitalScore : digitalScore,
@@ -177,9 +178,61 @@
     function getArticlesIndividualsByType() {
       var articles = [];
       //TODO move list to service...
-      var list = [{
+      var list = [
+      //defenders new..
+      {
+        answers: ['gender'],
+        scores: [4],
+        article: '2018-09-19-women'
+      },
+
+      {
+        answers: ['minority'],
+        scores: [2],
+        exact: true,
+        article: '2018-09-19-vulnerables'
+      },
+
+      {
+        answers: ['minority'],
+        scores: [3],
+        exact: true,
+        article: '2018-09-19-diversidad'
+      },
+
+      {
+        answers: ['threat_collegues'],
+        scores: [5],
+        exact: true,
+        article: '2018-09-19-ambiente-hostil'
+      },
+
+      {
+        answers: ['censorship_inemotional_attention'],
+        scores: [4],
+        article: '2018-09-19-autocuidado'
+      },
+      {
+        answers: ['profesional_information'],
+        scores: [4],
+        article: 'zone_protocols'
+      },
+      {
+        answers: ['security_police', 'security_zone', 'security_information'],
+        scores: [3, 3, 3],
+        article: '2018-09-19-abusos'
+      },
+      {
+        answers: ['network_collegues_in'],
+        scores: [4],
+        article: 'network'
+      },
+
+
+
+      {
         answers: ['digital_navigation', 'digital_mail', 'digital_chat', 'digital_passwords'],
-        scores: [20, 20, 20, 20],
+        scores: [10, 10, 10, 10],
         article: 'digital_security',
         articles: ['navigation', 'mail', 'chat', 'passwords']
       },
@@ -211,7 +264,7 @@
         article: 'information_corruption_mail'
       }, {
         answers: ['threat_collegues', 'profesional_protocols'],
-        scores: [3, 3],
+        scores: [3, 4],
         article: 'threat_protocols'
       }, {
         answers: ['profesional_plan', 'profesional_information', 'profesional_etic'],
@@ -223,7 +276,7 @@
         article: 'network'
       }, {
         answers: ['profesional_plan'],
-        scores: [3],
+        scores: [4],
         article: 'plan'
       }, {
         answers: ['profesional_information'],
@@ -235,13 +288,21 @@
         article: 'etic'
       }, {
         answers: ['security_information'],
-        scores: [4],
+        scores: [3],
         article: 'sinformation'
       }];
 
       list.forEach(function(l) {
         l.answers.forEach(function(answer, i) {
-          if (ctrl.answers[answer] >= l.scores[i]) {
+          var added = false;
+          if (l.exact && ctrl.answers[answer] == l.scores[i]){
+            added = true;
+          }
+
+          if (!l.exact && ctrl.answers[answer] >= l.scores[i]) {
+            added = true;
+          }
+          if (added) {
             if (articles[articles.length-1] !== l.article) {
               articles.push(l.article);
             }
@@ -252,6 +313,7 @@
         });
       });
 
+      console.log('articles', articles);
       return articles;
     }
 
