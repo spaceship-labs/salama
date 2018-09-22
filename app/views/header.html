@@ -84,30 +84,308 @@
   function UnToggle6() {
     document.getElementById("subdrawer6").style.display = "none";
   }
+
+
+  function Individuals(color) {
+    //document.getElementById('individuals').style.color = color;
+    document.getElementById('organizations').style.color = color;
+    document.getElementById('digitalsecurity').style.color = color;
+    document.getElementById('evaluation').style.color = color;
+    document.getElementById('library').style.color = color;
+    document.getElementById('censura').style.color = color;
+    document.getElementById('seglab').style.color = color;
+    document.getElementById('segprof').style.color = color;
+    document.getElementById('redes').style.color = color;
+    document.getElementById('otros').style.color = color;
+
+    if (color == 'grey') {
+      //document.getElementById('individual_png').style.filter = 'invert(70%)';
+      document.getElementById('organizations_png').style.filter = 'invert(70%)';
+      document.getElementById('digital_png').style.filter = 'invert(70%)';
+      document.getElementById('censura_png').style.filter = 'invert(70%)';
+      document.getElementById('seglab_png').style.filter = 'invert(70%)';
+      document.getElementById('segprof_png').style.filter = 'invert(70%)';
+      document.getElementById('redes_png').style.filter = 'invert(70%)';
+      document.getElementById('otros_png').style.filter = 'invert(70%)';
+    }
+    if (color == 'white') {
+      document.getElementById('individual_png').style.filter = 'invert(0%)';
+      document.getElementById('organizations_png').style.filter = 'invert(0%)';
+      document.getElementById('digital_png').style.filter = 'invert(0%)';
+      document.getElementById('censura_png').style.filter = 'invert(0%)';
+      document.getElementById('seglab_png').style.filter = 'invert(0%)';
+      document.getElementById('segprof_png').style.filter = 'invert(0%)';
+      document.getElementById('redes_png').style.filter = 'invert(0%)';
+      document.getElementById('otros_png').style.filter = 'invert(0%)';
+    }
+  }
+
+
+  function Organizations(color) {
+    document.getElementById('individuals').style.color = color;
+    //document.getElementById('organizations').style.color = color;
+    document.getElementById('digitalsecurity').style.color = color;
+    document.getElementById('evaluation').style.color = color;
+    document.getElementById('library').style.color = color;
+    document.getElementById('censura').style.color = color;
+    document.getElementById('seglab').style.color = color;
+    document.getElementById('segprof').style.color = color;
+    document.getElementById('redes').style.color = color;
+    document.getElementById('otros').style.color = color;
+
+    if (color == 'grey') {
+      document.getElementById('individual_png').style.filter = 'invert(70%)';
+      //document.getElementById('organizations_png').style.filter = 'invert(70%)';
+      document.getElementById('digital_png').style.filter = 'invert(70%)';
+      document.getElementById('censura_png').style.filter = 'invert(70%)';
+      document.getElementById('seglab_png').style.filter = 'invert(70%)';
+      document.getElementById('segprof_png').style.filter = 'invert(70%)';
+      document.getElementById('redes_png').style.filter = 'invert(70%)';
+      document.getElementById('otros_png').style.filter = 'invert(70%)';
+    }
+    if (color == 'white') {
+      document.getElementById('individual_png').style.filter = 'invert(0%)';
+      document.getElementById('organizations_png').style.filter = 'invert(0%)';
+      document.getElementById('digital_png').style.filter = 'invert(0%)';
+      document.getElementById('censura_png').style.filter = 'invert(0%)';
+      document.getElementById('seglab_png').style.filter = 'invert(0%)';
+      document.getElementById('segprof_png').style.filter = 'invert(0%)';
+      document.getElementById('redes_png').style.filter = 'invert(0%)';
+      document.getElementById('otros_png').style.filter = 'invert(0%)';
+    }
+  }
+
+  function DigitalSecurity(color) {
+    document.getElementById('individuals').style.color = color;
+    document.getElementById('organizations').style.color = color;
+    // document.getElementById('digitalsecurity').style.color = color;
+    document.getElementById('evaluation').style.color = color;
+    document.getElementById('library').style.color = color;
+    document.getElementById('censura').style.color = color;
+    document.getElementById('seglab').style.color = color;
+    document.getElementById('segprof').style.color = color;
+    document.getElementById('redes').style.color = color;
+    document.getElementById('otros').style.color = color;
+
+    if (color == 'grey') {
+      document.getElementById('individual_png').style.filter = 'invert(70%)';
+      document.getElementById('organizations_png').style.filter = 'invert(70%)';
+      // document.getElementById('digital_png').style.filter = 'invert(70%)';
+      document.getElementById('censura_png').style.filter = 'invert(70%)';
+      document.getElementById('seglab_png').style.filter = 'invert(70%)';
+      document.getElementById('segprof_png').style.filter = 'invert(70%)';
+      document.getElementById('redes_png').style.filter = 'invert(70%)';
+      document.getElementById('otros_png').style.filter = 'invert(70%)';
+    }
+    if (color == 'white') {
+      document.getElementById('individual_png').style.filter = 'invert(0%)';
+      document.getElementById('organizations_png').style.filter = 'invert(0%)';
+      document.getElementById('digital_png').style.filter = 'invert(0%)';
+      document.getElementById('censura_png').style.filter = 'invert(0%)';
+      document.getElementById('seglab_png').style.filter = 'invert(0%)';
+      document.getElementById('segprof_png').style.filter = 'invert(0%)';
+      document.getElementById('redes_png').style.filter = 'invert(0%)';
+      document.getElementById('otros_png').style.filter = 'invert(0%)';
+    }
+  }
+
+  function Censored(color) {
+    document.getElementById('individuals').style.color = color;
+    document.getElementById('organizations').style.color = color;
+    document.getElementById('digitalsecurity').style.color = color;
+    document.getElementById('evaluation').style.color = color;
+    document.getElementById('library').style.color = color;
+    //document.getElementById('censura').style.color = color;
+    document.getElementById('seglab').style.color = color;
+    document.getElementById('segprof').style.color = color;
+    document.getElementById('redes').style.color = color;
+    document.getElementById('otros').style.color = color;
+
+    if (color == 'grey') {
+      document.getElementById('individual_png').style.filter = 'invert(70%)';
+      document.getElementById('organizations_png').style.filter = 'invert(70%)';
+      document.getElementById('digital_png').style.filter = 'invert(70%)';
+      //document.getElementById('censura_png').style.filter = 'invert(70%)';
+      document.getElementById('seglab_png').style.filter = 'invert(70%)';
+      document.getElementById('segprof_png').style.filter = 'invert(70%)';
+      document.getElementById('redes_png').style.filter = 'invert(70%)';
+      document.getElementById('otros_png').style.filter = 'invert(70%)';
+    }
+    if (color == 'white') {
+      document.getElementById('individual_png').style.filter = 'invert(0%)';
+      document.getElementById('organizations_png').style.filter = 'invert(0%)';
+      document.getElementById('digital_png').style.filter = 'invert(0%)';
+      document.getElementById('censura_png').style.filter = 'invert(0%)';
+      document.getElementById('seglab_png').style.filter = 'invert(0%)';
+      document.getElementById('segprof_png').style.filter = 'invert(0%)';
+      document.getElementById('redes_png').style.filter = 'invert(0%)';
+      document.getElementById('otros_png').style.filter = 'invert(0%)';
+    }
+  }
+
+
+  function Seglab(color) {
+    document.getElementById('individuals').style.color = color;
+    document.getElementById('organizations').style.color = color;
+    document.getElementById('digitalsecurity').style.color = color;
+    document.getElementById('evaluation').style.color = color;
+    document.getElementById('library').style.color = color;
+    document.getElementById('censura').style.color = color;
+    //document.getElementById('seglab').style.color = color;
+    document.getElementById('segprof').style.color = color;
+    document.getElementById('redes').style.color = color;
+    document.getElementById('otros').style.color = color;
+
+    if (color == 'grey') {
+      document.getElementById('individual_png').style.filter = 'invert(70%)';
+      document.getElementById('organizations_png').style.filter = 'invert(70%)';
+      document.getElementById('digital_png').style.filter = 'invert(70%)';
+      document.getElementById('censura_png').style.filter = 'invert(70%)';
+      //document.getElementById('seglab_png').style.filter = 'invert(70%)';
+      document.getElementById('segprof_png').style.filter = 'invert(70%)';
+      document.getElementById('redes_png').style.filter = 'invert(70%)';
+      document.getElementById('otros_png').style.filter = 'invert(70%)';
+    }
+    if (color == 'white') {
+      document.getElementById('individual_png').style.filter = 'invert(0%)';
+      document.getElementById('organizations_png').style.filter = 'invert(0%)';
+      document.getElementById('digital_png').style.filter = 'invert(0%)';
+      document.getElementById('censura_png').style.filter = 'invert(0%)';
+      document.getElementById('seglab_png').style.filter = 'invert(0%)';
+      document.getElementById('segprof_png').style.filter = 'invert(0%)';
+      document.getElementById('redes_png').style.filter = 'invert(0%)';
+      document.getElementById('otros_png').style.filter = 'invert(0%)';
+    }
+  }
+
+
+  function Segprof(color) {
+    document.getElementById('individuals').style.color = color;
+    document.getElementById('organizations').style.color = color;
+    document.getElementById('digitalsecurity').style.color = color;
+    document.getElementById('evaluation').style.color = color;
+    document.getElementById('library').style.color = color;
+    document.getElementById('censura').style.color = color;
+    document.getElementById('seglab').style.color = color;
+    //document.getElementById('segprof').style.color = color;
+    document.getElementById('redes').style.color = color;
+    document.getElementById('otros').style.color = color;
+
+    if (color == 'grey') {
+      document.getElementById('individual_png').style.filter = 'invert(70%)';
+      document.getElementById('organizations_png').style.filter = 'invert(70%)';
+      document.getElementById('digital_png').style.filter = 'invert(70%)';
+      document.getElementById('censura_png').style.filter = 'invert(70%)';
+      document.getElementById('seglab_png').style.filter = 'invert(70%)';
+      // document.getElementById('segprof_png').style.filter = 'invert(70%)';
+      document.getElementById('redes_png').style.filter = 'invert(70%)';
+      document.getElementById('otros_png').style.filter = 'invert(70%)';
+    }
+    if (color == 'white') {
+      document.getElementById('individual_png').style.filter = 'invert(0%)';
+      document.getElementById('organizations_png').style.filter = 'invert(0%)';
+      document.getElementById('digital_png').style.filter = 'invert(0%)';
+      document.getElementById('censura_png').style.filter = 'invert(0%)';
+      document.getElementById('seglab_png').style.filter = 'invert(0%)';
+      document.getElementById('segprof_png').style.filter = 'invert(0%)';
+      document.getElementById('redes_png').style.filter = 'invert(0%)';
+      document.getElementById('otros_png').style.filter = 'invert(0%)';
+    }
+  }
+
+  function Redes(color) {
+    document.getElementById('individuals').style.color = color;
+    document.getElementById('organizations').style.color = color;
+    document.getElementById('digitalsecurity').style.color = color;
+    document.getElementById('evaluation').style.color = color;
+    document.getElementById('library').style.color = color;
+    document.getElementById('censura').style.color = color;
+    document.getElementById('seglab').style.color = color;
+    document.getElementById('segprof').style.color = color;
+    //document.getElementById('redes').style.color = color;
+    document.getElementById('otros').style.color = color;
+
+    if (color == 'grey') {
+      document.getElementById('individual_png').style.filter = 'invert(70%)';
+      document.getElementById('organizations_png').style.filter = 'invert(70%)';
+      document.getElementById('digital_png').style.filter = 'invert(70%)';
+      document.getElementById('censura_png').style.filter = 'invert(70%)';
+      document.getElementById('seglab_png').style.filter = 'invert(70%)';
+      document.getElementById('segprof_png').style.filter = 'invert(70%)';
+      //document.getElementById('redes_png').style.filter = 'invert(70%)';
+      document.getElementById('otros_png').style.filter = 'invert(70%)';
+    }
+    if (color == 'white') {
+      document.getElementById('individual_png').style.filter = 'invert(0%)';
+      document.getElementById('organizations_png').style.filter = 'invert(0%)';
+      document.getElementById('digital_png').style.filter = 'invert(0%)';
+      document.getElementById('censura_png').style.filter = 'invert(0%)';
+      document.getElementById('seglab_png').style.filter = 'invert(0%)';
+      document.getElementById('segprof_png').style.filter = 'invert(0%)';
+      document.getElementById('redes_png').style.filter = 'invert(0%)';
+      document.getElementById('otros_png').style.filter = 'invert(0%)';
+    }
+  }
+  function Otros(color) {
+    document.getElementById('individuals').style.color = color;
+    document.getElementById('organizations').style.color = color;
+    document.getElementById('digitalsecurity').style.color = color;
+    document.getElementById('evaluation').style.color = color;
+    document.getElementById('library').style.color = color;
+    document.getElementById('censura').style.color = color;
+    document.getElementById('seglab').style.color = color;
+    document.getElementById('segprof').style.color = color;
+    document.getElementById('redes').style.color = color;
+    //document.getElementById('otros').style.color = color;
+
+    if (color == 'grey') {
+      document.getElementById('individual_png').style.filter = 'invert(70%)';
+      document.getElementById('organizations_png').style.filter = 'invert(70%)';
+      document.getElementById('digital_png').style.filter = 'invert(70%)';
+      document.getElementById('censura_png').style.filter = 'invert(70%)';
+      document.getElementById('seglab_png').style.filter = 'invert(70%)';
+      document.getElementById('segprof_png').style.filter = 'invert(70%)';
+      document.getElementById('redes_png').style.filter = 'invert(70%)';
+      //document.getElementById('otros_png').style.filter = 'invert(70%)';
+    }
+    if (color == 'white') {
+      document.getElementById('individual_png').style.filter = 'invert(0%)';
+      document.getElementById('organizations_png').style.filter = 'invert(0%)';
+      document.getElementById('digital_png').style.filter = 'invert(0%)';
+      document.getElementById('censura_png').style.filter = 'invert(0%)';
+      document.getElementById('seglab_png').style.filter = 'invert(0%)';
+      document.getElementById('segprof_png').style.filter = 'invert(0%)';
+      document.getElementById('redes_png').style.filter = 'invert(0%)';
+      document.getElementById('otros_png').style.filter = 'invert(0%)';
+    }
+  }
 </script>
 <div id="shadow" onclick="activeMenu()"></div>
 <div id="drawer" class="drawer">
   <span class="subtitle" translate> views.sidenav.menu </span>
-  <h1 class="title" translate> views.sidenav.evaluation </h1>
+  <h1 id="evaluation" class="title" translate> views.sidenav.evaluation </h1>
   <div layout="row" class="icon-row">
-    <img src="images/indiv.png" height="20" width="15" alt="s" />
-    <a href="#/evaluation-individual" class="first-option-link" translate onclick="activeMenu()">views.evaluation.individuals
+    <img id="individual_png" src="images/indiv.png" height="20" width="15" alt="s" />
+    <a href="#/evaluation-individual" onmouseover="Individuals('grey')" onmouseout="Individuals('white')" id="individuals"
+      class="first-option-link" translate onclick="activeMenu()">views.evaluation.individuals
     </a>
   </div>
   <div layout="row" class="icon-row-organizations">
-    <img src="images/org.png" height="18" width="31" alt="s" />
-    <a href="#/evaluation/organizations" class="first-option-link" translate onclick="activeMenu()">views.evaluation.organizations
+    <img src="images/org.png" id="organizations_png" height="18" width="31" alt="s" />
+    <a onmouseover="Organizations('grey')" onmouseout="Organizations('white')" href="#/evaluation/organizations" id="organizations"
+      class="first-option-link" translate onclick="activeMenu()">views.evaluation.organizations
     </a>
   </div>
-  <h1 href="" class="title" translate>views.sidenav.library </h1>
+  <h1 href="" id="library" class="title" translate>views.sidenav.library </h1>
   <div class="row" onmouseover="Toggle()" onmouseout="UnToggle()">
-    <div layout="row" class="icon-row">
-      <img src="images/otros.png" height="22" width="20" alt="" />
-      <a href="" class="first-option" translate> views.sidenav.security </a>
+    <div layout="row" onmouseover="DigitalSecurity('grey')" onmouseout="DigitalSecurity('white')" class="icon-row">
+      <img id="digital_png" src="images/otros.png" height="22" width="20" alt="" />
+      <a href="" id="digitalsecurity" class="first-option" translate>
+        views.sidenav.security </a>
     </div>
-    <div id="subdrawer" class="subdrawer">
+    <div id="subdrawer" onmouseover="DigitalSecurity('grey')" onmouseout="DigitalSecurity('white')" class="subdrawer">
       <ul>
-        <a class="mediumtitle" href="#/article/calls" translate onclick="activeMenu()"> views.sidenav.calls</a>
+        <a id="calls" class="mediumtitle" href="#/article/calls" translate onclick="activeMenu()"> views.sidenav.calls</a>
       </ul>
       <ul>
         <a class="mediumtitle" href="#/article/chat" translate onclick="activeMenu()"> views.sidenav.chat</a>
@@ -133,10 +411,11 @@
   </div>
   <div class="row" onmouseover="Toggle2()" onmouseout="UnToggle2()">
     <div layout="row" class="row-padded">
-      <img src="images/censura.png" height="22" width="20" alt="s" />
-      <h1 class="first-option" translate> views.sidenav.censored </h1>
+      <img id="censura_png" src="images/censura.png" height="22" width="20" alt="s" />
+      <h1 id="censura" onmouseover="Censored('grey')" onmouseout="Censored('white')" class="first-option" translate>
+        views.sidenav.censored </h1>
     </div>
-    <div id="subdrawer2" class="subdrawer2">
+    <div id="subdrawer2" onmouseover="Censored('grey')" onmouseout="Censored('white')" class="subdrawer2">
       <ul>
         <a class="mediumtitle" href="#/article/corruption" translate onclick="activeMenu()">views.sidenav.corruption</a>
       </ul>
@@ -144,10 +423,11 @@
   </div>
   <div class="row" onmouseover="Toggle3()" onmouseout="UnToggle3()">
     <div layout="row" class="icon-row">
-      <img src="images/seglab.png" height="22" width="20" alt="s" />
-      <h1 class="first-option" translate> views.sidenav.worksecurity </h1>
+      <img id="seglab_png" src="images/seglab.png" height="22" width="20" alt="s" />
+      <h1 id="seglab" onmouseover="Seglab('grey')" onmouseout="Seglab('white')" class="first-option" translate>
+        views.sidenav.worksecurity </h1>
     </div>
-    <div id="subdrawer3" class="subdrawer3">
+    <div id="subdrawer3" onmouseover="Seglab('grey')" onmouseout="Seglab('white')" class="subdrawer3">
       <ul>
         <a class="mediumtitle" href="#/article/corruption_information" translate onclick="activeMenu()">views.sidenav.corruptioneinfo</a>
       </ul>
@@ -167,11 +447,11 @@
   </div>
   <div class="row" onmouseover="Toggle4()" onmouseout="UnToggle4()"">
     <div layout=" row" class="icon-row">
-    <img src="images/segprof.png" height="22" width="20" alt="d" />
-    <h1 class=" first-option" translate>
+    <img id="segprof_png" src="images/segprof.png" height="22" width="20" alt="d" />
+    <h1 id="segprof" onmouseover="Segprof('grey')" onmouseout="Segprof('white')" class=" first-option" translate>
       views.sidenav.prosecurity </h1>
   </div>
-  <div id="subdrawer4" class="subdrawer4">
+  <div id="subdrawer4" onmouseover="Segprof('grey')" onmouseout="Segprof('white')" class="subdrawer4">
     <ul>
       <a class="mediumtitle" href=" #/article/etic" translate onclick="activeMenu()">views.sidenav.ethic</a>
     </ul>
@@ -201,11 +481,11 @@
 
 <div class="row" onmouseover="Toggle5()" onmouseout="UnToggle5()">
   <div layout=" row" class=" icon-row">
-    <img src="images/redes.png" height="22" width="20" alt="d" />
-    <h1 class=" first-option" translate>
+    <img id="redes_png" src="images/redes.png" height="22" width="20" alt="d" />
+    <h1 id="redes" onmouseover="Redes('grey')" onmouseout="Redes('white')" class=" first-option" translate>
       views.sidenav.networksecurity </h1>
   </div>
-  <div id="subdrawer5" class="subdrawer5">
+  <div id="subdrawer5" onmouseover="Redes('grey')" onmouseout="Redes('white')" class="subdrawer5">
     <ul>
       <a class="mediumtitle" href="#/article/violence_boss" translate onclick="activeMenu()">views.sidenav.improvecomm</a>
     </ul>
@@ -213,11 +493,11 @@
 </div>
 <div class="row" onmouseover="Toggle6()" onmouseout="UnToggle6()">
   <div layout=" row" class=" icon-row">
-    <img src="images/otros.png" height="22" width="20" alt="ds" />
-    <h1 class=" first-option" translate>
+    <img id="otros_png" src="images/otros.png" height="22" width="20" alt="ds" />
+    <h1 id="otros" onmouseover="Otros('grey')" onmouseout="Otros('white')" class=" first-option" translate>
       views.sidenav.others </h1>
   </div>
-  <div id="subdrawer6" class="subdrawer6">
+  <div id="subdrawer6" onmouseover="Otros('grey')" onmouseout="Otros('white')" class="subdrawer6">
     <ul>
       <a class="mediumtitle" href="#/article/extreme" translate onclick="activeMenu()">views.sidenav.extreme</a>
     </ul>
