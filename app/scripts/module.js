@@ -1,22 +1,3 @@
-/// VERIFY IF THE DIRECTION HAVE CHANGED /////////////////////////////////
-
-if (toggle = true) {
-    function hashHandler() {
-      this.oldHash = window.location.hash;
-      this.Check;
-      document.getElementById("drawer").style.marginLeft = "-950px";
-      var that = this;
-      var detect = function () {
-        if (that.oldHash != window.location.hash) {
-          that.oldHash = window.location.hash;
-          document.getElementById("drawer").style.marginLeft = "-1050px";
-        }
-      };
-      this.Check = setInterval(function () { detect() }, 100);
-    }
-  }
-
-/////////////////END OF FUNCTION ////////////////////////////////////////////
 
 var hashDetection = new hashHandler();
 var toggle = false;
