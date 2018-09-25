@@ -13,6 +13,8 @@
 }
 .ev-text {
   font-weight: bold;
+  width: 200px;
+  margin: 0 auto;
 }
 .center {
   text-align: center;
@@ -373,45 +375,43 @@ form-question {
   }
 }
 
-
-.options-icon{
+.options-icon {
   margin: 25px;
 }
 
-.options-icon.view .no-margin{
+.options-icon.view .no-margin {
   margin: 0;
 }
 
-.options-icon.view h2{
+.options-icon.view h2 {
   font-size: 1.8em;
 }
 
-.options-icon .option-icon{
+.options-icon .option-icon {
   background-color: #d2d2d2;
   margin: 0 20px;
   padding: 30px;
   cursor: pointer;
 }
 
-
 .options-icon .option-icon:hover,
-.options-icon .option-icon.selected{
+.options-icon .option-icon.selected {
   background-color: #519dbd;
 }
 
 .options-icon .option-icon h3,
-.options-icon .option-icon p{
+.options-icon .option-icon p {
   color: black;
   margin: 10px;
   font-weight: bold;
   text-align: center;
 }
 
-.center-title{
+.center-title {
   text-align: center;
 }
 
-.opt-icon{
+.opt-icon {
   width: 280px;
   height: 280px;
   background-repeat: no-repeat;
@@ -419,51 +419,49 @@ form-question {
   margin: 0 auto;
 }
 
-.opt-icon-women{
+.opt-icon-women {
   background-image: url(../images/asset-women.png);
-
 }
 
-.opt-icon-men{
+.opt-icon-men {
   background-image: url(../images/asset-men.png);
 }
 
-.opt-icon-min1{
+.opt-icon-min1 {
   background-image: url(../images/asset-min1.png);
 }
 
-.opt-icon-min2{
+.opt-icon-min2 {
   background-image: url(../images/asset-min2.png);
 }
 
-
-.opt-icon-journalist{
+.opt-icon-journalist {
   background-image: url(../images/asset-journalist.png);
 }
 
-.opt-icon-defender{
+.opt-icon-defender {
   background-image: url(../images/asset-defender.png);
 }
 
-.options-icon .evaluation-options{
+.options-icon .evaluation-options {
   padding-top: 10px;
   margin: 15px 0;
 }
 
-.categories.option-icon{
+.categories.option-icon {
   border: none;
 }
 
-.noip{
+.noip {
   margin: 0;
 }
 
-.title-cursor{
+.title-cursor {
   position: relative;
   display: block;
 }
 
-.tooltip-title{
+.tooltip-title {
   position: absolute;
   font-size: 10px;
   left: 0px;
@@ -472,11 +470,11 @@ form-question {
   display: none;
 }
 
-.title-cursor .tooltip-title.tooltip-show{
+.title-cursor .tooltip-title.tooltip-show {
   display: block;
 }
 
-.multiradio-column .tooltip-title{
+.multiradio-column .tooltip-title {
   top: -44px;
   bottom: auto;
 }
