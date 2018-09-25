@@ -156,15 +156,19 @@
 }
 .row-padded {
   padding-top: 20px;
-  padding-left: 50px;
+  padding-left: 5%;
 }
 .icon-row {
   padding-top: 20px;
-  padding-left: 50px;
+  padding-left: 5%;
+}
+.icon-row-two {
+  padding-top: 20px;
+  padding-left: 5%;
 }
 .icon-row-organizations {
   padding-top: 20px;
-  padding-left: 35px;
+  padding-left: 4%;
 }
 .icon {
 }
