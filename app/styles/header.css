@@ -24,6 +24,9 @@
   z-index: 99;
   width: 80px;
 }
+.inside-bar:hover {
+  cursor: pointer;
+}
 .bmenu-container {
   position: absolute;
   margin: auto;
