@@ -1,14 +1,13 @@
 footer {
-  width:100%;
-  height:60px;
-  text-align:center;
+  width: 100%;
+  height: 60px;
+  text-align: center;
   background-color: #252525;
 }
-footer .footer-share{
-  color:white;
+footer .footer-share {
+  color: white;
 }
-footer .footer-rights{
-  color:#3B566C;
-  font-weight:bold;
+footer .footer-rights {
+  color: #3b566c;
+  font-weight: bold;
 }
-
