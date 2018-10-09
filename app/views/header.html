@@ -38,25 +38,39 @@
   }
 
   function Toggle() {
-    document.getElementById("drawer").classList.remove('drawer-mobile-untoggle');
-    document.getElementById("subdrawer").classList.remove('subdrawer-mobile-untoggle');
-    document.getElementById("drawer").classList.add('drawer-mobile-untoggle');
-    document.getElementById("subdrawer").classList.add('subdrawer-mobile');
+
+    if (window.matchMedia("(max-width: 400px)").matches) {
+      /* The viewport is less than, or equal to, 700 pixels wide */
+      document.getElementById("drawer").style.width = "850px";
+      document.getElementById("drawer").style.paddingLeft = "-100px";
+      document.getElementById("subdrawer").style.display = "block";
+    } else {
+      document.getElementById("subdrawer").style.display = "block";
+      document.getElementById("drawer").style.width = "900px";
+
+    }
+
+
 
   }
   function UnToggle() {
-    document.getElementById("drawer").classList.add('subdrawer-mobile');
-    document.getElementById("subdrawer").classList.add('subdrawer-mobile-untoggle');
+
     document.getElementById("subdrawer").style.display = "none";
     document.getElementById("drawer").style.width = "initial";
     document.getElementById("drawer").style.marginLeft = "initial";
   }
   function Toggle2() {
-    document.getElementById("drawer").classList.add('drawer-mobile-toggle');
-    document.getElementById("subdrawer2").classList.add('subdrawer-mobile');
-    document.getElementById("subdrawer2").style.display = "block";
-    document.getElementById("drawer").style.width = "700px";
-    document.getElementById("drawer").style.marginLeft = "-300px";
+    if (window.matchMedia("(max-width: 400px)").matches) {
+      /* The viewport is less than, or equal to, 700 pixels wide */
+      document.getElementById("drawer").style.width = "850px";
+      document.getElementById("drawer").style.marginLeft = "-0px";
+      document.getElementById("subdrawer2").style.display = "block";
+    } else {
+      document.getElementById("subdrawer2").style.display = "block";
+      document.getElementById("drawer").style.width = "900px";
+
+    }
+
 
   }
   function UnToggle2() {
@@ -67,10 +81,16 @@
     document.getElementById("drawer").style.marginLeft = "initial";
   }
   function Toggle3() {
-    document.getElementById("drawer").classList.add('drawer-mobile-toggle');
-    document.getElementById("subdrawer3").classList.add('subdrawer-mobile');
-    document.getElementById("subdrawer3").style.display = "block";
-    document.getElementById("drawer").style.width = "700px"; document.getElementById("drawer").style.marginLeft = "-300px";
+    if (window.matchMedia("(max-width: 400px)").matches) {
+      /* The viewport is less than, or equal to, 700 pixels wide */
+      document.getElementById("drawer").style.width = "850px";
+      document.getElementById("drawer").style.marginLeft = "-0px";
+      document.getElementById("subdrawer3").style.display = "block";
+    } else {
+      document.getElementById("subdrawer3").style.display = "block";
+      document.getElementById("drawer").style.width = "900px";
+
+    }
   }
   function UnToggle3() {
     document.getElementById("drawer").classList.add('subdrawer-mobile');
@@ -79,10 +99,16 @@
     document.getElementById("drawer").style.width = "initial"; document.getElementById("drawer").style.marginLeft = "initial";
   }
   function Toggle4() {
-    document.getElementById("drawer").classList.add('drawer-mobile-toggle');
-    document.getElementById("subdrawer").classList.add('subdrawer-mobile');
-    document.getElementById("subdrawer4").style.display = "block";
-    document.getElementById("drawer").style.width = "700px"; document.getElementById("drawer").style.marginLeft = "-300px";
+    if (window.matchMedia("(max-width: 400px)").matches) {
+      /* The viewport is less than, or equal to, 700 pixels wide */
+      document.getElementById("drawer").style.width = "850px";
+      document.getElementById("drawer").style.marginLeft = "-0px";
+      document.getElementById("subdrawer4").style.display = "block";
+    } else {
+      document.getElementById("subdrawer4").style.display = "block";
+      document.getElementById("drawer").style.width = "900px";
+
+    }
   }
   function UnToggle4() {
     document.getElementById("drawer").classList.add('subdrawer-mobile');
@@ -92,10 +118,16 @@
     document.getElementById("drawer").style.marginLeft = "initial";
   }
   function Toggle5() {
-    document.getElementById("drawer").classList.add('drawer-mobile-toggle');
-    document.getElementById("subdrawer").classList.add('subdrawer-mobile');
-    document.getElementById("subdrawer5").style.display = "block";
-    document.getElementById("drawer").style.width = "700px"; document.getElementById("drawer").style.marginLeft = "-300px";
+    if (window.matchMedia("(max-width: 400px)").matches) {
+      /* The viewport is less than, or equal to, 700 pixels wide */
+      document.getElementById("drawer").style.width = "850px";
+      document.getElementById("drawer").style.marginLeft = "-0px";
+      document.getElementById("subdrawer5").style.display = "block";
+    } else {
+      document.getElementById("subdrawer5").style.display = "block";
+      document.getElementById("drawer").style.width = "900px";
+
+    }
   }
   function UnToggle5() {
     document.getElementById("drawer").classList.add('subdrawer-mobile');
@@ -105,11 +137,16 @@
     document.getElementById("drawer").style.marginLeft = "initial";
   }
   function Toggle6() {
-    document.getElementById("drawer").classList.add('drawer-mobile-toggle');
-    document.getElementById("subdrawer6").classList.add('subdrawer-mobile');
-    document.getElementById("subdrawer6").style.display = "block";
+    if (window.matchMedia("(max-width: 400px)").matches) {
+      /* The viewport is less than, or equal to, 700 pixels wide */
+      document.getElementById("drawer").style.width = "850px";
+      document.getElementById("drawer").style.marginLeft = "-0px";
+      document.getElementById("subdrawer6").style.display = "block";
+    } else {
+      document.getElementById("subdrawer6").style.display = "block";
+      document.getElementById("drawer").style.width = "900px";
 
-    document.getElementById("drawer").style.width = "700px"; document.getElementById("drawer").style.marginLeft = "-300px";
+    }
   }
   function UnToggle6() {
     document.getElementById("drawer").classList.add('subdrawer-mobile');
@@ -573,7 +610,7 @@
   <div layout="row" class="icon-row-two">
     <img id="individual_png" src="images/indiv.png" height="20" width="15" alt="s" />
     <a href="#/evaluation-individual" onmouseover="Individuals('grey')" onmouseout="Individuals('white')" id="individuals"
-      class="first-option-link" translate onclick="activeMenu()">views.evaluation.individuals
+      class="first-option-link-one" translate onclick="activeMenu()">views.evaluation.individuals
     </a>
   </div>
   <div layout="row" class="icon-row-organizations">
