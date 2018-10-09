@@ -167,6 +167,7 @@
           infoSurvey.risk = riskLevel;
           infoSurvey.type = 'individual-'+ctrl.type;
           saveSurvey(infoSurvey).then(function(res) {
+          }).finally(function(){
             $location.path('/advice');
           });
           break;
