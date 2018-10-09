@@ -283,13 +283,10 @@ header .header-left .header-menu span {
 header .header-left .header-menu md-icon svg {
   fill: #5495c0;
 }
-.header-menu-logo .ng-scope {
-  background-color: #fff !important;
-}
 md-toolbar.md-default-theme:not(.md-menu-toolbar) .md-button:not(.md-raised),
 md-toolbar:not(.md-menu-toolbar) .md-button:not(.md-raised) {
   color: #000;
-  background-color: #fff !important;
+  font-weight: bold;
 }
 header .header-right {
 }
