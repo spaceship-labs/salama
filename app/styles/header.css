@@ -35,15 +35,14 @@
 }
 .drawer {
   margin-left: -950px;
-  padding-left: 0px;
-  padding-right: 50px;
+  padding-left: 50px;
   height: 100%;
   width: 950px;
   background-color: #0d0d0d;
   position: fixed;
   z-index: 99;
   transition: all 0.5s;
-
+  display: none;
   color: #fff;
   padding-top: 20px;
   font-family: Lato !important;
