@@ -37,6 +37,26 @@ html {
   overflow: scroll;
   overflow-x: hidden;
 }
+
+@media only screen and (max-width: 768px) {
+  .drawer-mobile-toggle {
+    width: 700px;
+    margin-left: -300px;
+  }
+  .drawer-mobile-untoggle {
+    width: 700px;
+    margin-left: -300px;
+    width: initial;
+    margin-left: initial;
+  }
+  .subdrawer-mobile {
+    display: block;
+  }
+  .subdrawer-mobile-untoggle {
+    display: none;
+  }
+}
+
 .drawer {
   margin-left: -950px;
   padding-left: 20px !important;
@@ -62,7 +82,7 @@ html {
   background-color: #0d0d0d;
   width: 300px;
   margin-top: -120px;
-  margin-left: 350px;
+  margin-left: 300px;
   font-family: Lato !important;
   position: absolute;
   display: none;

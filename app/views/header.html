@@ -22,6 +22,7 @@
   function activeMenu() {
     if (toggle === false) {
       toggle = true;
+
       document.getElementById("drawer").style.paddingLeft = "0px";
       document.getElementById("drawer").style.marginLeft = "0px";
       document.getElementById("shadow").style.display = "initial";
@@ -37,55 +38,87 @@
   }
 
   function Toggle() {
-    document.getElementById("subdrawer").style.display = "block";
-    document.getElementById("drawer").style.width = "700px";
+    document.getElementById("drawer").classList.remove('drawer-mobile-untoggle');
+    document.getElementById("subdrawer").classList.remove('subdrawer-mobile-untoggle');
+    document.getElementById("drawer").classList.add('drawer-mobile-untoggle');
+    document.getElementById("subdrawer").classList.add('subdrawer-mobile');
+
   }
   function UnToggle() {
+    document.getElementById("drawer").classList.add('subdrawer-mobile');
+    document.getElementById("subdrawer").classList.add('subdrawer-mobile-untoggle');
     document.getElementById("subdrawer").style.display = "none";
     document.getElementById("drawer").style.width = "initial";
+    document.getElementById("drawer").style.marginLeft = "initial";
   }
   function Toggle2() {
+    document.getElementById("drawer").classList.add('drawer-mobile-toggle');
+    document.getElementById("subdrawer2").classList.add('subdrawer-mobile');
     document.getElementById("subdrawer2").style.display = "block";
     document.getElementById("drawer").style.width = "700px";
+    document.getElementById("drawer").style.marginLeft = "-300px";
 
   }
   function UnToggle2() {
+    document.getElementById("drawer").classList.add('subdrawer-mobile');
+    document.getElementById("subdrawer2").classList.add('subdrawer-mobile-untoggle');
     document.getElementById("subdrawer2").style.display = "none";
     document.getElementById("drawer").style.width = "initial";
+    document.getElementById("drawer").style.marginLeft = "initial";
   }
   function Toggle3() {
+    document.getElementById("drawer").classList.add('drawer-mobile-toggle');
+    document.getElementById("subdrawer3").classList.add('subdrawer-mobile');
     document.getElementById("subdrawer3").style.display = "block";
-    document.getElementById("drawer").style.width = "700px";
+    document.getElementById("drawer").style.width = "700px"; document.getElementById("drawer").style.marginLeft = "-300px";
   }
   function UnToggle3() {
+    document.getElementById("drawer").classList.add('subdrawer-mobile');
+    document.getElementById("subdrawer3").classList.add('subdrawer-mobile-untoggle');
     document.getElementById("subdrawer3").style.display = "none";
-    document.getElementById("drawer").style.width = "initial";
+    document.getElementById("drawer").style.width = "initial"; document.getElementById("drawer").style.marginLeft = "initial";
   }
   function Toggle4() {
+    document.getElementById("drawer").classList.add('drawer-mobile-toggle');
+    document.getElementById("subdrawer").classList.add('subdrawer-mobile');
     document.getElementById("subdrawer4").style.display = "block";
-    document.getElementById("drawer").style.width = "700px";
+    document.getElementById("drawer").style.width = "700px"; document.getElementById("drawer").style.marginLeft = "-300px";
   }
   function UnToggle4() {
+    document.getElementById("drawer").classList.add('subdrawer-mobile');
+    document.getElementById("subdrawer4").classList.add('subdrawer-mobile-untoggle');
     document.getElementById("subdrawer4").style.display = "none";
     document.getElementById("drawer").style.width = "initial";
+    document.getElementById("drawer").style.marginLeft = "initial";
   }
   function Toggle5() {
+    document.getElementById("drawer").classList.add('drawer-mobile-toggle');
+    document.getElementById("subdrawer").classList.add('subdrawer-mobile');
     document.getElementById("subdrawer5").style.display = "block";
-    document.getElementById("drawer").style.width = "700px";
+    document.getElementById("drawer").style.width = "700px"; document.getElementById("drawer").style.marginLeft = "-300px";
   }
   function UnToggle5() {
+    document.getElementById("drawer").classList.add('subdrawer-mobile');
+    document.getElementById("subdrawer5").classList.add('subdrawer-mobile-untoggle');
     document.getElementById("subdrawer5").style.display = "none";
     document.getElementById("drawer").style.width = "initial";
+    document.getElementById("drawer").style.marginLeft = "initial";
   }
   function Toggle6() {
+    document.getElementById("drawer").classList.add('drawer-mobile-toggle');
+    document.getElementById("subdrawer6").classList.add('subdrawer-mobile');
     document.getElementById("subdrawer6").style.display = "block";
 
-    document.getElementById("drawer").style.width = "700px";
+    document.getElementById("drawer").style.width = "700px"; document.getElementById("drawer").style.marginLeft = "-300px";
   }
   function UnToggle6() {
+    document.getElementById("drawer").classList.add('subdrawer-mobile');
+    document.getElementById("subdrawer6").classList.add('subdrawer-mobile-untoggle');
     document.getElementById("subdrawer6").style.display = "none";
     document.getElementById("drawer").style.width = "initial";
+    document.getElementById("drawer").style.marginLeft = "initial";
   }
+
 
   function Individuals(color) {
     //document.getElementById('individuals').style.color = color;
