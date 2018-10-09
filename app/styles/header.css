@@ -33,11 +33,16 @@
   top: 40%;
   bottom: 0;
 }
+html {
+  overflow: scroll;
+  overflow-x: hidden;
+}
 .drawer {
   margin-left: -950px;
-  padding-left: 50px;
+  padding-left: 20px !important;
+  padding-right: 20px;
+  overflow-y: scroll;
   height: 100%;
-  width: 950px;
   background-color: #0d0d0d;
   position: fixed;
   z-index: 99;
