@@ -135,6 +135,7 @@ html {
   font-stretch: normal;
   line-height: normal;
   letter-spacing: 4.2px;
+  cursor: pointer;
   text-align: center;
   color: #fffefd;
 }
