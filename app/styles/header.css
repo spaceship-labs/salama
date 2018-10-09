@@ -35,7 +35,8 @@
 }
 .drawer {
   margin-left: -950px;
-  padding-left: 150px;
+  padding-left: 0px;
+  padding-right: 50px;
   height: 100%;
   width: 950px;
   background-color: #0d0d0d;
