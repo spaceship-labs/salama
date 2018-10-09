@@ -694,29 +694,16 @@
   </div>
 </div>
 </div>
-<div class="left-bar">
-  <div class="logo-bg" onclick="activeMenu()">
-    <a href="#/" onclick="activeMenu()">
-      <img class="logo" src="images/icon_salama.png" onclick="activeMenu()">
-    </a>
-  </div>
-  <div class="inside-bar" onclick="activeMenu()">
-    <div class="bmenu-container">
-      <div id="burger">
-        <img src="images/menu-button.png" class="bmenuu" alt="bmenu">
-        <span class="Menu" translate>views.sidenav.menu</span>
-      </div>
-      <div id="cross">
-        <img src="images/multiply.png" class="cross" alt="cross">
-        <span class="CrossText" translate>views.sidenav.close</span>
-      </div>
-    </div>
-  </div>
-</div>
 <header layout layout-align="center center" layout-wrap ng-controller="HeaderCtrl as header" style="{{header.lang == 'ar_AE' && 'text-align:right!important'}}">
   <!--Sidenav-->
   <md-sidenav md-component-id="left" class="md-sidenav-left md-whiteframe-z2 header-sidenav">
     <md-toolbar class="md-toolbar-tools">
+
+      <md-button class="sideButton" ng-click="header.changeStateSide()">
+        <img src="images/icon_salama.png">
+        <div>Menu</div>
+      </md-button>
+
     </md-toolbar>
     <div class="sidenav-block">
       <h3 translate>views.sidenav.evaluation</h3>
@@ -745,13 +732,22 @@
       </div>
     </div>
   </md-sidenav>
+
   <md-toolbar class="md-toolbar-tools animate header-fixed">
     <div class="container" layout layout-align="space-between center">
       <div layout layout-align="space-between center" class="header-left">
         <a href="#/" layout layout-align="center center" class="header-logo">
+          <img src="images/icon_salama.png">
         </a>
+
+        <md-button class="header-menu" onclick="activeMenu()">
+          <md-icon md-svg-icon="images/menu.svg" class="header-menu-logo">
+          </md-icon>
+          Menu
+        </md-button>
       </div>
       <div layout layout-align="space-between center" class="header-right">
+
         <div>
           <md-button class="header-lang" ng-click="header.showLangOptions = !header.showLangOptions">
             <md-icon md-svg-icon="images/lang.svg">
@@ -771,16 +767,12 @@
             <md-button ng-click="header.changeLang('ar_AE')">
               العربي
             </md-button>
+
           </md-content>
         </div>
       </div>
     </div>
-    <div class="cookie-popup" layout="row" layout-align="center center" ng-show="!header.okCookiesStorage">
-      <p translate>views.footer.cookie</p>
-      <md-button ng-click="header.okCookies()">{{'views.footer.cookie.ok' | translate}}</md-button>
-    </div>
   </md-toolbar>
-
 
 </header>
 <!--endSidenav-->

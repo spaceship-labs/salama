@@ -6,7 +6,6 @@
 }
 .left-bar {
   height: 100%;
-  background-color: #000;
   position: fixed;
   z-index: 99;
   width: 80px;
@@ -19,7 +18,7 @@
 }
 .inside-bar {
   height: 100%;
-  background-color: #000;
+
   position: relative;
   z-index: 99;
   width: 80px;
@@ -284,7 +283,14 @@ header .header-left .header-menu span {
 header .header-left .header-menu md-icon svg {
   fill: #5495c0;
 }
-
+.header-menu-logo .ng-scope {
+  background-color: #fff !important;
+}
+md-toolbar.md-default-theme:not(.md-menu-toolbar) .md-button:not(.md-raised),
+md-toolbar:not(.md-menu-toolbar) .md-button:not(.md-raised) {
+  color: #000;
+  background-color: #fff !important;
+}
 header .header-right {
 }
 header .header-right .header-lang {
@@ -329,13 +335,13 @@ header .header-sidenav .md-sidenav-left {
   left: 0;
   top: 0;
   z-index: 99999;
-  background-color: #141414;
+  background-color: #fff;
 }
 header .header-sidenav .md-toolbar-tools {
   padding-left: 35px;
   min-height: 85px;
   color: white;
-  background-color: #141414;
+  background-color: #fff;
 }
 header .header-sidenav .sidenav-block {
   padding-left: 35px;
