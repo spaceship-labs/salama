@@ -41,8 +41,8 @@
 
     if (window.matchMedia("(max-width: 400px)").matches) {
       /* The viewport is less than, or equal to, 700 pixels wide */
-      document.getElementById("drawer").style.width = "850px";
-      document.getElementById("drawer").style.paddingLeft = "-100px";
+
+      document.getElementById("drawer").style.marginLeft = "-100px";
       document.getElementById("subdrawer").style.display = "block";
     } else {
       document.getElementById("subdrawer").style.display = "block";
