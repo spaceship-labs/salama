@@ -3,8 +3,8 @@
   margin-left: 65%;
 }
 .header-menu-logo-burger {
-  color: #000;
-  fill: #fff;
+  color: #000 !important;
+  fill: #fff !important;
 }
 
 .first-row {
