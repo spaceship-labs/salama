@@ -1,3 +1,12 @@
+#exit {
+  cursor: pointer;
+  margin-left: 80%;
+}
+
+.first-row {
+  width: 100%;
+}
+
 .shadow {
   position: absolute;
   width: 100vw;
