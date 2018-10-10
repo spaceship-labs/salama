@@ -2,6 +2,10 @@
   cursor: pointer;
   margin-left: 65%;
 }
+.header-menu-logo-burger {
+  color: #000;
+  fill: #fff;
+}
 
 .first-row {
   width: 100%;
