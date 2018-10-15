@@ -47,7 +47,7 @@
   bottom: 0;
 }
 html {
-  overflow: hidden;
+  /* overflow: hidden; */
   overflow-x: hidden;
 }
 
@@ -418,4 +418,13 @@ header .header-sidenav * {
   width: 100% !important;
   left: 0;
   top: 0;
+}
+
+.active-menu-hover{
+  position: absolute;
+  width: 7%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 10;
 }

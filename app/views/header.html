@@ -1,7 +1,7 @@
 <script>
   /// VERIFY IF THE DIRECTION HAVE CHANGED /////////////////////////////////
 
-  if (toggle = true) {
+  if (toggle == true) {
     function hashHandler() {
       this.oldHash = window.location.hash;
       this.Check;
@@ -22,18 +22,19 @@
   function activeMenu() {
     if (toggle === false) {
       toggle = true;
-
+      //WTF raw js ????!
+      document.getElementById("drawer").style.display = "block";
       document.getElementById("drawer").style.paddingLeft = "0px";
       document.getElementById("drawer").style.marginLeft = "0px";
       document.getElementById("shadow").style.display = "initial";
-      document.getElementById("burger").style.display = "none";
-      document.getElementById("cross").style.display = "initial";
+      /* document.getElementById("burger").style.display = "none"; */
+      /* document.getElementById("cross").style.display = "initial"; */
     } else {
       toggle = false;
       document.getElementById("drawer").style.marginLeft = "-1050px";
       document.getElementById("shadow").style.display = "none";
-      document.getElementById("burger").style.display = "initial";
-      document.getElementById("cross").style.display = "none";
+      /* document.getElementById("burger").style.display = "initial"; */
+      /* document.getElementById("cross").style.display = "none"; */
     }
   }
 
@@ -603,6 +604,7 @@
     //  document.getElementById('corrcover').style.color = color;
   }
 </script>
+<div class="active-menu-hover" onmouseover="activeMenu()" ></div>
 <div id="shadow" onclick="activeMenu()"></div>
 <div id="drawer" class="drawer">
   <div layout="row" class="first-row">
