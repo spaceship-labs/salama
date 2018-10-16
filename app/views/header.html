@@ -1,6 +1,14 @@
 <script>
   /// VERIFY IF THE DIRECTION HAVE CHANGED /////////////////////////////////
 
+  function closeMenu() {
+    console.log('menu!');
+    if (toggle == true) {
+
+      activeMenu();
+    }
+  }
+
   if (toggle == true) {
     function hashHandler() {
       this.oldHash = window.location.hash;
@@ -27,14 +35,12 @@
       document.getElementById("drawer").style.paddingLeft = "0px";
       document.getElementById("drawer").style.marginLeft = "0px";
       document.getElementById("shadow").style.display = "initial";
-      /* document.getElementById("burger").style.display = "none"; */
-      /* document.getElementById("cross").style.display = "initial"; */
+      document.getElementById("drawerclose").style.display = "block";
     } else {
       toggle = false;
       document.getElementById("drawer").style.marginLeft = "-1050px";
       document.getElementById("shadow").style.display = "none";
-      /* document.getElementById("burger").style.display = "initial"; */
-      /* document.getElementById("cross").style.display = "none"; */
+      document.getElementById("drawerclose").style.display = "none";
     }
   }
 
@@ -782,6 +788,8 @@
     </ul>
   </div>
 </div>
+</div>
+<div id="drawerclose" class="close-menu-hover" onmouseover="closeMenu()">
 </div>
 <header layout layout-align="center center" layout-wrap ng-controller="HeaderCtrl as header" style="{{header.lang == 'ar_AE' && 'text-align:right!important'}}">
   <!--Sidenav-->

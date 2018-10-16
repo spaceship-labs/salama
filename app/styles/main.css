@@ -83,12 +83,12 @@ md-content{
 }
 
 .cookie-popup{
-  position: absolute;
+  position: fixed;
   color: white;
   background: black;
   border-radius: 10px;
   width: 100%;
-  bottom: -30px;
+  bottom: 0;
   z-index: 10;
   height: 30px;
   text-align: center;
@@ -96,4 +96,13 @@ md-content{
 
 .cookie-popup p{
   margin: 0;
+}
+
+.close-menu-hover{
+  display: none;
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  right: 0;
+  z-index:115;
 }

@@ -1,26 +1,3 @@
-<script>
-  var toggle = false;
-  function activeMenu() {
-    if (toggle === false) {
-
-      toggle = true;
-      document.getElementById("drawer").style.paddingLeft = "0px";
-      document.getElementById("drawer").style.marginLeft = "0px";
-      document.getElementById("drawer").style.display = "block";
-      document.getElementById("shadow").style.display = "initial";
-      document.getElementById("burger").style.display = "none";
-      document.getElementById("cross").style.display = "initial";
-
-    } else {
-
-      toggle = false;
-      document.getElementById("drawer").style.marginLeft = "-1050px";
-      document.getElementById("shadow").style.display = "none";
-      document.getElementById("burger").style.display = "initial";
-      document.getElementById("cross").style.display = "none";
-    }
-  }
-</script>
 <md-content layout layout-align="center center" layout-wrap layout-fill class="content-home">
   <div flex="100" class="home-logo">
     <img src="images/logo_salama.png">

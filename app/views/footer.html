@@ -1,5 +1,8 @@
-<footer id="footer" layout layout-align="center center">
-
+<footer id="footer" layout layout-align="center center" ng-controller="FooterCtrl">
+  <div class="cookie-popup" layout="row" layout-align="center center" ng-show="!okCookiesStorage">
+    <p translate>views.footer.cookie</p>
+    <md-button ng-click="okCookies()">{{'views.footer.cookie.ok' | translate}}</md-button>
+  </div>
   <div layout="column">
 
     <div class="footer-share">

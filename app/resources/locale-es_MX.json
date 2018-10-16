@@ -134,9 +134,9 @@
   "views.footer.rights": "Todos los derechos reservados",
   "views.footer.about": "Acerca de Salama",
 
-  "views.footer.cookie": "Esta pagina usa cookies",
   "views.footer.cookie.ok": "Aceptar",
   "views.footer.privacy": "Privacidad",
   "views.footer.terms": "Terminos",
-  "views.footer.ours": "Nosotros"
+  "views.footer.ours": "Nosotros",
+  "views.footer.cookie":"Privacidad y Cookies: este sitio usa cookies, al continuar usando este sitio, estas de acuerdo con su uso."
 }
