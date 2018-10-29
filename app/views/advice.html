@@ -39,10 +39,15 @@
       {{'views.advice.resultstitle4'|translate}}
       <strong> {{advice.digitalScore}}</strong>
     </h2>
-     <h3>{{ advice.digitalRisk.level | translate}}</h3>
+    <h3>{{ advice.digitalRisk.level | translate}}</h3>
 
-    <md-button ng-click="advice.restartEval()" ng-href="#/evaluation">
-    {{'views.advice.restart' | translate}}
-    </md-button>
+    <div layout="row">
+      <md-button ng-click="advice.restartEval()" ng-href="#/evaluation">
+      {{'views.advice.restart' | translate}}
+      </md-button>
+      <md-button ng-click="advice.printScreen()">
+      {{'views.advice.print' | translate}}
+      </md-button>
+    </div>
   </div>
 </md-content>

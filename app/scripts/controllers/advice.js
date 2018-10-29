@@ -23,6 +23,7 @@
     ctrl.links       = [];
     ctrl.advice      = '';
     ctrl.restartEval = restartEval;
+    ctrl.printScreen = printScreen;
     activate();
 
     function activate(){
@@ -49,6 +50,11 @@
       adviceService.getLinksIndividuals(lang).then(function(links){
         ctrl.links = links;
       });
+    }
+
+    function printScreen(){
+      console.log('print');
+      window.print();
     }
 
     function restartEval(){

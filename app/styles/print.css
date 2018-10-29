@@ -1,0 +1,35 @@
+@media print {
+
+  header{
+    display: none !important;
+  }
+
+  h1, h2{
+    font-size: 15px !important;
+  }
+
+  footer .footer-share{
+    display: none;
+  }
+
+  .evaluation-results .risk-image img{width: 50%;}
+  .md-button.md-ink-ripple{
+    display: none;
+  }
+
+  md-content, .container, .container-fluid, .wrap, #main {
+    width: auto;
+    display: block!important;
+  }
+
+  .container, .container-md{
+    font-size: 14px !important;
+  }
+
+  #footer {
+    margin: 0!important;
+    display: none !important;
+  }
+
+
+}
