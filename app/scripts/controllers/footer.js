@@ -8,7 +8,7 @@
  * Controller of the salamaApp
  */
 angular.module('salamaApp')
-  .controller('FooterCtrl', function ($scope) {
+  .controller('FooterCtrl', function ($scope, $translate, postsService) {
     $scope.okCookies = okCookies;
     $scope.okCookiesStorage = localStorage.getItem('okCookiesValue');
 
@@ -16,4 +16,19 @@ angular.module('salamaApp')
       localStorage.setItem('okCookiesValue', true);
       $scope.okCookiesStorage = true;
     }
+
+    function loadCopy() {
+      var lang = $translate.use();
+      console.log('run', lang);
+      var selected = lang + '/copyright.md';
+      postsService.setSelected(selected);
+      postsService.getPost()
+        .then(function(res) {
+          $scope.copyright = res;
+        });
+    }
+    loadCopy();
+    $scope.$watch(function() {
+      return $translate.use();
+    }, loadCopy);
   });

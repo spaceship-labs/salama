@@ -1,26 +1,34 @@
-<footer id="footer" layout layout-align="center center" ng-controller="FooterCtrl">
+<footer id="footer" layout layout-align="center start" ng-controller="FooterCtrl">
   <div class="cookie-popup" layout="row" layout-align="center center" ng-show="!okCookiesStorage">
     <p translate>views.footer.cookie</p>
     <md-button ng-click="okCookies()">{{'views.footer.cookie.ok' | translate}}</md-button>
   </div>
   <div layout="column">
+    <div class="markdow-bg">
+      <div class="markdow-footer"  marked="copyright" layout-padding>
+      </div>
+    </div>
+    <div class="last-footer" layout="column" layout-align="center center" >
+      <div class="footer-share">
+        <a href="http://salamaapp.org/">
+          <span translate>views.footer.about</span>
+        </a>
+        <a href="#/article/policy">
+          <span translate>views.footer.privacy</span>
+        </a>
+        <a href="#/article/terms">
+          <span translate>views.footer.terms</span>
+        </a>
+        <a href="#/article/ours">
+          <span translate>views.footer.ours</span>
+        </a>
+      </div>
+      <div class="footer-rights">
+        2016 Salama. <span translate>views.footer.rights</span>
+      </div>
+    </div>
 
-    <div class="footer-share">
-      <a href="http://salamaapp.org/">
-        <span translate>views.footer.about</span>
-      </a>
-      <a href="#/article/policy">
-        <span translate>views.footer.privacy</span>
-      </a>
-      <a href="#/article/terms">
-        <span translate>views.footer.terms</span>
-      </a>
-      <a href="#/article/ours">
-        <span translate>views.footer.ours</span>
-      </a>
-    </div>
-    <div class="footer-rights">
-      2016 Salama. <span translate>views.footer.rights</span>
-    </div>
+
   </div>
+
 </footer>

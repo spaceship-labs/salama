@@ -106,3 +106,35 @@ md-content{
   right: 0;
   z-index:115;
 }
+
+#footer{
+  background: #202020;
+}
+
+.markdow-bg{
+  background: #111111;
+}
+.markdow-footer{
+  color: white;
+  width: 90%;
+  margin: 0 auto;
+}
+.markdow-footer a{
+  color: #549dbc;
+}
+.markdow-footer p{
+  font-size: .8rem;
+  margin-bottom: 5px;
+  padding: 0;
+}
+.markdow-footer .mk-title{
+  font-weight: bold;
+}
+
+.markdow-footer .mk-italic{
+  font-style: italic;
+}
+.last-footer{
+  padding-top: 5px;
+  background: #202020;
+}
