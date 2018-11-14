@@ -420,7 +420,7 @@ header .header-sidenav * {
 
 .active-menu-hover{
   position: absolute;
-  width: 7%;
+  width: 4%;
   height: 100%;
   top: 0;
   left: 0;
@@ -467,4 +467,65 @@ header .header-sidenav * {
 
 .subdrawer ul{
   padding: 0 20px;
+}
+
+@media screen and (max-width: 960px) and (min-width: 620px) {
+  header .header-sidenav, header .header-sidenav .md-sidenav-left{
+    min-width: 70%;
+  }
+}
+
+@media screen and (max-width: 620px) and (min-width: 360px){
+  header .header-sidenav, header .header-sidenav .md-sidenav-left{
+    min-width: 90%;
+  }
+}
+
+@media screen and (max-width: 360px){
+  header .header-sidenav, header .header-sidenav .md-sidenav-left{
+    min-width: 100%;
+  }
+
+  header .sidenav-item .first-option .subdrawer ul {
+    padding: 0 5px;
+    margin: 1px;
+  }
+
+  header .sidenav-item .first-option:hover .subdrawer{
+    position: relative;
+    display: inline-grid;
+    margin: 0;
+    min-height: auto;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  header .title{
+    font-size: 11px;
+  }
+
+  header .header-sidenav .sidenav-item{
+    padding-top:5px;
+  }
+
+  header .sd-item{
+    font-size: 11px;
+  }
+
+  header .sidenav-item img{
+    width: 15px;
+    height: 17px;
+  }
+
+  header .sd-item{
+    padding-left: 10px;
+  }
+
+  header .first-option{
+    padding-left: 10px;
+  }
+
+  header .subdrawer{
+    margin-left: 130px;
+  }
 }
