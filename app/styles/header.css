@@ -427,6 +427,9 @@ header .header-sidenav * {
   z-index: 10;
 }
 
+.md-sidenav-left{
+  overflow: hidden;
+}
 .active-sidenav-menu{
   display: block;
   margin-left: 0;
