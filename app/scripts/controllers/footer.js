@@ -19,7 +19,6 @@ angular.module('salamaApp')
 
     function loadCopy() {
       var lang = $translate.use();
-      console.log('run', lang);
       var selected = lang + '/copyright.md';
       postsService.setSelected(selected);
       postsService.getPost()

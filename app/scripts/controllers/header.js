@@ -44,10 +44,39 @@
     ctrl.metadata = {};
     ctrl.setPost = setPost;
     ctrl.headerFixed = false;
-    ctrl.okCookies = okCookies;
-    ctrl.okCookiesStorage = localStorage.getItem('okCookie');
+    ctrl.sidenavSelect = sidenavSelect;
 
     activate();
+
+    var sidenavItems = angular.element('.sidenav-item .sd-item');
+    sidenavItems.hover(sidenavSelect, sidenavSelect);
+
+    var selectClass = 'sidenav-selected';
+    var activeClass = 'sidenav-active';
+    function sidenavSelect($event){
+      console.log('run!');
+      var ls = angular.element('.sidenav-item');
+      var ele = angular.element($event.target).parent().parent();
+      var active;
+      if (ele.hasClass(activeClass)) {
+        ele.removeClass(activeClass);
+      } else {
+        ele.addClass(activeClass);
+        active = true;
+      }
+      ls.each(function(i, ele) {
+        var e = angular.element(ele);
+        if (e.hasClass(activeClass)) {
+          e.removeClass(selectClass);
+        } else {
+          e.addClass(selectClass);
+        }
+      });
+      if (!active) {
+        ls.removeClass(selectClass);
+      }
+    }
+
 
     // newFoo
     function changeStateSide(){
@@ -136,11 +165,6 @@
 
     function logError(err){
       console.error(err);
-    }
-
-    function okCookies() {
-      localStorage.setItem('okCookie', true);
-      ctrl.okCookiesStorage = true;
     }
 
   }

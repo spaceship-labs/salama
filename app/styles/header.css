@@ -52,18 +52,15 @@ html {
 }
 
 .drawer {
-  margin-left: -950px;
+  width: 100%;
+  display: block;
   padding-left: 20px !important;
-  width: 50% !important;
-  min-width: 350px;
   padding-right: 20px;
   overflow-y: hidden;
   height: 100%;
   background-color: #0d0d0d;
-  position: fixed;
   z-index: 99;
   transition: all 0.5s;
-  display: none;
   color: #fff;
   padding-top: 20px;
   font-family: Lato !important;
@@ -72,16 +69,17 @@ html {
   padding-left: 15px;
 }
 .subdrawer {
-  height: 200px;
+  min-height: 200px;
   text-align: left;
   border-left: 2px solid #fff;
   background-color: #0d0d0d;
   width: 300px;
   margin-top: -120px;
-  margin-left: 250px;
+  margin-left: 215px;
   font-family: Lato !important;
   position: absolute;
   display: none;
+  font-weight: 100;
 }
 .subdrawer2 {
   height: 200px;
@@ -216,6 +214,7 @@ html {
   padding-top: 0px;
   padding-left: 30px;
   color: #fff;
+  width: 100%;
 }
 .first-option-link-one {
   font-size: 15px;
@@ -365,7 +364,9 @@ header .header-lang-options .legend {
 
 header .header-sidenav,
 header .header-sidenav .md-sidenav-left {
-  max-width: 262px;
+  -webkit-transform: none;
+  transform: none;
+  width: 50%;
   height: 100vh;
   position: fixed;
   left: 0;
@@ -399,9 +400,6 @@ header .header-sidenav .sidenav-block ul li {
   margin-top: 5px;
 }
 header .header-sidenav * {
-  color: #474d4d;
-  font-weight: bold;
-  font-size: 12px;
 }
 .sideButton * {
   float: left;
@@ -427,4 +425,46 @@ header .header-sidenav * {
   top: 0;
   left: 0;
   z-index: 10;
+}
+
+.active-sidenav-menu{
+  display: block;
+  margin-left: 0;
+  transition: all 0.5s;
+}
+.sidenav-menu{
+  width: 100%;
+}
+
+.sidenav-item{
+  flex-basis: 100%;
+}
+
+.sd-item{
+  color: inherit;
+  display: inline-block;
+  width: 100%;
+}
+
+.sidenav-active .sd-item{
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.sidenav-selected, .sidenav-selected a.sd-item{
+  color: gray;
+}
+
+.sidenav-selected img{
+  filter: invert(70%);
+}
+
+.sidenav-item .first-option:hover .subdrawer{
+  display: block;
+  z-index: 999999;
+}
+
+.subdrawer ul{
+  padding: 0 20px;
 }
