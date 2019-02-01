@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 /**
  * @ngdoc function
@@ -7,14 +7,12 @@
  * # HomeCtrl
  * Controller of the salamaApp
  */
-(function(){
-  angular.module('salamaApp')
-  .controller('HomeCtrl', HomeCtrl);
+(function() {
+  angular.module("salamaApp").controller("HomeCtrl", HomeCtrl);
 
-  HomeCtrl.$inject=['$window','$mdSidenav','$mdDialog'];
+  HomeCtrl.$inject = ["$window", "$mdSidenav", "$mdDialog"];
 
-  function HomeCtrl($window, $mdSidenav, $mdDialog){
-
+  function HomeCtrl($window, $mdSidenav, $mdDialog) {
     var ctrl = this;
     var w = angular.element($window);
 
@@ -22,29 +20,32 @@
     ctrl.changeStateSide = changeStateSide;
     setFixedMenu();
 
-    function showVideo(){
+    function showVideo() {
       $mdDialog.show({
-        template : '<iframe width="560" height="315" src="https://www.youtube.com/embed/DA6dDy3FuQQ" frameborder="0" allowfullscreen></iframe>',
-        clickOutsideToClose : true
+        template:
+          '<iframe width="560" height="315" src="https://www.youtube.com/embed/DA6dDy3FuQQ" frameborder="0" allowfullscreen></iframe>',
+        clickOutsideToClose: true
       });
     }
 
-    function changeStateSide(){
-      $mdSidenav('left').toggle();
+    function changeStateSide() {
+      $mdSidenav("left").toggle();
     }
 
-    function setFixedMenu(){
+    function setFixedMenu() {
       fixedMenu();
-      w.bind('load resize',function (){
+      w.bind("load resize", function() {
         var h = w.height() - 120;
         fixedMenu();
       });
     }
-
-    function fixedMenu(){
-      var h = w.height() - 120;
-      $('.content-home').css('min-height',h+'px');
+    function setPost(path) {
+      changeStateSide();
     }
 
+    function fixedMenu() {
+      var h = w.height() - 120;
+      $(".content-home").css("min-height", h + "px");
+    }
   }
 })();
