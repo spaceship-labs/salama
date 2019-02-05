@@ -148,7 +148,7 @@ module.exports = function(grunt) {
       }
     },
 
-    // Empties folders to start fresh
+    // Empties folders to start freshs
     clean: {
       dist: {
         files: [
