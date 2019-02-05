@@ -148,7 +148,7 @@ module.exports = function(grunt) {
       }
     },
 
-    // Empties folders to start freshs
+    // Empties folders to start freshss
     clean: {
       dist: {
         files: [
