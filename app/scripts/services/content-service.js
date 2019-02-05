@@ -18,7 +18,7 @@
 
     var urlSite = '#{URLCONTENT}';
     urlSite = urlSite.indexOf('CONTENT')===-1 ?
-                urlSite : 'https://raw.githubusercontent.com/icfj-org/salama-content/gh-pages/';
+                urlSite : 'https://raw.githubusercontent.com/border-center-for-journalists/salama-content/gh-pages/';
     console.log('urlContent', urlSite);
     var urlVersion = urlSite + 'version.txt';
     var urlMetadata = urlSite + 'metadata/';
