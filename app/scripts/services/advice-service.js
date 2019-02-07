@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 /**
  * @ngdoc service
@@ -8,48 +8,47 @@
  * Service in the salamaApp.
  */
 (function() {
-  angular.module('salamaApp')
-    .factory('adviceService', adviceService);
+  angular.module("salamaApp").factory("adviceService", adviceService);
 
   adviceService.$inject = [
-    '$localStorage',
-    'contentService',
-    'metadataService'
+    "$localStorage",
+    "contentService",
+    "metadataService"
   ];
 
   function adviceService($localStorage, contentService, metadataService) {
-    var store = $localStorage.adviceService = $localStorage.adviceService || {
+    var store = ($localStorage.adviceService = $localStorage.adviceService || {
       individuals: {
         results: {}
       },
       organizations: {
         results: {}
       }
-    };
+    });
     var risks = {
       extreme: {
-        level: 'views.evaluation.extremerisk',
-        image: 'images/riesgo_extremo.jpg',
-        description: 'views.evaluation.extremeadvice',
-        advice: 'extreme'
+        level: "views.evaluation.extremerisk",
+        image: "images/riesgo_extremo.jpg",
+        description: "views.evaluation.extremeadvice",
+        advice: "extreme"
       },
       high: {
-        level: 'views.evaluation.highrisk',
-        image: 'images/riesgo_alto.jpg',
-        description: 'views.evaluation.highadvice',
-        advice: 'high'
+        level: "views.evaluation.highrisk",
+        image: "images/riesgo_alto.jpg",
+        description: "views.evaluation.highadvice",
+        advice: "high"
       },
       moderate: {
-        level: 'views.evaluation.moderaterisk',
-        image: 'images/riesgo_medio.jpg',
-        description: 'views.evaluation.moderateadvice',
-        advice: 'moderate'
+        level: "views.evaluation.moderaterisk",
+        image: "images/riesgo_medio.jpg",
+        description: "views.evaluation.moderateadvice",
+        advice: "moderate"
       },
       low: {
-        level: 'views.evaluation.lowrisk',
-        image: 'images/riesgo_bajo.jpg',
-        description: 'views.evaluation.lowadvice',
-        advice: 'low'
+        level: "views.evaluation.lowrisk",
+        image: "images/riesgo_bajo.jpg",
+        description: "views.evaluation.lowadvice",
+        advice: "low"
       }
     };
 
@@ -84,7 +83,7 @@
           var article = rlinks[i];
           links.push({
             title: titles[article],
-            link: article,
+            link: article
           });
         }
         return links;
@@ -100,7 +99,6 @@
       return risks[store.individuals.results.riskLevel];
     }
 
-
     function getDigitalRiskLevelIndividuals(lang) {
       return risks[store.individuals.results.digitalRiskLevel];
     }
@@ -112,6 +110,5 @@
     function getResultsOrganizations() {
       return store.organizations.results;
     }
-
   }
 })();
