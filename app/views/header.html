@@ -1,85 +1,174 @@
-<header layout layout-align="center center" layout-wrap ng-controller="HeaderCtrl as header" style="{{header.lang == 'ar_AE' && 'text-align:right!important'}}">
+<header
+  layout
+  layout-align="center center"
+  layout-wrap
+  ng-controller="HeaderCtrl as header"
+  style="{{ header.lang == 'ar_AE' && 'text-align:right!important' }}"
+>
   <div class="active-menu-hover" ng-mouseenter="header.changeStateSide()"></div>
   <!--Sidenav-->
-  <md-sidenav md-component-id="left" class="md-sidenav-left md-whiteframe-z2 header-sidenav"  md-is-open="openSidenav">
-    <div id="drawer" class="drawer" >
+  <md-sidenav
+    md-component-id="left"
+    class="md-sidenav-left md-whiteframe-z2 header-sidenav"
+    md-is-open="openSidenav"
+  >
+    <div id="drawer" class="drawer" ng-mouseleave="header.changeStateSide()">
       <div layout="row" class="first-row" ng-click="header.changeStateSide()">
         <span class="subtitle" translate> views.sidenav.menu </span>
-        <img id="exit" src="images/multiply.png" height="15" width="15" alt="x" />
+        <img
+          id="exit"
+          src="images/multiply.png"
+          height="15"
+          width="15"
+          alt="x"
+        />
       </div>
-      <h1 id="evaluation" class="sidenav-item title" translate> views.sidenav.evaluation </h1>
+      <h1 id="evaluation" class="sidenav-item title" translate>
+        views.sidenav.evaluation
+      </h1>
       <div layout="row" class="sidenav-item icon-row-two">
-        <img id="individual_png" src="images/indiv.png" height="20" width="15" alt="s" />
+        <img
+          id="individual_png"
+          src="images/indiv.png"
+          height="20"
+          width="15"
+          alt="s"
+        />
         <div>
-          <a href="#/evaluation-individual" id="individuals"
-            class="sd-item first-option-link-one" translate  ng-click="header.changeStateSide()" >views.evaluation.individuals
+          <a
+            href="#/evaluation-individual"
+            id="individuals"
+            class="sd-item first-option-link-one"
+            translate
+            ng-click="header.changeStateSide()"
+            >views.evaluation.individuals
           </a>
         </div>
-
       </div>
       <div layout="row" class="sidenav-item icon-row-organizations">
-        <img src="images/org.png" id="organizations_png" height="18" width="31" alt="s" />
+        <img
+          src="images/org.png"
+          id="organizations_png"
+          height="18"
+          width="31"
+          alt="s"
+        />
         <div>
-          <a href="#/evaluation/organizations" id="organizations"
-            class="sd-item first-option-link" translate  ng-click="header.changeStateSide()">views.evaluation.organizations
+          <a
+            href="#/evaluation/organizations"
+            id="organizations"
+            class="sd-item first-option-link"
+            translate
+            ng-click="header.changeStateSide()"
+            >views.evaluation.organizations
           </a>
         </div>
-
       </div>
-      <h1 href="" id="library" class="title sidenav-item" translate>views.sidenav.library </h1>
+      <h1 href="" id="library" class="title sidenav-item" translate>
+        views.sidenav.library
+      </h1>
       <div class="row">
         <div layout="row" class="icon-row sidenav-item">
-          <img id="digital_png" src="images/otros.png" height="22" width="20" alt="" />
+          <img
+            id="digital_png"
+            src="images/otros.png"
+            height="22"
+            width="20"
+            alt=""
+          />
           <div id="digitalsecurity" class="first-option">
-            <a class="sd-item" href=""  translate>views.sidenav.security</a>
+            <a class="sd-item" href="" translate>views.sidenav.security</a>
 
             <div id="subdrawer" class="subdrawer">
               <ul>
-                <a id="calls" class="mediumtitle" href="#/article/calls"
-                  translate > views.sidenav.calls</a>
+                <a
+                  id="calls"
+                  class="mediumtitle"
+                  href="#/article/calls"
+                  translate
+                >
+                  views.sidenav.calls</a
+                >
               </ul>
               <ul>
-                <a id="chat" class="mediumtitle" href="#/article/chat"
-                  translate > views.sidenav.chat</a>
+                <a
+                  id="chat"
+                  class="mediumtitle"
+                  href="#/article/chat"
+                  translate
+                >
+                  views.sidenav.chat</a
+                >
               </ul>
               <ul>
-                <a  id="security" class="mediumtitle" href="#/article/digital_security"
-                  translate >
-                  views.sidenav.security</a>
+                <a
+                  id="security"
+                  class="mediumtitle"
+                  href="#/article/digital_security"
+                  translate
+                >
+                  views.sidenav.security</a
+                >
               </ul>
               <ul>
-                <a id="sensitiveinfo" class="mediumtitle" href="#/article/information_corruption_mail"
-                  translate >
-                  views.sidenav.sensitive</a>
+                <a
+                  id="sensitiveinfo"
+                  class="mediumtitle"
+                  href="#/article/information_corruption_mail"
+                  translate
+                >
+                  views.sidenav.sensitive</a
+                >
               </ul>
               <ul>
-                <a id="protect" class="mediumtitle" href="#/article/mail"
-                  translate >
-                  views.sidenav.protect</a>
+                <a
+                  id="protect"
+                  class="mediumtitle"
+                  href="#/article/mail"
+                  translate
+                >
+                  views.sidenav.protect</a
+                >
               </ul>
               <ul>
-                <a id="safe" class="mediumtitle" href="#/article/navigation"
-                  translate >
-                  views.sidenav.navigation</a>
+                <a
+                  id="safe"
+                  class="mediumtitle"
+                  href="#/article/navigation"
+                  translate
+                >
+                  views.sidenav.navigation</a
+                >
               </ul>
               <ul>
-                <a id="passwords" class="mediumtitle" href="#/article/passwords"
-                  translate >views.sidenav.passwords</a>
+                <a
+                  id="passwords"
+                  class="mediumtitle"
+                  href="#/article/passwords"
+                  translate
+                  >views.sidenav.passwords</a
+                >
               </ul>
             </div>
-
-
           </div>
         </div>
       </div>
       <div class="row">
         <div layout="row" class="row-padded sidenav-item">
-          <img id="censura_png" src="images/censura.png" height="22" width="20" alt="s" />
+          <img
+            id="censura_png"
+            src="images/censura.png"
+            height="22"
+            width="20"
+            alt="s"
+          />
           <div href="" id="censura" class="first-option">
             <a class="sd-item" href="" translate>views.sidenav.censored</a>
             <div id="subdrawer2" class="subdrawer">
               <ul>
-                <a class="mediumtitle" href="#/article/corruption" translate>views.sidenav.corruption</a>
+                <a class="mediumtitle" href="#/article/corruption" translate
+                  >views.sidenav.corruption</a
+                >
               </ul>
             </div>
           </div>
@@ -87,30 +176,61 @@
       </div>
       <div class="row">
         <div layout="row" class="icon-row sidenav-item">
-          <img id="seglab_png" src="images/seglab.png" height="22" width="20" alt="s" />
+          <img
+            id="seglab_png"
+            src="images/seglab.png"
+            height="22"
+            width="20"
+            alt="s"
+          />
           <div id="seglab" class="first-option">
             <a class="sd-item" href="" translate>views.sidenav.worksecurity </a>
 
             <div id="subdrawer3" class="subdrawer">
               <ul>
-                <a id="corruption" class="mediumtitle" href="#/article/corruption_information"
-                  translate>views.sidenav.corruptioneinfo</a>
+                <a
+                  id="corruption"
+                  class="mediumtitle"
+                  href="#/article/corruption_information"
+                  translate
+                  >views.sidenav.corruptioneinfo</a
+                >
               </ul>
               <ul>
-                <a id="cover" class="mediumtitle" href="#/article/crime_corruption"
-                  translate>views.sidenav.corruptioncover</a>
+                <a
+                  id="cover"
+                  class="mediumtitle"
+                  href="#/article/crime_corruption"
+                  translate
+                  >views.sidenav.corruptioncover</a
+                >
               </ul>
               <ul>
-                <a id="attacks" class="mediumtitle" href="#/article/threat"
-                  translate >views.sidenav.attacks</a>
+                <a
+                  id="attacks"
+                  class="mediumtitle"
+                  href="#/article/threat"
+                  translate
+                  >views.sidenav.attacks</a
+                >
               </ul>
               <ul>
-                <a id="plan" class="mediumtitle" href="#/article/violence_plan"
-                  translate>views.sidenav.plan</a>
+                <a
+                  id="plan"
+                  class="mediumtitle"
+                  href="#/article/violence_plan"
+                  translate
+                  >views.sidenav.plan</a
+                >
               </ul>
               <ul>
-                <a id="danger" class="mediumtitle" href="#/article/zone_protocols"
-                  translate>views.sidenav.dangareas</a>
+                <a
+                  id="danger"
+                  class="mediumtitle"
+                  href="#/article/zone_protocols"
+                  translate
+                  >views.sidenav.dangareas</a
+                >
               </ul>
             </div>
           </div>
@@ -118,114 +238,187 @@
       </div>
       <div class="row">
         <div layout=" row" class="icon-row sidenav-item">
-        <img id="segprof_png" src="images/segprof.png" height="22" width="20" alt="d" />
-        <div id="segprof" class=" first-option">
-          <a class="sd-item" href="" translate>views.sidenav.prosecurity</a>
-          <div id="subdrawer4" class="subdrawer">
-            <ul>
-              <a id="ethic" class="mediumtitle" href=" #/article/etic"
-                translate >views.sidenav.ethic</a>
-            </ul>
-            <ul>
-              <a id="stories" class="mediumtitle" href="#/article/information"
-                translate >views.sidenav.stories</a>
-            </ul>
-            <ul>
-              <a id="good" class="mediumtitle" href=" #/article/network"
-                translate >views.sidenav.communication</a>
-            </ul>
-            <ul>
-              <a id="methods"  class="mediumtitle" href="#/article/plan"
-                translate >views.sidenav.methods</a>
-            </ul>
-            <ul>
-              <a id="situation" class="mediumtitle" href="#/article/professional"
-                translate >views.sidenav.professional</a>
-            </ul>
-            <ul>
-              <a id="handle" class="mediumtitle" href="#/article/sinformation"
-                translate >views.sidenav.handle</a>
-            </ul>
-            <ul>
-              <a id="protocols" class="mediumtitle" href="#/article/threat_protocols"
-                translate >views.sidenav.protocols</a>
-            </ul>
-            <ul>
-              <a id="corrcover" class="mediumtitle" href="#/article/violence"
-                translate>views.sidenav.corruptioncover</a>
-            </ul>
+          <img
+            id="segprof_png"
+            src="images/segprof.png"
+            height="22"
+            width="20"
+            alt="d"
+          />
+          <div id="segprof" class=" first-option">
+            <a class="sd-item" href="" translate>views.sidenav.prosecurity</a>
+            <div id="subdrawer4" class="subdrawer">
+              <ul>
+                <a
+                  id="ethic"
+                  class="mediumtitle"
+                  href=" #/article/etic"
+                  translate
+                  >views.sidenav.ethic</a
+                >
+              </ul>
+              <ul>
+                <a
+                  id="stories"
+                  class="mediumtitle"
+                  href="#/article/information"
+                  translate
+                  >views.sidenav.stories</a
+                >
+              </ul>
+              <ul>
+                <a
+                  id="good"
+                  class="mediumtitle"
+                  href=" #/article/network"
+                  translate
+                  >views.sidenav.communication</a
+                >
+              </ul>
+              <ul>
+                <a
+                  id="methods"
+                  class="mediumtitle"
+                  href="#/article/plan"
+                  translate
+                  >views.sidenav.methods</a
+                >
+              </ul>
+              <ul>
+                <a
+                  id="situation"
+                  class="mediumtitle"
+                  href="#/article/professional"
+                  translate
+                  >views.sidenav.professional</a
+                >
+              </ul>
+              <ul>
+                <a
+                  id="handle"
+                  class="mediumtitle"
+                  href="#/article/sinformation"
+                  translate
+                  >views.sidenav.handle</a
+                >
+              </ul>
+              <ul>
+                <a
+                  id="protocols"
+                  class="mediumtitle"
+                  href="#/article/threat_protocols"
+                  translate
+                  >views.sidenav.protocols</a
+                >
+              </ul>
+              <ul>
+                <a
+                  id="corrcover"
+                  class="mediumtitle"
+                  href="#/article/violence"
+                  translate
+                  >views.sidenav.corruptioncover</a
+                >
+              </ul>
+            </div>
           </div>
-
         </div>
       </div>
 
-    </div>
-
-    <div class="row" >
-      <div layout=" row" class=" icon-row sidenav-item">
-        <img id="redes_png" src="images/redes.png" height="22" width="20" alt="d" />
-        <div id="redes" class=" first-option">
-          <a class="sd-item" href="" translate>views.sidenav.networksecurity</a>
-          <div id="subdrawer5" class="subdrawer">
-            <ul>
-              <a class="mediumtitle" href="#/article/violence_boss" translate>views.sidenav.improvecomm</a>
-            </ul>
+      <div class="row">
+        <div layout=" row" class=" icon-row sidenav-item">
+          <img
+            id="redes_png"
+            src="images/redes.png"
+            height="22"
+            width="20"
+            alt="d"
+          />
+          <div id="redes" class=" first-option">
+            <a class="sd-item" href="" translate
+              >views.sidenav.networksecurity</a
+            >
+            <div id="subdrawer5" class="subdrawer">
+              <ul>
+                <a class="mediumtitle" href="#/article/violence_boss" translate
+                  >views.sidenav.improvecomm</a
+                >
+              </ul>
+            </div>
           </div>
-         </div>
+        </div>
       </div>
-
-    </div>
-    <div class="row">
-      <div layout=" row" class="icon-row sidenav-item">
-        <img id="otros_png" src="images/otros.png" height="22" width="20" alt="ds" />
-        <div href="" id="otros" class=" first-option">
-          <a class="sd-item" href="" translate>views.sidenav.others </a>
-          <div id="subdrawer6" class="subdrawer">
-            <ul>
-              <a class="mediumtitle" href="#/article/extreme" translate >views.sidenav.extreme</a>
-            </ul>
-            <ul>
-              <a class="mediumtitle" href="#/article/high" translate>views.sidenav.high</a>
-            </ul>
-            <ul>
-              <a class="mediumtitle" href="#/article/low" translate >views.sidenav.medium</a>
-            </ul>
-            <ul>
-              <a class="mediumtitle" href="#/article/moderate" translate >views.sidenav.down</a>
-            </ul>
+      <div class="row">
+        <div layout=" row" class="icon-row sidenav-item">
+          <img
+            id="otros_png"
+            src="images/otros.png"
+            height="22"
+            width="20"
+            alt="ds"
+          />
+          <div href="" id="otros" class=" first-option">
+            <a class="sd-item" href="" translate>views.sidenav.others </a>
+            <div id="subdrawer6" class="subdrawer">
+              <ul>
+                <a class="mediumtitle" href="#/article/extreme" translate
+                  >views.sidenav.extreme</a
+                >
+              </ul>
+              <ul>
+                <a class="mediumtitle" href="#/article/high" translate
+                  >views.sidenav.high</a
+                >
+              </ul>
+              <ul>
+                <a class="mediumtitle" href="#/article/low" translate
+                  >views.sidenav.medium</a
+                >
+              </ul>
+              <ul>
+                <a class="mediumtitle" href="#/article/moderate" translate
+                  >views.sidenav.down</a
+                >
+              </ul>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-
   </md-sidenav>
 
-  <div id="drawerclose" class="close-menu-hover" ng-show="openSidenav" ng-mouseenter="header.changeStateSide()">
-  </div>
+  <div id="drawerclose" class="close-menu-hover" ng-show="openSidenav"></div>
 
   <md-toolbar class="md-toolbar-tools animate header-fixed">
     <div class="container" layout layout-align="space-between center">
       <div layout layout-align="space-between center" class="header-left">
         <a href="#/" layout layout-align="center center" class="header-logo">
-          <img src="images/icon_salama.png">
+          <img src="images/icon_salama.png" />
         </a>
 
         <md-button class="header-menu-left" ng-click="header.changeStateSide()">
-          <md-icon md-svg-icon="images/menu.svg" class="header-menu-logo-burger">
+          <md-icon
+            md-svg-icon="images/menu.svg"
+            class="header-menu-logo-burger"
+          >
           </md-icon>
           Menu
         </md-button>
       </div>
       <div layout layout-align="space-between center" class="header-right">
-
         <div>
-          <md-button class="header-lang" ng-click="header.showLangOptions = !header.showLangOptions">
-            <md-icon md-svg-icon="images/lang.svg">
-            </md-icon>
+          <md-button
+            class="header-lang"
+            ng-click="header.showLangOptions = !header.showLangOptions"
+          >
+            <md-icon md-svg-icon="images/lang.svg"> </md-icon>
             <span translate>views.main.lang</span>
           </md-button>
-          <md-content layout="column" ng-show="header.showLangOptions" class="header-lang-options">
+          <md-content
+            layout="column"
+            ng-show="header.showLangOptions"
+            class="header-lang-options"
+          >
             <md-button class="legend">
               <span translate>views.main.suggest</span>
             </md-button>
@@ -238,12 +431,10 @@
             <md-button ng-click="header.changeLang('ar_AE')">
               العربي
             </md-button>
-
           </md-content>
         </div>
       </div>
     </div>
   </md-toolbar>
-
 </header>
 <!--endSidenav-->
