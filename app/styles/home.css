@@ -18,6 +18,9 @@
   text-align: center;
   color: #fffefd;
 }
+.translate-text:hover {
+  cursor: pointer;
+}
 .warning {
   height: 174px;
   background-color: #181818;
