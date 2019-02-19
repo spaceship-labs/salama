@@ -64,7 +64,7 @@
     };
 
     function getResultsIndividuals() {
-      return store.individuals.resuxlts;
+      return store.individuals.results;
     }
 
     function setResultsIndividuals(results) {
